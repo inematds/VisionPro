@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionPro | Producao Audiovisual com IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .dark\:bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .dark\:bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .dark\:text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .dark\:text-neutral-300 { color: #475569; }
+    html:not(.dark) .dark\:text-neutral-400 { color: #64748b; }
+    html:not(.dark) .dark\:border-dark-600 { border-color: #e2e8f0; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo + INEMA.CLUB -->
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium transition-colors">INEMA.CLUB</a>
+        </div>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="curso/trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+            <span class="sm:hidden">T1</span>
+            <span class="hidden sm:inline">Fundamentos</span>
+          </a>
+          <a href="curso/trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+            <span class="sm:hidden">T2</span>
+            <span class="hidden sm:inline">Metodo</span>
+          </a>
+          <a href="curso/trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+            <span class="sm:hidden">T3</span>
+            <span class="hidden sm:inline">Avancado</span>
+          </a>
+          <a href="curso/trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+            <span class="sm:hidden">T4</span>
+            <span class="hidden sm:inline">Labs</span>
+          </a>
+          <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2" title="Alternar tema">
+            <span id="theme-icon" class="text-lg">🌙</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/20 via-blue-900/20 to-purple-900/20"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+      <div class="text-center">
+        <span class="inline-block px-4 py-1.5 bg-yellow-500/20 text-yellow-400 text-sm font-semibold rounded-full mb-6">
+          PRODUCAO AUDIOVISUAL COM IA
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Construa audiovisual<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400">
+            com clareza e IA
+          </span>
+        </h1>
+        <p class="text-lg sm:text-xl text-neutral-400 max-w-2xl mx-auto mb-10">
+          Domine a arte de criar conteudo audiovisual profissional usando inteligencia artificial como seu copiloto criativo.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="curso/trilha1/index.html" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-colors text-lg">
+            Comecar Agora
+          </a>
+          <a href="#trilhas" class="px-8 py-4 bg-dark-700 hover:bg-dark-600 text-neutral-200 font-semibold rounded-xl transition-colors text-lg border border-dark-600">
+            Ver Trilhas
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Section -->
+  <section class="border-y border-dark-600 bg-dark-800/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-3xl sm:text-4xl font-bold text-emerald-400">4</div>
+          <div class="text-neutral-400 text-sm mt-1">Trilhas</div>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-bold text-blue-400">30</div>
+          <div class="text-neutral-400 text-sm mt-1">Modulos</div>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-bold text-purple-400">180</div>
+          <div class="text-neutral-400 text-sm mt-1">Topicos</div>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-bold text-amber-400">5</div>
+          <div class="text-neutral-400 text-sm mt-1">Laboratorios</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trilhas Section -->
+  <section id="trilhas" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Sua Jornada de Aprendizado</h2>
+      <p class="text-neutral-400 max-w-2xl mx-auto">
+        Quatro trilhas progressivas que transformam iniciantes em arquitetos de sistemas criativos audiovisuais.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Trilha 1 -->
+      <a href="curso/trilha1/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-emerald-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full">TRILHA 1</span>
+            <span class="text-neutral-500 text-sm">8 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-emerald-400 transition-colors">
+            📐 Fundamentos
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Construa a base mental para pensar, enxergar e decidir audiovisual antes de usar IA.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Alfabetizacao Visual</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Ritmo</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Emocao</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Narrativa</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-emerald-900/20 border-t border-dark-600 group-hover:bg-emerald-900/30 transition-colors">
+          <span class="text-emerald-400 font-semibold text-sm">Nivel: Iniciante → Intermediario</span>
+        </div>
+      </a>
+
+      <!-- Trilha 2 -->
+      <a href="curso/trilha2/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-blue-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded-full">TRILHA 2</span>
+            <span class="text-neutral-500 text-sm">10 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+            🎬 Metodo Pratico
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Construa audiovisual com IA integrada. Cada capitulo entrega um resultado concreto.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Prompts</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Roteiro</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Storyboard</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Producao</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-blue-900/20 border-t border-dark-600 group-hover:bg-blue-900/30 transition-colors">
+          <span class="text-blue-400 font-semibold text-sm">Nivel: Intermediario → Avancado</span>
+        </div>
+      </a>
+
+      <!-- Trilha 3 -->
+      <a href="curso/trilha3/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-purple-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-bold rounded-full">TRILHA 3</span>
+            <span class="text-neutral-500 text-sm">7 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors">
+            🚀 Sistema Avancado
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Transforme-se em arquiteto de sistemas de producao criativa com escala e impacto.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Escala</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Assinatura</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Equipes</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Metricas</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-purple-900/20 border-t border-dark-600 group-hover:bg-purple-900/30 transition-colors">
+          <span class="text-purple-400 font-semibold text-sm">Nivel: Avancado → Elite</span>
+        </div>
+      </a>
+
+      <!-- Trilha 4 -->
+      <a href="curso/trilha4/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-amber-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-bold rounded-full">TRILHA 4</span>
+            <span class="text-neutral-500 text-sm">5 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+            🧪 Laboratorios
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Dispositivos praticos e diferenciais de elite que quase nenhuma escola ensina.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Falhas Guiadas</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Leitura Reversa</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Modo Estudio</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-amber-900/20 border-t border-dark-600 group-hover:bg-amber-900/30 transition-colors">
+          <span class="text-amber-400 font-semibold text-sm">Diferenciais de Elite</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Ferramentas de IA Section -->
+  <section class="bg-dark-800/50 border-y border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Ferramentas de IA que Voce Vai Dominar</h2>
+        <p class="text-neutral-400">Aprenda a usar as melhores ferramentas de IA para producao audiovisual</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-dark-800 rounded-xl p-6 text-center border border-dark-600">
+          <div class="text-3xl mb-3">💬</div>
+          <div class="font-semibold text-neutral-200">ChatGPT / Claude</div>
+          <div class="text-sm text-neutral-500">Roteiro & Ideias</div>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-6 text-center border border-dark-600">
+          <div class="text-3xl mb-3">🎨</div>
+          <div class="font-semibold text-neutral-200">fal.ai / kie.ai</div>
+          <div class="text-sm text-neutral-500">Geracao Visual</div>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-6 text-center border border-dark-600">
+          <div class="text-3xl mb-3">🎬</div>
+          <div class="font-semibold text-neutral-200">Replicate</div>
+          <div class="text-sm text-neutral-500">Video & Animacao</div>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-6 text-center border border-dark-600">
+          <div class="text-3xl mb-3">🔗</div>
+          <div class="font-semibold text-neutral-200">OpenRouter</div>
+          <div class="text-sm text-neutral-500">Integracao</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="bg-gradient-to-br from-emerald-900/30 via-blue-900/30 to-purple-900/30 rounded-3xl p-12 text-center border border-dark-600">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Pronto para Comecar?</h2>
+      <p class="text-neutral-400 max-w-xl mx-auto mb-8">
+        Comece pela Trilha 1 e construa uma base solida antes de usar IA como acelerador.
+      </p>
+      <a href="curso/trilha1/index.html" class="inline-block px-10 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-colors text-lg">
+        Iniciar Trilha 1: Fundamentos
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">🎬</span>
+          <span class="font-bold text-lg text-neutral-200">VisionPro</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">
+          Producao Audiovisual com Inteligencia Artificial
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Check saved theme on load
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
+
+</body>
+</html>

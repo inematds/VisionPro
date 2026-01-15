@@ -1,23 +1,26 @@
-# Padrao de Paginas - Dashboard Mastery
+# Padrao de Paginas - VisionPro
 
-Padrao visual e estrutural baseado nos projetos SHIA e NanoBanana.
+Padrao visual e estrutural para o curso de Producao Audiovisual com IA.
+
+**Hospedagem:** GitHub Pages (https://inematds.github.io/VisionPro)
 
 ---
 
 ## 1. Menu no Topo
 
 ```html
-[📊 Dashboard Mastery] | [INEMA.CLUB]
-[Fundamentos] [Tecnicas] [Avancado] [🌙 Theme]
+[🎬 VisionPro] | [INEMA.CLUB]
+[Fundamentos] [Metodo] [Avancado] [Laboratorios] [🌙 Theme]
 ```
 
 **Elementos:**
 - Logo com emoji + nome do curso
 - Link externo para INEMA.CLUB (azul claro `text-sky-400`)
-- Botoes das trilhas com descricao (ativo com cor, outros neutros)
-  - T1: Fundamentos (emerald)
-  - T2: Tecnicas (blue)
-  - T3: Avancado (purple)
+- Botoes das 4 trilhas com descricao (ativo com cor, outros neutros)
+  - T1: Fundamentos (emerald) - 8 modulos
+  - T2: Metodo (blue) - 10 modulos
+  - T3: Avancado (purple) - 7 modulos
+  - T4: Laboratorios (amber) - 5 modulos
 - Toggle de tema (dark/light)
 
 **INEMA.CLUB deve aparecer em TODAS as paginas (index, trilhas, modulos)**
