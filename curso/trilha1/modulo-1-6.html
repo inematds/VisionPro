@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.6 Personagem como Funcao | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🎬</span>
+            <span class="font-bold hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <a href="index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">← Trilha 1</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 text-sm text-neutral-500 mb-4">
+        <a href="index.html" class="hover:text-neutral-300">Trilha 1</a>
+        <span>/</span>
+        <span class="text-emerald-400">Modulo 1.6</span>
+      </div>
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-bold rounded-full">1.6</span>
+        <span class="text-neutral-500 text-sm">~60 min</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🎭 Personagem como Funcao</h1>
+      <p class="text-lg text-neutral-400">Desmistificar personagem "complexo" e focar no que funciona em tela.</p>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Objetivo -->
+    <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-6 mb-8">
+      <h2 class="text-emerald-400 font-bold mb-2">Objetivo do Modulo</h2>
+      <p class="text-neutral-300">Aprender a criar personagens claros, filmaveis e funcionais, focando no que realmente importa para a narrativa audiovisual em vez de biografias complexas que nunca aparecem na tela.</p>
+    </div>
+
+    <!-- Topicos -->
+    <div class="space-y-6">
+
+      <!-- Topico 1 -->
+      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">1</span>
+            <h3 class="text-xl font-bold">O que o Personagem Quer</h3>
+          </div>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <span class="text-emerald-400 font-semibold">O que e:</span>
+            <p class="text-neutral-300 mt-1">O desejo e a informacao mais importante sobre qualquer personagem. O que ele quer determina suas acoes, suas escolhas, sua direcao. Pode ser algo simples (chegar em casa) ou complexo (ser amado), mas deve ser claro para o criador.</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
+            <p class="text-neutral-300 mt-1">Personagem sem desejo claro e inerte. Nao tem motivacao, nao tem movimento, nao tem interesse. O desejo e o motor que faz o personagem AGIR.</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
+            <p class="text-neutral-300 mt-1">Objetivo, motivacao, want (desejo consciente), need (necessidade inconsciente), motor do personagem.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Topico 2 -->
+      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">2</span>
+            <h3 class="text-xl font-bold">O que Impede</h3>
+          </div>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <span class="text-emerald-400 font-semibold">O que e:</span>
+            <p class="text-neutral-300 mt-1">O obstaculo do personagem pode ser externo (um vilao, uma situacao, uma regra do mundo) ou interno (medo, crenca limitante, falha de carater). Frequentemente os mais interessantes sao os obstaculos internos - o personagem e seu proprio inimigo.</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
+            <p class="text-neutral-300 mt-1">O obstaculo define o conflito, e o conflito define a historia. Saber o que impede o personagem e tao importante quanto saber o que ele quer.</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
+            <p class="text-neutral-300 mt-1">Obstaculo interno vs externo, falha tragica, ghost (trauma), limitacao, conflito interno.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Topico 3 -->
+      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">3</span>
+            <h3 class="text-xl font-bold">O que Muda</h3>
+          </div>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <span class="text-emerald-400 font-semibold">O que e:</span>
+            <p class="text-neutral-300 mt-1">O arco de transformacao e a mudanca que o personagem sofre ao longo da historia. Pode ser positiva (supera medo), negativa (cede a tentacao), ou nula (personagem permanece o mesmo enquanto o mundo muda ao redor - antihero).</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
+            <p class="text-neutral-300 mt-1">A transformacao e o que da significado a jornada. E a resposta a pergunta "por que essa historia merece ser contada?" - porque algo importante mudou.</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
+            <p class="text-neutral-300 mt-1">Arco de personagem, transformacao, crescimento, catarse, resolucao interna.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Topico 4 -->
+      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">4</span>
+            <h3 class="text-xl font-bold">Aparencia como Narrativa</h3>
+          </div>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <span class="text-emerald-400 font-semibold">O que e:</span>
+            <p class="text-neutral-300 mt-1">Em video, aparencia CONTA historia. Roupa, cabelo, postura, objetos que carrega - tudo comunica quem o personagem e sem precisar de uma linha de dialogo. A aparencia e a biografia visivel.</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
+            <p class="text-neutral-300 mt-1">Video e visual. Se a personalidade do personagem nao e visivel, voce nao esta usando o meio. Aparencia bem pensada faz o trabalho de paginas de exposicao.</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
+            <p class="text-neutral-300 mt-1">Design de personagem, figurino como linguagem, objetos simbolicos, corpo como expressao.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Topico 5 -->
+      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">5</span>
+            <h3 class="text-xl font-bold">Acao Define Personagem</h3>
+          </div>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <span class="text-emerald-400 font-semibold">O que e:</span>
+            <p class="text-neutral-300 mt-1">Personagem nao e o que ele DIZ ser - e o que ele FAZ. Especialmente em momentos de pressao. Um personagem que diz ser corajoso mas foge quando ameacado E um covarde. As acoes revelam a verdade.</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
+            <p class="text-neutral-300 mt-1">Dialogos podem mentir, acoes nao. Construir personagem atraves de acao e mais poderoso e mais cinematografico do que atraves de falas.</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
+            <p class="text-neutral-300 mt-1">Acao sobre dialogo, verdade em pressao, comportamento revela carater, show don't tell.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Topico 6 -->
+      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">6</span>
+            <h3 class="text-xl font-bold">Erros Comuns de Construcao</h3>
+          </div>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <span class="text-emerald-400 font-semibold">O que e:</span>
+            <p class="text-neutral-300 mt-1">Erros comuns: biografias longas que nunca aparecem na tela, personagens "complexos" que nao tem desejo claro, backstories elaborados que nao afetam a historia presente, personagens que existem para explicar coisas ao espectador.</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
+            <p class="text-neutral-300 mt-1">Reconhecer esses erros permite evita-los. A maioria dos personagens fracos sofre dos mesmos problemas - complexidade sem funcao, profundidade sem visibilidade.</p>
+          </div>
+          <div>
+            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
+            <p class="text-neutral-300 mt-1">Personagem funcional vs complexo gratuito, informacao dramatica vs informacao morta, economia narrativa.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Ficha Funcional -->
+    <div class="mt-12 bg-dark-800 rounded-xl border border-dark-600 p-6">
+      <h2 class="text-xl font-bold text-emerald-400 mb-4">Ficha Minima de Personagem</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-dark-700/50 rounded-lg p-4">
+          <span class="text-emerald-400 font-semibold">1. O que QUER?</span>
+          <p class="text-neutral-400 text-sm mt-1">Objetivo concreto e visivel</p>
+        </div>
+        <div class="bg-dark-700/50 rounded-lg p-4">
+          <span class="text-emerald-400 font-semibold">2. O que IMPEDE?</span>
+          <p class="text-neutral-400 text-sm mt-1">Obstaculo interno ou externo</p>
+        </div>
+        <div class="bg-dark-700/50 rounded-lg p-4">
+          <span class="text-emerald-400 font-semibold">3. O que MUDA?</span>
+          <p class="text-neutral-400 text-sm mt-1">Transformacao ao final</p>
+        </div>
+        <div class="bg-dark-700/50 rounded-lg p-4">
+          <span class="text-emerald-400 font-semibold">4. Como PARECE?</span>
+          <p class="text-neutral-400 text-sm mt-1">Visual que comunica</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resumo -->
+    <div class="mt-8 bg-dark-800 rounded-xl border border-dark-600 p-6">
+      <h2 class="text-xl font-bold text-emerald-400 mb-4">Resumo do Modulo</h2>
+      <p class="text-neutral-300 mb-4">Personagem funcional e personagem que funciona na tela. Nao precisa ser complexo - precisa ser claro, visivel e em movimento. O que ele quer, o que o impede, o que muda, como parece. Quatro perguntas que resolvem 90% dos problemas de personagem.</p>
+      <div class="bg-emerald-900/20 rounded-lg p-4 border border-emerald-500/30">
+        <p class="text-emerald-300 font-medium">Resultado esperado: Personagens claros, filmaveis e funcionais.</p>
+      </div>
+    </div>
+
+    <!-- Navegacao -->
+    <div class="mt-12 flex flex-col sm:flex-row gap-4">
+      <a href="modulo-1-5.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+        ← Modulo 1.5
+      </a>
+      <a href="modulo-1-7.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
+        Modulo 1.7 →
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 py-8 text-center text-neutral-500 text-sm">
+      VisionPro - Producao Audiovisual com IA | <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a>
+    </div>
+  </footer>
+
+</body>
+</html>
