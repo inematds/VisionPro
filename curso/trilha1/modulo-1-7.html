@@ -11,7 +11,8 @@
       theme: {
         extend: {
           colors: {
-            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+            dark: { 900: '#0a0a0b', 800: '#141416', 700: '#1e1e22', 600: '#2a2a30' },
+            primary: { 500: '#f59e0b', 600: '#d97706' }
           }
         }
       }
@@ -24,35 +25,84 @@
 
   <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center space-x-4">
-          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+          <a href="../../index.html" class="flex items-center space-x-2 text-primary-500 hover:text-primary-600 transition-colors">
             <span class="text-2xl">🎬</span>
             <span class="font-bold hidden sm:inline">VisionPro</span>
           </a>
           <span class="text-neutral-600">|</span>
           <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
         </div>
-        <a href="index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">← Trilha 1</a>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="../trilha1/index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">Trilha 1</a>
+          <a href="../trilha2/index.html" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Trilha 2</a>
+          <a href="../trilha3/index.html" class="text-purple-400 hover:text-purple-300 text-sm font-medium">Trilha 3</a>
+          <a href="../trilha4/index.html" class="text-amber-400 hover:text-amber-300 text-sm font-medium">Trilha 4</a>
+          <button onclick="toggleTheme()" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" title="Alternar tema">
+            <span id="themeIcon">🌙</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
+
+  <!-- Sub Navigation -->
+  <div class="bg-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 py-3">
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium flex items-center space-x-1">
+          <span>←</span>
+          <span>Trilha 1: Fundamentos</span>
+        </a>
+        <div class="flex items-center space-x-4 text-sm">
+          <a href="modulo-1-6.html" class="text-neutral-400 hover:text-neutral-300">← Anterior</a>
+          <span class="text-neutral-600">|</span>
+          <a href="modulo-1-8.html" class="text-neutral-400 hover:text-neutral-300">Proximo →</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Header -->
   <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="flex items-center space-x-2 text-sm text-neutral-500 mb-4">
+        <a href="../../index.html" class="hover:text-neutral-300">Home</a>
+        <span>/</span>
         <a href="index.html" class="hover:text-neutral-300">Trilha 1</a>
         <span>/</span>
         <span class="text-emerald-400">Modulo 1.7</span>
       </div>
+
       <div class="flex items-center space-x-3 mb-4">
         <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-bold rounded-full">1.7</span>
-        <span class="text-neutral-500 text-sm">~60 min</span>
+        <span class="text-neutral-500 text-sm">Fundamentos</span>
       </div>
+
       <h1 class="text-3xl sm:text-4xl font-bold mb-4">🔊 Imagem, Som e Silencio</h1>
-      <p class="text-lg text-neutral-400">Criar consciencia audiovisual completa.</p>
+      <p class="text-lg text-neutral-400 mb-6">Criar consciencia audiovisual completa - som e imagem como sistema unico.</p>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+        <div class="bg-dark-700/50 rounded-lg p-3 text-center">
+          <span class="text-2xl">📚</span>
+          <p class="text-neutral-400 text-xs mt-1">6 Topicos</p>
+        </div>
+        <div class="bg-dark-700/50 rounded-lg p-3 text-center">
+          <span class="text-2xl">⏱️</span>
+          <p class="text-neutral-400 text-xs mt-1">~60 min</p>
+        </div>
+        <div class="bg-dark-700/50 rounded-lg p-3 text-center">
+          <span class="text-2xl">📊</span>
+          <p class="text-neutral-400 text-xs mt-1">Intermediario</p>
+        </div>
+        <div class="bg-dark-700/50 rounded-lg p-3 text-center">
+          <span class="text-2xl">🎧</span>
+          <p class="text-neutral-400 text-xs mt-1">Teoria + Pratica</p>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -62,176 +112,751 @@
     <!-- Objetivo -->
     <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-6 mb-8">
       <h2 class="text-emerald-400 font-bold mb-2">Objetivo do Modulo</h2>
-      <p class="text-neutral-300">Desenvolver pensamento audiovisual integrado, entendendo que som e imagem sao um sistema unico e que o silencio e uma ferramenta tao poderosa quanto qualquer trilha sonora.</p>
+      <p class="text-neutral-300">Desenvolver pensamento audiovisual integrado, entendendo que <strong class="text-white">som e imagem sao um sistema unico</strong> e que o silencio e uma ferramenta tao poderosa quanto qualquer trilha sonora.</p>
+    </div>
+
+    <!-- Featured Visual: O Sistema Audiovisual -->
+    <div class="bg-gradient-to-r from-emerald-900/30 via-dark-800 to-emerald-900/30 rounded-xl p-6 border border-emerald-500/30 mb-12">
+      <h2 class="text-xl font-bold text-emerald-400 mb-4 text-center">O Sistema Audiovisual</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto rounded-full bg-emerald-500/20 flex items-center justify-center text-4xl mb-3">👁️</div>
+          <h3 class="font-bold text-emerald-400 mb-2">IMAGEM</h3>
+          <p class="text-neutral-400 text-sm">O que voce VE</p>
+          <p class="text-neutral-500 text-xs mt-1">Frames, composicao, movimento</p>
+        </div>
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto rounded-full bg-primary-500/20 flex items-center justify-center text-4xl mb-3">🔗</div>
+          <h3 class="font-bold text-primary-500 mb-2">SINCRONIA</h3>
+          <p class="text-neutral-400 text-sm">Como se RELACIONAM</p>
+          <p class="text-neutral-500 text-xs mt-1">Contraponto, assincronia, harmonia</p>
+        </div>
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto rounded-full bg-blue-500/20 flex items-center justify-center text-4xl mb-3">👂</div>
+          <h3 class="font-bold text-blue-400 mb-2">SOM</h3>
+          <p class="text-neutral-400 text-sm">O que voce OUVE</p>
+          <p class="text-neutral-500 text-xs mt-1">Dialogo, ambiente, musica, silencio</p>
+        </div>
+      </div>
+      <div class="mt-6 text-center">
+        <p class="text-neutral-300 text-sm bg-dark-700/50 rounded-lg p-3 inline-block">
+          <strong class="text-emerald-400">Audiovisual = Sistema unico</strong> - Nao e imagem COM som, e imagem E som juntos
+        </p>
+      </div>
     </div>
 
     <!-- Topicos -->
-    <div class="space-y-6">
+    <div class="space-y-8">
 
-      <!-- Topico 1 -->
+      <!-- Topico 1: Som como Narrativa -->
       <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
         <div class="p-6 border-b border-dark-600">
           <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">1</span>
-            <h3 class="text-xl font-bold">Som como Narrativa</h3>
+            <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">1</span>
+            <div>
+              <h3 class="text-xl font-bold">Som como Narrativa</h3>
+              <p class="text-neutral-500 text-sm">Som CONTA historia, nao apenas acompanha</p>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Som nao e apenas acompanhamento - e narrativa. O som de passos pode contar que alguem se aproxima antes de aparecer na tela. Um telefone tocando cria urgencia. O som do vento estabelece solidao. Som CONTA historia.</p>
+        <div class="p-6 space-y-6">
+
+          <p class="text-neutral-300">
+            Som nao e apenas acompanhamento - <strong class="text-white">e narrativa</strong>. O som de passos pode contar que alguem se aproxima antes de aparecer na tela. Um telefone tocando cria urgencia. O som do vento estabelece solidao. Som CONTA historia de forma independente.
+          </p>
+
+          <!-- Tipos de Som Narrativo -->
+          <div class="bg-gradient-to-br from-emerald-900/20 to-dark-700 rounded-lg p-5 border border-emerald-500/20">
+            <h4 class="font-bold text-emerald-400 mb-4">Funcoes Narrativas do Som</h4>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-dark-800/50 rounded-lg p-4">
+                <span class="text-2xl">🎵</span>
+                <h5 class="font-semibold text-white mt-2">Diegetico</h5>
+                <p class="text-neutral-400 text-sm mt-1">Som que existe no mundo da historia - personagens podem ouvir</p>
+                <p class="text-emerald-400 text-xs mt-2">Ex: Radio tocando, passos, dialogo</p>
+              </div>
+              <div class="bg-dark-800/50 rounded-lg p-4">
+                <span class="text-2xl">🎼</span>
+                <h5 class="font-semibold text-white mt-2">Nao-Diegetico</h5>
+                <p class="text-neutral-400 text-sm mt-1">Som externo a historia - so espectador ouve</p>
+                <p class="text-emerald-400 text-xs mt-2">Ex: Trilha sonora, narracao voice-over</p>
+              </div>
+              <div class="bg-dark-800/50 rounded-lg p-4">
+                <span class="text-2xl">👻</span>
+                <h5 class="font-semibold text-white mt-2">Fora de Quadro</h5>
+                <p class="text-neutral-400 text-sm mt-1">Som de algo que nao vemos, mas existe na cena</p>
+                <p class="text-emerald-400 text-xs mt-2">Ex: Carro passando, conversa no comodo ao lado</p>
+              </div>
+              <div class="bg-dark-800/50 rounded-lg p-4">
+                <span class="text-2xl">⏳</span>
+                <h5 class="font-semibold text-white mt-2">Antecipatorio</h5>
+                <p class="text-neutral-400 text-sm mt-1">Som que prepara para algo que ainda vai acontecer</p>
+                <p class="text-emerald-400 text-xs mt-2">Ex: Trovao antes da tempestade aparecer</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Criadores iniciantes pensam em som como "complemento". Profissionais pensam em som como linguagem paralela que pode concordar, contradizer ou expandir o que a imagem mostra.</p>
+
+          <!-- Exemplos Som Narrativo -->
+          <div class="bg-dark-700/50 rounded-lg p-5">
+            <h4 class="font-bold text-white mb-3">Som que Conta Historia</h4>
+            <div class="space-y-3">
+              <div class="flex items-start space-x-3">
+                <span class="text-emerald-400">🚪</span>
+                <div>
+                  <p class="text-neutral-300"><strong>Porta rangendo</strong> - Alguem esta entrando (tensao antes de ver quem)</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-emerald-400">📱</span>
+                <div>
+                  <p class="text-neutral-300"><strong>Celular vibrando</strong> - Urgencia, interrupcao, expectativa</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-emerald-400">🌧️</span>
+                <div>
+                  <p class="text-neutral-300"><strong>Chuva constante</strong> - Estabelece tom melancolico, isolamento</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-emerald-400">🐕</span>
+                <div>
+                  <p class="text-neutral-300"><strong>Cachorro latindo longe</strong> - Solidao, noite, perigo distante</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Sound design, som diegetico vs nao-diegetico, som fora de quadro, antecipacao sonora.</p>
+
+          <!-- Insight -->
+          <div class="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+            <p class="text-blue-300"><strong>Insight:</strong> Criadores iniciantes pensam em som como "complemento". Profissionais pensam em som como <strong class="text-white">linguagem paralela</strong> que pode concordar, contradizer ou expandir o que a imagem mostra.</p>
           </div>
+
         </div>
       </div>
 
-      <!-- Topico 2 -->
+      <!-- Topico 2: Ruido, Silencio e Atencao -->
       <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
         <div class="p-6 border-b border-dark-600">
           <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">2</span>
-            <h3 class="text-xl font-bold">Ruido, Silencio e Atencao</h3>
+            <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">2</span>
+            <div>
+              <h3 class="text-xl font-bold">Ruido, Silencio e Atencao</h3>
+              <p class="text-neutral-500 text-sm">Controle auditivo do espectador</p>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Ruido ambiente cria realidade e imersao. Silencio cria tensao e foco. A alternancia entre os dois controla a atencao do espectador. Silencio apos ruido e impactante. Ruido apos silencio e chocante.</p>
+        <div class="p-6 space-y-6">
+
+          <p class="text-neutral-300">
+            <strong class="text-white">Ruido ambiente</strong> cria realidade e imersao. <strong class="text-white">Silencio</strong> cria tensao e foco. A alternancia entre os dois controla a atencao do espectador. Silencio apos ruido e impactante. Ruido apos silencio e chocante.
+          </p>
+
+          <!-- Espectro Sonoro -->
+          <div class="bg-gradient-to-r from-red-900/20 via-dark-700 to-emerald-900/20 rounded-lg p-5 border border-dark-600">
+            <h4 class="font-bold text-white mb-4 text-center">Espectro do Som</h4>
+            <div class="flex items-center justify-between">
+              <div class="text-center flex-1">
+                <div class="text-3xl mb-2">🔇</div>
+                <p class="text-emerald-400 font-semibold text-sm">SILENCIO</p>
+                <p class="text-neutral-500 text-xs">Tensao, foco, impacto</p>
+              </div>
+              <div class="flex-1 h-2 bg-gradient-to-r from-emerald-500 via-primary-500 to-red-500 rounded-full mx-4"></div>
+              <div class="text-center flex-1">
+                <div class="text-3xl mb-2">📢</div>
+                <p class="text-red-400 font-semibold text-sm">RUIDO</p>
+                <p class="text-neutral-500 text-xs">Realidade, caos, energia</p>
+              </div>
+            </div>
+            <p class="text-center text-neutral-400 text-sm mt-4">A magia esta no CONTRASTE e na TRANSICAO entre os extremos</p>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Som constante cansa. Silencio constante e irreal. Saber quando usar cada um e uma habilidade que separa videos amadores de profissionais.</p>
+
+          <!-- Efeitos do Silencio -->
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-lg p-4">
+              <h5 class="font-bold text-emerald-400 mb-3">Silencio Cria:</h5>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-center space-x-2">
+                  <span class="text-emerald-400">✓</span>
+                  <span class="text-neutral-300">Tensao dramatica</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="text-emerald-400">✓</span>
+                  <span class="text-neutral-300">Foco absoluto</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="text-emerald-400">✓</span>
+                  <span class="text-neutral-300">Respiro emocional</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="text-emerald-400">✓</span>
+                  <span class="text-neutral-300">Antecipacao</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="text-emerald-400">✓</span>
+                  <span class="text-neutral-300">Peso do momento</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+              <h5 class="font-bold text-blue-400 mb-3">Ruido Cria:</h5>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-center space-x-2">
+                  <span class="text-blue-400">✓</span>
+                  <span class="text-neutral-300">Realismo e imersao</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="text-blue-400">✓</span>
+                  <span class="text-neutral-300">Contexto espacial</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="text-blue-400">✓</span>
+                  <span class="text-neutral-300">Energia e ritmo</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="text-blue-400">✓</span>
+                  <span class="text-neutral-300">Caos e confusao</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <span class="text-blue-400">✓</span>
+                  <span class="text-neutral-300">Localizacao geografica</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Room tone, silencio dramatico, contraste sonoro, economia sonora, foco auditivo.</p>
+
+          <!-- Room Tone -->
+          <div class="bg-dark-700/50 rounded-lg p-5">
+            <h4 class="font-bold text-white mb-3">Room Tone: O "Silencio" Real</h4>
+            <p class="text-neutral-300 mb-3">Silencio absoluto nao existe na natureza. Todo ambiente tem seu "som do silencio" - o <strong class="text-emerald-400">room tone</strong>.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
+              <div class="bg-dark-800/50 rounded p-3 text-center">
+                <span class="text-xl">🏠</span>
+                <p class="text-xs text-neutral-400 mt-1">Casa: ar, geladeira, vizinhos</p>
+              </div>
+              <div class="bg-dark-800/50 rounded p-3 text-center">
+                <span class="text-xl">🌳</span>
+                <p class="text-xs text-neutral-400 mt-1">Floresta: vento, folhas, insetos</p>
+              </div>
+              <div class="bg-dark-800/50 rounded p-3 text-center">
+                <span class="text-xl">🏢</span>
+                <p class="text-xs text-neutral-400 mt-1">Escritorio: ar-condicionado, teclas</p>
+              </div>
+              <div class="bg-dark-800/50 rounded p-3 text-center">
+                <span class="text-xl">🌃</span>
+                <p class="text-xs text-neutral-400 mt-1">Cidade: trafego distante, sirenes</p>
+              </div>
+            </div>
           </div>
+
+          <!-- Warning -->
+          <div class="bg-amber-900/20 border border-amber-500/30 rounded-lg p-4">
+            <p class="text-amber-300"><strong>Atencao:</strong> Som constante cansa. Silencio constante e irreal. Saber quando usar cada um e uma habilidade que <strong class="text-white">separa videos amadores de profissionais</strong>.</p>
+          </div>
+
         </div>
       </div>
 
-      <!-- Topico 3 -->
+      <!-- Topico 3: Musica como Manipulacao Emocional -->
       <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
         <div class="p-6 border-b border-dark-600">
           <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">3</span>
-            <h3 class="text-xl font-bold">Musica como Manipulacao Emocional</h3>
+            <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">3</span>
+            <div>
+              <h3 class="text-xl font-bold">Musica como Manipulacao Emocional</h3>
+              <p class="text-neutral-500 text-sm">A ferramenta mais direta de controle emocional</p>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Musica e a ferramenta mais direta de manipulacao emocional em video. Ela pode fazer uma cena triste parecer feliz, uma cena comum parecer epica, uma cena calma parecer ameacadora. A musica INSTRUI o espectador sobre como sentir.</p>
+        <div class="p-6 space-y-6">
+
+          <p class="text-neutral-300">
+            Musica e a ferramenta <strong class="text-white">mais direta de manipulacao emocional</strong> em video. Ela pode fazer uma cena triste parecer feliz, uma cena comum parecer epica, uma cena calma parecer ameacadora. A musica INSTRUI o espectador sobre como sentir.
+          </p>
+
+          <!-- Como Musica Muda Tudo -->
+          <div class="bg-gradient-to-br from-emerald-900/20 to-dark-700 rounded-lg p-5 border border-emerald-500/20">
+            <h4 class="font-bold text-emerald-400 mb-4">Mesma Cena, Musicas Diferentes</h4>
+            <p class="text-neutral-400 text-sm mb-4">Uma pessoa caminhando sozinha na rua:</p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-dark-800/50 rounded-lg p-4">
+                <div class="flex items-center space-x-2 mb-2">
+                  <span class="text-2xl">🎻</span>
+                  <span class="font-semibold text-white">Violinos Tristes</span>
+                </div>
+                <p class="text-neutral-400 text-sm">= Solidao, abandono, melancolia</p>
+              </div>
+              <div class="bg-dark-800/50 rounded-lg p-4">
+                <div class="flex items-center space-x-2 mb-2">
+                  <span class="text-2xl">🎸</span>
+                  <span class="font-semibold text-white">Rock Energico</span>
+                </div>
+                <p class="text-neutral-400 text-sm">= Determinacao, rebeldia, liberdade</p>
+              </div>
+              <div class="bg-dark-800/50 rounded-lg p-4">
+                <div class="flex items-center space-x-2 mb-2">
+                  <span class="text-2xl">🎹</span>
+                  <span class="font-semibold text-white">Piano Tenso</span>
+                </div>
+                <p class="text-neutral-400 text-sm">= Perigo iminente, suspense, medo</p>
+              </div>
+              <div class="bg-dark-800/50 rounded-lg p-4">
+                <div class="flex items-center space-x-2 mb-2">
+                  <span class="text-2xl">🎺</span>
+                  <span class="font-semibold text-white">Orquestra Epica</span>
+                </div>
+                <p class="text-neutral-400 text-sm">= Heroismo, destino, grandeza</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Musica mal usada e obvia e cliche. Musica bem usada e invisivel mas poderosa. Saber quando usar, quando NAO usar, e como escolher define o impacto do seu video.</p>
+
+          <!-- Score vs Song -->
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-dark-700/50 rounded-lg p-4">
+              <h5 class="font-bold text-emerald-400 mb-3">Score (Trilha Original)</h5>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">+</span>
+                  <span class="text-neutral-300">Feita para a cena especifica</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">+</span>
+                  <span class="text-neutral-300">Invisivel, nao distrai</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">+</span>
+                  <span class="text-neutral-300">Controle total de timing</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-red-400">-</span>
+                  <span class="text-neutral-300">Mais cara e trabalhosa</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-dark-700/50 rounded-lg p-4">
+              <h5 class="font-bold text-blue-400 mb-3">Song (Musica Existente)</h5>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">+</span>
+                  <span class="text-neutral-300">Conexao cultural imediata</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">+</span>
+                  <span class="text-neutral-300">Reconhecimento do publico</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-red-400">-</span>
+                  <span class="text-neutral-300">Pode sobrepor a cena</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-red-400">-</span>
+                  <span class="text-neutral-300">Direitos autorais</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Score vs song, mickey-mousing, contraponto musical, timing de entrada, fade out emocional.</p>
+
+          <!-- Mickey-Mousing -->
+          <div class="bg-red-900/20 border border-red-500/30 rounded-lg p-4">
+            <h5 class="font-bold text-red-400 mb-2">Erro: Mickey-Mousing</h5>
+            <p class="text-neutral-300 text-sm">Quando a musica literalmente "comenta" cada acao (nota aguda quando alguem olha pra cima, nota grave quando cai). E obvio, infantil e retira o poder emocional. Use com moderacao extrema.</p>
           </div>
+
+          <!-- Exercise -->
+          <div class="bg-primary-500/10 border border-primary-500/30 rounded-lg p-4">
+            <h5 class="font-bold text-primary-500 mb-2">Exercicio: Teste de Trilha</h5>
+            <p class="text-neutral-300 text-sm">Pegue uma cena de 30 segundos que voce filmou. Teste 3 musicas completamente diferentes. Perceba como CADA UMA muda radicalmente o significado emocional. Anote qual funciona melhor e POR QUE.</p>
+          </div>
+
+          <!-- Insight -->
+          <div class="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+            <p class="text-blue-300"><strong>Principio:</strong> Musica mal usada e obvia e cliche. Musica bem usada e <strong class="text-white">invisivel mas poderosa</strong>. Saber quando usar, quando NAO usar, e como escolher define o impacto.</p>
+          </div>
+
         </div>
       </div>
 
-      <!-- Topico 4 -->
+      <!-- Topico 4: Relacao Imagem x Som -->
       <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
         <div class="p-6 border-b border-dark-600">
           <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">4</span>
-            <h3 class="text-xl font-bold">Relacao Imagem x Som</h3>
+            <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">4</span>
+            <div>
+              <h3 class="text-xl font-bold">Relacao Imagem x Som</h3>
+              <p class="text-neutral-500 text-sm">Tres formas de combinar elementos audiovisuais</p>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Imagem e som podem ter tres relacoes: sincronia (combinam perfeitamente), contraponto (contradizem propositalmente), ou assincronia (um adianta ou atrasa em relacao ao outro). Cada relacao cria efeito diferente.</p>
+        <div class="p-6 space-y-6">
+
+          <p class="text-neutral-300">
+            Imagem e som podem ter <strong class="text-white">tres relacoes fundamentais</strong>: sincronia (combinam perfeitamente), contraponto (contradizem propositalmente), ou assincronia (um adianta ou atrasa em relacao ao outro). Cada relacao cria efeito diferente.
+          </p>
+
+          <!-- Tres Relacoes Visuais -->
+          <div class="bg-gradient-to-br from-emerald-900/20 to-dark-700 rounded-lg p-6 border border-emerald-500/20">
+            <h4 class="font-bold text-white mb-6 text-center">As Tres Relacoes Som-Imagem</h4>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="w-24 h-24 mx-auto rounded-full bg-emerald-500/20 flex items-center justify-center mb-3">
+                  <div class="text-center">
+                    <span class="text-2xl block">👁️</span>
+                    <span class="text-xl">🔗</span>
+                    <span class="text-2xl block">👂</span>
+                  </div>
+                </div>
+                <h5 class="font-bold text-emerald-400">SINCRONIA</h5>
+                <p class="text-neutral-400 text-sm mt-2">Som e imagem combinam perfeitamente</p>
+                <p class="text-neutral-500 text-xs mt-2">Porta bate → som de batida</p>
+                <p class="text-emerald-400 text-xs mt-1">Efeito: Realismo, clareza</p>
+              </div>
+              <div class="text-center">
+                <div class="w-24 h-24 mx-auto rounded-full bg-purple-500/20 flex items-center justify-center mb-3">
+                  <div class="text-center">
+                    <span class="text-2xl block">👁️</span>
+                    <span class="text-xl">↔️</span>
+                    <span class="text-2xl block">👂</span>
+                  </div>
+                </div>
+                <h5 class="font-bold text-purple-400">CONTRAPONTO</h5>
+                <p class="text-neutral-400 text-sm mt-2">Som contradiz a imagem de proposito</p>
+                <p class="text-neutral-500 text-xs mt-2">Cena violenta → musica infantil</p>
+                <p class="text-purple-400 text-xs mt-1">Efeito: Ironia, tensao, desconforto</p>
+              </div>
+              <div class="text-center">
+                <div class="w-24 h-24 mx-auto rounded-full bg-blue-500/20 flex items-center justify-center mb-3">
+                  <div class="text-center">
+                    <span class="text-2xl block">👁️</span>
+                    <span class="text-xl">⏱️</span>
+                    <span class="text-2xl block">👂</span>
+                  </div>
+                </div>
+                <h5 class="font-bold text-blue-400">ASSINCRONIA</h5>
+                <p class="text-neutral-400 text-sm mt-2">Som adianta ou atrasa a imagem</p>
+                <p class="text-neutral-500 text-xs mt-2">Ouvimos voz antes de ver quem fala</p>
+                <p class="text-blue-400 text-xs mt-1">Efeito: Antecipacao, transicao suave</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">A maioria dos criadores usa apenas sincronia por default. Dominar contraponto e assincronia abre possibilidades criativas enormes e cria momentos memoraveis.</p>
+
+          <!-- L-Cut e J-Cut -->
+          <div class="bg-dark-700/50 rounded-lg p-5">
+            <h4 class="font-bold text-white mb-4">Tecnicas de Assincronia: L-Cut e J-Cut</h4>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-dark-800/50 rounded-lg p-4">
+                <h5 class="font-semibold text-emerald-400 mb-2">J-Cut</h5>
+                <div class="flex items-center space-x-2 text-sm mb-2">
+                  <span class="text-neutral-500">Audio antes</span>
+                  <span class="text-emerald-400">→</span>
+                  <span class="text-neutral-300">Video depois</span>
+                </div>
+                <p class="text-neutral-400 text-sm">Ouvimos a proxima cena ANTES de ve-la. Cria antecipacao e transicao suave.</p>
+                <p class="text-emerald-400 text-xs mt-2">Ex: Ouvimos som de festa, depois cortamos para a festa</p>
+              </div>
+              <div class="bg-dark-800/50 rounded-lg p-4">
+                <h5 class="font-semibold text-blue-400 mb-2">L-Cut</h5>
+                <div class="flex items-center space-x-2 text-sm mb-2">
+                  <span class="text-neutral-500">Video antes</span>
+                  <span class="text-blue-400">→</span>
+                  <span class="text-neutral-300">Audio depois</span>
+                </div>
+                <p class="text-neutral-400 text-sm">Vemos a proxima cena mas audio da anterior continua. Conecta emocoes.</p>
+                <p class="text-blue-400 text-xs mt-2">Ex: Vemos pessoa saindo, mas ainda ouvimos a conversa</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Sincronia audiovisual, contraponto, L-cut, J-cut, som antecipando ou prolongando.</p>
+
+          <!-- Exemplos de Contraponto -->
+          <div class="bg-purple-900/20 border border-purple-500/30 rounded-lg p-4">
+            <h5 class="font-bold text-purple-400 mb-3">Contraponto Famoso no Cinema</h5>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start space-x-2">
+                <span class="text-purple-400">•</span>
+                <span class="text-neutral-300"><strong>Laranja Mecanica:</strong> "Singin' in the Rain" durante cena de violencia</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-purple-400">•</span>
+                <span class="text-neutral-300"><strong>Apocalypse Now:</strong> "Cavalgada das Valquirias" durante bombardeio</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-purple-400">•</span>
+                <span class="text-neutral-300"><strong>Guardioes da Galaxia:</strong> Musica pop alegre em cenas de acao</span>
+              </li>
+            </ul>
           </div>
+
+          <!-- Insight -->
+          <div class="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+            <p class="text-blue-300"><strong>Insight:</strong> A maioria dos criadores usa apenas sincronia por default. Dominar contraponto e assincronia abre <strong class="text-white">possibilidades criativas enormes</strong> e cria momentos memoraveis.</p>
+          </div>
+
         </div>
       </div>
 
-      <!-- Topico 5 -->
+      <!-- Topico 5: O Erro de "Corrigir Tudo na Edicao" -->
       <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
         <div class="p-6 border-b border-dark-600">
           <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">5</span>
-            <h3 class="text-xl font-bold">O Erro de "Corrigir Tudo na Edicao"</h3>
+            <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">5</span>
+            <div>
+              <h3 class="text-xl font-bold">O Erro de "Corrigir Tudo na Edicao"</h3>
+              <p class="text-neutral-500 text-sm">Prevencao sempre vence correcao em audio</p>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Um erro comum e gravar com som ruim pensando "conserto depois". Som mal captado e muito dificil de corrigir. Ruido de fundo, reverberacao, volume baixo - esses problemas na edicao custam tempo enorme e raramente ficam perfeitos.</p>
+        <div class="p-6 space-y-6">
+
+          <p class="text-neutral-300">
+            Um erro comum e gravar com som ruim pensando <strong class="text-white">"conserto depois"</strong>. Som mal captado e muito dificil de corrigir. Ruido de fundo, reverberacao, volume baixo - esses problemas na edicao custam tempo enorme e raramente ficam perfeitos.
+          </p>
+
+          <!-- O que da pra corrigir vs nao -->
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-lg p-4">
+              <h5 class="font-bold text-emerald-400 mb-3">Da para Corrigir</h5>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">✓</span>
+                  <span class="text-neutral-300">Volume baixo (ate certo ponto)</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">✓</span>
+                  <span class="text-neutral-300">Equalizacao de frequencias</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">✓</span>
+                  <span class="text-neutral-300">Clicks e pops isolados</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">✓</span>
+                  <span class="text-neutral-300">Ruido de fundo LEVE e constante</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-red-900/20 border border-red-500/30 rounded-lg p-4">
+              <h5 class="font-bold text-red-400 mb-3">NAO Da para Corrigir</h5>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start space-x-2">
+                  <span class="text-red-400">✗</span>
+                  <span class="text-neutral-300">Reverberacao excessiva (eco)</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-red-400">✗</span>
+                  <span class="text-neutral-300">Audio clipado (estourado)</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-red-400">✗</span>
+                  <span class="text-neutral-300">Ruido variavel (carros, conversas)</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-red-400">✗</span>
+                  <span class="text-neutral-300">Vento no microfone</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-red-400">✗</span>
+                  <span class="text-neutral-300">Microfone muito longe</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Prevencao e sempre melhor que correcao em som. Um minuto de atencao na gravacao economiza horas na edicao. Som limpo na captacao e meio caminho andado.</p>
+
+          <!-- Custo de correcao -->
+          <div class="bg-dark-700/50 rounded-lg p-5">
+            <h4 class="font-bold text-white mb-4">O Custo Real da Correcao</h4>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <div class="w-32 text-right text-neutral-400 text-sm">Prevencao:</div>
+                <div class="flex-1 bg-emerald-500/30 h-4 rounded" style="width: 10%;"></div>
+                <div class="w-20 text-emerald-400 text-sm">1 minuto</div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div class="w-32 text-right text-neutral-400 text-sm">Correcao leve:</div>
+                <div class="flex-1 bg-primary-500/30 h-4 rounded" style="width: 30%;"></div>
+                <div class="w-20 text-primary-500 text-sm">30 min</div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div class="w-32 text-right text-neutral-400 text-sm">Correcao pesada:</div>
+                <div class="flex-1 bg-red-500/30 h-4 rounded" style="width: 80%;"></div>
+                <div class="w-20 text-red-400 text-sm">3+ horas</div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div class="w-32 text-right text-neutral-400 text-sm">Re-gravacao:</div>
+                <div class="flex-1 bg-red-500/30 h-4 rounded" style="width: 100%;"></div>
+                <div class="w-20 text-red-400 text-sm">Dia inteiro</div>
+              </div>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Captacao limpa, monitoramento em tempo real, problemas irreversiveis, prevencao vs correcao.</p>
+
+          <!-- Checklist de captacao -->
+          <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-lg p-4">
+            <h5 class="font-bold text-emerald-400 mb-3">Checklist de Captacao Limpa</h5>
+            <div class="grid md:grid-cols-2 gap-2 text-sm">
+              <div class="flex items-center space-x-2">
+                <span class="text-emerald-400">□</span>
+                <span class="text-neutral-300">Microfone proximo da fonte</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-emerald-400">□</span>
+                <span class="text-neutral-300">Fone de monitoramento plugado</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-emerald-400">□</span>
+                <span class="text-neutral-300">Nivel nao passa de -6dB</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-emerald-400">□</span>
+                <span class="text-neutral-300">Ambiente silencioso</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-emerald-400">□</span>
+                <span class="text-neutral-300">Protetor de vento se externo</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-emerald-400">□</span>
+                <span class="text-neutral-300">Teste de audio antes de gravar</span>
+              </div>
+            </div>
           </div>
+
+          <!-- Warning -->
+          <div class="bg-amber-900/20 border border-amber-500/30 rounded-lg p-4">
+            <p class="text-amber-300"><strong>Regra de ouro:</strong> Um minuto de atencao na gravacao economiza horas na edicao. <strong class="text-white">Prevencao e sempre melhor que correcao</strong> em audio.</p>
+          </div>
+
         </div>
       </div>
 
-      <!-- Topico 6 -->
+      <!-- Topico 6: Pensar Som Antes de Filmar -->
       <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
         <div class="p-6 border-b border-dark-600">
           <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">6</span>
-            <h3 class="text-xl font-bold">Pensar Som Antes de Filmar</h3>
+            <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">6</span>
+            <div>
+              <h3 class="text-xl font-bold">Pensar Som Antes de Filmar</h3>
+              <p class="text-neutral-500 text-sm">Som planejado na pre-producao, nao na pos</p>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Som deve ser planejado na pre-producao, nao apenas na pos. Que sons a cena precisa? Que problemas sonoros o local tem? Precisa de gravacao de som ambiente separada? A trilha vai influenciar o ritmo de gravacao? Pensar som antes muda tudo.</p>
+        <div class="p-6 space-y-6">
+
+          <p class="text-neutral-300">
+            Som deve ser planejado na <strong class="text-white">pre-producao</strong>, nao apenas na pos. Que sons a cena precisa? Que problemas sonoros o local tem? Precisa de gravacao de som ambiente separada? A trilha vai influenciar o ritmo de gravacao? Pensar som antes muda tudo.
+          </p>
+
+          <!-- Perguntas de Pre-producao -->
+          <div class="bg-gradient-to-br from-emerald-900/20 to-dark-700 rounded-lg p-5 border border-emerald-500/20">
+            <h4 class="font-bold text-emerald-400 mb-4">Perguntas de Pre-Producao Sonora</h4>
+            <div class="space-y-3">
+              <div class="flex items-start space-x-3">
+                <span class="text-emerald-400 text-lg">1</span>
+                <div>
+                  <p class="text-white font-medium">Que sons a cena PRECISA ter?</p>
+                  <p class="text-neutral-400 text-sm">Dialogos, efeitos essenciais, ambiente</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-emerald-400 text-lg">2</span>
+                <div>
+                  <p class="text-white font-medium">Que problemas sonoros o local tem?</p>
+                  <p class="text-neutral-400 text-sm">Trafego, obras, eco, vizinhos</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-emerald-400 text-lg">3</span>
+                <div>
+                  <p class="text-white font-medium">Precisa gravar room tone separado?</p>
+                  <p class="text-neutral-400 text-sm">30 segundos de silencio do ambiente</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-emerald-400 text-lg">4</span>
+                <div>
+                  <p class="text-white font-medium">Qual trilha sonora? Ja escolheu?</p>
+                  <p class="text-neutral-400 text-sm">Ritmo da musica pode influenciar ritmo de gravacao</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-emerald-400 text-lg">5</span>
+                <div>
+                  <p class="text-white font-medium">Que sons nao vai ter e precisa criar?</p>
+                  <p class="text-neutral-400 text-sm">Foley, efeitos sonoros, biblioteca de audio</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Quando som vira pensamento posterior, o resultado e sempre inferior. Produtores experientes pensam em som desde o roteiro. Isso muda a qualidade final dramaticamente.</p>
+
+          <!-- Sound Breakdown -->
+          <div class="bg-dark-700/50 rounded-lg p-5">
+            <h4 class="font-bold text-white mb-4">Sound Breakdown: O Documento Sonoro</h4>
+            <p class="text-neutral-300 mb-4">Assim como existe decupagem visual, profissionais fazem <strong class="text-emerald-400">decupagem sonora</strong>:</p>
+            <div class="bg-dark-800/50 rounded-lg p-4 font-mono text-sm">
+              <p class="text-emerald-400"># CENA 1 - COZINHA MANHA</p>
+              <p class="text-neutral-400 mt-2">Dialogos: Maria e Pedro - lapela</p>
+              <p class="text-neutral-400">Ambiente: Som de cafe, geladeira</p>
+              <p class="text-neutral-400">Foley: Passos, xicara na mesa</p>
+              <p class="text-neutral-400">Musica: Nao - dialogo importante</p>
+              <p class="text-neutral-400">Problemas: Geladeira barulhenta - desligar</p>
+              <p class="text-neutral-400">Room tone: Gravar 30s no final</p>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Sound breakdown, locacao sonora, pre-planejamento sonoro, integracao som-imagem desde a concepcao.</p>
+
+          <!-- Integracao desde concepcao -->
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center border border-emerald-500/20">
+              <span class="text-2xl mb-2 block">📝</span>
+              <h5 class="font-semibold text-emerald-400">ROTEIRO</h5>
+              <p class="text-neutral-400 text-xs mt-1">Ja indica sons importantes</p>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center border border-blue-500/20">
+              <span class="text-2xl mb-2 block">🎬</span>
+              <h5 class="font-semibold text-blue-400">GRAVACAO</h5>
+              <p class="text-neutral-400 text-xs mt-1">Capta audio com intencao</p>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center border border-purple-500/20">
+              <span class="text-2xl mb-2 block">✂️</span>
+              <h5 class="font-semibold text-purple-400">EDICAO</h5>
+              <p class="text-neutral-400 text-xs mt-1">Apenas refina e integra</p>
+            </div>
           </div>
+
+          <!-- Exercise -->
+          <div class="bg-primary-500/10 border border-primary-500/30 rounded-lg p-4">
+            <h5 class="font-bold text-primary-500 mb-2">Exercicio: Audicao Consciente</h5>
+            <p class="text-neutral-300 text-sm">Antes da sua proxima gravacao, visite o local apenas para OUVIR. Feche os olhos por 2 minutos. Que sons existem? Sao constantes ou variaveis? Vao atrapalhar? Podem ser usados criativamente? Anote tudo.</p>
+          </div>
+
+          <!-- Insight -->
+          <div class="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+            <p class="text-blue-300"><strong>Principio:</strong> Quando som vira pensamento posterior, o resultado e sempre inferior. Produtores experientes pensam em <strong class="text-white">som desde o roteiro</strong>. Isso muda a qualidade final dramaticamente.</p>
+          </div>
+
         </div>
       </div>
 
     </div>
 
-    <!-- Relacoes Som-Imagem -->
-    <div class="mt-12 bg-dark-800 rounded-xl border border-dark-600 p-6">
-      <h2 class="text-xl font-bold text-emerald-400 mb-4">Tres Relacoes Som-Imagem</h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <div class="bg-dark-700/50 rounded-lg p-4 text-center">
-          <span class="text-2xl mb-2 block">🔗</span>
-          <span class="text-emerald-400 font-semibold block">Sincronia</span>
-          <p class="text-neutral-400 text-sm mt-1">Som e imagem combinam</p>
-        </div>
-        <div class="bg-dark-700/50 rounded-lg p-4 text-center">
-          <span class="text-2xl mb-2 block">↔️</span>
-          <span class="text-emerald-400 font-semibold block">Contraponto</span>
-          <p class="text-neutral-400 text-sm mt-1">Som contradiz imagem</p>
-        </div>
-        <div class="bg-dark-700/50 rounded-lg p-4 text-center">
-          <span class="text-2xl mb-2 block">⏱️</span>
-          <span class="text-emerald-400 font-semibold block">Assincronia</span>
-          <p class="text-neutral-400 text-sm mt-1">Som adianta ou atrasa</p>
+    <!-- Template: Planejamento Sonoro -->
+    <div class="mt-12 bg-gradient-to-br from-dark-700 to-dark-800 rounded-xl border border-dark-600 p-6">
+      <h2 class="text-xl font-bold text-emerald-400 mb-4">Template: Planejamento Sonoro de Cena</h2>
+      <div class="bg-dark-800/50 rounded-lg p-4 font-mono text-sm">
+        <p class="text-emerald-400 mb-3"># PLANEJAMENTO SONORO</p>
+        <div class="space-y-2 text-neutral-300">
+          <p><span class="text-neutral-500">Cena:</span> ________________</p>
+          <p><span class="text-neutral-500">Local:</span> ________________</p>
+          <p class="mt-3 text-emerald-400">## SONS NECESSARIOS</p>
+          <p><span class="text-neutral-500">Dialogos:</span> ________________</p>
+          <p><span class="text-neutral-500">Ambiente:</span> ________________</p>
+          <p><span class="text-neutral-500">Efeitos:</span> ________________</p>
+          <p><span class="text-neutral-500">Musica:</span> ________________</p>
+          <p class="mt-3 text-emerald-400">## PROBLEMAS POTENCIAIS</p>
+          <p><span class="text-neutral-500">Ruidos:</span> ________________</p>
+          <p><span class="text-neutral-500">Solucoes:</span> ________________</p>
+          <p class="mt-3 text-emerald-400">## EQUIPAMENTO</p>
+          <p><span class="text-neutral-500">Mic principal:</span> ________________</p>
+          <p><span class="text-neutral-500">Backup:</span> ________________</p>
+          <p class="mt-3 text-emerald-400">## EXTRAS</p>
+          <p><span class="text-neutral-500">Room tone:</span> [ ] Sim [ ] Nao</p>
+          <p><span class="text-neutral-500">Foley depois:</span> ________________</p>
         </div>
       </div>
     </div>
@@ -239,19 +864,59 @@
     <!-- Resumo -->
     <div class="mt-8 bg-dark-800 rounded-xl border border-dark-600 p-6">
       <h2 class="text-xl font-bold text-emerald-400 mb-4">Resumo do Modulo</h2>
-      <p class="text-neutral-300 mb-4">Audiovisual e UM sistema, nao imagem COM som. Quando voce pensa os dois juntos desde o inicio - planejamento, captacao, edicao - o resultado e incomparavelmente melhor. E o silencio? E a ferramenta mais poderosa do seu toolkit sonoro.</p>
-      <div class="bg-emerald-900/20 rounded-lg p-4 border border-emerald-500/30">
-        <p class="text-emerald-300 font-medium">Resultado esperado: O aluno passa a pensar audiovisual como sistema, nao partes soltas.</p>
+
+      <div class="mb-6">
+        <h3 class="font-bold text-white mb-3">Voce aprendeu:</h3>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="flex items-start space-x-2">
+            <span class="text-emerald-400">✓</span>
+            <span class="text-neutral-300">Som e linguagem narrativa paralela</span>
+          </div>
+          <div class="flex items-start space-x-2">
+            <span class="text-emerald-400">✓</span>
+            <span class="text-neutral-300">Silencio e ruido controlam atencao</span>
+          </div>
+          <div class="flex items-start space-x-2">
+            <span class="text-emerald-400">✓</span>
+            <span class="text-neutral-300">Musica manipula emocao diretamente</span>
+          </div>
+          <div class="flex items-start space-x-2">
+            <span class="text-emerald-400">✓</span>
+            <span class="text-neutral-300">Tres relacoes som-imagem</span>
+          </div>
+          <div class="flex items-start space-x-2">
+            <span class="text-emerald-400">✓</span>
+            <span class="text-neutral-300">Prevencao > correcao em audio</span>
+          </div>
+          <div class="flex items-start space-x-2">
+            <span class="text-emerald-400">✓</span>
+            <span class="text-neutral-300">Planejar som desde pre-producao</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-emerald-900/20 rounded-lg p-4 border border-emerald-500/30 mb-6">
+        <p class="text-emerald-300"><strong>Principio central:</strong> Audiovisual e UM sistema, nao imagem COM som. Quando voce pensa os dois juntos desde o inicio, o resultado e incomparavelmente melhor.</p>
+      </div>
+
+      <div class="flex items-center justify-between p-4 bg-dark-700/50 rounded-lg">
+        <div>
+          <p class="text-neutral-400 text-sm">Proximo modulo:</p>
+          <p class="text-white font-medium">1.8 Decisao Criativa e Limitacao</p>
+        </div>
+        <a href="modulo-1-8.html" class="px-4 py-2 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
+          Continuar →
+        </a>
       </div>
     </div>
 
     <!-- Navegacao -->
-    <div class="mt-12 flex flex-col sm:flex-row gap-4">
+    <div class="mt-8 flex flex-col sm:flex-row gap-4">
       <a href="modulo-1-6.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
-        ← Modulo 1.6
+        ← Modulo 1.6: Personagem como Funcao
       </a>
       <a href="modulo-1-8.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
-        Modulo 1.8 →
+        Modulo 1.8: Decisao Criativa →
       </a>
     </div>
 
@@ -259,10 +924,42 @@
 
   <!-- Footer -->
   <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
-    <div class="max-w-4xl mx-auto px-4 py-8 text-center text-neutral-500 text-sm">
-      VisionPro - Producao Audiovisual com IA | <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a>
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center space-x-2 mb-4 md:mb-0">
+          <span class="text-2xl">🎬</span>
+          <span class="font-bold text-primary-500">VisionPro</span>
+        </div>
+        <div class="text-center md:text-right">
+          <p class="text-neutral-500 text-sm">Producao Audiovisual com IA</p>
+          <a href="https://inema.club" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('themeIcon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Check for saved theme preference
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('themeIcon').textContent = '☀️';
+    }
+  </script>
 
 </body>
 </html>

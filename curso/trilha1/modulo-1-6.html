@@ -11,7 +11,8 @@
       theme: {
         extend: {
           colors: {
-            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' },
+            primary: { 400: '#facc15', 500: '#eab308', 600: '#ca8a04' }
           }
         }
       }
@@ -34,10 +35,27 @@
           <span class="text-neutral-600">|</span>
           <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
         </div>
-        <a href="index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">← Trilha 1</a>
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">← Trilha 1</a>
+          <button onclick="toggleTheme()" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+            <span id="theme-icon">🌙</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
+
+  <!-- Sub-navigation -->
+  <div class="bg-dark-800/50 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center space-x-6 py-3 text-sm overflow-x-auto">
+        <a href="index.html" class="text-emerald-400 font-medium whitespace-nowrap">Trilha 1: Fundamentos</a>
+        <a href="../trilha2/index.html" class="text-neutral-400 hover:text-blue-400 whitespace-nowrap">Trilha 2: Metodo</a>
+        <a href="../trilha3/index.html" class="text-neutral-400 hover:text-purple-400 whitespace-nowrap">Trilha 3: Avancado</a>
+        <a href="../trilha4/index.html" class="text-neutral-400 hover:text-amber-400 whitespace-nowrap">Trilha 4: Labs</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Header -->
   <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
@@ -49,10 +67,29 @@
       </div>
       <div class="flex items-center space-x-3 mb-4">
         <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-bold rounded-full">1.6</span>
-        <span class="text-neutral-500 text-sm">~60 min</span>
       </div>
       <h1 class="text-3xl sm:text-4xl font-bold mb-4">🎭 Personagem como Funcao</h1>
-      <p class="text-lg text-neutral-400">Desmistificar personagem "complexo" e focar no que funciona em tela.</p>
+      <p class="text-lg text-neutral-400 mb-6">Desmistificar personagem "complexo" e focar no que funciona em tela.</p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">6</div>
+          <div class="text-xs text-neutral-500">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">60</div>
+          <div class="text-xs text-neutral-500">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">Base</div>
+          <div class="text-xs text-neutral-500">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">Mental</div>
+          <div class="text-xs text-neutral-500">Tipo</div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -61,198 +98,662 @@
 
     <!-- Objetivo -->
     <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-6 mb-8">
-      <h2 class="text-emerald-400 font-bold mb-2">Objetivo do Modulo</h2>
-      <p class="text-neutral-300">Aprender a criar personagens claros, filmaveis e funcionais, focando no que realmente importa para a narrativa audiovisual em vez de biografias complexas que nunca aparecem na tela.</p>
+      <h2 class="text-emerald-400 font-bold mb-2">🎯 Objetivo do Modulo</h2>
+      <p class="text-neutral-300">Aprender a criar <strong class="text-emerald-300">personagens claros, filmaveis e funcionais</strong>, focando no que realmente importa para a narrativa audiovisual em vez de biografias complexas que nunca aparecem na tela.</p>
+    </div>
+
+    <!-- Ficha Minima Destacada -->
+    <div class="bg-gradient-to-r from-emerald-900/30 via-dark-800 to-emerald-900/30 rounded-xl p-6 border border-emerald-500/30 mb-12">
+      <h2 class="text-xl font-bold text-emerald-400 mb-4 text-center">A Ficha Minima: 4 Perguntas que Definem Qualquer Personagem</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+          <div class="text-3xl mb-2">🎯</div>
+          <div class="text-emerald-400 font-semibold">O que QUER?</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+          <div class="text-3xl mb-2">🚧</div>
+          <div class="text-emerald-400 font-semibold">O que IMPEDE?</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+          <div class="text-3xl mb-2">🔄</div>
+          <div class="text-emerald-400 font-semibold">O que MUDA?</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+          <div class="text-3xl mb-2">👁️</div>
+          <div class="text-emerald-400 font-semibold">Como PARECE?</div>
+        </div>
+      </div>
+      <p class="text-neutral-400 text-sm mt-4 text-center">Essas 4 perguntas resolvem 90% dos problemas de personagem.</p>
     </div>
 
     <!-- Topicos -->
-    <div class="space-y-6">
+    <div class="space-y-12">
 
-      <!-- Topico 1 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">1</span>
-            <h3 class="text-xl font-bold">O que o Personagem Quer</h3>
-          </div>
+      <!-- Topico 1: O que o Personagem Quer -->
+      <section class="scroll-mt-20" id="topico-1">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">1</span>
+          <h2 class="text-2xl font-bold">O que o Personagem Quer</h2>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">O desejo e a informacao mais importante sobre qualquer personagem. O que ele quer determina suas acoes, suas escolhas, sua direcao. Pode ser algo simples (chegar em casa) ou complexo (ser amado), mas deve ser claro para o criador.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Personagem sem desejo claro e inerte. Nao tem motivacao, nao tem movimento, nao tem interesse. O desejo e o motor que faz o personagem AGIR.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Objetivo, motivacao, want (desejo consciente), need (necessidade inconsciente), motor do personagem.</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Topico 2 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">2</span>
-            <h3 class="text-xl font-bold">O que Impede</h3>
-          </div>
-        </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">O obstaculo do personagem pode ser externo (um vilao, uma situacao, uma regra do mundo) ou interno (medo, crenca limitante, falha de carater). Frequentemente os mais interessantes sao os obstaculos internos - o personagem e seu proprio inimigo.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">O obstaculo define o conflito, e o conflito define a historia. Saber o que impede o personagem e tao importante quanto saber o que ele quer.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Obstaculo interno vs externo, falha tragica, ghost (trauma), limitacao, conflito interno.</p>
-          </div>
-        </div>
-      </div>
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          O desejo e a <strong class="text-emerald-400">informacao mais importante</strong> sobre qualquer personagem. O que ele quer determina suas acoes, suas escolhas, sua direcao. Pode ser algo simples (chegar em casa) ou complexo (ser amado), mas <strong class="text-white">deve ser claro para o criador</strong>.
+        </p>
 
-      <!-- Topico 3 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">3</span>
-            <h3 class="text-xl font-bold">O que Muda</h3>
+        <!-- Want vs Need -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Want vs Need (Desejo vs Necessidade)</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-dark-800/50 rounded-lg p-5">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="text-2xl">🎯</span>
+                <span class="font-semibold text-neutral-200">WANT (Consciente)</span>
+              </div>
+              <p class="text-neutral-400 text-sm mb-3">O que o personagem ACHA que quer</p>
+              <ul class="text-neutral-300 text-sm space-y-2">
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">•</span>
+                  <span>Dinheiro, poder, fama</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">•</span>
+                  <span>Vingar-se de alguem</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">•</span>
+                  <span>Conquistar uma pessoa</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">•</span>
+                  <span>Vencer uma competicao</span>
+                </li>
+              </ul>
+              <div class="mt-3 p-2 bg-emerald-900/20 rounded text-xs text-emerald-400">Motor da ACAO externa</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-5">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="text-2xl">❤️</span>
+                <span class="font-semibold text-neutral-200">NEED (Inconsciente)</span>
+              </div>
+              <p class="text-neutral-400 text-sm mb-3">O que o personagem REALMENTE precisa</p>
+              <ul class="text-neutral-300 text-sm space-y-2">
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">•</span>
+                  <span>Aceitar-se como e</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">•</span>
+                  <span>Perdoar ou ser perdoado</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">•</span>
+                  <span>Conectar-se com outros</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400">•</span>
+                  <span>Superar um medo/trauma</span>
+                </li>
+              </ul>
+              <div class="mt-3 p-2 bg-emerald-900/20 rounded text-xs text-emerald-400">Motor da TRANSFORMACAO interna</div>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">O arco de transformacao e a mudanca que o personagem sofre ao longo da historia. Pode ser positiva (supera medo), negativa (cede a tentacao), ou nula (personagem permanece o mesmo enquanto o mundo muda ao redor - antihero).</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">A transformacao e o que da significado a jornada. E a resposta a pergunta "por que essa historia merece ser contada?" - porque algo importante mudou.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Arco de personagem, transformacao, crescimento, catarse, resolucao interna.</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Topico 4 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">4</span>
-            <h3 class="text-xl font-bold">Aparencia como Narrativa</h3>
+        <!-- Exemplo de Want vs Need -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Exemplo Pratico</h3>
+          <div class="bg-dark-700/50 rounded-lg p-4">
+            <div class="text-neutral-300 mb-2"><strong class="text-emerald-400">Personagem:</strong> Executivo workaholic</div>
+            <div class="text-neutral-300 mb-2"><strong class="text-emerald-400">WANT:</strong> Conseguir a promocao a CEO</div>
+            <div class="text-neutral-300 mb-2"><strong class="text-emerald-400">NEED:</strong> Reconectar-se com a familia que abandonou</div>
+            <div class="text-neutral-400 text-sm mt-3 italic">A historia mais interessante acontece quando ele consegue o WANT mas so encontra satisfacao quando alcanca o NEED.</div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Em video, aparencia CONTA historia. Roupa, cabelo, postura, objetos que carrega - tudo comunica quem o personagem e sem precisar de uma linha de dialogo. A aparencia e a biografia visivel.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Video e visual. Se a personalidade do personagem nao e visivel, voce nao esta usando o meio. Aparencia bem pensada faz o trabalho de paginas de exposicao.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Design de personagem, figurino como linguagem, objetos simbolicos, corpo como expressao.</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Topico 5 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">5</span>
-            <h3 class="text-xl font-bold">Acao Define Personagem</h3>
+        <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 text-xl">💡</span>
+            <div>
+              <span class="text-blue-300 font-semibold">Por que importa:</span>
+              <p class="text-neutral-300 mt-1">Personagem sem desejo claro e inerte. Nao tem motivacao, nao tem movimento, nao tem interesse. O desejo e o motor que faz o personagem AGIR e a historia AVANCAR.</p>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Personagem nao e o que ele DIZ ser - e o que ele FAZ. Especialmente em momentos de pressao. Um personagem que diz ser corajoso mas foge quando ameacado E um covarde. As acoes revelam a verdade.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Dialogos podem mentir, acoes nao. Construir personagem atraves de acao e mais poderoso e mais cinematografico do que atraves de falas.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Acao sobre dialogo, verdade em pressao, comportamento revela carater, show don't tell.</p>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <!-- Topico 6 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">6</span>
-            <h3 class="text-xl font-bold">Erros Comuns de Construcao</h3>
+      <!-- Topico 2: O que Impede -->
+      <section class="scroll-mt-20" id="topico-2">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">2</span>
+          <h2 class="text-2xl font-bold">O que Impede</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          O obstaculo do personagem pode ser <strong class="text-emerald-400">externo</strong> (um vilao, uma situacao, uma regra do mundo) ou <strong class="text-emerald-400">interno</strong> (medo, crenca limitante, falha de carater). Frequentemente os mais interessantes sao os <strong class="text-white">obstaculos internos</strong> - o personagem e seu proprio inimigo.
+        </p>
+
+        <!-- Tipos de Obstaculos -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Mapa de Obstaculos</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="text-neutral-200 font-semibold mb-3">Externos (mais simples)</h4>
+              <div class="space-y-3">
+                <div class="bg-dark-800/50 rounded-lg p-3 flex items-center space-x-3">
+                  <span class="text-xl">👤</span>
+                  <div>
+                    <div class="text-neutral-200 text-sm font-semibold">Antagonista</div>
+                    <div class="text-neutral-500 text-xs">Pessoa que ativamente impede</div>
+                  </div>
+                </div>
+                <div class="bg-dark-800/50 rounded-lg p-3 flex items-center space-x-3">
+                  <span class="text-xl">🌍</span>
+                  <div>
+                    <div class="text-neutral-200 text-sm font-semibold">Ambiente</div>
+                    <div class="text-neutral-500 text-xs">Natureza, sociedade, regras</div>
+                  </div>
+                </div>
+                <div class="bg-dark-800/50 rounded-lg p-3 flex items-center space-x-3">
+                  <span class="text-xl">⏰</span>
+                  <div>
+                    <div class="text-neutral-200 text-sm font-semibold">Circunstancia</div>
+                    <div class="text-neutral-500 text-xs">Tempo, distancia, recursos</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 class="text-neutral-200 font-semibold mb-3">Internos (mais profundos)</h4>
+              <div class="space-y-3">
+                <div class="bg-dark-800/50 rounded-lg p-3 flex items-center space-x-3">
+                  <span class="text-xl">😨</span>
+                  <div>
+                    <div class="text-neutral-200 text-sm font-semibold">Medo</div>
+                    <div class="text-neutral-500 text-xs">Paralisa a acao necessaria</div>
+                  </div>
+                </div>
+                <div class="bg-dark-800/50 rounded-lg p-3 flex items-center space-x-3">
+                  <span class="text-xl">👻</span>
+                  <div>
+                    <div class="text-neutral-200 text-sm font-semibold">Ghost (Trauma)</div>
+                    <div class="text-neutral-500 text-xs">Evento do passado que assombra</div>
+                  </div>
+                </div>
+                <div class="bg-dark-800/50 rounded-lg p-3 flex items-center space-x-3">
+                  <span class="text-xl">💔</span>
+                  <div>
+                    <div class="text-neutral-200 text-sm font-semibold">Falha Tragica</div>
+                    <div class="text-neutral-500 text-xs">Defeito de carater que sabota</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Erros comuns: biografias longas que nunca aparecem na tela, personagens "complexos" que nao tem desejo claro, backstories elaborados que nao afetam a historia presente, personagens que existem para explicar coisas ao espectador.</p>
+
+        <!-- Diagrama de Conflito -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Anatomia do Conflito</h3>
+          <div class="flex items-center justify-center space-x-4">
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-2">
+                <span class="text-3xl">🎯</span>
+              </div>
+              <span class="text-sm text-neutral-400">Desejo</span>
+            </div>
+            <div class="text-red-400 text-3xl">⚡</div>
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-2">
+                <span class="text-3xl">🚧</span>
+              </div>
+              <span class="text-sm text-neutral-400">Obstaculo</span>
+            </div>
+            <div class="text-emerald-400 text-3xl">=</div>
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-emerald-500/30 flex items-center justify-center mx-auto mb-2">
+                <span class="text-3xl">💥</span>
+              </div>
+              <span class="text-sm text-emerald-400 font-semibold">Conflito</span>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Reconhecer esses erros permite evita-los. A maioria dos personagens fracos sofre dos mesmos problemas - complexidade sem funcao, profundidade sem visibilidade.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Personagem funcional vs complexo gratuito, informacao dramatica vs informacao morta, economia narrativa.</p>
+          <p class="text-center text-neutral-500 text-sm mt-4">Sem obstaculo = sem conflito = sem historia interessante</p>
+        </div>
+
+        <div class="bg-amber-900/20 border border-amber-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-amber-400 text-xl">⚠️</span>
+            <div>
+              <span class="text-amber-300 font-semibold">Dica importante:</span>
+              <p class="text-neutral-300 mt-1">Os obstaculos internos geralmente sao mais cinematograficos que os externos. Um personagem lutando contra si mesmo e universalmente compreensivel e emocionalmente envolvente.</p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Topico 3: O que Muda -->
+      <section class="scroll-mt-20" id="topico-3">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">3</span>
+          <h2 class="text-2xl font-bold">O que Muda</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          O arco de transformacao e a <strong class="text-emerald-400">mudanca que o personagem sofre</strong> ao longo da historia. Pode ser positiva (supera medo), negativa (cede a tentacao), ou nula (personagem permanece o mesmo enquanto o mundo muda - antihero). <strong class="text-white">A transformacao da significado a jornada</strong>.
+        </p>
+
+        <!-- Tipos de Arco -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Tipos de Arco de Personagem</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-dark-800/50 rounded-lg p-5">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="text-2xl">📈</span>
+                <span class="font-semibold text-emerald-400">Arco Positivo</span>
+              </div>
+              <p class="text-neutral-400 text-sm mb-3">Personagem melhora, cresce, supera</p>
+              <div class="text-xs text-neutral-500">Ex: De covarde a corajoso</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-5">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="text-2xl">📉</span>
+                <span class="font-semibold text-red-400">Arco Negativo</span>
+              </div>
+              <p class="text-neutral-400 text-sm mb-3">Personagem piora, cede, corrompe</p>
+              <div class="text-xs text-neutral-500">Ex: De bom a vilao</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-5">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="text-2xl">➡️</span>
+                <span class="font-semibold text-blue-400">Arco Plano</span>
+              </div>
+              <p class="text-neutral-400 text-sm mb-3">Personagem muda o mundo, nao a si</p>
+              <div class="text-xs text-neutral-500">Ex: Heroi transforma outros</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visualizacao do Arco -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Visualizacao: Arco Positivo Classico</h3>
+          <div class="relative h-40">
+            <div class="absolute bottom-0 left-0 w-full h-px bg-dark-600"></div>
+            <div class="absolute bottom-0 left-0 h-full w-px bg-dark-600"></div>
+            <!-- Pontos do arco -->
+            <div class="absolute bottom-4 left-4 text-center">
+              <div class="w-3 h-3 bg-emerald-500/50 rounded-full"></div>
+              <span class="text-xs text-neutral-500 block mt-1">Inicio</span>
+            </div>
+            <div class="absolute bottom-8 left-1/4 text-center">
+              <div class="w-3 h-3 bg-emerald-500/50 rounded-full"></div>
+              <span class="text-xs text-neutral-500 block mt-1">Desafio</span>
+            </div>
+            <div class="absolute bottom-4 left-1/2 text-center transform -translate-x-1/2">
+              <div class="w-3 h-3 bg-red-500/50 rounded-full"></div>
+              <span class="text-xs text-red-400 block mt-1">Crise</span>
+            </div>
+            <div class="absolute bottom-16 left-3/4 text-center">
+              <div class="w-3 h-3 bg-emerald-500/70 rounded-full"></div>
+              <span class="text-xs text-neutral-500 block mt-1">Escolha</span>
+            </div>
+            <div class="absolute bottom-32 right-4 text-center">
+              <div class="w-4 h-4 bg-emerald-500 rounded-full"></div>
+              <span class="text-xs text-emerald-400 block mt-1 font-semibold">Transformado</span>
+            </div>
+          </div>
+          <p class="text-center text-neutral-500 text-sm mt-4">O ponto mais baixo (crise) e onde a transformacao acontece</p>
+        </div>
+
+        <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 text-xl">💡</span>
+            <div>
+              <span class="text-blue-300 font-semibold">Por que importa:</span>
+              <p class="text-neutral-300 mt-1">A transformacao e a resposta a pergunta "por que essa historia merece ser contada?" Porque algo importante mudou. Sem mudanca, a historia e uma sequencia de eventos sem significado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topico 4: Aparencia como Narrativa -->
+      <section class="scroll-mt-20" id="topico-4">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">4</span>
+          <h2 class="text-2xl font-bold">Aparencia como Narrativa</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          Em video, <strong class="text-emerald-400">aparencia CONTA historia</strong>. Roupa, cabelo, postura, objetos que carrega - tudo comunica quem o personagem e sem precisar de uma linha de dialogo. A aparencia e a <strong class="text-white">biografia visivel</strong>.
+        </p>
+
+        <!-- Elementos Visuais -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Elementos que Comunicam</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">👔</div>
+              <div class="font-semibold text-neutral-200 text-sm">Roupa</div>
+              <div class="text-xs text-neutral-400 mt-1">Status, profissao, estado</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">💇</div>
+              <div class="font-semibold text-neutral-200 text-sm">Cabelo</div>
+              <div class="text-xs text-neutral-400 mt-1">Epoca, rebeldia, cuidado</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">🧍</div>
+              <div class="font-semibold text-neutral-200 text-sm">Postura</div>
+              <div class="text-xs text-neutral-400 mt-1">Confianca, derrota, poder</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">🎒</div>
+              <div class="font-semibold text-neutral-200 text-sm">Objetos</div>
+              <div class="text-xs text-neutral-400 mt-1">Historia, valores, passado</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">🎨</div>
+              <div class="font-semibold text-neutral-200 text-sm">Cores</div>
+              <div class="text-xs text-neutral-400 mt-1">Personalidade, humor</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">💍</div>
+              <div class="font-semibold text-neutral-200 text-sm">Acessorios</div>
+              <div class="text-xs text-neutral-400 mt-1">Relacionamentos, passado</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">👁️</div>
+              <div class="font-semibold text-neutral-200 text-sm">Olhar</div>
+              <div class="text-xs text-neutral-400 mt-1">Intencao, emocao</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">🚶</div>
+              <div class="font-semibold text-neutral-200 text-sm">Movimento</div>
+              <div class="text-xs text-neutral-400 mt-1">Energia, idade, estado</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exemplo -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Exemplo: Contando Historia sem Palavras</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-dark-700/50 rounded-lg p-4">
+              <div class="text-neutral-200 font-semibold mb-2">Visual escolhido:</div>
+              <ul class="text-neutral-400 text-sm space-y-1">
+                <li>• Roupa cara mas amarrotada</li>
+                <li>• Alianca no dedo, mas na mao errada</li>
+                <li>• Postura curvada</li>
+                <li>• Barba por fazer</li>
+              </ul>
+            </div>
+            <div class="bg-emerald-900/20 rounded-lg p-4 border border-emerald-500/20">
+              <div class="text-emerald-400 font-semibold mb-2">O que comunica:</div>
+              <p class="text-neutral-300 text-sm">Homem rico passando por crise. Casamento em colapso. Descuidando de si. Em queda livre emocional.</p>
+              <div class="text-xs text-emerald-400 mt-2">Zero dialogos necessarios.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-primary-900/20 border border-primary-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-primary-400 text-xl">📝</span>
+            <div>
+              <span class="text-primary-300 font-semibold">Exercicio:</span>
+              <p class="text-neutral-300 mt-1">Descreva um personagem usando APENAS elementos visuais (sem nome, sem historia, sem dialogo). Depois pergunte a alguem o que essa aparencia comunica. Se comunicou o que voce queria, funcionou.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topico 5: Acao Define Personagem -->
+      <section class="scroll-mt-20" id="topico-5">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">5</span>
+          <h2 class="text-2xl font-bold">Acao Define Personagem</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          Personagem nao e o que ele DIZ ser - e o que ele <strong class="text-emerald-400">FAZ</strong>. Especialmente em momentos de pressao. Um personagem que diz ser corajoso mas foge quando ameacado <strong class="text-white">E um covarde</strong>. As acoes revelam a verdade.
+        </p>
+
+        <!-- Comparacao -->
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-red-900/20 border border-red-500/30 rounded-xl p-5">
+            <div class="flex items-center space-x-2 mb-4">
+              <span class="text-red-400 text-xl">✗</span>
+              <span class="text-red-400 font-semibold">O que FALA (pode mentir)</span>
+            </div>
+            <ul class="space-y-3 text-neutral-300 text-sm">
+              <li class="flex items-start space-x-2">
+                <span class="text-red-400">•</span>
+                <span>"Eu faria qualquer coisa por voce"</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-red-400">•</span>
+                <span>"Nao tenho medo de nada"</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-red-400">•</span>
+                <span>"Dinheiro nao me importa"</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-red-400">•</span>
+                <span>"Eu te perdoo"</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-5">
+            <div class="flex items-center space-x-2 mb-4">
+              <span class="text-emerald-400 text-xl">✓</span>
+              <span class="text-emerald-400 font-semibold">O que FAZ (revela verdade)</span>
+            </div>
+            <ul class="space-y-3 text-neutral-300 text-sm">
+              <li class="flex items-start space-x-2">
+                <span class="text-emerald-400">•</span>
+                <span>Arrisca a propria vida por outro</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-emerald-400">•</span>
+                <span>Enfrenta o perigo tremendo</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-emerald-400">•</span>
+                <span>Recusa suborno mesmo precisando</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-emerald-400">•</span>
+                <span>Ajuda quem o machucou</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Principio -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Principio Fundamental</h3>
+          <div class="bg-dark-700/50 rounded-lg p-4 text-center">
+            <p class="text-lg text-neutral-200 italic">"Pressao revela carater. Personagens se definem em momentos de escolha dificil."</p>
+          </div>
+          <div class="grid grid-cols-3 gap-4 mt-4 text-center">
+            <div>
+              <div class="text-2xl mb-1">⚡</div>
+              <div class="text-sm text-neutral-400">Pressao</div>
+            </div>
+            <div>
+              <div class="text-2xl mb-1">🔀</div>
+              <div class="text-sm text-neutral-400">Escolha</div>
+            </div>
+            <div>
+              <div class="text-2xl mb-1">🎭</div>
+              <div class="text-sm text-neutral-400">Revelacao</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 text-xl">💡</span>
+            <div>
+              <span class="text-blue-300 font-semibold">Insight:</span>
+              <p class="text-neutral-300 mt-1">Dialogos podem mentir, acoes nao. Construir personagem atraves de acao e mais poderoso e mais cinematografico do que atraves de falas. O espectador confia no que VE, nao no que OUVE.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topico 6: Erros Comuns -->
+      <section class="scroll-mt-20" id="topico-6">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">6</span>
+          <h2 class="text-2xl font-bold">Erros Comuns de Construcao</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          A maioria dos <strong class="text-emerald-400">personagens fracos</strong> sofre dos mesmos problemas: complexidade sem funcao, profundidade sem visibilidade. Reconhecer esses erros permite <strong class="text-white">evita-los conscientemente</strong>.
+        </p>
+
+        <!-- Lista de Erros -->
+        <div class="bg-gradient-to-br from-red-900/20 to-dark-800 rounded-xl p-6 border border-red-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-red-400 mb-4">Erros que Destroem Personagens</h3>
+          <div class="space-y-4">
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="flex items-start space-x-3">
+                <span class="text-red-400 text-xl">✗</span>
+                <div>
+                  <div class="text-neutral-200 font-semibold">Biografia invisivel</div>
+                  <p class="text-neutral-400 text-sm mt-1">Paginas de backstory que nunca aparecem na tela. Se nao e visivel, nao existe para o espectador.</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="flex items-start space-x-3">
+                <span class="text-red-400 text-xl">✗</span>
+                <div>
+                  <div class="text-neutral-200 font-semibold">Complexidade sem desejo</div>
+                  <p class="text-neutral-400 text-sm mt-1">Personagem "complexo" que nao QUER nada claro. Profundidade sem direcao e confusao.</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="flex items-start space-x-3">
+                <span class="text-red-400 text-xl">✗</span>
+                <div>
+                  <div class="text-neutral-200 font-semibold">Personagem expositor</div>
+                  <p class="text-neutral-400 text-sm mt-1">Existe apenas para explicar coisas ao espectador. Nao tem funcao propria na historia.</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="flex items-start space-x-3">
+                <span class="text-red-400 text-xl">✗</span>
+                <div>
+                  <div class="text-neutral-200 font-semibold">Mudanca sem causa</div>
+                  <p class="text-neutral-400 text-sm mt-1">Personagem muda no final sem ter passado por experiencias que justifiquem a transformacao.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solucoes -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Teste de Funcionalidade</h3>
+          <p class="text-neutral-400 text-sm mb-4">Antes de finalizar um personagem, pergunte:</p>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-3 p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-emerald-400 font-bold">1</span>
+              <span class="text-neutral-300">O desejo dele e claro em 10 segundos de tela?</span>
+            </div>
+            <div class="flex items-center space-x-3 p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-emerald-400 font-bold">2</span>
+              <span class="text-neutral-300">A aparencia comunica algo sobre ele?</span>
+            </div>
+            <div class="flex items-center space-x-3 p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-emerald-400 font-bold">3</span>
+              <span class="text-neutral-300">Ele FAZ algo que revela quem e?</span>
+            </div>
+            <div class="flex items-center space-x-3 p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-emerald-400 font-bold">4</span>
+              <span class="text-neutral-300">A mudanca dele e visivel na tela?</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-900/20 border border-amber-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-amber-400 text-xl">⚠️</span>
+            <div>
+              <span class="text-amber-300 font-semibold">Regra de ouro:</span>
+              <p class="text-neutral-300 mt-1">Se voce precisa EXPLICAR quem o personagem e, voce falhou em MOSTRAR quem ele e. Video e visual - use o meio.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
 
-    <!-- Ficha Funcional -->
-    <div class="mt-12 bg-dark-800 rounded-xl border border-dark-600 p-6">
-      <h2 class="text-xl font-bold text-emerald-400 mb-4">Ficha Minima de Personagem</h2>
+    <!-- Ficha Minima Completa -->
+    <div class="mt-12 bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-xl p-6 border border-emerald-500/30">
+      <h2 class="text-xl font-bold text-emerald-400 mb-4">Template: Ficha Minima de Personagem</h2>
       <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-dark-700/50 rounded-lg p-4">
+        <div class="bg-dark-800/50 rounded-lg p-4">
           <span class="text-emerald-400 font-semibold">1. O que QUER?</span>
-          <p class="text-neutral-400 text-sm mt-1">Objetivo concreto e visivel</p>
+          <p class="text-neutral-400 text-sm mt-1">Objetivo concreto e visivel que move a acao</p>
+          <div class="mt-2 text-xs text-neutral-500 italic">Ex: "Salvar a filha sequestrada"</div>
         </div>
-        <div class="bg-dark-700/50 rounded-lg p-4">
+        <div class="bg-dark-800/50 rounded-lg p-4">
           <span class="text-emerald-400 font-semibold">2. O que IMPEDE?</span>
-          <p class="text-neutral-400 text-sm mt-1">Obstaculo interno ou externo</p>
+          <p class="text-neutral-400 text-sm mt-1">Obstaculo interno ou externo que cria conflito</p>
+          <div class="mt-2 text-xs text-neutral-500 italic">Ex: "Medo de confronto violento"</div>
         </div>
-        <div class="bg-dark-700/50 rounded-lg p-4">
+        <div class="bg-dark-800/50 rounded-lg p-4">
           <span class="text-emerald-400 font-semibold">3. O que MUDA?</span>
-          <p class="text-neutral-400 text-sm mt-1">Transformacao ao final</p>
+          <p class="text-neutral-400 text-sm mt-1">Transformacao ao final da jornada</p>
+          <div class="mt-2 text-xs text-neutral-500 italic">Ex: "Supera o medo, aceita violencia necessaria"</div>
         </div>
-        <div class="bg-dark-700/50 rounded-lg p-4">
+        <div class="bg-dark-800/50 rounded-lg p-4">
           <span class="text-emerald-400 font-semibold">4. Como PARECE?</span>
-          <p class="text-neutral-400 text-sm mt-1">Visual que comunica</p>
+          <p class="text-neutral-400 text-sm mt-1">Visual que comunica personalidade</p>
+          <div class="mt-2 text-xs text-neutral-500 italic">Ex: "Ex-militar em roupas civis gastas"</div>
         </div>
       </div>
+      <p class="text-neutral-400 text-sm text-center mt-4">Preencha estas 4 perguntas ANTES de desenvolver qualquer cena.</p>
     </div>
 
     <!-- Resumo -->
     <div class="mt-8 bg-dark-800 rounded-xl border border-dark-600 p-6">
       <h2 class="text-xl font-bold text-emerald-400 mb-4">Resumo do Modulo</h2>
-      <p class="text-neutral-300 mb-4">Personagem funcional e personagem que funciona na tela. Nao precisa ser complexo - precisa ser claro, visivel e em movimento. O que ele quer, o que o impede, o que muda, como parece. Quatro perguntas que resolvem 90% dos problemas de personagem.</p>
+      <p class="text-neutral-300 mb-4">Personagem funcional e personagem que funciona na tela. Nao precisa ser complexo - precisa ser claro, visivel e em movimento. Quatro perguntas (quer, impede, muda, parece) resolvem 90% dos problemas de personagem.</p>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-dark-700/50 rounded-lg p-4">
+          <span class="text-emerald-400 font-semibold block mb-2">Voce aprendeu:</span>
+          <ul class="text-neutral-400 text-sm space-y-1">
+            <li>• Want vs Need (desejo vs necessidade)</li>
+            <li>• Obstaculos internos vs externos</li>
+            <li>• Tipos de arco de transformacao</li>
+            <li>• Aparencia como narrativa visual</li>
+            <li>• Acao revela carater</li>
+            <li>• Erros comuns a evitar</li>
+          </ul>
+        </div>
+        <div class="bg-dark-700/50 rounded-lg p-4">
+          <span class="text-emerald-400 font-semibold block mb-2">Proximo modulo:</span>
+          <p class="text-neutral-400 text-sm">Imagem, Som e Silencio - como criar consciencia audiovisual completa, entendendo que som e imagem sao um sistema unico.</p>
+        </div>
+      </div>
+
       <div class="bg-emerald-900/20 rounded-lg p-4 border border-emerald-500/30">
-        <p class="text-emerald-300 font-medium">Resultado esperado: Personagens claros, filmaveis e funcionais.</p>
+        <p class="text-emerald-300 font-medium">Resultado esperado: Capacidade de criar personagens claros, filmaveis e funcionais usando a ficha minima de 4 perguntas.</p>
       </div>
     </div>
 
     <!-- Navegacao -->
     <div class="mt-12 flex flex-col sm:flex-row gap-4">
       <a href="modulo-1-5.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
-        ← Modulo 1.5
+        ← Modulo 1.5: Narrativa
       </a>
       <a href="modulo-1-7.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
-        Modulo 1.7 →
+        Modulo 1.7: Som e Silencio →
       </a>
     </div>
 
@@ -264,6 +765,20 @@
       VisionPro - Producao Audiovisual com IA | <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a>
     </div>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      const icon = document.getElementById('theme-icon');
+      icon.textContent = document.documentElement.classList.contains('dark') ? '🌙' : '☀️';
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
 
 </body>
 </html>

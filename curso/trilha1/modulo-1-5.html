@@ -11,7 +11,8 @@
       theme: {
         extend: {
           colors: {
-            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' },
+            primary: { 400: '#facc15', 500: '#eab308', 600: '#ca8a04' }
           }
         }
       }
@@ -34,10 +35,27 @@
           <span class="text-neutral-600">|</span>
           <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
         </div>
-        <a href="index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">← Trilha 1</a>
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">← Trilha 1</a>
+          <button onclick="toggleTheme()" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+            <span id="theme-icon">🌙</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
+
+  <!-- Sub-navigation -->
+  <div class="bg-dark-800/50 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center space-x-6 py-3 text-sm overflow-x-auto">
+        <a href="index.html" class="text-emerald-400 font-medium whitespace-nowrap">Trilha 1: Fundamentos</a>
+        <a href="../trilha2/index.html" class="text-neutral-400 hover:text-blue-400 whitespace-nowrap">Trilha 2: Metodo</a>
+        <a href="../trilha3/index.html" class="text-neutral-400 hover:text-purple-400 whitespace-nowrap">Trilha 3: Avancado</a>
+        <a href="../trilha4/index.html" class="text-neutral-400 hover:text-amber-400 whitespace-nowrap">Trilha 4: Labs</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Header -->
   <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
@@ -49,10 +67,29 @@
       </div>
       <div class="flex items-center space-x-3 mb-4">
         <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-bold rounded-full">1.5</span>
-        <span class="text-neutral-500 text-sm">~60 min</span>
       </div>
       <h1 class="text-3xl sm:text-4xl font-bold mb-4">📖 Narrativa Funcional</h1>
-      <p class="text-lg text-neutral-400">Ensinar narrativa para imagem, nao para texto.</p>
+      <p class="text-lg text-neutral-400 mb-6">Ensinar narrativa para imagem, nao para texto. Estrutura minima que funciona em qualquer formato.</p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">6</div>
+          <div class="text-xs text-neutral-500">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">60</div>
+          <div class="text-xs text-neutral-500">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">Base</div>
+          <div class="text-xs text-neutral-500">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">Mental</div>
+          <div class="text-xs text-neutral-500">Tipo</div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -61,194 +98,532 @@
 
     <!-- Objetivo -->
     <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-6 mb-8">
-      <h2 class="text-emerald-400 font-bold mb-2">Objetivo do Modulo</h2>
-      <p class="text-neutral-300">Desenvolver a capacidade de estruturar historias simples que funcionam em video, usando uma estrutura minima e eficaz que pode ser aplicada em qualquer formato.</p>
+      <h2 class="text-emerald-400 font-bold mb-2">🎯 Objetivo do Modulo</h2>
+      <p class="text-neutral-300">Desenvolver a capacidade de <strong class="text-emerald-300">estruturar historias simples que funcionam em video</strong>, usando uma estrutura minima e eficaz que pode ser aplicada em qualquer formato - de 30 segundos a 3 horas.</p>
+    </div>
+
+    <!-- Estrutura Visual Destacada -->
+    <div class="bg-gradient-to-r from-emerald-900/30 via-dark-800 to-emerald-900/30 rounded-xl p-6 border border-emerald-500/30 mb-12">
+      <h2 class="text-xl font-bold text-emerald-400 mb-4 text-center">A Estrutura Minima Universal</h2>
+      <div class="flex flex-wrap items-center justify-center gap-2 text-sm">
+        <span class="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold">1. Situacao</span>
+        <span class="text-neutral-500">→</span>
+        <span class="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold">2. Desejo</span>
+        <span class="text-neutral-500">→</span>
+        <span class="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold">3. Obstaculo</span>
+        <span class="text-neutral-500">→</span>
+        <span class="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold">4. Tentativa</span>
+        <span class="text-neutral-500">→</span>
+        <span class="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold">5. Transformacao</span>
+        <span class="text-neutral-500">→</span>
+        <span class="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg font-semibold">6. Estado Final</span>
+      </div>
+      <p class="text-neutral-400 text-sm mt-4 text-center">Esta sequencia e reconhecida naturalmente pelo cerebro humano. Funciona em QUALQUER historia.</p>
     </div>
 
     <!-- Topicos -->
-    <div class="space-y-6">
+    <div class="space-y-12">
 
-      <!-- Topico 1 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">1</span>
-            <h3 class="text-xl font-bold">Situacao Inicial</h3>
-          </div>
+      <!-- Topico 1: Situacao Inicial -->
+      <section class="scroll-mt-20" id="topico-1">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">1</span>
+          <h2 class="text-2xl font-bold">Situacao Inicial</h2>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">A situacao inicial e o "mundo normal" antes de qualquer problema surgir. E onde voce mostra quem e o personagem, onde ele esta, qual e sua rotina. Nao precisa ser longa - pode ser segundos. Mas o espectador precisa entender o ponto de partida.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Sem situacao inicial, o espectador nao tem referencia para medir a mudanca. A transformacao so faz sentido se sabemos de onde partiu.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Mundo ordinario, status quo, ponto de partida, baseline, estabelecimento.</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Topico 2 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">2</span>
-            <h3 class="text-xl font-bold">Desejo</h3>
-          </div>
-        </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">O desejo e o que o personagem QUER. Pode ser algo concreto (um objeto, uma pessoa, um lugar) ou abstrato (respeito, liberdade, paz). O desejo cria movimento - sem desejo, nao ha historia porque nao ha direcao.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">O desejo e o motor da narrativa. E o que faz o espectador torcer por alguem. Se voce nao sabe o que seu personagem quer, sua historia nao vai a lugar nenhum.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Objetivo, meta, motivacao, want vs need, desejo consciente.</p>
-          </div>
-        </div>
-      </div>
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          A situacao inicial e o <strong class="text-emerald-400">"mundo normal"</strong> antes de qualquer problema surgir. E onde voce mostra quem e o personagem, onde ele esta, qual e sua rotina. <strong class="text-white">Nao precisa ser longa</strong> - pode ser segundos. Mas o espectador PRECISA entender o ponto de partida.
+        </p>
 
-      <!-- Topico 3 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">3</span>
-            <h3 class="text-xl font-bold">Obstaculo</h3>
+        <!-- O que estabelecer -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">O Que Estabelecer na Abertura</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">👤</div>
+              <div class="font-semibold text-neutral-200">Quem</div>
+              <div class="text-sm text-neutral-400 mt-1">Apresente o personagem principal de forma rapida e clara</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">📍</div>
+              <div class="font-semibold text-neutral-200">Onde</div>
+              <div class="text-sm text-neutral-400 mt-1">Localizacao fisica e contexto social/temporal</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🔄</div>
+              <div class="font-semibold text-neutral-200">Rotina</div>
+              <div class="text-sm text-neutral-400 mt-1">O que e "normal" para esse personagem</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">⚡</div>
+              <div class="font-semibold text-neutral-200">Tom</div>
+              <div class="text-sm text-neutral-400 mt-1">Qual e a atmosfera da historia que vem</div>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">O obstaculo e o que impede o personagem de conseguir o que quer. Pode ser externo (um vilao, uma barreira fisica, uma regra) ou interno (medo, duvida, limitacao). Sem obstaculo, o personagem simplesmente consegue o que quer e nao ha drama.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">O obstaculo cria conflito, e conflito e o que prende atencao. Uma historia sem obstaculos e chata porque nao ha tensao, risco ou incerteza.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Conflito, antagonismo, barreira, complicacao, stakes.</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Topico 4 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">4</span>
-            <h3 class="text-xl font-bold">Tentativa</h3>
+        <!-- Exemplos de Duracao -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Duracao da Situacao Inicial por Formato</h3>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-neutral-300">TikTok/Reels (60s)</span>
+              <span class="text-emerald-400 font-semibold">3-5 segundos</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-neutral-300">Video YouTube (10min)</span>
+              <span class="text-emerald-400 font-semibold">30-60 segundos</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-neutral-300">Curta-metragem (15min)</span>
+              <span class="text-emerald-400 font-semibold">1-2 minutos</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-neutral-300">Longa-metragem (2h)</span>
+              <span class="text-emerald-400 font-semibold">5-15 minutos</span>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">A tentativa e a acao do personagem para superar o obstaculo. E onde vemos o personagem FAZER algo, nao apenas querer. Pode haver multiplas tentativas, cada uma escalando a dificuldade e a aposta.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">A tentativa revela carater. O que o personagem FAZ quando enfrenta dificuldades define quem ele e. E tambem onde o video ganha dinamismo e movimento.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Acao, luta, esforco, escalada, progressao de dificuldade.</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Topico 5 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">5</span>
-            <h3 class="text-xl font-bold">Transformacao</h3>
+        <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 text-xl">💡</span>
+            <div>
+              <span class="text-blue-300 font-semibold">Por que isso importa:</span>
+              <p class="text-neutral-300 mt-1">Sem situacao inicial, o espectador nao tem referencia para medir a mudanca. A transformacao so faz sentido se sabemos de onde partiu. E o "antes" que da significado ao "depois".</p>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">A transformacao e a mudanca que ocorre no personagem ou na situacao. Algo e diferente no final. Pode ser uma mudanca de atitude, uma conquista, uma perda, uma descoberta. A transformacao da significado a jornada.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Historias sem transformacao sao vazias. O espectador assiste para ver algo mudar. Se tudo termina como comecou, por que assistir?</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Arco de personagem, mudanca, crescimento, resolucao, payoff.</p>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <!-- Topico 6 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">6</span>
-            <h3 class="text-xl font-bold">Estado Final</h3>
+      <!-- Topico 2: Desejo -->
+      <section class="scroll-mt-20" id="topico-2">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">2</span>
+          <h2 class="text-2xl font-bold">Desejo</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          O desejo e o que o personagem <strong class="text-emerald-400">QUER</strong>. Pode ser algo concreto (um objeto, uma pessoa, um lugar) ou abstrato (respeito, liberdade, paz). O desejo <strong class="text-white">cria movimento</strong> - sem desejo, nao ha historia porque nao ha direcao.
+        </p>
+
+        <!-- Tipos de Desejo -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Tipos de Desejo</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-dark-800/50 rounded-lg p-5">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="text-2xl">🎯</span>
+                <span class="font-semibold text-neutral-200">Desejo Consciente (WANT)</span>
+              </div>
+              <p class="text-neutral-400 text-sm mb-3">O que o personagem ACHA que quer</p>
+              <ul class="text-neutral-300 text-sm space-y-1">
+                <li>• Dinheiro, fama, poder</li>
+                <li>• Conquistar alguem</li>
+                <li>• Vencer uma competicao</li>
+                <li>• Escapar de um lugar</li>
+              </ul>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-5">
+              <div class="flex items-center space-x-2 mb-3">
+                <span class="text-2xl">❤️</span>
+                <span class="font-semibold text-neutral-200">Necessidade Real (NEED)</span>
+              </div>
+              <p class="text-neutral-400 text-sm mb-3">O que o personagem REALMENTE precisa</p>
+              <ul class="text-neutral-300 text-sm space-y-1">
+                <li>• Aceitar-se como e</li>
+                <li>• Perdoar alguem</li>
+                <li>• Superar um trauma</li>
+                <li>• Conectar-se com outros</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">O estado final e o novo "normal" apos a transformacao. E onde mostramos as consequencias da jornada. Pode ecoar a situacao inicial para mostrar contraste, ou abrir para algo completamente novo.</p>
+
+        <!-- Diagramas -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Desejo como Motor da Historia</h3>
+          <div class="flex items-center justify-center space-x-4">
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-2">
+                <span class="text-3xl">💭</span>
+              </div>
+              <span class="text-sm text-neutral-400">Desejo</span>
+            </div>
+            <div class="text-emerald-400 text-2xl">→</div>
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-2">
+                <span class="text-3xl">🏃</span>
+              </div>
+              <span class="text-sm text-neutral-400">Acao</span>
+            </div>
+            <div class="text-emerald-400 text-2xl">→</div>
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-2">
+                <span class="text-3xl">📖</span>
+              </div>
+              <span class="text-sm text-neutral-400">Historia</span>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">O estado final fecha o ciclo narrativo e deixa uma impressao duradoura. E o que o espectador leva consigo. Um final fraco pode arruinar uma historia inteira.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Desfecho, novo equilibrio, consequencias, fechamento, impressao final.</p>
+          <p class="text-center text-neutral-500 text-sm mt-4">Sem desejo = sem acao = sem historia</p>
+        </div>
+
+        <div class="bg-amber-900/20 border border-amber-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-amber-400 text-xl">⚠️</span>
+            <div>
+              <span class="text-amber-300 font-semibold">Erro comum:</span>
+              <p class="text-neutral-300 mt-1">Personagens sem desejo claro. Se voce nao sabe o que seu personagem quer, sua historia nao vai a lugar nenhum. Defina o desejo ANTES de escrever qualquer cena.</p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Topico 3: Obstaculo -->
+      <section class="scroll-mt-20" id="topico-3">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">3</span>
+          <h2 class="text-2xl font-bold">Obstaculo</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          O obstaculo e o que <strong class="text-emerald-400">impede o personagem</strong> de conseguir o que quer. Pode ser externo (um vilao, uma barreira fisica, uma regra) ou interno (medo, duvida, limitacao). <strong class="text-white">Sem obstaculo, nao ha drama</strong> - o personagem simplesmente consegue o que quer.
+        </p>
+
+        <!-- Tipos de Obstaculos -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Categorias de Obstaculos</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">👤</div>
+              <div class="font-semibold text-neutral-200">Antagonista</div>
+              <div class="text-sm text-neutral-400 mt-1">Pessoa que ativamente impede</div>
+              <div class="text-xs text-emerald-400 mt-2">Vilao, rival, inimigo</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🌍</div>
+              <div class="font-semibold text-neutral-200">Ambiente</div>
+              <div class="text-sm text-neutral-400 mt-1">Circunstancias externas</div>
+              <div class="text-xs text-emerald-400 mt-2">Natureza, sociedade, regras</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🧠</div>
+              <div class="font-semibold text-neutral-200">Interno</div>
+              <div class="text-sm text-neutral-400 mt-1">Dentro do personagem</div>
+              <div class="text-xs text-emerald-400 mt-2">Medo, duvida, trauma</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proporcionalidade -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Proporcionalidade: Obstaculo vs Desejo</h3>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <span class="w-1/3 text-neutral-400 text-sm">Desejo pequeno</span>
+              <div class="w-1/3 h-3 bg-emerald-500/30 rounded-full mx-4"></div>
+              <span class="w-1/3 text-neutral-400 text-sm text-right">Obstaculo pequeno</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-1/3 text-neutral-400 text-sm">Desejo grande</span>
+              <div class="w-1/3 h-6 bg-emerald-500/50 rounded-full mx-4"></div>
+              <span class="w-1/3 text-neutral-400 text-sm text-right">Obstaculo grande</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-1/3 text-neutral-400 text-sm">Desejo vital</span>
+              <div class="w-1/3 h-9 bg-emerald-500/70 rounded-full mx-4"></div>
+              <span class="w-1/3 text-neutral-400 text-sm text-right">Obstaculo imenso</span>
+            </div>
+          </div>
+          <p class="text-neutral-500 text-sm text-center mt-4">O tamanho do obstaculo deve ser proporcional a importancia do desejo</p>
+        </div>
+
+        <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 text-xl">💡</span>
+            <div>
+              <span class="text-blue-300 font-semibold">Por que funciona:</span>
+              <p class="text-neutral-300 mt-1">O obstaculo cria conflito, e conflito e o que prende atencao. Uma historia sem obstaculos e chata porque nao ha tensao, risco ou incerteza. O espectador precisa se perguntar: "Sera que vai conseguir?"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topico 4: Tentativa -->
+      <section class="scroll-mt-20" id="topico-4">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">4</span>
+          <h2 class="text-2xl font-bold">Tentativa</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          A tentativa e a <strong class="text-emerald-400">acao do personagem</strong> para superar o obstaculo. E onde vemos o personagem <strong class="text-white">FAZER algo</strong>, nao apenas querer. Pode haver multiplas tentativas, cada uma escalando a dificuldade e a aposta.
+        </p>
+
+        <!-- Escalada de Tentativas -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Escalada de Tentativas</h3>
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4">
+              <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">1</span>
+              <div class="flex-1 bg-dark-800/50 rounded-lg p-3">
+                <span class="text-neutral-300">Tentativa inicial - abordagem obvia</span>
+                <span class="text-neutral-500 text-sm block">Falha. Aprende algo.</span>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4">
+              <span class="w-8 h-8 rounded-full bg-emerald-500/40 text-emerald-400 flex items-center justify-center text-sm font-bold">2</span>
+              <div class="flex-1 bg-dark-800/50 rounded-lg p-3">
+                <span class="text-neutral-300">Segunda tentativa - ajuste de estrategia</span>
+                <span class="text-neutral-500 text-sm block">Progresso parcial. Stakes aumentam.</span>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4">
+              <span class="w-8 h-8 rounded-full bg-emerald-500/60 text-emerald-400 flex items-center justify-center text-sm font-bold">3</span>
+              <div class="flex-1 bg-dark-800/50 rounded-lg p-3">
+                <span class="text-neutral-300">Tentativa critica - tudo ou nada</span>
+                <span class="text-neutral-500 text-sm block">Ponto de virada. Mudanca necessaria.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- O que tentativas revelam -->
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-dark-800 rounded-xl p-5 border border-dark-600">
+            <div class="text-emerald-400 font-semibold mb-2">Tentativa revela carater</div>
+            <p class="text-neutral-400 text-sm">O que o personagem FAZ quando enfrenta dificuldades define quem ele realmente e. Acoes sob pressao mostram verdade.</p>
+          </div>
+          <div class="bg-dark-800 rounded-xl p-5 border border-dark-600">
+            <div class="text-emerald-400 font-semibold mb-2">Tentativa cria dinamismo</div>
+            <p class="text-neutral-400 text-sm">E onde o video ganha movimento e energia. Personagem parado pensando e estatico. Personagem agindo e cinema.</p>
+          </div>
+        </div>
+
+        <div class="bg-primary-900/20 border border-primary-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-primary-400 text-xl">📝</span>
+            <div>
+              <span class="text-primary-300 font-semibold">Exercicio:</span>
+              <p class="text-neutral-300 mt-1">Pense em um personagem com um desejo. Liste 3 tentativas que ele poderia fazer, cada uma mais arriscada que a anterior. Como cada falha muda sua abordagem?</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topico 5: Transformacao -->
+      <section class="scroll-mt-20" id="topico-5">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">5</span>
+          <h2 class="text-2xl font-bold">Transformacao</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          A transformacao e a <strong class="text-emerald-400">mudanca que ocorre</strong> no personagem ou na situacao. Algo e diferente no final. Pode ser uma mudanca de atitude, uma conquista, uma perda, uma descoberta. <strong class="text-white">A transformacao da significado a jornada</strong>.
+        </p>
+
+        <!-- Tipos de Transformacao -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Tipos de Transformacao</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🧠</div>
+              <div class="font-semibold text-neutral-200">Interna</div>
+              <div class="text-sm text-neutral-400 mt-1">Mudanca de crenca, valor ou atitude</div>
+              <div class="text-xs text-emerald-400 mt-2">"Agora entendo que..."</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🏆</div>
+              <div class="font-semibold text-neutral-200">Externa</div>
+              <div class="text-sm text-neutral-400 mt-1">Mudanca de status ou circunstancia</div>
+              <div class="text-xs text-emerald-400 mt-2">"Agora tenho/sou..."</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">💔</div>
+              <div class="font-semibold text-neutral-200">Perda</div>
+              <div class="text-sm text-neutral-400 mt-1">Mudanca pelo que foi perdido</div>
+              <div class="text-xs text-emerald-400 mt-2">"Agora vivo sem..."</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">💡</div>
+              <div class="font-semibold text-neutral-200">Descoberta</div>
+              <div class="text-sm text-neutral-400 mt-1">Mudanca pelo que foi revelado</div>
+              <div class="text-xs text-emerald-400 mt-2">"Agora sei que..."</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diagrama de Arco -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Arco de Transformacao</h3>
+          <div class="flex items-end justify-between h-32 px-4">
+            <div class="text-center">
+              <div class="w-4 h-8 bg-emerald-500/30 rounded"></div>
+              <span class="text-xs text-neutral-500 mt-1 block">Inicio</span>
+            </div>
+            <div class="text-center">
+              <div class="w-4 h-12 bg-emerald-500/40 rounded"></div>
+              <span class="text-xs text-neutral-500 mt-1 block">Tentativa 1</span>
+            </div>
+            <div class="text-center">
+              <div class="w-4 h-16 bg-emerald-500/50 rounded"></div>
+              <span class="text-xs text-neutral-500 mt-1 block">Tentativa 2</span>
+            </div>
+            <div class="text-center">
+              <div class="w-4 h-24 bg-emerald-500/70 rounded"></div>
+              <span class="text-xs text-neutral-500 mt-1 block">Crise</span>
+            </div>
+            <div class="text-center">
+              <div class="w-4 h-32 bg-emerald-500 rounded"></div>
+              <span class="text-xs text-emerald-400 mt-1 block font-semibold">Transformacao</span>
+            </div>
+          </div>
+          <p class="text-center text-neutral-500 text-sm mt-4">A transformacao e o ponto mais alto do arco narrativo</p>
+        </div>
+
+        <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 text-xl">💡</span>
+            <div>
+              <span class="text-blue-300 font-semibold">Por que funciona:</span>
+              <p class="text-neutral-300 mt-1">Historias sem transformacao sao vazias. O espectador assiste para ver algo mudar. Se tudo termina como comecou, por que assistir? A transformacao e o que justifica a jornada.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topico 6: Estado Final -->
+      <section class="scroll-mt-20" id="topico-6">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">6</span>
+          <h2 class="text-2xl font-bold">Estado Final</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          O estado final e o <strong class="text-emerald-400">novo "normal"</strong> apos a transformacao. E onde mostramos as consequencias da jornada. Pode ecoar a situacao inicial para mostrar contraste, ou abrir para algo completamente novo. <strong class="text-white">E o que o espectador leva consigo</strong>.
+        </p>
+
+        <!-- Tecnicas de Fechamento -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Tecnicas de Estado Final</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🔄</div>
+              <div class="font-semibold text-neutral-200">Espelho</div>
+              <div class="text-sm text-neutral-400 mt-1">Repete elemento do inicio mostrando mudanca</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🚪</div>
+              <div class="font-semibold text-neutral-200">Abertura</div>
+              <div class="text-sm text-neutral-400 mt-1">Sugere que a jornada continua</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">📸</div>
+              <div class="font-semibold text-neutral-200">Snapshot</div>
+              <div class="text-sm text-neutral-400 mt-1">Momento congelado do novo equilibrio</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">💭</div>
+              <div class="font-semibold text-neutral-200">Reflexao</div>
+              <div class="text-sm text-neutral-400 mt-1">Personagem processa o que aconteceu</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparacao Visual -->
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-dark-800 rounded-xl p-5 border border-dark-600">
+            <div class="text-neutral-500 text-sm mb-2">SITUACAO INICIAL</div>
+            <div class="bg-dark-700/50 rounded-lg p-4 text-center">
+              <span class="text-4xl">😐</span>
+              <p class="text-neutral-400 text-sm mt-2">Mundo normal, rotina, status quo</p>
+            </div>
+          </div>
+          <div class="bg-emerald-900/20 rounded-xl p-5 border border-emerald-500/30">
+            <div class="text-emerald-400 text-sm mb-2">ESTADO FINAL</div>
+            <div class="bg-dark-700/50 rounded-lg p-4 text-center">
+              <span class="text-4xl">😊</span>
+              <p class="text-neutral-300 text-sm mt-2">Novo equilibrio, crescimento, mudanca</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-900/20 border border-amber-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-amber-400 text-xl">⚠️</span>
+            <div>
+              <span class="text-amber-300 font-semibold">Cuidado:</span>
+              <p class="text-neutral-300 mt-1">Um final fraco pode arruinar uma historia inteira. O estado final fecha o ciclo narrativo e deixa uma impressao duradoura. Invista tempo no fechamento - e o que o espectador vai lembrar.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
 
-    <!-- Estrutura Visual -->
+    <!-- Aplicacao Pratica -->
     <div class="mt-12 bg-dark-800 rounded-xl border border-dark-600 p-6">
-      <h2 class="text-xl font-bold text-emerald-400 mb-4">Estrutura Minima</h2>
-      <div class="flex flex-wrap items-center justify-center gap-2 text-sm">
-        <span class="px-3 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg">Situacao</span>
-        <span class="text-neutral-500">→</span>
-        <span class="px-3 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg">Desejo</span>
-        <span class="text-neutral-500">→</span>
-        <span class="px-3 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg">Obstaculo</span>
-        <span class="text-neutral-500">→</span>
-        <span class="px-3 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg">Tentativa</span>
-        <span class="text-neutral-500">→</span>
-        <span class="px-3 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg">Transformacao</span>
-        <span class="text-neutral-500">→</span>
-        <span class="px-3 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg">Estado Final</span>
+      <h2 class="text-xl font-bold text-emerald-400 mb-4">Aplicacao: Estrutura em Acao</h2>
+      <p class="text-neutral-300 mb-4">Exemplo de video de 60 segundos usando a estrutura completa:</p>
+      <div class="space-y-3">
+        <div class="flex items-start space-x-3 p-3 bg-dark-700/50 rounded-lg">
+          <span class="text-emerald-400 font-bold">0-5s</span>
+          <span class="text-neutral-300">SITUACAO: Pessoa sozinha, olhando celular, expressao entediada</span>
+        </div>
+        <div class="flex items-start space-x-3 p-3 bg-dark-700/50 rounded-lg">
+          <span class="text-emerald-400 font-bold">5-10s</span>
+          <span class="text-neutral-300">DESEJO: Olha foto de amigos, suspira - quer conexao</span>
+        </div>
+        <div class="flex items-start space-x-3 p-3 bg-dark-700/50 rounded-lg">
+          <span class="text-emerald-400 font-bold">10-25s</span>
+          <span class="text-neutral-300">OBSTACULO + TENTATIVAS: Tenta mandar mensagem, hesita, apaga, tenta de novo</span>
+        </div>
+        <div class="flex items-start space-x-3 p-3 bg-dark-700/50 rounded-lg">
+          <span class="text-emerald-400 font-bold">25-45s</span>
+          <span class="text-neutral-300">TRANSFORMACAO: Respira fundo, envia mensagem, espera tensa</span>
+        </div>
+        <div class="flex items-start space-x-3 p-3 bg-dark-700/50 rounded-lg">
+          <span class="text-emerald-400 font-bold">45-60s</span>
+          <span class="text-neutral-300">ESTADO FINAL: Celular vibra, sorriso surge - nova conexao</span>
+        </div>
       </div>
-      <p class="text-neutral-400 text-sm mt-4 text-center">Esta estrutura funciona para videos de 30 segundos ou filmes de 3 horas.</p>
     </div>
 
     <!-- Resumo -->
     <div class="mt-8 bg-dark-800 rounded-xl border border-dark-600 p-6">
       <h2 class="text-xl font-bold text-emerald-400 mb-4">Resumo do Modulo</h2>
       <p class="text-neutral-300 mb-4">Narrativa funcional e uma estrutura minima que funciona. Nao e literatura complexa - e uma sequencia logica que o cerebro humano reconhece e acompanha naturalmente. Domine esses 6 elementos e voce pode contar qualquer historia.</p>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-dark-700/50 rounded-lg p-4">
+          <span class="text-emerald-400 font-semibold block mb-2">A estrutura:</span>
+          <ul class="text-neutral-400 text-sm space-y-1">
+            <li>1. Situacao → ponto de partida</li>
+            <li>2. Desejo → motor da acao</li>
+            <li>3. Obstaculo → criador de conflito</li>
+            <li>4. Tentativa → revelador de carater</li>
+            <li>5. Transformacao → significado</li>
+            <li>6. Estado Final → fechamento</li>
+          </ul>
+        </div>
+        <div class="bg-dark-700/50 rounded-lg p-4">
+          <span class="text-emerald-400 font-semibold block mb-2">Proximo modulo:</span>
+          <p class="text-neutral-400 text-sm">Personagem como Funcao - como criar personagens que servem a historia, nao o contrario.</p>
+        </div>
+      </div>
+
       <div class="bg-emerald-900/20 rounded-lg p-4 border border-emerald-500/30">
-        <p class="text-emerald-300 font-medium">Resultado esperado: Capacidade de estruturar historias simples que funcionam.</p>
+        <p class="text-emerald-300 font-medium">Resultado esperado: Capacidade de estruturar historias simples que funcionam, aplicando os 6 elementos em qualquer formato - de TikTok a longa-metragem.</p>
       </div>
     </div>
 
     <!-- Navegacao -->
     <div class="mt-12 flex flex-col sm:flex-row gap-4">
       <a href="modulo-1-4.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
-        ← Modulo 1.4
+        ← Modulo 1.4: Emocao
       </a>
       <a href="modulo-1-6.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
-        Modulo 1.6 →
+        Modulo 1.6: Personagem →
       </a>
     </div>
 
@@ -260,6 +635,20 @@
       VisionPro - Producao Audiovisual com IA | <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a>
     </div>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      const icon = document.getElementById('theme-icon');
+      icon.textContent = document.documentElement.classList.contains('dark') ? '🌙' : '☀️';
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
 
 </body>
 </html>

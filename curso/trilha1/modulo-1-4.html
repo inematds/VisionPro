@@ -11,7 +11,8 @@
       theme: {
         extend: {
           colors: {
-            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' },
+            primary: { 400: '#facc15', 500: '#eab308', 600: '#ca8a04' }
           }
         }
       }
@@ -34,10 +35,27 @@
           <span class="text-neutral-600">|</span>
           <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
         </div>
-        <a href="index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">← Trilha 1</a>
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">← Trilha 1</a>
+          <button onclick="toggleTheme()" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+            <span id="theme-icon">🌙</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
+
+  <!-- Sub-navigation -->
+  <div class="bg-dark-800/50 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center space-x-6 py-3 text-sm overflow-x-auto">
+        <a href="index.html" class="text-emerald-400 font-medium whitespace-nowrap">Trilha 1: Fundamentos</a>
+        <a href="../trilha2/index.html" class="text-neutral-400 hover:text-blue-400 whitespace-nowrap">Trilha 2: Metodo</a>
+        <a href="../trilha3/index.html" class="text-neutral-400 hover:text-purple-400 whitespace-nowrap">Trilha 3: Avancado</a>
+        <a href="../trilha4/index.html" class="text-neutral-400 hover:text-amber-400 whitespace-nowrap">Trilha 4: Labs</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Header -->
   <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
@@ -49,10 +67,29 @@
       </div>
       <div class="flex items-center space-x-3 mb-4">
         <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-bold rounded-full">1.4</span>
-        <span class="text-neutral-500 text-sm">~60 min</span>
       </div>
       <h1 class="text-3xl sm:text-4xl font-bold mb-4">❤️ Emocao como Estrutura</h1>
-      <p class="text-lg text-neutral-400">Ensinar que emocao vem antes da historia.</p>
+      <p class="text-lg text-neutral-400 mb-6">Ensinar que emocao vem antes da historia - a historia e o veiculo, a emocao e o destino.</p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">6</div>
+          <div class="text-xs text-neutral-500">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">60</div>
+          <div class="text-xs text-neutral-500">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">Base</div>
+          <div class="text-xs text-neutral-500">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-emerald-400">Mental</div>
+          <div class="text-xs text-neutral-500">Tipo</div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -61,175 +98,543 @@
 
     <!-- Objetivo -->
     <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-6 mb-8">
-      <h2 class="text-emerald-400 font-bold mb-2">Objetivo do Modulo</h2>
-      <p class="text-neutral-300">Desenvolver a capacidade de construir emocao intencionalmente, entendendo que a emocao e o objetivo principal e a historia e apenas o veiculo para entrega-la.</p>
+      <h2 class="text-emerald-400 font-bold mb-2">🎯 Objetivo do Modulo</h2>
+      <p class="text-neutral-300">Desenvolver a capacidade de <strong class="text-emerald-300">construir emocao intencionalmente</strong>, entendendo que a emocao e o objetivo principal e a historia e apenas o veiculo para entrega-la.</p>
     </div>
 
     <!-- Topicos -->
-    <div class="space-y-6">
+    <div class="space-y-12">
 
-      <!-- Topico 1 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">1</span>
-            <h3 class="text-xl font-bold">Emocao Primaria</h3>
-          </div>
+      <!-- Topico 1: Emocao Primaria -->
+      <section class="scroll-mt-20" id="topico-1">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">1</span>
+          <h2 class="text-2xl font-bold">Emocao Primaria</h2>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Emocao primaria e a emocao PRINCIPAL que voce quer que o espectador sinta. Antes de qualquer historia, voce deve saber: quero causar medo? Alegria? Tensao? Nostalgia? Raiva? Toda decisao criativa serve a essa emocao central.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Videos sem emocao primaria clara sao confusos emocionalmente. O espectador nao sabe o que sentir e desliga. Definir a emocao e o primeiro passo de qualquer projeto.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Emocao-alvo, intencao emocional, clareza de objetivo, experiencia desejada.</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Topico 2 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">2</span>
-            <h3 class="text-xl font-bold">Emocao Secundaria</h3>
-          </div>
-        </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Emocoes secundarias sao camadas emocionais que acompanham a primaria. Um filme de terror pode ter momentos de humor (alivio). Uma comedia pode ter momentos de ternura. Essas camadas criam profundidade e evitam a monotonia emocional.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Uma unica emocao por muito tempo cansa. As secundarias dao respiro e amplificam a primaria por contraste.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Camadas emocionais, contraste emocional, respiro, complexidade controlada.</p>
-          </div>
-        </div>
-      </div>
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          A emocao primaria e a <strong class="text-emerald-400">emocao PRINCIPAL</strong> que voce quer que o espectador sinta. Antes de pensar em historia, personagens ou cenas, voce deve responder: <strong class="text-white">quero causar medo? Alegria? Tensao? Nostalgia? Raiva?</strong> Toda decisao criativa subsequente serve a essa emocao central.
+        </p>
 
-      <!-- Topico 3 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">3</span>
-            <h3 class="text-xl font-bold">Emocao Contraditoria</h3>
+        <!-- Catalogo de Emocoes -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Catalogo de Emocoes Primarias</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">😨</div>
+              <div class="font-semibold text-neutral-200">Medo</div>
+              <div class="text-xs text-neutral-400 mt-1">Terror, suspense</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">😂</div>
+              <div class="font-semibold text-neutral-200">Alegria</div>
+              <div class="text-xs text-neutral-400 mt-1">Comedia, diversao</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">😢</div>
+              <div class="font-semibold text-neutral-200">Tristeza</div>
+              <div class="text-xs text-neutral-400 mt-1">Drama, melancolia</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">😠</div>
+              <div class="font-semibold text-neutral-200">Raiva</div>
+              <div class="text-xs text-neutral-400 mt-1">Injustica, revolta</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">😍</div>
+              <div class="font-semibold text-neutral-200">Amor</div>
+              <div class="text-xs text-neutral-400 mt-1">Romance, conexao</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">😮</div>
+              <div class="font-semibold text-neutral-200">Surpresa</div>
+              <div class="text-xs text-neutral-400 mt-1">Plot twist, choque</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">🤔</div>
+              <div class="font-semibold text-neutral-200">Curiosidade</div>
+              <div class="text-xs text-neutral-400 mt-1">Misterio, intrigo</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+              <div class="text-3xl mb-2">🥺</div>
+              <div class="font-semibold text-neutral-200">Nostalgia</div>
+              <div class="text-xs text-neutral-400 mt-1">Memoria, saudade</div>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Emocao contraditoria e quando duas emocoes opostas coexistem no mesmo momento. Rir e chorar ao mesmo tempo. Sentir alivio e tristeza. Isso cria experiencias memoraveis porque espelha a complexidade real das emocoes humanas.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">As experiencias mais marcantes do cinema usam emocoes contraditorias. E o que diferencia conteudo "bom" de conteudo "inesquecivel".</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Ambivalencia emocional, agridoce, complexidade humana, memorabilidade.</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Topico 4 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">4</span>
-            <h3 class="text-xl font-bold">O Erro de Explicar Demais</h3>
+        <!-- Processo de Definicao -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Como Definir sua Emocao Primaria</h3>
+          <div class="space-y-3">
+            <div class="flex items-start space-x-3">
+              <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold shrink-0">1</span>
+              <span class="text-neutral-300">Pergunte: "O que quero que a pessoa SINTA ao terminar de assistir?"</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold shrink-0">2</span>
+              <span class="text-neutral-300">Escolha UMA emocao dominante - nao multiplas</span>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold shrink-0">3</span>
+              <span class="text-neutral-300">Teste: cada decisao criativa serve a essa emocao?</span>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Explicar demais e quando o video FALA o que o espectador deveria SENTIR. "Ele estava muito triste" em vez de MOSTRAR a tristeza. Dialogos que explicam motivacoes. Narracoes que descrevem emocoes. Isso quebra a experiencia.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Explicar emocao e o erro mais comum de criadores iniciantes. O publico quer SENTIR, nao ser INFORMADO sobre o que deveria sentir.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Show don't tell, confianca no espectador, subtexto, deixar espaco para interpretacao.</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Topico 5 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">5</span>
-            <h3 class="text-xl font-bold">Mostrar vs Afirmar</h3>
+        <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 text-xl">💡</span>
+            <div>
+              <span class="text-blue-300 font-semibold">Por que isso importa:</span>
+              <p class="text-neutral-300 mt-1">Videos sem emocao primaria clara sao confusos emocionalmente. O espectador nao sabe o que sentir e desliga. Definir a emocao e o PRIMEIRO passo de qualquer projeto - antes de roteiro, antes de storyboard, antes de tudo.</p>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Mostrar e usar imagem, acao e comportamento para comunicar. Afirmar e usar palavras para declarar. Em vez de dizer "Maria amava Joao", mostre Maria guardando um objeto de Joao, olhando para ele quando ninguem ve, hesitando antes de falar.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Video e um meio VISUAL. A forca do audiovisual esta em mostrar, nao em afirmar. Quando voce afirma, desperica o potencial do meio.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Linguagem visual, comportamento como comunicacao, detalhes reveladores, acoes falam mais.</p>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <!-- Topico 6 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">6</span>
-            <h3 class="text-xl font-bold">Emocao sem Dialogo</h3>
+      <!-- Topico 2: Emocao Secundaria -->
+      <section class="scroll-mt-20" id="topico-2">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">2</span>
+          <h2 class="text-2xl font-bold">Emocao Secundaria</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          Emocoes secundarias sao <strong class="text-emerald-400">camadas emocionais</strong> que acompanham a primaria. Um filme de terror pode ter momentos de humor. Uma comedia pode ter ternura. Essas camadas criam <strong class="text-white">profundidade</strong> e evitam a monotonia emocional - porque uma unica emocao por muito tempo cansa.
+        </p>
+
+        <!-- Funcao das Secundarias -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Funcoes da Emocao Secundaria</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🌊</div>
+              <div class="font-semibold text-neutral-200">Respiro</div>
+              <div class="text-sm text-neutral-400 mt-1">Dar pausa da emocao principal para o espectador descansar</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">📈</div>
+              <div class="font-semibold text-neutral-200">Contraste</div>
+              <div class="text-sm text-neutral-400 mt-1">Amplificar a primaria pelo efeito de oposicao</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🎭</div>
+              <div class="font-semibold text-neutral-200">Profundidade</div>
+              <div class="text-sm text-neutral-400 mt-1">Tornar a experiencia mais rica e realista</div>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Os momentos mais poderosos do cinema frequentemente nao tem dialogo. Um olhar, um gesto, uma pausa, um objeto - todos comunicam emocao pura. Exercitar criar emocao sem palavras desenvolve a verdadeira fluencia audiovisual.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Se voce depende de dialogo para comunicar emocao, voce nao esta usando o meio ao maximo. A emocao sem dialogo e universal - atravessa linguas e culturas.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Cinema mudo, comunicacao nao-verbal, universalidade emocional, poder do silencio.</p>
+
+        <!-- Exemplos de Combinacoes -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Combinacoes Classicas</h3>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-neutral-300">Terror + Humor</span>
+              <span class="text-neutral-500 text-sm">Scream, Get Out</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-neutral-300">Acao + Romance</span>
+              <span class="text-neutral-500 text-sm">Mr. & Mrs. Smith</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-neutral-300">Drama + Comedia</span>
+              <span class="text-neutral-500 text-sm">Life is Beautiful</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-dark-700/50 rounded-lg">
+              <span class="text-neutral-300">Tensao + Ternura</span>
+              <span class="text-neutral-500 text-sm">Up (Pixar)</span>
+            </div>
           </div>
         </div>
-      </div>
+
+        <div class="bg-primary-900/20 border border-primary-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-primary-400 text-xl">📝</span>
+            <div>
+              <span class="text-primary-300 font-semibold">Exercicio Mental:</span>
+              <p class="text-neutral-300 mt-1">Pense em 3 videos que voce adora. Identifique a emocao PRIMARIA de cada um. Depois, identifique pelo menos 2 emocoes SECUNDARIAS. Note como as secundarias aparecem em momentos especificos para dar respiro ou criar contraste.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topico 3: Emocao Contraditoria -->
+      <section class="scroll-mt-20" id="topico-3">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">3</span>
+          <h2 class="text-2xl font-bold">Emocao Contraditoria</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          A emocao contraditoria e quando <strong class="text-emerald-400">duas emocoes opostas coexistem no mesmo momento</strong>. Rir e chorar ao mesmo tempo. Sentir alivio e tristeza. Esta tecnica cria experiencias memoraveis porque espelha a <strong class="text-white">complexidade real das emocoes humanas</strong>.
+        </p>
+
+        <!-- Diagrama Visual -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">O Poder da Contradicao</h3>
+          <div class="flex items-center justify-center space-x-4 mb-4">
+            <div class="text-center">
+              <div class="text-4xl mb-2">😊</div>
+              <div class="text-sm text-neutral-400">Alegria</div>
+            </div>
+            <div class="text-3xl text-emerald-400">+</div>
+            <div class="text-center">
+              <div class="text-4xl mb-2">😢</div>
+              <div class="text-sm text-neutral-400">Tristeza</div>
+            </div>
+            <div class="text-3xl text-emerald-400">=</div>
+            <div class="text-center">
+              <div class="text-4xl mb-2">✨</div>
+              <div class="text-sm text-emerald-400 font-semibold">Memoravel</div>
+            </div>
+          </div>
+          <p class="text-center text-neutral-400 text-sm">Emocoes contraditorias criam os momentos mais lembrados do cinema</p>
+        </div>
+
+        <!-- Exemplos de Contradicao -->
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-dark-800 rounded-xl p-5 border border-dark-600">
+            <div class="text-emerald-400 font-semibold mb-2">Agridoce (Bittersweet)</div>
+            <p class="text-neutral-400 text-sm">Felicidade com sabor de perda. O heroi vence mas perde alguem querido.</p>
+          </div>
+          <div class="bg-dark-800 rounded-xl p-5 border border-dark-600">
+            <div class="text-emerald-400 font-semibold mb-2">Alivio Doloroso</div>
+            <p class="text-neutral-400 text-sm">O perigo passou mas o custo foi alto. Sobreviver, mas a que preco?</p>
+          </div>
+          <div class="bg-dark-800 rounded-xl p-5 border border-dark-600">
+            <div class="text-emerald-400 font-semibold mb-2">Riso Nervoso</div>
+            <p class="text-neutral-400 text-sm">Humor em situacao tensa. Rir porque chorar nao e opcao.</p>
+          </div>
+          <div class="bg-dark-800 rounded-xl p-5 border border-dark-600">
+            <div class="text-emerald-400 font-semibold mb-2">Nostalgia Feliz</div>
+            <p class="text-neutral-400 text-sm">Lembrar com carinho de algo que ja passou. Saudade alegre.</p>
+          </div>
+        </div>
+
+        <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 text-xl">💡</span>
+            <div>
+              <span class="text-blue-300 font-semibold">Por que funciona:</span>
+              <p class="text-neutral-300 mt-1">As experiencias mais marcantes do cinema usam emocoes contraditorias. E o que diferencia conteudo "bom" de conteudo "inesquecivel". Quando o espectador sente duas coisas opostas simultaneamente, a memoria fixa o momento.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topico 4: O Erro de Explicar Demais -->
+      <section class="scroll-mt-20" id="topico-4">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">4</span>
+          <h2 class="text-2xl font-bold">O Erro de Explicar Demais</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          Explicar demais e quando o video <strong class="text-red-400">FALA o que o espectador deveria SENTIR</strong>. "Ele estava muito triste" em vez de MOSTRAR a tristeza. Dialogos que explicam motivacoes. Narracoes que descrevem emocoes. Isso <strong class="text-white">quebra a experiencia</strong> porque o publico quer SENTIR, nao ser INFORMADO.
+        </p>
+
+        <!-- Comparacao Visual -->
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-red-900/20 border border-red-500/30 rounded-xl p-5">
+            <div class="flex items-center space-x-2 mb-4">
+              <span class="text-red-400 text-xl">✗</span>
+              <span class="text-red-400 font-semibold">Explicar (Errado)</span>
+            </div>
+            <ul class="space-y-3 text-neutral-300 text-sm">
+              <li class="flex items-start space-x-2">
+                <span class="text-red-400">•</span>
+                <span>"Joao estava devastado com a noticia"</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-red-400">•</span>
+                <span>"Ela o amava profundamente"</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-red-400">•</span>
+                <span>"Aquilo deixou todos com medo"</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-red-400">•</span>
+                <span>"Foi um momento muito tenso"</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-5">
+            <div class="flex items-center space-x-2 mb-4">
+              <span class="text-emerald-400 text-xl">✓</span>
+              <span class="text-emerald-400 font-semibold">Mostrar (Certo)</span>
+            </div>
+            <ul class="space-y-3 text-neutral-300 text-sm">
+              <li class="flex items-start space-x-2">
+                <span class="text-emerald-400">•</span>
+                <span>Joao deixa o telefone cair, olhar vazio</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-emerald-400">•</span>
+                <span>Ela guarda uma foto dele escondida</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-emerald-400">•</span>
+                <span>Silencio, respiracoes pesadas, olhos arregalados</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-emerald-400">•</span>
+                <span>Maos tremendo, suor, close no rosto</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Principio -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">O Principio "Show Don't Tell"</h3>
+          <div class="bg-dark-700/50 rounded-lg p-4">
+            <p class="text-neutral-300 text-center italic">"O espectador quer descobrir a emocao, nao receber uma instrucao sobre o que sentir."</p>
+          </div>
+          <div class="grid grid-cols-3 gap-4 mt-4 text-center">
+            <div>
+              <div class="text-2xl mb-1">🖼️</div>
+              <div class="text-sm text-neutral-400">Imagem comunica</div>
+            </div>
+            <div>
+              <div class="text-2xl mb-1">🎭</div>
+              <div class="text-sm text-neutral-400">Acao revela</div>
+            </div>
+            <div>
+              <div class="text-2xl mb-1">🔍</div>
+              <div class="text-sm text-neutral-400">Detalhe sugere</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-900/20 border border-amber-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-amber-400 text-xl">⚠️</span>
+            <div>
+              <span class="text-amber-300 font-semibold">Alerta:</span>
+              <p class="text-neutral-300 mt-1">Explicar emocao e o erro mais comum de criadores iniciantes. Toda vez que voce escrever uma frase que DESCREVE uma emocao, pare e pergunte: "Como posso MOSTRAR isso em vez de dizer?"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topico 5: Mostrar vs Afirmar -->
+      <section class="scroll-mt-20" id="topico-5">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">5</span>
+          <h2 class="text-2xl font-bold">Mostrar vs Afirmar</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          <strong class="text-emerald-400">Mostrar</strong> e usar imagem, acao e comportamento para comunicar. <strong class="text-emerald-400">Afirmar</strong> e usar palavras para declarar. Video e um meio <strong class="text-white">VISUAL</strong> - a forca do audiovisual esta em mostrar. Quando voce afirma, desperdica o potencial do meio.
+        </p>
+
+        <!-- Ferramentas para Mostrar -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Ferramentas para Mostrar Emocao</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">👁️</div>
+              <div class="font-semibold text-neutral-200">Olhar</div>
+              <div class="text-sm text-neutral-400 mt-1">Direcao do olhar, duracao, intensidade</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🖐️</div>
+              <div class="font-semibold text-neutral-200">Gestos</div>
+              <div class="text-sm text-neutral-400 mt-1">Maos nervosas, punhos fechados, tremores</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🚶</div>
+              <div class="font-semibold text-neutral-200">Postura</div>
+              <div class="text-sm text-neutral-400 mt-1">Ombros caidos, rigidez, relaxamento</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">📦</div>
+              <div class="font-semibold text-neutral-200">Objetos</div>
+              <div class="text-sm text-neutral-400 mt-1">O que guarda, toca, evita, quebra</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">⏸️</div>
+              <div class="font-semibold text-neutral-200">Pausa</div>
+              <div class="text-sm text-neutral-400 mt-1">Hesitacao antes de agir ou falar</div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4">
+              <div class="text-2xl mb-2">🔄</div>
+              <div class="font-semibold text-neutral-200">Rotina</div>
+              <div class="text-sm text-neutral-400 mt-1">Mudanca de comportamento habitual</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exemplo Pratico -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Exemplo: "Maria ama Joao"</h3>
+          <div class="space-y-4">
+            <div class="bg-red-900/10 rounded-lg p-4 border border-red-500/20">
+              <span class="text-red-400 text-sm font-semibold">AFIRMAR:</span>
+              <p class="text-neutral-400 mt-1">"Maria amava Joao mais do que tudo"</p>
+            </div>
+            <div class="bg-emerald-900/10 rounded-lg p-4 border border-emerald-500/20">
+              <span class="text-emerald-400 text-sm font-semibold">MOSTRAR:</span>
+              <ul class="text-neutral-300 mt-1 space-y-1 text-sm">
+                <li>• Maria guarda um objeto de Joao escondido na gaveta</li>
+                <li>• Ela olha para ele quando ninguem esta vendo</li>
+                <li>• Hesita antes de falar com ele</li>
+                <li>• Muda de postura quando ele entra na sala</li>
+                <li>• Ri diferente das piadas dele vs outros</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 text-xl">💡</span>
+            <div>
+              <span class="text-blue-300 font-semibold">Insight:</span>
+              <p class="text-neutral-300 mt-1">Comportamento e mais poderoso que dialogo. Acoes revelam verdade, palavras podem mentir. O espectador confia mais no que VE do que no que OUVE.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Topico 6: Emocao sem Dialogo -->
+      <section class="scroll-mt-20" id="topico-6">
+        <div class="flex items-center space-x-3 mb-6">
+          <span class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-lg">6</span>
+          <h2 class="text-2xl font-bold">Emocao sem Dialogo</h2>
+        </div>
+
+        <p class="text-neutral-300 mb-6 leading-relaxed">
+          Os momentos mais poderosos do cinema frequentemente <strong class="text-emerald-400">nao tem dialogo</strong>. Um olhar, um gesto, uma pausa, um objeto - todos comunicam emocao pura. A emocao sem dialogo e <strong class="text-white">universal</strong> - atravessa linguas e culturas. Se voce depende de dialogo, nao esta usando o meio ao maximo.
+        </p>
+
+        <!-- Elementos de Comunicacao Silenciosa -->
+        <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-4">Linguagem do Silencio</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="text-center">
+              <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/20 flex items-center justify-center mb-2">
+                <span class="text-2xl">👀</span>
+              </div>
+              <div class="text-sm text-neutral-300">Olhar</div>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/20 flex items-center justify-center mb-2">
+                <span class="text-2xl">🤲</span>
+              </div>
+              <div class="text-sm text-neutral-300">Gesto</div>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/20 flex items-center justify-center mb-2">
+                <span class="text-2xl">⏱️</span>
+              </div>
+              <div class="text-sm text-neutral-300">Pausa</div>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/20 flex items-center justify-center mb-2">
+                <span class="text-2xl">🎁</span>
+              </div>
+              <div class="text-sm text-neutral-300">Objeto</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cenas Iconicas sem Dialogo -->
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 mb-6">
+          <h3 class="font-semibold text-emerald-400 mb-4">Cenas Iconicas sem Dialogo</h3>
+          <div class="space-y-3">
+            <div class="p-3 bg-dark-700/50 rounded-lg">
+              <div class="flex items-center justify-between">
+                <span class="text-neutral-300">Abertura de "Up" (Pixar)</span>
+                <span class="text-emerald-400 text-sm">10 min sem falas</span>
+              </div>
+            </div>
+            <div class="p-3 bg-dark-700/50 rounded-lg">
+              <div class="flex items-center justify-between">
+                <span class="text-neutral-300">Final de "Lost in Translation"</span>
+                <span class="text-emerald-400 text-sm">Sussurro inaudivel</span>
+              </div>
+            </div>
+            <div class="p-3 bg-dark-700/50 rounded-lg">
+              <div class="flex items-center justify-between">
+                <span class="text-neutral-300">"WALL-E" (primeiro ato)</span>
+                <span class="text-emerald-400 text-sm">40 min sem dialogo</span>
+              </div>
+            </div>
+            <div class="p-3 bg-dark-700/50 rounded-lg">
+              <div class="flex items-center justify-between">
+                <span class="text-neutral-300">"No Country for Old Men"</span>
+                <span class="text-emerald-400 text-sm">Tensao em silencio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-primary-900/20 border border-primary-500/30 rounded-xl p-5">
+          <div class="flex items-start space-x-3">
+            <span class="text-primary-400 text-xl">📝</span>
+            <div>
+              <span class="text-primary-300 font-semibold">Exercicio:</span>
+              <p class="text-neutral-300 mt-1">Crie uma cena de 30 segundos que comunique AMOR sem usar nenhuma palavra. Use apenas olhar, gesto, objeto e pausa. Depois crie outra comunicando MEDO. Se funcionar em silencio, funcionara ainda melhor com som.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
 
+    <!-- Mapa Emocional -->
+    <div class="mt-12 bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-xl p-6 border border-emerald-500/30">
+      <h2 class="text-xl font-bold text-emerald-400 mb-4">Mapa de Construcao Emocional</h2>
+      <div class="flex flex-wrap items-center justify-center gap-2 text-sm mb-4">
+        <span class="px-3 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg">1. Definir Primaria</span>
+        <span class="text-neutral-500">→</span>
+        <span class="px-3 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg">2. Planejar Secundarias</span>
+        <span class="text-neutral-500">→</span>
+        <span class="px-3 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg">3. Criar Contradicoes</span>
+        <span class="text-neutral-500">→</span>
+        <span class="px-3 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg">4. Mostrar, nao Contar</span>
+      </div>
+      <p class="text-neutral-400 text-sm text-center">Esta sequencia transforma uma ideia vaga em experiencia emocional intencional.</p>
+    </div>
+
     <!-- Resumo -->
-    <div class="mt-12 bg-dark-800 rounded-xl border border-dark-600 p-6">
+    <div class="mt-8 bg-dark-800 rounded-xl border border-dark-600 p-6">
       <h2 class="text-xl font-bold text-emerald-400 mb-4">Resumo do Modulo</h2>
-      <p class="text-neutral-300 mb-4">Emocao e o objetivo final de qualquer conteudo audiovisual. Historia, tecnica, efeitos - tudo e veiculo para entregar emocao. Quando voce comecar pelo "o que quero que sintam?", todas as outras decisoes ficam mais claras.</p>
+      <p class="text-neutral-300 mb-4">Emocao e o objetivo final de qualquer conteudo audiovisual. Historia, tecnica, efeitos - tudo e veiculo para entregar emocao. Quando voce comeca pelo "o que quero que sintam?", todas as outras decisoes ficam mais claras.</p>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-dark-700/50 rounded-lg p-4">
+          <span class="text-emerald-400 font-semibold block mb-2">Voce aprendeu:</span>
+          <ul class="text-neutral-400 text-sm space-y-1">
+            <li>• Emocao primaria como ponto de partida</li>
+            <li>• Secundarias para profundidade</li>
+            <li>• Contradicao para memorabilidade</li>
+            <li>• Mostrar em vez de explicar</li>
+            <li>• Poder do silencio</li>
+          </ul>
+        </div>
+        <div class="bg-dark-700/50 rounded-lg p-4">
+          <span class="text-emerald-400 font-semibold block mb-2">Proximo modulo:</span>
+          <p class="text-neutral-400 text-sm">Narrativa Funcional - como estruturar historias simples que funcionam em video, usando a estrutura minima e eficaz.</p>
+        </div>
+      </div>
+
       <div class="bg-emerald-900/20 rounded-lg p-4 border border-emerald-500/30">
-        <p class="text-emerald-300 font-medium">Resultado esperado: O aluno passa a construir emocao intencionalmente.</p>
+        <p class="text-emerald-300 font-medium">Resultado esperado: O aluno passa a construir emocao intencionalmente, definindo primeiro o que quer causar e depois construindo o veiculo (historia) para entregar essa emocao.</p>
       </div>
     </div>
 
     <!-- Navegacao -->
     <div class="mt-12 flex flex-col sm:flex-row gap-4">
       <a href="modulo-1-3.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
-        ← Modulo 1.3
+        ← Modulo 1.3: Tempo e Ritmo
       </a>
       <a href="modulo-1-5.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
-        Modulo 1.5 →
+        Modulo 1.5: Narrativa Funcional →
       </a>
     </div>
 
@@ -241,6 +646,20 @@
       VisionPro - Producao Audiovisual com IA | <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a>
     </div>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      const icon = document.getElementById('theme-icon');
+      icon.textContent = document.documentElement.classList.contains('dark') ? '🌙' : '☀️';
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
 
 </body>
 </html>

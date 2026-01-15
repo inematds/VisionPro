@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1.3 Tempo, Ritmo e Atencao | VisionPro</title>
+  <title>Modulo 1.3: Tempo, Ritmo e Atencao | VisionPro</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -11,6 +11,7 @@
       theme: {
         extend: {
           colors: {
+            primary: '#FACC15',
             dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
           }
         }
@@ -18,23 +19,53 @@
     }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>body { font-family: 'Inter', sans-serif; }</style>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
 
-  <!-- Navigation -->
+  <!-- Navigation Global -->
   <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center space-x-4">
-          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🎬</span>
-            <span class="font-bold hidden sm:inline">VisionPro</span>
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
           </a>
           <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
         </div>
-        <a href="index.html" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium">← Trilha 1</a>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/10 text-emerald-400">
+            <span class="sm:hidden">T1</span>
+            <span class="hidden sm:inline">Fundamentos</span>
+          </a>
+          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+            <span class="sm:hidden">T2</span>
+            <span class="hidden sm:inline">Metodo</span>
+          </a>
+          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+            <span class="sm:hidden">T3</span>
+            <span class="hidden sm:inline">Avancado</span>
+          </a>
+          <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+            <span class="sm:hidden">T4</span>
+            <span class="hidden sm:inline">Labs</span>
+          </a>
+          <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+            <span id="theme-icon" class="text-lg">🌙</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -42,205 +73,537 @@
   <!-- Header -->
   <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="flex items-center space-x-2 text-sm text-neutral-500 mb-4">
-        <a href="index.html" class="hover:text-neutral-300">Trilha 1</a>
-        <span>/</span>
-        <span class="text-emerald-400">Modulo 1.3</span>
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 1</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-emerald-400 font-medium">Modulo 1.3</span>
       </div>
-      <div class="flex items-center space-x-3 mb-4">
-        <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-sm font-bold rounded-full">1.3</span>
-        <span class="text-neutral-500 text-sm">~60 min</span>
-      </div>
+
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">
+        MODULO 1.3
+      </span>
       <h1 class="text-3xl sm:text-4xl font-bold mb-4">⏱️ Tempo, Ritmo e Atencao</h1>
-      <p class="text-lg text-neutral-400">Preparar para videos curtos, narrativas rapidas e edicao consciente.</p>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Preparar para videos curtos, narrativas rapidas e edicao consciente. Dominar o tempo e controlar a experiencia.
+      </p>
+
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-emerald-400">6</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-emerald-400">~60</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-emerald-400">Basico</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-emerald-400">Tecnico</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Content -->
+  <!-- Conteudo Principal -->
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-    <!-- Objetivo -->
-    <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-6 mb-8">
-      <h2 class="text-emerald-400 font-bold mb-2">Objetivo do Modulo</h2>
-      <p class="text-neutral-300">Desenvolver a capacidade de pensar em ritmo antes de editar, entendendo como o tempo funciona no audiovisual e como a atencao do publico e conquistada e mantida.</p>
-    </div>
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">🕐 Tempo Real vs Tempo Narrativo</h2>
+      </div>
 
-    <!-- Topicos -->
-    <div class="space-y-6">
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Tempo real e o que o relogio marca. Tempo narrativo e como o espectador <strong class="text-emerald-400">sente</strong> o tempo passar. Um minuto pode parecer uma eternidade ou um piscar, dependendo de como voce constroi a sequencia.
+      </p>
 
-      <!-- Topico 1 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">1</span>
-            <h3 class="text-xl font-bold">Tempo Real vs Tempo Narrativo</h3>
+      <!-- Box Principal -->
+      <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">Ferramentas de Manipulacao Temporal</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">⏩</div>
+            <div class="font-semibold text-neutral-200">Compressao</div>
+            <div class="text-sm text-neutral-400 mt-1">Anos viram segundos. Montagem acelera passagem de tempo. Time-lapse, jump cuts.</div>
           </div>
-        </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Tempo real e o tempo cronologico que passa. Tempo narrativo e como o espectador SENTE o tempo passar. Um minuto pode parecer uma eternidade ou um segundo, dependendo de como voce constroi a sequencia. Compressao e dilatacao temporal sao ferramentas fundamentais.</p>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">⏸️</div>
+            <div class="font-semibold text-neutral-200">Dilatacao</div>
+            <div class="text-sm text-neutral-400 mt-1">Segundos viram minutos. Slow-motion, multiplos angulos do mesmo momento.</div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Dominar o tempo narrativo e o que separa um video que "arrasta" de um que "voa". Voce controla a experiencia temporal do espectador.</p>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">⏭️</div>
+            <div class="font-semibold text-neutral-200">Elipse</div>
+            <div class="text-sm text-neutral-400 mt-1">Pular o irrelevante. Corta do problema para a solucao, sem mostrar o meio.</div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Compressao temporal, dilatacao temporal, elipse, tempo subjetivo, duracao percebida.</p>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🔄</div>
+            <div class="font-semibold text-neutral-200">Tempo Real</div>
+            <div class="text-sm text-neutral-400 mt-1">Escolha deliberada. Cria tensao, urgencia, imersao. Rare e poderoso.</div>
           </div>
         </div>
       </div>
 
-      <!-- Topico 2 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">2</span>
-            <h3 class="text-xl font-bold">Ritmo Emocional</h3>
+      <!-- Exemplo Visual -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-3">Exemplo: A Mesma Cena, Dois Tempos</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-sm text-neutral-500 mb-2">TEMPO REAL: 30 segundos</div>
+            <p class="text-neutral-300 text-sm">Personagem caminha pela rua, entra no predio, sobe escada, abre porta.</p>
+            <div class="text-xs text-red-400 mt-2">Tempo narrativo: ETERNO. Espectador desiste.</div>
           </div>
-        </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Ritmo emocional e a cadencia de tensao e alivio ao longo do video. Nao e sobre velocidade constante - e sobre variacao intencional. Momentos rapidos criam urgencia, momentos lentos criam reflexao. A combinacao cria envolvimento.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Videos monotonos (sempre rapidos ou sempre lentos) perdem o publico. O ritmo emocional mantem o cerebro engajado atraves de variacao controlada.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Tensao e alivio, variacao ritmica, cadencia emocional, picos e vales, respiracao narrativa.</p>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-sm text-neutral-500 mb-2">TEMPO COMPRIMIDO: 3 segundos</div>
+            <p class="text-neutral-300 text-sm">Corte: pe na calcada → mao na macaneta → rosto entrando.</p>
+            <div class="text-xs text-emerald-400 mt-2">Tempo narrativo: INSTANTANEO. Informacao entregue.</div>
           </div>
         </div>
       </div>
 
-      <!-- Topico 3 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">3</span>
-            <h3 class="text-xl font-bold">Pausa como Linguagem</h3>
-          </div>
+      <!-- Insight -->
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 A verdade inconveniente</h3>
+        <p class="text-neutral-300">
+          O espectador <strong class="text-blue-400">nao tem paciencia</strong>. Todo segundo que voce gasta mostrando algo sem valor e um segundo onde ele pode sair. Respeite o tempo dele.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">🎵 Ritmo Emocional</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Ritmo nao e velocidade constante - e a <strong class="text-emerald-400">variacao intencional</strong> entre tensao e alivio. Videos monotonos (sempre rapidos ou sempre lentos) perdem o publico. A variacao mantem o cerebro engajado.
+      </p>
+
+      <!-- Grafico Visual -->
+      <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">Curva de Tensao</h3>
+        <div class="h-32 flex items-end justify-between gap-1 mb-4">
+          <div class="flex-1 bg-emerald-500/40 rounded-t" style="height: 30%"></div>
+          <div class="flex-1 bg-emerald-500/50 rounded-t" style="height: 50%"></div>
+          <div class="flex-1 bg-emerald-500/40 rounded-t" style="height: 35%"></div>
+          <div class="flex-1 bg-emerald-500/60 rounded-t" style="height: 70%"></div>
+          <div class="flex-1 bg-emerald-500/40 rounded-t" style="height: 40%"></div>
+          <div class="flex-1 bg-emerald-500/70 rounded-t" style="height: 85%"></div>
+          <div class="flex-1 bg-emerald-500/50 rounded-t" style="height: 50%"></div>
+          <div class="flex-1 bg-emerald-500/90 rounded-t" style="height: 100%"></div>
+          <div class="flex-1 bg-emerald-500/30 rounded-t" style="height: 20%"></div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">A pausa nao e ausencia de conteudo - e conteudo. Um momento de silencio apos uma revelacao amplifica o impacto. Um segundo a mais no rosto do personagem comunica mais que dialogo. A pausa da espaco para o espectador processar.</p>
+        <div class="flex justify-between text-xs text-neutral-500">
+          <span>Inicio</span>
+          <span>Desenvolvimento</span>
+          <span>Climax</span>
+          <span>Fim</span>
+        </div>
+        <p class="text-neutral-400 text-sm mt-4 text-center">Note os vales entre os picos - momentos de respiro que amplificam o impacto dos momentos intensos.</p>
+      </div>
+
+      <!-- Grid de Comparacao -->
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-emerald-900/20 rounded-xl p-6 border border-emerald-500/30">
+          <h4 class="font-bold text-emerald-400 mb-4">✓ Ritmo Dinamico</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li>→ Alterna entre rapido e lento</li>
+            <li>→ Momentos de respiro antes de picos</li>
+            <li>→ Intensidade cresce progressivamente</li>
+            <li>→ Variacao mantém interesse</li>
+          </ul>
+        </div>
+        <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30">
+          <h4 class="font-bold text-red-400 mb-4">✗ Ritmo Monotono</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li>→ Sempre na mesma velocidade</li>
+            <li>→ Sem pausas para processar</li>
+            <li>→ Climax igual ao resto</li>
+            <li>→ Previsivel = tedioso</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dica -->
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Regra Musical</h3>
+        <p class="text-neutral-300">
+          Pense no video como musica. Tem <strong class="text-primary">verso</strong> (calmo), <strong class="text-primary">refrão</strong> (intenso), e <strong class="text-primary">ponte</strong> (transição). Se fosse uma unica nota, ninguem ouviria.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">⏸️ Pausa como Linguagem</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A pausa nao e ausencia de conteudo - e <strong class="text-emerald-400">conteudo em si</strong>. Um momento de silencio apos uma revelacao amplifica o impacto. Um segundo a mais no rosto comunica mais que dialogo.
+      </p>
+
+      <!-- Box Visual -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">Funcoes da Pausa</h3>
+        <div class="space-y-4">
+          <div class="flex items-center space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-emerald-900/30 flex items-center justify-center text-2xl">😱</div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-neutral-200">Amplificar Impacto</h4>
+              <p class="text-sm text-neutral-400">Pausa apos revelacao chocante. O silencio e o processamento.</p>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Criadores iniciantes tem medo do "vazio" e enchem tudo. Profissionais sabem que o poder muitas vezes esta no que NAO e mostrado ou dito.</p>
+          <div class="flex items-center space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-blue-900/30 flex items-center justify-center text-2xl">🤔</div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-neutral-200">Dar Espaco para Pensar</h4>
+              <p class="text-sm text-neutral-400">Informacao importante precisa de tempo para absorver.</p>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Silencio dramatico, beat, momento de respiro, espaco negativo temporal, processamento do espectador.</p>
+          <div class="flex items-center space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-purple-900/30 flex items-center justify-center text-2xl">😢</div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-neutral-200">Criar Emocao</h4>
+              <p class="text-sm text-neutral-400">Rosto em silencio comunica mais que mil palavras.</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-amber-900/30 flex items-center justify-center text-2xl">⚡</div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-neutral-200">Construir Tensao</h4>
+              <p class="text-sm text-neutral-400">Antes do susto, do impacto, da revelacao. Anticipacao.</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Topico 4 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">4</span>
-            <h3 class="text-xl font-bold">Corte como Decisao Emocional</h3>
+      <!-- Insight -->
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 O medo do amador</h3>
+        <p class="text-neutral-300">
+          Iniciantes enchem tudo de som, cortes, movimento - medo do "vazio". Profissionais <strong class="text-blue-400">usam o vazio</strong>. O silencio e a tela em branco onde a emocao e pintada.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">✂️ Corte como Decisao Emocional</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Cada corte e uma <strong class="text-emerald-400">decisao emocional</strong>, nao tecnica. Voce corta quando quer que o espectador SINTA algo diferente. O momento exato do corte muda completamente o significado.
+      </p>
+
+      <!-- Box Principal -->
+      <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">Momentos de Corte</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">👀</div>
+            <div class="font-semibold text-neutral-200 text-sm">Corte no Olhar</div>
+            <div class="text-xs text-neutral-400 mt-1">Personagem olha → corta para o que ele ve. Conecta visualmente.</div>
           </div>
-        </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Cada corte e uma decisao emocional, nao tecnica. Voce corta quando quer que o espectador SINTA algo diferente. Corte no olhar surpreso. Corte antes da resposta para criar expectativa. Corte durante a acao para criar dinamismo.</p>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">🏃</div>
+            <div class="font-semibold text-neutral-200 text-sm">Corte na Acao</div>
+            <div class="text-xs text-neutral-400 mt-1">Corta NO MEIO do movimento. Cria continuidade e dinamismo.</div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Cortar "quando o plano acabou" e amador. Cortar para manipular emocao e profissional. O momento exato do corte muda completamente o significado.</p>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">😮</div>
+            <div class="font-semibold text-neutral-200 text-sm">Corte de Reacao</div>
+            <div class="text-xs text-neutral-400 mt-1">Mostra reacao antes de mostrar causa. Amplifica curiosidade.</div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Corte na acao, corte no olhar, corte de reacao, momento do corte, motivacao do corte.</p>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <div class="text-2xl mb-2">❓</div>
+            <div class="font-semibold text-neutral-200 text-sm">Corte de Suspense</div>
+            <div class="text-xs text-neutral-400 mt-1">Corta ANTES da resposta. Forca o espectador a imaginar.</div>
           </div>
         </div>
       </div>
 
-      <!-- Topico 5 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">5</span>
-            <h3 class="text-xl font-bold">Atencao do Publico</h3>
+      <!-- Comparacao -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-3">A Pergunta Certa</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-red-900/20 rounded-lg p-4">
+            <p class="text-red-400 font-semibold text-sm">Pergunta Errada:</p>
+            <p class="text-neutral-300 mt-1">"O plano acabou?"</p>
           </div>
-        </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Atencao e um recurso limitado que precisa ser conquistado e reconquistado constantemente. O publico decide em segundos se vai continuar assistindo. Cada momento do video compete com infinitas distracoes. A atencao funciona em ondas, nao em linha reta.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">Nao adianta ter conteudo incrivel se ninguem assiste ate o fim. Entender como a atencao funciona e fundamental para criar videos que prendem.</p>
-          </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Economia da atencao, hook, retencao, pontos de escape, reconquista de atencao.</p>
+          <div class="bg-emerald-900/20 rounded-lg p-4">
+            <p class="text-emerald-400 font-semibold text-sm">Pergunta Certa:</p>
+            <p class="text-neutral-300 mt-1">"O que quero que sintam agora?"</p>
           </div>
         </div>
       </div>
 
-      <!-- Topico 6 -->
-      <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
-        <div class="p-6 border-b border-dark-600">
-          <div class="flex items-center space-x-3">
-            <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center">6</span>
-            <h3 class="text-xl font-bold">Por que Videos Falham nos Primeiros Segundos</h3>
+      <!-- Dica -->
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Exercicio</h3>
+        <p class="text-neutral-300">
+          Pegue a mesma cena e faca <strong class="text-primary">tres montagens diferentes</strong>: cortando cedo, cortando tarde, cortando no meio. Veja como o significado muda completamente.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">🎯 Atencao do Publico</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Atencao e um <strong class="text-emerald-400">recurso limitado</strong> que precisa ser conquistado e reconquistado a cada segundo. O publico decide em 3 segundos se vai continuar. Cada momento compete com infinitas distracoes.
+      </p>
+
+      <!-- Box Visual -->
+      <div class="bg-gradient-to-br from-emerald-900/20 to-dark-800 rounded-xl p-6 border border-emerald-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">Economia da Atencao</h3>
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <span class="w-24 text-sm text-neutral-400">0-3 seg</span>
+            <div class="flex-1 bg-dark-800/50 rounded-full h-6 overflow-hidden">
+              <div class="h-full bg-red-500 rounded-full flex items-center justify-end pr-2" style="width: 100%">
+                <span class="text-xs text-white font-bold">DECISAO</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span class="w-24 text-sm text-neutral-400">3-10 seg</span>
+            <div class="flex-1 bg-dark-800/50 rounded-full h-6 overflow-hidden">
+              <div class="h-full bg-amber-500 rounded-full flex items-center justify-end pr-2" style="width: 80%">
+                <span class="text-xs text-white font-bold">TESTE</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span class="w-24 text-sm text-neutral-400">10-30 seg</span>
+            <div class="flex-1 bg-dark-800/50 rounded-full h-6 overflow-hidden">
+              <div class="h-full bg-emerald-500 rounded-full flex items-center justify-end pr-2" style="width: 60%">
+                <span class="text-xs text-white font-bold">COMPROMISSO</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <span class="w-24 text-sm text-neutral-400">30+ seg</span>
+            <div class="flex-1 bg-dark-800/50 rounded-full h-6 overflow-hidden">
+              <div class="h-full bg-blue-500 rounded-full flex items-center justify-end pr-2" style="width: 40%">
+                <span class="text-xs text-white font-bold">INVESTIDO</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="p-6 space-y-4">
-          <div>
-            <span class="text-emerald-400 font-semibold">O que e:</span>
-            <p class="text-neutral-300 mt-1">Os primeiros 3-5 segundos decidem tudo. Erros comuns: comecar com logos longas, explicacoes, contexto desnecessario. O publico nao te deve atencao - voce precisa ROUBAR a atencao dele imediatamente com algo que faca sentido continuar.</p>
+        <p class="text-neutral-400 text-sm mt-4">Quanto mais tempo investido, maior a chance de continuar - mas voce precisa passar cada barreira primeiro.</p>
+      </div>
+
+      <!-- Pontos de Escape -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">Pontos de Escape</h3>
+        <p class="text-neutral-300 text-sm mb-4">Momentos onde o espectador mais provavelmente sai:</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-xs">Depois de intro longa</span>
+          <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-xs">Quando confuso</span>
+          <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-xs">Durante monotonia</span>
+          <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-xs">Apos promessa nao cumprida</span>
+          <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-xs">No meio de explicacao</span>
+        </div>
+      </div>
+
+      <!-- Insight -->
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 A batalha continua</h3>
+        <p class="text-neutral-300">
+          Atencao nao e conquistada uma vez - e <strong class="text-blue-400">reconquistada a cada momento</strong>. O espectador pergunta constantemente: "Vale a pena continuar?" Sua resposta deve ser sempre "SIM".
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">6</span>
+        <h2 class="text-2xl font-bold">⚡ Os Primeiros 3 Segundos</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Os primeiros 3 segundos <strong class="text-emerald-400">decidem tudo</strong>. E onde a maioria dos videos morre. O espectador nao te deve atencao - voce precisa ROUBAR ela imediatamente.
+      </p>
+
+      <!-- Box de Erros -->
+      <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30 mb-6">
+        <h3 class="text-lg font-semibold text-red-400 mb-4">Erros Fatais de Abertura</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="flex items-start space-x-3">
+            <span class="text-red-400">✗</span>
+            <div>
+              <span class="text-neutral-200 font-semibold text-sm">Logo animada de 5 segundos</span>
+              <p class="text-neutral-400 text-xs mt-1">Ninguem se importa com sua marca ainda</p>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Por que aprender:</span>
-            <p class="text-neutral-300 mt-1">A maioria dos videos morre nos primeiros segundos sem que o criador saiba. Dominar a abertura e a diferenca entre 100 views e 100.000 views.</p>
+          <div class="flex items-start space-x-3">
+            <span class="text-red-400">✗</span>
+            <div>
+              <span class="text-neutral-200 font-semibold text-sm">"Oi gente, tudo bem?"</span>
+              <p class="text-neutral-400 text-xs mt-1">Contexto social desnecessario</p>
+            </div>
           </div>
-          <div>
-            <span class="text-emerald-400 font-semibold">Conceitos-chave:</span>
-            <p class="text-neutral-300 mt-1">Hook inicial, cold open, promessa de valor, curiosidade gap, pattern interrupt.</p>
+          <div class="flex items-start space-x-3">
+            <span class="text-red-400">✗</span>
+            <div>
+              <span class="text-neutral-200 font-semibold text-sm">"Antes de comecar..."</span>
+              <p class="text-neutral-400 text-xs mt-1">Ja comecou. Voce esta atrasando.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="text-red-400">✗</span>
+            <div>
+              <span class="text-neutral-200 font-semibold text-sm">Explicar o que vai explicar</span>
+              <p class="text-neutral-400 text-xs mt-1">Meta-introducao e perda de tempo</p>
+            </div>
           </div>
         </div>
       </div>
 
-    </div>
-
-    <!-- Resumo -->
-    <div class="mt-12 bg-dark-800 rounded-xl border border-dark-600 p-6">
-      <h2 class="text-xl font-bold text-emerald-400 mb-4">Resumo do Modulo</h2>
-      <p class="text-neutral-300 mb-4">Tempo, ritmo e atencao sao os fundamentos invisiveis que fazem um video funcionar. Nao e sobre velocidade ou duracao - e sobre controlar a experiencia temporal do espectador e ganhar a batalha pela atencao dele a cada segundo.</p>
-      <div class="bg-emerald-900/20 rounded-lg p-4 border border-emerald-500/30">
-        <p class="text-emerald-300 font-medium">Resultado esperado: Capacidade de pensar em ritmo antes de editar.</p>
+      <!-- Box de Acertos -->
+      <div class="bg-emerald-900/20 rounded-xl p-6 border border-emerald-500/30 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">Aberturas que Funcionam</h3>
+        <div class="space-y-4">
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <span class="text-emerald-400 font-semibold text-sm">Pattern Interrupt</span>
+            <p class="text-neutral-300 text-sm mt-1">"Voce esta fazendo X errado." - Quebra expectativa, cria curiosidade.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <span class="text-emerald-400 font-semibold text-sm">Cold Open</span>
+            <p class="text-neutral-300 text-sm mt-1">Comeca no meio da acao. Sem introducao, direto no gancho.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <span class="text-emerald-400 font-semibold text-sm">Promessa de Valor</span>
+            <p class="text-neutral-300 text-sm mt-1">"Em 60 segundos voce vai saber..." - Beneficio claro e imediato.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4">
+            <span class="text-emerald-400 font-semibold text-sm">Curiosity Gap</span>
+            <p class="text-neutral-300 text-sm mt-1">Mostra resultado sem mostrar processo. "Como ele fez isso?"</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- Navegacao -->
-    <div class="mt-12 flex flex-col sm:flex-row gap-4">
-      <a href="modulo-1-2.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
-        ← Modulo 1.2
-      </a>
-      <a href="modulo-1-4.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
-        Modulo 1.4 →
-      </a>
-    </div>
+      <!-- Conclusao -->
+      <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📊 O teste do scroll</h3>
+        <p class="text-neutral-300">
+          Imagine seu video no feed, entre milhares. O dedo do espectador esta pronto para <strong class="text-blue-400">passar para o proximo</strong>. Sua abertura precisa ser boa o suficiente para parar esse dedo.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <span class="mr-3">📝</span> Resumo do Modulo
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-emerald-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Diferenca entre tempo real e narrativo</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Ritmo emocional e variacao intencional</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Pausa como ferramenta de comunicacao</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Corte como decisao emocional</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Economia da atencao do publico</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400">✓</span>
+              <span>Como dominar os primeiros segundos</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-emerald-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-emerald-400 font-bold text-sm">1.4</span>
+            <h4 class="font-bold mt-1">❤️ Emocao como Estrutura</h4>
+            <p class="text-neutral-400 text-sm mt-2">
+              Emocao vem antes da historia. Aprenda a construir intencao emocional.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-1-2.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          ← Modulo 1.2
+        </a>
+        <a href="modulo-1-4.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
+          Proximo: Modulo 1.4 →
+        </a>
+      </div>
+    </section>
 
   </main>
 
   <!-- Footer -->
   <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
-    <div class="max-w-4xl mx-auto px-4 py-8 text-center text-neutral-500 text-sm">
-      VisionPro - Producao Audiovisual com IA | <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">🎬</span>
+          <span class="font-bold text-neutral-200">VisionPro</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 1.3: Tempo, Ritmo e Atencao</div>
+      </div>
     </div>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
 
 </body>
 </html>
