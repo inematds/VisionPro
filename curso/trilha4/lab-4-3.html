@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 4.3: Modo Estudio - VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              900: '#0a0a0f',
+              800: '#12121a',
+              700: '#1a1a24',
+              600: '#24242e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .topic-explanation {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+    .topic-explanation.active {
+      max-height: 5000px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+  <!-- Header -->
+  <header class="bg-dark-800/80 backdrop-blur-md border-b border-dark-600 sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center font-bold text-dark-900">
+            VP
+          </div>
+          <span class="text-xl font-semibold">VisionPro</span>
+        </div>
+        <nav class="flex items-center gap-6">
+          <a href="../../index.html" class="text-neutral-400 hover:text-white transition-colors">Inicio</a>
+          <a href="index.html" class="text-neutral-400 hover:text-white transition-colors">Trilha 4</a>
+          <span class="text-amber-400 font-medium">Lab 4.3</span>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-dark-900 to-dark-900"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-sm font-medium">
+            Laboratorio 4.3
+          </span>
+          <span class="text-neutral-500">|</span>
+          <span class="text-neutral-400">6 Simulacoes Praticas</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          <span class="gradient-text">Modo Estudio</span>
+        </h1>
+        <p class="text-xl text-neutral-300 leading-relaxed mb-8">
+          Simule o ambiente de uma produtora profissional mesmo trabalhando sozinho.
+          Este laboratorio ensina a criar restricoes produtivas que elevam a qualidade
+          e preparam voce para trabalhos comerciais.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 text-neutral-400">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+            <span>Ambiente profissional</span>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-400">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Deadlines reais</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+
+        <!-- Intro Box -->
+        <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-2xl p-8 border border-amber-500/20 mb-12">
+          <h2 class="text-2xl font-bold text-amber-400 mb-4">O Que e Modo Estudio?</h2>
+          <p class="text-neutral-300 mb-6">
+            Modo Estudio e a pratica de criar condicoes de producao profissional mesmo em projetos
+            pessoais. Inclui briefings formais, deadlines reais, revisoes estruturadas e padroes
+            de qualidade nao-negociaveis.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-dark-700/50 rounded-xl p-4 text-center">
+              <div class="text-3xl font-bold text-amber-400 mb-1">Briefing</div>
+              <div class="text-sm text-neutral-400">Requisitos claros por escrito</div>
+            </div>
+            <div class="bg-dark-700/50 rounded-xl p-4 text-center">
+              <div class="text-3xl font-bold text-amber-400 mb-1">Deadline</div>
+              <div class="text-sm text-neutral-400">Prazo fixo e inegociavel</div>
+            </div>
+            <div class="bg-dark-700/50 rounded-xl p-4 text-center">
+              <div class="text-3xl font-bold text-amber-400 mb-1">Revisao</div>
+              <div class="text-sm text-neutral-400">Feedback estruturado</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 1 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                01
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">A Mentalidade Profissional</h3>
+                <p class="text-neutral-400 text-sm mt-1">Diferenca entre amador e profissional</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                A diferenca entre amador e profissional nao esta no equipamento ou orcamento -
+                esta na mentalidade e nos processos. Profissionais trabalham com restricoes;
+                amadores esperam condicoes perfeitas.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-red-900/20 rounded-xl p-5 border border-red-500/30">
+                  <h4 class="font-semibold text-red-400 mb-3">Mentalidade Amadora</h4>
+                  <ul class="space-y-2 text-sm text-neutral-300">
+                    <li class="flex items-start gap-2">
+                      <span class="text-red-400">X</span>
+                      <span>"Vou fazer quando tiver inspiracao"</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-red-400">X</span>
+                      <span>"Preciso de equipamento melhor"</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-red-400">X</span>
+                      <span>"Esta bom o suficiente"</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-red-400">X</span>
+                      <span>"Depois eu melhoro"</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-red-400">X</span>
+                      <span>"Nao tenho tempo agora"</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="bg-green-900/20 rounded-xl p-5 border border-green-500/30">
+                  <h4 class="font-semibold text-green-400 mb-3">Mentalidade Profissional</h4>
+                  <ul class="space-y-2 text-sm text-neutral-300">
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>"Tenho um deadline, vou entregar"</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>"Como fazer o melhor com o que tenho?"</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>"Atende o briefing? Cumpre o padrao?"</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>"Qual a proxima iteracao?"</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>"Reservei esse bloco para producao"</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Os 5 Pilares do Modo Estudio</h4>
+                <div class="grid md:grid-cols-5 gap-3">
+                  <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+                    <div class="text-2xl mb-1">1</div>
+                    <div class="text-xs text-neutral-400">Briefing escrito</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+                    <div class="text-2xl mb-1">2</div>
+                    <div class="text-xs text-neutral-400">Deadline fixo</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+                    <div class="text-2xl mb-1">3</div>
+                    <div class="text-xs text-neutral-400">Padrao minimo</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+                    <div class="text-2xl mb-1">4</div>
+                    <div class="text-xs text-neutral-400">Revisao formal</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-3 text-center">
+                    <div class="text-2xl mb-1">5</div>
+                    <div class="text-xs text-neutral-400">Entrega final</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-2">Principio Central</h4>
+                <p class="text-neutral-300 text-sm">
+                  Restricoes nao limitam criatividade - elas a direcionam. Um profissional
+                  abraca restricoes porque sabe que "fazer qualquer coisa" resulta em nada.
+                  O Modo Estudio cria restricoes artificiais que simulam pressao real de mercado.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 2 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                02
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Exercicio: Briefing de Cliente Ficticio</h3>
+                <p class="text-neutral-400 text-sm mt-1">Crie e responda a um brief profissional</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Neste exercicio, voce vai criar um briefing completo como se fosse um cliente
+                real, e depois responder a ele como produtor. Isso desenvolve a habilidade
+                de traduzir pedidos vagos em especificacoes tecnicas.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Template de Briefing Completo</h4>
+                <div class="bg-dark-900/50 rounded-lg p-4 font-mono text-sm text-neutral-400">
+                  <p class="text-amber-400 font-bold">## BRIEFING DE PROJETO</p>
+                  <p class="mt-3 text-amber-400">### 1. IDENTIFICACAO</p>
+                  <p><span class="text-neutral-500">Cliente:</span> [nome/empresa]</p>
+                  <p><span class="text-neutral-500">Projeto:</span> [titulo]</p>
+                  <p><span class="text-neutral-500">Data do brief:</span> [dd/mm/aaaa]</p>
+                  <p><span class="text-neutral-500">Deadline:</span> [dd/mm/aaaa]</p>
+
+                  <p class="mt-3 text-amber-400">### 2. OBJETIVO</p>
+                  <p><span class="text-neutral-500">O que queremos alcançar:</span> [objetivo mensuravel]</p>
+                  <p><span class="text-neutral-500">Metricas de sucesso:</span> [KPIs]</p>
+                  <p><span class="text-neutral-500">Acao esperada do publico:</span> [CTA]</p>
+
+                  <p class="mt-3 text-amber-400">### 3. PUBLICO-ALVO</p>
+                  <p><span class="text-neutral-500">Demografia:</span> [idade, genero, localizacao]</p>
+                  <p><span class="text-neutral-500">Psicografia:</span> [interesses, valores, dores]</p>
+                  <p><span class="text-neutral-500">Nivel de consciencia:</span> [conhece o produto/problema?]</p>
+
+                  <p class="mt-3 text-amber-400">### 4. ESPECIFICACOES TECNICAS</p>
+                  <p><span class="text-neutral-500">Formato:</span> [plataforma, orientacao, resolucao]</p>
+                  <p><span class="text-neutral-500">Duracao:</span> [tempo exato ou range]</p>
+                  <p><span class="text-neutral-500">Elementos obrigatorios:</span> [logo, CTA, legenda]</p>
+
+                  <p class="mt-3 text-amber-400">### 5. DIRECAO CRIATIVA</p>
+                  <p><span class="text-neutral-500">Tom de voz:</span> [formal/casual/humorado]</p>
+                  <p><span class="text-neutral-500">Referencias visuais:</span> [links ou descricoes]</p>
+                  <p><span class="text-neutral-500">O que evitar:</span> [restricoes criativas]</p>
+
+                  <p class="mt-3 text-amber-400">### 6. ASSETS DISPONIVEIS</p>
+                  <p><span class="text-neutral-500">Footage existente:</span> [sim/nao - descricao]</p>
+                  <p><span class="text-neutral-500">Audio/musica:</span> [licenciado/a providenciar]</p>
+                  <p><span class="text-neutral-500">Brand guidelines:</span> [link ou arquivo]</p>
+
+                  <p class="mt-3 text-amber-400">### 7. ENTREGAVEIS</p>
+                  <p><span class="text-neutral-500">Versao principal:</span> [especificacoes]</p>
+                  <p><span class="text-neutral-500">Versoes adicionais:</span> [adaptacoes]</p>
+                  <p><span class="text-neutral-500">Arquivos fonte:</span> [projeto editavel?]</p>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Exemplo de Briefing Preenchido</h4>
+                <div class="bg-dark-800/50 rounded-lg p-4 text-sm text-neutral-300 space-y-2">
+                  <p><strong class="text-amber-400">Cliente:</strong> CafeAroma (cafeteria artesanal)</p>
+                  <p><strong class="text-amber-400">Projeto:</strong> Video promocional metodo V60</p>
+                  <p><strong class="text-amber-400">Deadline:</strong> 7 dias</p>
+                  <p><strong class="text-amber-400">Objetivo:</strong> Aumentar vendas do workshop de V60 em 30%</p>
+                  <p><strong class="text-amber-400">Publico:</strong> Amantes de cafe 25-40, buscam experiencia premium</p>
+                  <p><strong class="text-amber-400">Formato:</strong> Reels 9:16, 60 segundos max</p>
+                  <p><strong class="text-amber-400">Tom:</strong> Sofisticado mas acessivel, ASMR visual</p>
+                  <p><strong class="text-amber-400">Obrigatorio:</strong> Mostrar o processo, close dos graos, steam shot</p>
+                  <p><strong class="text-amber-400">Evitar:</strong> Parecer industrial, pressa, musica generica</p>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-3">Exercicio Pratico</h4>
+                <ol class="list-decimal list-inside text-neutral-300 space-y-2 text-sm">
+                  <li>Escolha um negocio local ou ficticio</li>
+                  <li>Preencha o template COMPLETO como se fosse o cliente</li>
+                  <li>Espere 24 horas (simula receber brief de terceiro)</li>
+                  <li>Leia o brief como produtor e anote duvidas</li>
+                  <li>Crie uma lista de perguntas de alinhamento</li>
+                  <li>Execute o projeto seguindo EXATAMENTE o brief</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 3 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                03
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Exercicio: Deadline Impossivel</h3>
+                <p class="text-neutral-400 text-sm mt-1">Producao sob pressao extrema de tempo</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Este exercicio simula a realidade de producoes comerciais onde o prazo
+                e inegociavel. Voce vai descobrir o que REALMENTE e essencial quando
+                nao ha tempo para perfeccionismo.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Os Desafios de Tempo</h4>
+                <div class="space-y-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4 border-l-4 border-red-500">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-red-400">Desafio 1: Video em 1 Hora</span>
+                      <span class="text-xs bg-red-500/20 text-red-400 px-2 py-1 rounded">Extremo</span>
+                    </div>
+                    <p class="text-sm text-neutral-400">
+                      Crie um video de 30-60 segundos completo. Inclui: ideacao, gravacao,
+                      edicao, exportacao. Timer visivel, sem pausas.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4 border-l-4 border-amber-500">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-amber-400">Desafio 2: Edicao em 30 Minutos</span>
+                      <span class="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded">Dificil</span>
+                    </div>
+                    <p class="text-sm text-neutral-400">
+                      Receba footage bruto (proprio ou de arquivo) e entregue versao
+                      final em 30 minutos. Corte, trilha, graficos basicos.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4 border-l-4 border-green-500">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium text-green-400">Desafio 3: Thumbnail em 10 Minutos</span>
+                      <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Moderado</span>
+                    </div>
+                    <p class="text-sm text-neutral-400">
+                      Dado um titulo, crie thumbnail profissional em 10 minutos.
+                      Inclui: conceito, execucao, 3 variacoes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Licoes do Deadline Impossivel</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Voce Vai Descobrir...</div>
+                    <ul class="text-sm text-neutral-400 space-y-1">
+                      <li>- O que e REALMENTE essencial</li>
+                      <li>- Seus gargalos de processo</li>
+                      <li>- Onde perde tempo sem perceber</li>
+                      <li>- Templates que precisam existir</li>
+                    </ul>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Voce Vai Parar de...</div>
+                    <ul class="text-sm text-neutral-400 space-y-1">
+                      <li>- Ajustar detalhes invisiveis</li>
+                      <li>- Refazer coisas que funcionam</li>
+                      <li>- Procrastinar com "pesquisa"</li>
+                      <li>- Esperar condicoes ideais</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-3">Protocolo do Desafio</h4>
+                <ol class="list-decimal list-inside text-neutral-300 space-y-2 text-sm">
+                  <li>Defina o brief ANTES de comecar o timer</li>
+                  <li>Tenha todos os assets prontos (footage, musica, etc)</li>
+                  <li>Use timer visivel na tela o tempo todo</li>
+                  <li>ZERO perfeccionismo - apenas entrega</li>
+                  <li>Ao fim do tempo, PARE imediatamente</li>
+                  <li>Avalie: o que voce cortou? O que fez falta?</li>
+                </ol>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Reflexao Pos-Desafio</h4>
+                <div class="bg-dark-900/50 rounded-lg p-4 font-mono text-sm text-neutral-400">
+                  <p class="text-amber-400">## Analise Pos-Deadline</p>
+                  <p class="mt-2"><span class="text-neutral-500">Tempo total:</span> [X minutos]</p>
+                  <p><span class="text-neutral-500">Entregue no prazo:</span> [sim/nao]</p>
+                  <p class="mt-2"><span class="text-neutral-500">O que cortei:</span> [lista]</p>
+                  <p><span class="text-neutral-500">O que fez falta:</span> [nada/lista]</p>
+                  <p><span class="text-neutral-500">Maior gargalo:</span> [etapa que mais atrasou]</p>
+                  <p class="mt-2"><span class="text-neutral-500">Processo a melhorar:</span> [insight]</p>
+                  <p><span class="text-neutral-500">Template a criar:</span> [o que automatizar]</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 4 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                04
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Exercicio: Revisao por Pares</h3>
+                <p class="text-neutral-400 text-sm mt-1">Sistema de feedback estruturado</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Em producoes profissionais, nada vai ao ar sem multiplas revisoes.
+                Este exercicio ensina a criar e participar de processos de feedback
+                que elevam a qualidade consistentemente.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">O Ciclo de Revisao Profissional</h4>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center">
+                      <span class="text-amber-400 font-bold">1</span>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Rough Cut</div>
+                      <p class="text-sm text-neutral-500">Primeira versao - foco em estrutura e narrativa</p>
+                    </div>
+                    <div class="text-xs text-amber-400">50% pronto</div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center">
+                      <span class="text-amber-400 font-bold">2</span>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Fine Cut</div>
+                      <p class="text-sm text-neutral-500">Ajustes de timing, ritmo e fluxo</p>
+                    </div>
+                    <div class="text-xs text-amber-400">75% pronto</div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center">
+                      <span class="text-amber-400 font-bold">3</span>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Picture Lock</div>
+                      <p class="text-sm text-neutral-500">Edicao finalizada, so falta polimento</p>
+                    </div>
+                    <div class="text-xs text-amber-400">90% pronto</div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center">
+                      <span class="text-amber-400 font-bold">4</span>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Final Delivery</div>
+                      <p class="text-sm text-neutral-500">Color, audio, graficos finais, exportacao</p>
+                    </div>
+                    <div class="text-xs text-green-400">100% pronto</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Template de Feedback</h4>
+                <div class="bg-dark-900/50 rounded-lg p-4 font-mono text-sm text-neutral-400">
+                  <p class="text-amber-400">## REVISAO DE VIDEO</p>
+                  <p class="mt-2"><span class="text-neutral-500">Revisor:</span> [nome]</p>
+                  <p><span class="text-neutral-500">Data:</span> [dd/mm/aaaa]</p>
+                  <p><span class="text-neutral-500">Versao:</span> [rough/fine/lock]</p>
+
+                  <p class="mt-3 text-amber-400">### ASPECTOS POSITIVOS</p>
+                  <p class="text-neutral-500">[Liste 3 coisas que funcionam bem]</p>
+
+                  <p class="mt-3 text-amber-400">### AJUSTES NECESSARIOS</p>
+                  <p class="text-neutral-500">[Timestamp] - [Descricao do problema] - [Sugestao]</p>
+
+                  <p class="mt-3 text-amber-400">### PRIORIDADE</p>
+                  <p class="text-neutral-500">Critico: [lista]</p>
+                  <p class="text-neutral-500">Importante: [lista]</p>
+                  <p class="text-neutral-500">Nice-to-have: [lista]</p>
+
+                  <p class="mt-3 text-amber-400">### ATENDE O BRIEFING?</p>
+                  <p class="text-neutral-500">[ ] Objetivo | [ ] Duracao | [ ] Tom | [ ] CTA</p>
+
+                  <p class="mt-3 text-amber-400">### APROVADO PARA PROXIMA FASE?</p>
+                  <p class="text-neutral-500">[ ] Sim | [ ] Com ajustes | [ ] Refazer</p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-dark-700/50 rounded-xl p-5">
+                  <h4 class="font-semibold text-green-400 mb-3">Bom Feedback</h4>
+                  <ul class="space-y-2 text-sm text-neutral-300">
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>Especifico com timestamp</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>Descreve o problema</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>Sugere solucao possivel</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>Prioriza por impacto</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="bg-dark-700/50 rounded-xl p-5">
+                  <h4 class="font-semibold text-red-400 mb-3">Feedback Inutil</h4>
+                  <ul class="space-y-2 text-sm text-neutral-300">
+                    <li class="flex items-start gap-2">
+                      <span class="text-red-400">X</span>
+                      <span>"Nao gostei muito"</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-red-400">X</span>
+                      <span>"Algo esta estranho"</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-red-400">X</span>
+                      <span>"Precisa melhorar"</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-red-400">X</span>
+                      <span>"Faz diferente"</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-3">Exercicio: Auto-Revisao Estruturada</h4>
+                <p class="text-neutral-300 text-sm mb-3">
+                  Se voce trabalha sozinho, faca revisao com 24h de distancia:
+                </p>
+                <ol class="list-decimal list-inside text-neutral-300 space-y-1 text-sm">
+                  <li>Termine o rough cut e PARE</li>
+                  <li>Espere 24 horas sem ver o video</li>
+                  <li>Assista com olhos frescos e preencha o template</li>
+                  <li>Implemente APENAS itens criticos e importantes</li>
+                  <li>Repita para fine cut</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 5 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                05
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Exercicio: Simulacao de Produtora</h3>
+                <p class="text-neutral-400 text-sm mt-1">Assuma multiplos papeis em um projeto</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Uma produtora tem funcoes especializadas. Neste exercicio, voce vai
+                assumir cada papel separadamente, desenvolvendo habilidades especificas
+                e entendendo o workflow completo.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Os Papeis da Producao</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Produtor Executivo</div>
+                    <p class="text-sm text-neutral-500 mb-2">
+                      Define escopo, orcamento, prazos. Aprova direcao criativa.
+                    </p>
+                    <div class="text-xs text-neutral-600">Pergunta: "Vale o investimento?"</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Diretor Criativo</div>
+                    <p class="text-sm text-neutral-500 mb-2">
+                      Visao artistica, tom, estetica. Decide o "como contar".
+                    </p>
+                    <div class="text-xs text-neutral-600">Pergunta: "Comunica a mensagem certa?"</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Roteirista</div>
+                    <p class="text-sm text-neutral-500 mb-2">
+                      Estrutura narrativa, dialogos, timing de informacao.
+                    </p>
+                    <div class="text-xs text-neutral-600">Pergunta: "A historia flui?"</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Diretor de Fotografia</div>
+                    <p class="text-sm text-neutral-500 mb-2">
+                      Enquadramentos, iluminacao, movimentos de camera.
+                    </p>
+                    <div class="text-xs text-neutral-600">Pergunta: "A imagem conta a historia?"</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Editor</div>
+                    <p class="text-sm text-neutral-500 mb-2">
+                      Ritmo, cortes, continuidade, trilha, graficos.
+                    </p>
+                    <div class="text-xs text-neutral-600">Pergunta: "O ritmo esta certo?"</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">QA / Controle de Qualidade</div>
+                    <p class="text-sm text-neutral-500 mb-2">
+                      Verificacao tecnica, checklist de entrega.
+                    </p>
+                    <div class="text-xs text-neutral-600">Pergunta: "Tem algum erro tecnico?"</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Exercicio: Uma Semana, Seis Chapeus</h4>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-sm">
+                    <thead>
+                      <tr class="border-b border-dark-600">
+                        <th class="text-left py-3 text-amber-400">Dia</th>
+                        <th class="text-left py-3 text-amber-400">Papel</th>
+                        <th class="text-left py-3 text-amber-400">Entregavel</th>
+                      </tr>
+                    </thead>
+                    <tbody class="text-neutral-300">
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3">Segunda</td>
+                        <td class="py-3">Produtor Executivo</td>
+                        <td class="py-3 text-neutral-500">Briefing completo + cronograma</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3">Terca</td>
+                        <td class="py-3">Diretor Criativo</td>
+                        <td class="py-3 text-neutral-500">Moodboard + direcao de arte</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3">Quarta</td>
+                        <td class="py-3">Roteirista</td>
+                        <td class="py-3 text-neutral-500">Roteiro completo formatado</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3">Quinta</td>
+                        <td class="py-3">DP + Gravacao</td>
+                        <td class="py-3 text-neutral-500">Footage bruto organizado</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3">Sexta</td>
+                        <td class="py-3">Editor</td>
+                        <td class="py-3 text-neutral-500">Fine cut completo</td>
+                      </tr>
+                      <tr>
+                        <td class="py-3">Sabado</td>
+                        <td class="py-3">QA</td>
+                        <td class="py-3 text-neutral-500">Checklist + versao final</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-2">A Regra de Ouro</h4>
+                <p class="text-neutral-300 text-sm">
+                  Quando vestir um chapeu, IGNORE as preocupacoes dos outros. O roteirista
+                  nao pensa em orcamento. O editor nao questiona o roteiro. Cada papel
+                  tem um foco unico - respeite isso para desenvolver cada habilidade.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 6 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                06
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Checklist de Entrega Profissional</h3>
+                <p class="text-neutral-400 text-sm mt-1">Padrao de qualidade nao-negociavel</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Produtoras profissionais tem checklists que DEVEM ser cumpridos antes
+                de qualquer entrega. Este e seu padrao minimo - nada vai ao ar sem
+                passar por todos os itens.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Checklist Master de Entrega</h4>
+                <div class="space-y-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-3">TECNICO</div>
+                    <div class="grid md:grid-cols-2 gap-2 text-sm text-neutral-300">
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Resolucao correta (1080p/4K)</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Frame rate consistente</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Aspect ratio correto</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Codec apropriado</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Sem frames pretos/corrompidos</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Duracao dentro do especificado</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-3">AUDIO</div>
+                    <div class="grid md:grid-cols-2 gap-2 text-sm text-neutral-300">
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Niveis entre -6dB e -3dB</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Sem clipping/distorcao</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Voz claramente audivel</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Musica licenciada</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Fade in/out suaves</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Sem ruidos/pops indesejados</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-3">VISUAL</div>
+                    <div class="grid md:grid-cols-2 gap-2 text-sm text-neutral-300">
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Color grading consistente</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Exposicao corrigida</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Graficos alinhados</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Texto legivel</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Safe zones respeitadas</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Logo na posicao correta</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-3">CONTEUDO</div>
+                    <div class="grid md:grid-cols-2 gap-2 text-sm text-neutral-300">
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Atende o briefing</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>CTA presente</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Sem erros de ortografia</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Informacoes corretas</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Tom de voz apropriado</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                        <span>Nenhum conteudo sensivel</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-2">Regra Nao-Negociavel</h4>
+                <p class="text-neutral-300 text-sm">
+                  Se UM item do checklist falhar, o video NAO esta pronto. Nao existe
+                  "so esse detalhe". Profissionais nao entregam trabalho incompleto.
+                  Use este checklist em TODOS os projetos, mesmo pessoais.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Completion Box -->
+        <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-2xl p-8 border border-amber-500/20 mt-12">
+          <h3 class="text-2xl font-bold text-amber-400 mb-4">Lab Completo: Proximos Passos</h3>
+          <p class="text-neutral-300 mb-6">
+            O Modo Estudio transforma projetos pessoais em portfolio profissional.
+            Use esses processos em TODOS os seus projetos - quanto mais pratica,
+            mais natural se torna trabalhar com padroes de qualidade elevados.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="lab-4-2.html" class="px-6 py-3 bg-dark-700 hover:bg-dark-600 rounded-xl transition-colors">
+              Lab Anterior: Leitura Reversa
+            </a>
+            <a href="lab-4-4.html" class="px-6 py-3 bg-amber-600 hover:bg-amber-500 text-dark-900 font-semibold rounded-xl transition-colors">
+              Proximo Lab: Portfolio com IA
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark-800 border-t border-dark-700 py-8 mt-16">
+    <div class="container mx-auto px-6 text-center text-neutral-500">
+      <p>&copy; 2026 VisionPro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTopic(button) {
+      const topicItem = button.parentElement;
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const icon = button.querySelector('span:last-child');
+
+      const container = button.closest('section');
+      container.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) {
+          exp.classList.remove('active');
+          const otherButton = exp.previousElementSibling;
+          const otherIcon = otherButton.querySelector('span:last-child');
+          if (otherIcon) otherIcon.textContent = '+';
+        }
+      });
+
+      explanation.classList.toggle('active');
+      icon.textContent = explanation.classList.contains('active') ? '−' : '+';
+    }
+  </script>
+</body>
+</html>

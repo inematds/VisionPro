@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 4.2: Leitura Reversa - VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              900: '#0a0a0f',
+              800: '#12121a',
+              700: '#1a1a24',
+              600: '#24242e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .topic-explanation {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+    .topic-explanation.active {
+      max-height: 5000px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+  <!-- Header -->
+  <header class="bg-dark-800/80 backdrop-blur-md border-b border-dark-600 sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center font-bold text-dark-900">
+            VP
+          </div>
+          <span class="text-xl font-semibold">VisionPro</span>
+        </div>
+        <nav class="flex items-center gap-6">
+          <a href="../../index.html" class="text-neutral-400 hover:text-white transition-colors">Inicio</a>
+          <a href="index.html" class="text-neutral-400 hover:text-white transition-colors">Trilha 4</a>
+          <span class="text-amber-400 font-medium">Lab 4.2</span>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-dark-900 to-dark-900"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-sm font-medium">
+            Laboratorio 4.2
+          </span>
+          <span class="text-neutral-500">|</span>
+          <span class="text-neutral-400">6 Tecnicas de Analise</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          <span class="gradient-text">Leitura Reversa</span>
+        </h1>
+        <p class="text-xl text-neutral-300 leading-relaxed mb-8">
+          Aprenda a desconstruir conteudos de sucesso para extrair principios replicaveis.
+          Este metodo de "engenharia reversa criativa" transforma qualquer video viral
+          em material de estudo.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 text-neutral-400">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+            <span>Analise profissional</span>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-400">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+            <span>Templates de estudo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+
+        <!-- Intro Box -->
+        <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-2xl p-8 border border-amber-500/20 mb-12">
+          <h2 class="text-2xl font-bold text-amber-400 mb-4">O Que e Leitura Reversa?</h2>
+          <p class="text-neutral-300 mb-6">
+            Leitura Reversa e assistir conteudo de forma ativa e analitica, desconstruindo
+            cada elemento para entender POR QUE funciona. Diferente de assistir passivamente,
+            voce se torna um estudioso do formato.
+          </p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-dark-700/50 rounded-xl p-4">
+              <div class="text-red-400 font-semibold mb-2">Assistir Passivo</div>
+              <ul class="text-sm text-neutral-400 space-y-1">
+                <li>- "Gostei desse video"</li>
+                <li>- "Essa parte foi legal"</li>
+                <li>- "Quero fazer parecido"</li>
+                <li>- Nenhum insight acionavel</li>
+              </ul>
+            </div>
+            <div class="bg-dark-700/50 rounded-xl p-4">
+              <div class="text-green-400 font-semibold mb-2">Leitura Reversa</div>
+              <ul class="text-sm text-neutral-400 space-y-1">
+                <li>- "O gancho usa pergunta + promessa"</li>
+                <li>- "Cortes a cada 3-4 segundos"</li>
+                <li>- "Storytelling com 3 atos em 60s"</li>
+                <li>- Framework replicavel</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 1 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                01
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">O Framework de Desconstrucao</h3>
+                <p class="text-neutral-400 text-sm mt-1">Sistema completo de analise de videos</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Este framework divide qualquer video em 7 camadas de analise. Cada camada
+                revela principios diferentes que voce pode aplicar no seu proprio conteudo.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">As 7 Camadas de Analise</h4>
+                <div class="space-y-4">
+                  <div class="flex items-start gap-4 bg-dark-800/50 rounded-lg p-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-amber-400 font-bold">1</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">Estrutura Macro</div>
+                      <p class="text-sm text-neutral-400">
+                        Duracao total, divisao em segmentos, quantidade de "capitulos", arco narrativo geral.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 bg-dark-800/50 rounded-lg p-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-amber-400 font-bold">2</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">Gancho e Retencao</div>
+                      <p class="text-sm text-neutral-400">
+                        Primeiros 3-10 segundos, tecnica de abertura, promessa feita, loop abertos.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 bg-dark-800/50 rounded-lg p-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-amber-400 font-bold">3</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">Ritmo e Pacing</div>
+                      <p class="text-sm text-neutral-400">
+                        Frequencia de cortes, variacao de energia, momentos de pausa, uso do silencio.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 bg-dark-800/50 rounded-lg p-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-amber-400 font-bold">4</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">Linguagem Visual</div>
+                      <p class="text-sm text-neutral-400">
+                        Enquadramentos usados, movimentos de camera, color grading, graficos e texto.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 bg-dark-800/50 rounded-lg p-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-amber-400 font-bold">5</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">Camada de Audio</div>
+                      <p class="text-sm text-neutral-400">
+                        Musica e quando entra, efeitos sonoros, niveis de voz, ambiente e foley.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 bg-dark-800/50 rounded-lg p-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-amber-400 font-bold">6</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">Script e Copywriting</div>
+                      <p class="text-sm text-neutral-400">
+                        Estrutura de frases, gatilhos usados, tom de voz, CTAs, storytelling.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 bg-dark-800/50 rounded-lg p-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-amber-400 font-bold">7</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">Emocao e Conexao</div>
+                      <p class="text-sm text-neutral-400">
+                        Jornada emocional, vulnerabilidade, humor, relatabilidade, autenticidade.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-2">Regra de Ouro</h4>
+                <p class="text-neutral-300 text-sm">
+                  Assista o video 7 vezes - uma vez focando APENAS em cada camada.
+                  Na primeira vez, ignore tudo exceto estrutura. Na segunda, so repare no gancho.
+                  Este foco isolado revela detalhes invisiveis na visualizacao normal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 2 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                02
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Exercicio: Dissecando o Gancho</h3>
+                <p class="text-neutral-400 text-sm mt-1">Analise profunda dos primeiros segundos</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                O gancho e o elemento mais estudado em conteudo viral. Neste exercicio,
+                voce vai analisar 10 ganchos diferentes e categorizar as tecnicas usadas.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Tipos de Gancho</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Pergunta Intrigante</div>
+                    <p class="text-sm text-neutral-500 mb-2">"Voce sabia que 90% das pessoas fazem isso errado?"</p>
+                    <div class="text-xs text-neutral-600">Ativa curiosidade, promete revelacao</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Afirmacao Controversa</div>
+                    <p class="text-sm text-neutral-500 mb-2">"Tudo que voce aprendeu sobre X esta errado"</p>
+                    <div class="text-xs text-neutral-600">Desafia crencas, gera tensao</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Promessa de Valor</div>
+                    <p class="text-sm text-neutral-500 mb-2">"Em 5 minutos voce vai dominar..."</p>
+                    <div class="text-xs text-neutral-600">Define tempo e beneficio claro</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Historia Pessoal</div>
+                    <p class="text-sm text-neutral-500 mb-2">"Isso aconteceu comigo ontem..."</p>
+                    <div class="text-xs text-neutral-600">Cria conexao, storytelling</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">In Medias Res</div>
+                    <p class="text-sm text-neutral-500 mb-2">"...e foi ai que tudo deu errado"</p>
+                    <div class="text-xs text-neutral-600">Comeca no meio da acao</div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Pattern Interrupt</div>
+                    <p class="text-sm text-neutral-500 mb-2">[Som alto + visual inesperado]</p>
+                    <div class="text-xs text-neutral-600">Quebra expectativa sensorial</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Template de Analise de Gancho</h4>
+                <div class="bg-dark-900/50 rounded-lg p-4 font-mono text-sm text-neutral-400">
+                  <p class="text-amber-400">## Analise de Gancho #[N]</p>
+                  <p class="mt-2"><span class="text-neutral-500">Video:</span> [URL ou titulo]</p>
+                  <p><span class="text-neutral-500">Criador:</span> [nome do canal]</p>
+                  <p><span class="text-neutral-500">Nicho:</span> [categoria]</p>
+                  <p class="mt-2"><span class="text-neutral-500">Duracao do gancho:</span> [X segundos]</p>
+                  <p><span class="text-neutral-500">Tipo de gancho:</span> [classificacao]</p>
+                  <p><span class="text-neutral-500">Transcricao exata:</span> "[palavras]"</p>
+                  <p class="mt-2"><span class="text-neutral-500">Elemento visual:</span> [descricao]</p>
+                  <p><span class="text-neutral-500">Elemento sonoro:</span> [musica/efeito]</p>
+                  <p class="mt-2"><span class="text-neutral-500">Loop aberto?</span> [sim/nao - qual?]</p>
+                  <p><span class="text-neutral-500">Emocao ativada:</span> [curiosidade/medo/etc]</p>
+                  <p class="mt-2"><span class="text-neutral-500">Por que funciona:</span> [sua analise]</p>
+                  <p><span class="text-neutral-500">Como adaptar:</span> [aplicacao para seu conteudo]</p>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-3">Exercicio Pratico</h4>
+                <ol class="list-decimal list-inside text-neutral-300 space-y-2 text-sm">
+                  <li>Encontre 10 videos virais no seu nicho (1M+ views)</li>
+                  <li>Preencha o template para cada um</li>
+                  <li>Identifique padroes: qual tipo de gancho aparece mais?</li>
+                  <li>Crie 3 variacoes de gancho para seu proximo video</li>
+                  <li>Teste com uma pessoa: qual gancho gerou mais interesse?</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 3 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                03
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Exercicio: Mapeamento de Estrutura</h3>
+                <p class="text-neutral-400 text-sm mt-1">Crie o "esqueleto" de videos de sucesso</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Todo video de sucesso segue uma estrutura - mesmo que o criador nao tenha
+                consciencia dela. Este exercicio ensina a visualizar essa estrutura
+                e transforma-la em um template reusavel.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">O Mapa de Estrutura</h4>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-sm">
+                    <thead>
+                      <tr class="border-b border-dark-600">
+                        <th class="text-left py-3 text-amber-400 w-20">Tempo</th>
+                        <th class="text-left py-3 text-amber-400">Segmento</th>
+                        <th class="text-left py-3 text-amber-400">Funcao</th>
+                        <th class="text-left py-3 text-amber-400 w-16">%</th>
+                      </tr>
+                    </thead>
+                    <tbody class="text-neutral-300">
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3 text-neutral-500">0:00-0:10</td>
+                        <td class="py-3">Gancho</td>
+                        <td class="py-3 text-neutral-400">Captura atencao</td>
+                        <td class="py-3 text-amber-400">5%</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3 text-neutral-500">0:10-0:30</td>
+                        <td class="py-3">Contexto</td>
+                        <td class="py-3 text-neutral-400">Setup do problema/tema</td>
+                        <td class="py-3 text-amber-400">10%</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3 text-neutral-500">0:30-2:00</td>
+                        <td class="py-3">Conteudo Principal</td>
+                        <td class="py-3 text-neutral-400">Entrega de valor</td>
+                        <td class="py-3 text-amber-400">60%</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3 text-neutral-500">2:00-2:30</td>
+                        <td class="py-3">Climax/Revelacao</td>
+                        <td class="py-3 text-neutral-400">Ponto alto</td>
+                        <td class="py-3 text-amber-400">15%</td>
+                      </tr>
+                      <tr>
+                        <td class="py-3 text-neutral-500">2:30-3:00</td>
+                        <td class="py-3">CTA/Fechamento</td>
+                        <td class="py-3 text-neutral-400">Proxima acao</td>
+                        <td class="py-3 text-amber-400">10%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Como Mapear Qualquer Video</h4>
+                <div class="space-y-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-sm font-medium text-neutral-300 mb-2">Passo 1: Primeira Assistida</div>
+                    <p class="text-xs text-neutral-500">
+                      Assista normalmente com um timer. Sempre que sentir uma "mudanca" de energia
+                      ou topico, anote o timestamp.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-sm font-medium text-neutral-300 mb-2">Passo 2: Segmentacao</div>
+                    <p class="text-xs text-neutral-500">
+                      Revise seus timestamps e nomeie cada segmento. O que acontece em cada um?
+                      Qual a funcao narrativa?
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-sm font-medium text-neutral-300 mb-2">Passo 3: Calcule Proporcoes</div>
+                    <p class="text-xs text-neutral-500">
+                      Que porcentagem do video e dedicada a cada segmento? Isso revela prioridades
+                      do criador.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-sm font-medium text-neutral-300 mb-2">Passo 4: Identifique Padroes</div>
+                    <p class="text-xs text-neutral-500">
+                      Faca isso com 5 videos do mesmo criador. Os melhores criadores tem estruturas
+                      consistentes (mesmo sem saber).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-dark-700/50 rounded-xl p-5">
+                  <h4 class="font-semibold text-amber-400 mb-3">Estruturas Comuns</h4>
+                  <ul class="space-y-2 text-sm text-neutral-300">
+                    <li><span class="text-amber-400">Tutorial:</span> Problema > Solucao > Demo > Recap</li>
+                    <li><span class="text-amber-400">Story:</span> Hook > Setup > Conflito > Resolucao</li>
+                    <li><span class="text-amber-400">Lista:</span> Intro > Item 1-N > Ranking > CTA</li>
+                    <li><span class="text-amber-400">Review:</span> Contexto > Pros > Cons > Veredicto</li>
+                  </ul>
+                </div>
+                <div class="bg-dark-700/50 rounded-xl p-5">
+                  <h4 class="font-semibold text-amber-400 mb-3">Metricas de Estrutura</h4>
+                  <ul class="space-y-2 text-sm text-neutral-300">
+                    <li><span class="text-neutral-500">Gancho ideal:</span> 3-10 segundos</li>
+                    <li><span class="text-neutral-500">Segmento maximo:</span> 60-90 segundos</li>
+                    <li><span class="text-neutral-500">Transicoes:</span> A cada 15-30 segundos</li>
+                    <li><span class="text-neutral-500">CTA:</span> Maximo 10% do video</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 4 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                04
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Exercicio: Analise de Retencao</h3>
+                <p class="text-neutral-400 text-sm mt-1">Preveja picos e quedas de audiencia</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Criadores profissionais analisam graficos de retencao obsessivamente.
+                Neste exercicio, voce vai aprender a PREVER onde a audiencia abandona
+                um video - e por que.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Gatilhos de Abandono</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-4 bg-dark-800/50 rounded-lg p-3">
+                    <div class="w-16 text-center">
+                      <div class="text-2xl font-bold text-red-400">-15%</div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Introducao longa</div>
+                      <p class="text-sm text-neutral-500">Mais de 15s sem valor ou gancho</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 bg-dark-800/50 rounded-lg p-3">
+                    <div class="w-16 text-center">
+                      <div class="text-2xl font-bold text-red-400">-20%</div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Mudanca brusca de topico</div>
+                      <p class="text-sm text-neutral-500">Expectativa quebrada sem transicao</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 bg-dark-800/50 rounded-lg p-3">
+                    <div class="w-16 text-center">
+                      <div class="text-2xl font-bold text-red-400">-10%</div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Segmento muito longo</div>
+                      <p class="text-sm text-neutral-500">Mesmo topico por mais de 90s</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 bg-dark-800/50 rounded-lg p-3">
+                    <div class="w-16 text-center">
+                      <div class="text-2xl font-bold text-red-400">-25%</div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">CTA prematuro</div>
+                      <p class="text-sm text-neutral-500">"Se inscreva" antes de entregar valor</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 bg-dark-800/50 rounded-lg p-3">
+                    <div class="w-16 text-center">
+                      <div class="text-2xl font-bold text-red-400">-30%</div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Promessa nao cumprida</div>
+                      <p class="text-sm text-neutral-500">Clickbait sem payoff</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Gatilhos de Retencao</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-4 bg-dark-800/50 rounded-lg p-3">
+                    <div class="w-16 text-center">
+                      <div class="text-2xl font-bold text-green-400">+10%</div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Loop aberto</div>
+                      <p class="text-sm text-neutral-500">"Mas isso nao e tudo..." "O melhor vem agora..."</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 bg-dark-800/50 rounded-lg p-3">
+                    <div class="w-16 text-center">
+                      <div class="text-2xl font-bold text-green-400">+15%</div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Revelacao surpreendente</div>
+                      <p class="text-sm text-neutral-500">Informacao inesperada que muda o contexto</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 bg-dark-800/50 rounded-lg p-3">
+                    <div class="w-16 text-center">
+                      <div class="text-2xl font-bold text-green-400">+20%</div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Demonstracao pratica</div>
+                      <p class="text-sm text-neutral-500">Mostrar ao inves de falar</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 bg-dark-800/50 rounded-lg p-3">
+                    <div class="w-16 text-center">
+                      <div class="text-2xl font-bold text-green-400">+25%</div>
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-neutral-200">Momento emocional</div>
+                      <p class="text-sm text-neutral-500">Vulnerabilidade, humor, conexao humana</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-3">Exercicio: Previsao de Retencao</h4>
+                <ol class="list-decimal list-inside text-neutral-300 space-y-2 text-sm">
+                  <li>Escolha um video que voce NAO assistiu ainda</li>
+                  <li>Assista e pause a cada 30 segundos</li>
+                  <li>Preveja: "Aqui a retencao sobe/desce X%"</li>
+                  <li>Anote sua previsao e o motivo</li>
+                  <li>Se tiver acesso ao Analytics, compare com dados reais</li>
+                  <li>Calibre sua intuicao com a pratica</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 5 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                05
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Exercicio: Reconstrucao de Roteiro</h3>
+                <p class="text-neutral-400 text-sm mt-1">Transcreva e analise palavra por palavra</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Este e o exercicio mais trabalhoso - e o mais transformador. Transcrever
+                manualmente um video de sucesso revela nuances de linguagem que voce
+                nunca perceberia assistindo.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">O Processo de Reconstrucao</h4>
+                <div class="space-y-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4 border-l-4 border-amber-500">
+                    <div class="font-medium text-neutral-300 mb-2">Fase 1: Transcricao Literal</div>
+                    <p class="text-sm text-neutral-500">
+                      Transcreva TUDO - incluindo hesitacoes, "entao", "tipo", repeticoes.
+                      Nao limpe nada. Anote tambem pausas e enfase.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4 border-l-4 border-amber-500">
+                    <div class="font-medium text-neutral-300 mb-2">Fase 2: Analise de Padroes</div>
+                    <p class="text-sm text-neutral-500">
+                      Destaque: gatilhos emocionais (vermelho), transicoes (azul),
+                      loops abertos (amarelo), CTAs (verde).
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4 border-l-4 border-amber-500">
+                    <div class="font-medium text-neutral-300 mb-2">Fase 3: Engenharia Reversa</div>
+                    <p class="text-sm text-neutral-500">
+                      Crie uma versao "esqueleto" do roteiro - apenas a estrutura,
+                      sem o conteudo especifico. Este e seu template.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4 border-l-4 border-amber-500">
+                    <div class="font-medium text-neutral-300 mb-2">Fase 4: Adaptacao</div>
+                    <p class="text-sm text-neutral-500">
+                      Use o esqueleto para criar seu proprio roteiro sobre um tema
+                      diferente, mantendo a mesma estrutura.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Template de Reconstrucao</h4>
+                <div class="bg-dark-900/50 rounded-lg p-4 font-mono text-xs text-neutral-400 overflow-x-auto">
+                  <pre class="whitespace-pre-wrap">
+## Video Original: [Titulo]
+## Criador: [Nome]
+## Duracao: [X:XX]
+
+---
+
+### TRANSCRICAO COM MARCACOES
+
+[0:00-0:03] **GANCHO**
+"[Texto exato]"
+> Tecnica: [tipo de gancho]
+> Emocao: [curiosidade/medo/etc]
+
+[0:03-0:15] **CONTEXTO**
+"[Texto exato]"
+> Funcao: [estabelece problema/credibilidade]
+> Loop aberto: [sim/nao]
+
+[0:15-0:45] **CONTEUDO 1**
+"[Texto exato]"
+> Transicao usada: "[frase de ligacao]"
+> Exemplo/prova: [tipo]
+
+[...]
+
+---
+
+### ESQUELETO ESTRUTURAL
+
+1. Gancho: [TIPO] + [PROMESSA]
+2. Contexto: [PROBLEMA] em [X] segundos
+3. Ponto 1: [AFIRMACAO] + [PROVA]
+4. Transicao: [FRASE MODELO]
+5. [...]
+
+---
+
+### MEU ROTEIRO ADAPTADO
+
+[Usar mesmo esqueleto, tema diferente]
+                  </pre>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-green-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-green-500">
+                <h4 class="font-semibold text-green-400 mb-2">Atalho com IA</h4>
+                <p class="text-neutral-300 text-sm">
+                  Use ferramentas de transcricao automatica para a Fase 1, mas SEMPRE
+                  revise manualmente. A IA perde enfases, pausas e nuances que sao
+                  cruciais para a analise. A transcricao e so o comeco do trabalho.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 6 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                06
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Biblioteca de Referencias</h3>
+                <p class="text-neutral-400 text-sm mt-1">Sistema de organizacao de estudos</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Todo o trabalho de leitura reversa so tem valor se for organizado e
+                consultavel. Este sistema transforma suas analises em uma biblioteca
+                de referencias que acelera toda producao futura.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Estrutura da Biblioteca</h4>
+                <div class="bg-dark-900/50 rounded-lg p-4 font-mono text-sm text-neutral-400">
+                  <pre class="whitespace-pre-wrap">
+/Biblioteca-Referencias/
+  /Por-Formato/
+    /Tutoriais/
+    /Vlogs/
+    /Reviews/
+    /Shorts/
+    /Documentarios/
+  /Por-Tecnica/
+    /Ganchos/
+    /Transicoes/
+    /CTAs/
+    /Storytelling/
+    /Humor/
+  /Por-Criador/
+    /[Nome do criador]/
+  /Templates/
+    /Roteiros/
+    /Estruturas/
+    /Checklists/
+                  </pre>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-dark-700/50 rounded-xl p-5">
+                  <h4 class="font-semibold text-amber-400 mb-3">O Que Guardar</h4>
+                  <ul class="space-y-2 text-sm text-neutral-300">
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>Ganchos que funcionaram</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>Transicoes criativas</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>Estruturas de roteiro</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>Paletas visuais de referencia</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-green-400">+</span>
+                      <span>Frases/CTAs efetivos</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="bg-dark-700/50 rounded-xl p-5">
+                  <h4 class="font-semibold text-amber-400 mb-3">Metadados por Item</h4>
+                  <ul class="space-y-2 text-sm text-neutral-300">
+                    <li class="flex items-start gap-2">
+                      <span class="text-amber-400">-</span>
+                      <span>Link do video original</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-amber-400">-</span>
+                      <span>Timestamp exato</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-amber-400">-</span>
+                      <span>Por que funciona</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-amber-400">-</span>
+                      <span>Tags de busca</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-amber-400">-</span>
+                      <span>Data de adicao</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Workflow de Uso</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+                    <div class="text-3xl mb-2">1</div>
+                    <div class="text-sm font-medium text-neutral-300">Antes de Criar</div>
+                    <p class="text-xs text-neutral-500 mt-2">
+                      Consulte referencias do formato que vai produzir
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+                    <div class="text-3xl mb-2">2</div>
+                    <div class="text-sm font-medium text-neutral-300">Durante Criacao</div>
+                    <p class="text-xs text-neutral-500 mt-2">
+                      Busque tecnicas especificas quando travar
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+                    <div class="text-3xl mb-2">3</div>
+                    <div class="text-sm font-medium text-neutral-300">Apos Publicar</div>
+                    <p class="text-xs text-neutral-500 mt-2">
+                      Compare metricas com referencias similares
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-3">Meta Semanal</h4>
+                <p class="text-neutral-300 text-sm mb-3">
+                  Para construir uma biblioteca util, comprometa-se com uma rotina minima:
+                </p>
+                <ul class="text-sm text-neutral-400 space-y-1">
+                  <li>- 3 videos analisados por semana</li>
+                  <li>- 5 referencias adicionadas a biblioteca</li>
+                  <li>- 1 template extraido por mes</li>
+                  <li>- Revisao mensal para remover itens obsoletos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Completion Box -->
+        <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-2xl p-8 border border-amber-500/20 mt-12">
+          <h3 class="text-2xl font-bold text-amber-400 mb-4">Lab Completo: Proximos Passos</h3>
+          <p class="text-neutral-300 mb-6">
+            A Leitura Reversa e uma habilidade que melhora com o tempo. Quanto mais videos
+            voce analisar, mais rapido seu olho se torna para identificar o que funciona.
+            Comece com 1 analise profunda por semana.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="lab-4-1.html" class="px-6 py-3 bg-dark-700 hover:bg-dark-600 rounded-xl transition-colors">
+              Lab Anterior: Falhas Guiadas
+            </a>
+            <a href="lab-4-3.html" class="px-6 py-3 bg-amber-600 hover:bg-amber-500 text-dark-900 font-semibold rounded-xl transition-colors">
+              Proximo Lab: Modo Estudio
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark-800 border-t border-dark-700 py-8 mt-16">
+    <div class="container mx-auto px-6 text-center text-neutral-500">
+      <p>&copy; 2026 VisionPro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTopic(button) {
+      const topicItem = button.parentElement;
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const icon = button.querySelector('span:last-child');
+
+      const container = button.closest('section');
+      container.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) {
+          exp.classList.remove('active');
+          const otherButton = exp.previousElementSibling;
+          const otherIcon = otherButton.querySelector('span:last-child');
+          if (otherIcon) otherIcon.textContent = '+';
+        }
+      });
+
+      explanation.classList.toggle('active');
+      icon.textContent = explanation.classList.contains('active') ? '−' : '+';
+    }
+  </script>
+</body>
+</html>

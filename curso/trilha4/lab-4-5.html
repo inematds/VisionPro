@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 4.5: Projeto Final - VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              900: '#0a0a0f',
+              800: '#12121a',
+              700: '#1a1a24',
+              600: '#24242e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .topic-explanation {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+    .topic-explanation.active {
+      max-height: 5000px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+  <!-- Header -->
+  <header class="bg-dark-800/80 backdrop-blur-md border-b border-dark-600 sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center font-bold text-dark-900">
+            VP
+          </div>
+          <span class="text-xl font-semibold">VisionPro</span>
+        </div>
+        <nav class="flex items-center gap-6">
+          <a href="../../index.html" class="text-neutral-400 hover:text-white transition-colors">Inicio</a>
+          <a href="index.html" class="text-neutral-400 hover:text-white transition-colors">Trilha 4</a>
+          <span class="text-amber-400 font-medium">Lab 4.5</span>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-dark-900 to-dark-900"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-sm font-medium">
+            Laboratorio 4.5
+          </span>
+          <span class="text-neutral-500">|</span>
+          <span class="text-neutral-400">Projeto Final do Curso</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          <span class="gradient-text">Projeto Final</span>
+        </h1>
+        <p class="text-xl text-neutral-300 leading-relaxed mb-8">
+          Este e o momento de integrar tudo que voce aprendeu nas 4 trilhas.
+          Voce vai criar uma producao completa do zero, documentar o processo,
+          e sair com uma peca de portfolio profissional.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 text-neutral-400">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+            </svg>
+            <span>Integracao total</span>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-400">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            </svg>
+            <span>Portfolio-ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+
+        <!-- Intro Box -->
+        <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-2xl p-8 border border-amber-500/20 mb-12">
+          <h2 class="text-2xl font-bold text-amber-400 mb-4">O Grande Finale</h2>
+          <p class="text-neutral-300 mb-6">
+            Este projeto integra todas as habilidades desenvolvidas ao longo do curso:
+            fundamentos tecnicos, metodo de producao, tecnicas avancadas e pratica
+            de laboratorio. E sua oportunidade de provar dominio completo.
+          </p>
+          <div class="grid md:grid-cols-4 gap-4">
+            <div class="bg-emerald-500/10 rounded-xl p-4 text-center border border-emerald-500/20">
+              <div class="text-emerald-400 font-bold mb-1">Trilha 1</div>
+              <div class="text-xs text-neutral-400">Fundamentos</div>
+            </div>
+            <div class="bg-blue-500/10 rounded-xl p-4 text-center border border-blue-500/20">
+              <div class="text-blue-400 font-bold mb-1">Trilha 2</div>
+              <div class="text-xs text-neutral-400">Metodo</div>
+            </div>
+            <div class="bg-purple-500/10 rounded-xl p-4 text-center border border-purple-500/20">
+              <div class="text-purple-400 font-bold mb-1">Trilha 3</div>
+              <div class="text-xs text-neutral-400">Avancado</div>
+            </div>
+            <div class="bg-amber-500/10 rounded-xl p-4 text-center border border-amber-500/20">
+              <div class="text-amber-400 font-bold mb-1">Trilha 4</div>
+              <div class="text-xs text-neutral-400">Laboratorios</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 1 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                01
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">O Briefing do Projeto Final</h3>
+                <p class="text-neutral-400 text-sm mt-1">Escolha sua modalidade e escopo</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Voce tem 3 opcoes de projeto final. Escolha baseado nos seus objetivos
+                profissionais e no tipo de trabalho que quer atrair.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Opcao A: Mini-Serie (3 Episodios)</h4>
+                <div class="space-y-3">
+                  <p class="text-neutral-300">
+                    Crie uma serie de 3 videos conectados (2-3 min cada) sobre um tema.
+                    Demonstra capacidade de planejamento de longo prazo e consistencia.
+                  </p>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-sm text-neutral-400">
+                      <strong class="text-amber-400">Ideal para:</strong> Criadores que querem trabalhar
+                      com conteudo serializado, educacional ou documental.
+                    </div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-sm text-neutral-400">
+                      <strong class="text-amber-400">Requisitos:</strong>
+                      <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>3 episodios de 2-3 minutos cada</li>
+                        <li>Identidade visual consistente</li>
+                        <li>Abertura/vinheta unificada</li>
+                        <li>Arco narrativo que conecta os 3</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Opcao B: Campanha Multi-Formato</h4>
+                <div class="space-y-3">
+                  <p class="text-neutral-300">
+                    Crie um pacote completo de video para uma marca: institucional + 3 reels + 2 stories.
+                    Demonstra versatilidade e pensamento de campanha.
+                  </p>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-sm text-neutral-400">
+                      <strong class="text-amber-400">Ideal para:</strong> Quem quer trabalhar com
+                      marcas, agencias ou como freelancer de conteudo comercial.
+                    </div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-sm text-neutral-400">
+                      <strong class="text-amber-400">Requisitos:</strong>
+                      <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>1 video institucional (60-90s)</li>
+                        <li>3 reels (15-30s cada)</li>
+                        <li>2 stories (15s cada)</li>
+                        <li>Brand guidelines respeitadas</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Opcao C: Short Film (5-7 min)</h4>
+                <div class="space-y-3">
+                  <p class="text-neutral-300">
+                    Crie um curta-metragem com narrativa completa. Demonstra capacidade
+                    de contar historias e producao cinematografica.
+                  </p>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-sm text-neutral-400">
+                      <strong class="text-amber-400">Ideal para:</strong> Quem quer trabalhar com
+                      narrativa, documentarios ou producao cinematografica.
+                    </div>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-sm text-neutral-400">
+                      <strong class="text-amber-400">Requisitos:</strong>
+                      <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>5-7 minutos de duracao</li>
+                        <li>Estrutura narrativa completa (3 atos)</li>
+                        <li>Sound design profissional</li>
+                        <li>Color grading cinematografico</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-2">Todos os Projetos Devem Incluir</h4>
+                <ul class="text-neutral-300 text-sm space-y-1">
+                  <li>- Uso documentado de IA em pelo menos 5 etapas</li>
+                  <li>- Briefing formal preenchido</li>
+                  <li>- Processo Modo Estudio (deadline real)</li>
+                  <li>- Caso de estudo completo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 2 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                02
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Fase 1: Pre-Producao Completa</h3>
+                <p class="text-neutral-400 text-sm mt-1">Planejamento profissional do projeto</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                A pre-producao e onde projetos sao ganhos ou perdidos. Esta fase deve
+                ser tratada com a seriedade de um projeto comercial real.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Checklist de Pre-Producao</h4>
+                <div class="space-y-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                      <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                      <span class="font-medium text-neutral-200">1. Briefing Completo</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 ml-7">
+                      Preencha o template de briefing do Lab 4.3 com todos os detalhes.
+                      Inclua cliente ficticio, objetivo, publico, restricoes.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                      <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                      <span class="font-medium text-neutral-200">2. Pesquisa e Referencias</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 ml-7">
+                      Use Leitura Reversa em 5 videos de referencia. Documente
+                      o que vai adaptar para seu projeto.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                      <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                      <span class="font-medium text-neutral-200">3. Roteiro Completo</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 ml-7">
+                      Escreva o roteiro formatado profissionalmente. Use IA para
+                      gerar variacoes e escolha as melhores.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                      <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                      <span class="font-medium text-neutral-200">4. Storyboard/Shot List</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 ml-7">
+                      Planeje cada cena visualmente. Pode usar IA para gerar
+                      referencias visuais ou desenhos de storyboard.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                      <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                      <span class="font-medium text-neutral-200">5. Cronograma de Producao</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 ml-7">
+                      Defina datas especificas para cada fase. Deadline final
+                      deve ser fixo e inegociavel.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                      <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                      <span class="font-medium text-neutral-200">6. Lista de Assets</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 ml-7">
+                      Catalogue tudo que precisa: footage, musica, graficos, fontes,
+                      locacoes, equipamentos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-3">Uso de IA na Pre-Producao</h4>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <span class="text-neutral-400">Pesquisa:</span>
+                    <span class="text-neutral-300"> Analise de tendencias e referencias</span>
+                  </div>
+                  <div>
+                    <span class="text-neutral-400">Roteiro:</span>
+                    <span class="text-neutral-300"> Geracao de variacoes e revisao</span>
+                  </div>
+                  <div>
+                    <span class="text-neutral-400">Storyboard:</span>
+                    <span class="text-neutral-300"> Referencias visuais com geracao de imagem</span>
+                  </div>
+                  <div>
+                    <span class="text-neutral-400">Planejamento:</span>
+                    <span class="text-neutral-300"> Organizacao de cronograma e checklists</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 3 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                03
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Fase 2: Producao e Captura</h3>
+                <p class="text-neutral-400 text-sm mt-1">Execucao das gravacoes</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Com a pre-producao solida, a producao flui naturalmente. Esta fase
+                e sobre executar o plano com eficiencia e capturar material de qualidade.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Protocolo de Gravacao</h4>
+                <div class="space-y-4">
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-emerald-400 text-sm">1</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">Setup Consistente</div>
+                      <p class="text-sm text-neutral-500">
+                        Antes de gravar, verifique: luz, audio, enquadramento,
+                        configuracoes de camera. Use o mesmo setup para cenas que
+                        devem ter continuidade.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-emerald-400 text-sm">2</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">Multiplas Takes</div>
+                      <p class="text-sm text-neutral-500">
+                        Grave pelo menos 3 takes de cada cena importante.
+                        Variacoes dao opcoes na edicao.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-emerald-400 text-sm">3</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">B-Roll Generoso</div>
+                      <p class="text-sm text-neutral-500">
+                        Capture 3x mais B-roll do que voce acha que precisa.
+                        Voce vai agradecer na edicao.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-emerald-400 text-sm">4</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">Audio Separado</div>
+                      <p class="text-sm text-neutral-500">
+                        Sempre que possivel, grave audio separadamente para
+                        ter mais controle na pos.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-emerald-400 text-sm">5</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-neutral-200">Backup Imediato</div>
+                      <p class="text-sm text-neutral-500">
+                        Ao final de cada dia de gravacao, faca backup de TUDO.
+                        Footage perdido nao volta.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Uso de IA na Producao</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Teleprompter IA</div>
+                    <p class="text-sm text-neutral-500">
+                      Use apps com teleprompter inteligente que ajusta velocidade
+                      conforme sua leitura.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Assistente de Setup</div>
+                    <p class="text-sm text-neutral-500">
+                      Peca recomendacoes de configuracao baseadas no seu equipamento
+                      e condicoes de luz.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Geracao de B-Roll</div>
+                    <p class="text-sm text-neutral-500">
+                      Complemente footage real com clips gerados por IA quando
+                      necessario (declare no projeto).
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Log de Gravacao</div>
+                    <p class="text-sm text-neutral-500">
+                      Use IA para transcrever e organizar notas de gravacao
+                      em formato estruturado.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 4 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                04
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Fase 3: Pos-Producao Avancada</h3>
+                <p class="text-neutral-400 text-sm mt-1">Edicao, efeitos e finalizacao</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                A pos-producao e onde a magia acontece. Nesta fase, voce vai aplicar
+                todas as tecnicas avancadas aprendidas na Trilha 3.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Pipeline de Pos-Producao</h4>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-sm">
+                    <thead>
+                      <tr class="border-b border-dark-600">
+                        <th class="text-left py-3 text-amber-400">Fase</th>
+                        <th class="text-left py-3 text-amber-400">Tarefas</th>
+                        <th class="text-left py-3 text-amber-400">Ferramentas IA</th>
+                      </tr>
+                    </thead>
+                    <tbody class="text-neutral-300">
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3">Organizacao</td>
+                        <td class="py-3 text-neutral-400">Import, proxy, bins, selecao</td>
+                        <td class="py-3 text-neutral-500">Transcricao automatica</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3">Assembly</td>
+                        <td class="py-3 text-neutral-400">Rough cut, estrutura narrativa</td>
+                        <td class="py-3 text-neutral-500">Edicao assistida</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3">Fine Cut</td>
+                        <td class="py-3 text-neutral-400">Timing, ritmo, transicoes</td>
+                        <td class="py-3 text-neutral-500">Reframe automatico</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3">Sound Design</td>
+                        <td class="py-3 text-neutral-400">Mix, efeitos, foley, musica</td>
+                        <td class="py-3 text-neutral-500">Isolamento de voz, geracao</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3">VFX/Motion</td>
+                        <td class="py-3 text-neutral-400">Graficos, animacoes, efeitos</td>
+                        <td class="py-3 text-neutral-500">Rotoscopia IA, tracking</td>
+                      </tr>
+                      <tr class="border-b border-dark-700">
+                        <td class="py-3">Color</td>
+                        <td class="py-3 text-neutral-400">Correcao, grading, matching</td>
+                        <td class="py-3 text-neutral-500">Auto-match, LUTs IA</td>
+                      </tr>
+                      <tr>
+                        <td class="py-3">Export</td>
+                        <td class="py-3 text-neutral-400">Render, versoes, entrega</td>
+                        <td class="py-3 text-neutral-500">Upscaling, otimizacao</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Ciclo de Revisao Obrigatorio</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-amber-400 mb-2">Rough Cut</div>
+                    <p class="text-xs text-neutral-500">Auto-revisao apos 24h</p>
+                    <p class="text-xs text-neutral-500 mt-1">Foco: estrutura e narrativa</p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-amber-400 mb-2">Fine Cut</div>
+                    <p class="text-xs text-neutral-500">Feedback de terceiro</p>
+                    <p class="text-xs text-neutral-500 mt-1">Foco: ritmo e clareza</p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-amber-400 mb-2">Picture Lock</div>
+                    <p class="text-xs text-neutral-500">QA tecnico completo</p>
+                    <p class="text-xs text-neutral-500 mt-1">Foco: polimento final</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-2">Padrao de Qualidade</h4>
+                <p class="text-neutral-300 text-sm">
+                  Este e um projeto de portfolio - nao aceite "bom o suficiente".
+                  Cada frame, cada corte, cada som deve ser intencional.
+                  Se algo te incomoda, corrija. A excelencia esta nos detalhes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 5 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                05
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Documentacao e Caso de Estudo</h3>
+                <p class="text-neutral-400 text-sm mt-1">Transformando em portfolio</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                O projeto final so esta completo quando documentado. Esta documentacao
+                e tao importante quanto o video em si - e o que vai para seu portfolio.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Entregaveis de Documentacao</h4>
+                <div class="space-y-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                      <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                      <span class="font-medium text-neutral-200">Caso de Estudo Completo</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 ml-7">
+                      Use o template do Lab 4.4. Inclua: briefing, desafio, processo,
+                      uso de IA, resultados, aprendizados.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                      <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                      <span class="font-medium text-neutral-200">Screenshots de Processo</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 ml-7">
+                      Minimo 10 screenshots mostrando: timeline, prompts de IA,
+                      antes/depois, decisoes criativas.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                      <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                      <span class="font-medium text-neutral-200">Video de Making-Of (Opcional)</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 ml-7">
+                      2-3 minutos mostrando bastidores. Excelente para demonstrar
+                      processo e personalidade.
+                    </p>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                      <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                      <span class="font-medium text-neutral-200">Metricas de Workflow</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 ml-7">
+                      Documente: tempo total, horas por fase, ferramentas usadas,
+                      estimativa de tempo economizado com IA.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Mapa de Uso de IA</h4>
+                <div class="bg-dark-900/50 rounded-lg p-4 font-mono text-sm text-neutral-400">
+                  <p class="text-amber-400">## REGISTRO DE USO DE IA - PROJETO FINAL</p>
+
+                  <p class="mt-3 text-amber-400">### PRE-PRODUCAO</p>
+                  <p><span class="text-neutral-500">1.</span> [Ferramenta] - [Tarefa] - [Resultado]</p>
+                  <p><span class="text-neutral-500">2.</span> [Ferramenta] - [Tarefa] - [Resultado]</p>
+
+                  <p class="mt-3 text-amber-400">### PRODUCAO</p>
+                  <p><span class="text-neutral-500">3.</span> [Ferramenta] - [Tarefa] - [Resultado]</p>
+
+                  <p class="mt-3 text-amber-400">### POS-PRODUCAO</p>
+                  <p><span class="text-neutral-500">4.</span> [Ferramenta] - [Tarefa] - [Resultado]</p>
+                  <p><span class="text-neutral-500">5.</span> [Ferramenta] - [Tarefa] - [Resultado]</p>
+
+                  <p class="mt-3 text-amber-400">### IMPACTO ESTIMADO</p>
+                  <p><span class="text-neutral-500">Tempo economizado:</span> [X horas]</p>
+                  <p><span class="text-neutral-500">Qualidade elevada em:</span> [areas]</p>
+                  <p><span class="text-neutral-500">Tarefas impossíveis sem IA:</span> [lista]</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic 6 -->
+        <div class="bg-dark-800 rounded-2xl border border-dark-600 mb-6 overflow-hidden">
+          <button onclick="toggleTopic(this)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 font-bold">
+                06
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Entrega e Proximos Passos</h3>
+                <p class="text-neutral-400 text-sm mt-1">Publicacao e continuidade</p>
+              </div>
+            </div>
+            <span class="text-neutral-500 text-2xl">+</span>
+          </button>
+          <div class="topic-explanation px-6 border-t border-dark-600">
+            <div class="py-6 space-y-6">
+              <p class="text-neutral-300">
+                Parabens por chegar ate aqui! Este e o momento de publicar seu trabalho
+                e planejar sua jornada apos o curso.
+              </p>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Checklist de Entrega Final</h4>
+                <div class="space-y-3">
+                  <label class="flex items-center gap-3 bg-dark-800/50 rounded-lg p-3">
+                    <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                    <span class="text-neutral-300">Video(s) final(is) exportado(s) em alta qualidade</span>
+                  </label>
+                  <label class="flex items-center gap-3 bg-dark-800/50 rounded-lg p-3">
+                    <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                    <span class="text-neutral-300">Passou por todas as revisoes (rough, fine, lock)</span>
+                  </label>
+                  <label class="flex items-center gap-3 bg-dark-800/50 rounded-lg p-3">
+                    <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                    <span class="text-neutral-300">Checklist de QA 100% completo</span>
+                  </label>
+                  <label class="flex items-center gap-3 bg-dark-800/50 rounded-lg p-3">
+                    <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                    <span class="text-neutral-300">Caso de estudo documentado</span>
+                  </label>
+                  <label class="flex items-center gap-3 bg-dark-800/50 rounded-lg p-3">
+                    <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                    <span class="text-neutral-300">Screenshots de processo (10+)</span>
+                  </label>
+                  <label class="flex items-center gap-3 bg-dark-800/50 rounded-lg p-3">
+                    <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                    <span class="text-neutral-300">Mapa de uso de IA preenchido</span>
+                  </label>
+                  <label class="flex items-center gap-3 bg-dark-800/50 rounded-lg p-3">
+                    <input type="checkbox" class="rounded bg-dark-700 border-dark-600">
+                    <span class="text-neutral-300">Publicado no portfolio pessoal</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="bg-dark-700/50 rounded-xl p-6">
+                <h4 class="text-lg font-semibold text-amber-400 mb-4">Onde Publicar</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Obrigatorio</div>
+                    <ul class="text-sm text-neutral-400 space-y-1">
+                      <li>- Seu site de portfolio</li>
+                      <li>- Vimeo (versao completa)</li>
+                      <li>- LinkedIn (com caso de estudo)</li>
+                    </ul>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-amber-400 font-medium mb-2">Recomendado</div>
+                    <ul class="text-sm text-neutral-400 space-y-1">
+                      <li>- Behance (projeto visual)</li>
+                      <li>- YouTube (versao publica)</li>
+                      <li>- Instagram (trechos + making-of)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl p-6 border border-emerald-500/20">
+                <h4 class="font-semibold text-emerald-400 mb-4">Sua Jornada Continua</h4>
+                <p class="text-neutral-300 text-sm mb-4">
+                  O curso termina aqui, mas sua evolucao como criador e continua.
+                  Algumas sugestoes para os proximos passos:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-emerald-400 font-medium mb-2">Curto Prazo (30 dias)</div>
+                    <ul class="text-sm text-neutral-400 space-y-1">
+                      <li>- Publique 1 projeto por semana</li>
+                      <li>- Aplique para 5 trabalhos freelance</li>
+                      <li>- Conecte com 10 pessoas do nicho</li>
+                    </ul>
+                  </div>
+                  <div class="bg-dark-800/50 rounded-lg p-4">
+                    <div class="text-emerald-400 font-medium mb-2">Medio Prazo (90 dias)</div>
+                    <ul class="text-sm text-neutral-400 space-y-1">
+                      <li>- Complete 3 projetos para clientes</li>
+                      <li>- Atualize portfolio com novos trabalhos</li>
+                      <li>- Defina sua especializacao</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-900/20 to-dark-700/50 rounded-xl p-6 border-l-4 border-amber-500">
+                <h4 class="font-semibold text-amber-400 mb-2">Mensagem Final</h4>
+                <p class="text-neutral-300 text-sm">
+                  Voce agora tem o conhecimento e as ferramentas para criar conteudo
+                  audiovisual profissional com IA. O diferencial nao esta mais no
+                  acesso a tecnologia - esta na sua visao criativa, seu processo
+                  refinado e sua capacidade de entregar. Va criar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final Completion Box -->
+        <div class="bg-gradient-to-br from-amber-500/20 via-amber-900/30 to-dark-800 rounded-2xl p-8 border border-amber-500/30 mt-12">
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-amber-500/20 rounded-full mb-4">
+              <svg class="w-10 h-10 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+              </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-amber-400 mb-2">Curso Completo!</h3>
+            <p class="text-neutral-300">
+              Voce completou todas as 4 trilhas do VisionPro.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-emerald-500/10 rounded-xl p-4 text-center border border-emerald-500/20">
+              <div class="text-2xl font-bold text-emerald-400 mb-1">10</div>
+              <div class="text-xs text-neutral-400">Modulos Trilha 1</div>
+            </div>
+            <div class="bg-blue-500/10 rounded-xl p-4 text-center border border-blue-500/20">
+              <div class="text-2xl font-bold text-blue-400 mb-1">10</div>
+              <div class="text-xs text-neutral-400">Modulos Trilha 2</div>
+            </div>
+            <div class="bg-purple-500/10 rounded-xl p-4 text-center border border-purple-500/20">
+              <div class="text-2xl font-bold text-purple-400 mb-1">7</div>
+              <div class="text-xs text-neutral-400">Modulos Trilha 3</div>
+            </div>
+            <div class="bg-amber-500/10 rounded-xl p-4 text-center border border-amber-500/20">
+              <div class="text-2xl font-bold text-amber-400 mb-1">5</div>
+              <div class="text-xs text-neutral-400">Labs Trilha 4</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="index.html" class="px-6 py-3 bg-dark-700 hover:bg-dark-600 rounded-xl transition-colors">
+              Voltar para Trilha 4
+            </a>
+            <a href="../../index.html" class="px-6 py-3 bg-amber-600 hover:bg-amber-500 text-dark-900 font-semibold rounded-xl transition-colors">
+              Voltar ao Inicio
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark-800 border-t border-dark-700 py-8 mt-16">
+    <div class="container mx-auto px-6 text-center text-neutral-500">
+      <p>&copy; 2026 VisionPro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTopic(button) {
+      const topicItem = button.parentElement;
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const icon = button.querySelector('span:last-child');
+
+      const container = button.closest('section');
+      container.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) {
+          exp.classList.remove('active');
+          const otherButton = exp.previousElementSibling;
+          const otherIcon = otherButton.querySelector('span:last-child');
+          if (otherIcon) otherIcon.textContent = '+';
+        }
+      });
+
+      explanation.classList.toggle('active');
+      icon.textContent = explanation.classList.contains('active') ? '−' : '+';
+    }
+  </script>
+</body>
+</html>

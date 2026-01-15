@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 4: Laboratorios | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+            <span class="sm:hidden">T1</span>
+            <span class="hidden sm:inline">Fundamentos</span>
+          </a>
+          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+            <span class="sm:hidden">T2</span>
+            <span class="hidden sm:inline">Metodo</span>
+          </a>
+          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+            <span class="sm:hidden">T3</span>
+            <span class="hidden sm:inline">Avancado</span>
+          </a>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-amber-500/10 text-amber-400">
+            <span class="sm:hidden">T4</span>
+            <span class="hidden sm:inline">Labs</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header da Trilha -->
+  <header class="relative bg-gradient-to-b from-amber-900/20 to-dark-900 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-bold rounded-full">TRILHA 4</span>
+        <span class="text-neutral-500 text-sm">5 laboratorios</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+        <span class="text-amber-400">Laboratorios</span>
+      </h1>
+      <p class="text-neutral-400 text-lg max-w-2xl">
+        Dispositivos praticos e diferenciais de elite que aceleram seu aprendizado. Aprenda fazendo, errando e iterando.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <span class="px-3 py-1.5 bg-dark-700 text-neutral-300 text-sm rounded-lg">Falhas Guiadas</span>
+        <span class="px-3 py-1.5 bg-dark-700 text-neutral-300 text-sm rounded-lg">Leitura Reversa</span>
+        <span class="px-3 py-1.5 bg-dark-700 text-neutral-300 text-sm rounded-lg">Modo Estudio</span>
+        <span class="px-3 py-1.5 bg-dark-700 text-neutral-300 text-sm rounded-lg">Portfolio IA</span>
+        <span class="px-3 py-1.5 bg-dark-700 text-neutral-300 text-sm rounded-lg">Projeto Final</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Lista de Modulos -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="space-y-6">
+
+      <!-- Lab 4.1 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-amber-500/30 transition-all">
+        <a href="lab-4-1.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center font-bold">4.1</span>
+                <span class="text-neutral-500 text-sm">90 min</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">
+                Falhas Guiadas
+              </h2>
+              <p class="text-neutral-400">
+                Erre de proposito para aprender mais rapido. Laboratorio de experimentacao controlada onde falhar e o objetivo.
+              </p>
+            </div>
+            <span class="text-amber-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <!-- Topicos Expansiveis -->
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">A Ciencia do Erro Produtivo</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Por que errar de proposito acelera o aprendizado. A neurociencia por tras de tentativa e erro. Como transformar frustração em insight.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: O Roteiro Quebrado</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Escreva um roteiro propositalmente ruim e analise. Identifique cada erro estrutural. Transforme em roteiro funcional.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Edicao de Desastre</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Edite um video violando todas as regras: cortes ruins, audio dessincronizado, ritmo errado. Documente o que torna cada escolha ruim.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Thumbnail Anticlick</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Crie thumbnails que ninguem clicaria e analise porque. Aprenda os principios do CTR pelo negativo.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: IA Mal Promtada</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Prompts vagos, genericos e sem contexto. Compare resultados ruins com bons. Entenda a anatomia de um prompt eficaz.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="flex-1 text-sm font-medium">Diario de Erros e Insights</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Como documentar falhas para extrair aprendizado maximo. Template de reflexao pos-erro. Construindo biblioteca de anti-padroes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 4.2 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-amber-500/30 transition-all">
+        <a href="lab-4-2.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center font-bold">4.2</span>
+                <span class="text-neutral-500 text-sm">120 min</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                Leitura Reversa
+              </h2>
+              <p class="text-neutral-400">
+                Desconstrua obras-primas para entender como foram feitas. Engenharia reversa aplicada ao audiovisual.
+              </p>
+            </div>
+            <span class="text-amber-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">Metodologia de Desconstrucao</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Framework para analisar qualquer video: estrutura, tecnica, emocao, decisoes. O olhar do profissional vs espectador.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Anatomia de um Viral</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Selecione 3 videos virais do seu nicho. Analise frame a frame os primeiros 3 segundos. Identifique os ganchos e padroes.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Desmontando Cinema</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Analise uma cena iconica de filme. Mapeie cada decisao: enquadramento, luz, movimento, som, corte. Recriar o raciocinio do diretor.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Reverse Engineering de Canal</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Escolha um canal de sucesso. Analise: formato, frequencia, thumbnails, titulos, CTA. Extraia o playbook sem copiar.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Transcricao de Estilo</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Recrie uma peca existente com seus recursos. Nao copie - interprete. Entenda as limitacoes e adaptacoes necessarias.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="flex-1 text-sm font-medium">Biblioteca de Referencias</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Como organizar uma swipe file de referencias. Categorizacao por tecnica, mood, estilo. Seu acervo de inspiracao curado.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 4.3 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-amber-500/30 transition-all">
+        <a href="lab-4-3.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center font-bold">4.3</span>
+                <span class="text-neutral-500 text-sm">100 min</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                Modo Estudio
+              </h2>
+              <p class="text-neutral-400">
+                Simule a operacao de um estudio profissional. Processos, checklists e mentalidade de producao em escala.
+              </p>
+            </div>
+            <span class="text-amber-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">Mentalidade de Estudio</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">A diferenca entre hobbyista e profissional nao e equipamento - e processo. Como pensar em sistemas, nao em projetos.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Setup de Producao</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Configure seu espaco de trabalho otimizado. Checklist de setup fisico e digital. Elimine friccao antes de comecar.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Dia de Gravacao Simulado</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Execute um dia completo de producao com cronograma real. Call sheet, setup, gravacao, wrap. Documente gargalos.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Pipeline de 3 Videos</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Produza 3 videos em pipeline simultaneo. Um em pre-producao, um em producao, um em pos. Gestao de projetos paralelos.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: QA e Revisao</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Implemente um processo de Quality Assurance. Checklist de revisao pre-publicacao. Nunca mais publique com erro.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="flex-1 text-sm font-medium">Post-Mortem de Producao</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Analise retrospectiva de cada producao. O que funcionou, o que falhou, o que mudar. Melhoria continua documentada.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 4.4 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-amber-500/30 transition-all">
+        <a href="lab-4-4.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center font-bold">4.4</span>
+                <span class="text-neutral-500 text-sm">110 min</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                Portfolio com IA
+              </h2>
+              <p class="text-neutral-400">
+                Construa um portfolio impressionante usando IA como acelerador. Demonstre habilidades que voce ainda esta desenvolvendo.
+              </p>
+            </div>
+            <span class="text-amber-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">Estrategia de Portfolio</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">O que mostrar, para quem, e como. Portfolio para clientes vs para audiencia. Qualidade vs quantidade.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Spec Work com IA</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Crie pecas para marcas que voce admira (sem cliente real). Use IA para acelerar producao. Demonstre potencial.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Showreel Completo</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Monte um reel de 60-90 segundos com seus melhores momentos. Edicao que impressiona nos primeiros 5 segundos.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Case Study</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Documente um projeto do briefing ao resultado. Mostre seu processo, nao so o produto final. Conte a historia da criacao.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="flex-1 text-sm font-medium">Exercicio: Presenca Online</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Configure seus canais profissionais: Behance, Vimeo, LinkedIn, site pessoal. Consistencia visual e mensagem clara.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="flex-1 text-sm font-medium">Pitch e Apresentacao</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Como apresentar seu trabalho. O pitch de 30 segundos. Responder "o que voce faz?" de forma memoravel.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab 4.5 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-amber-500/30 transition-all">
+        <a href="lab-4-5.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center font-bold">4.5</span>
+                <span class="text-neutral-500 text-sm">180 min</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                Projeto Final: Producao Completa
+              </h2>
+              <p class="text-neutral-400">
+                Aplique tudo que aprendeu em uma producao completa do zero. Do briefing a publicacao usando IA como parceira.
+              </p>
+            </div>
+            <span class="text-amber-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">Briefing e Conceito</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Defina seu projeto final: objetivo, publico, formato, recursos. Use IA para explorar conceitos e validar a ideia.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Pre-Producao com IA</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Roteiro, storyboard, planejamento visual tudo assistido por IA. Prepare cada detalhe antes de executar.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Producao Hibrida</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Combine footage real com assets gerados por IA. Grave o que puder, gere o que nao puder. Integracao seamless.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Pos-Producao Acelerada</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Edicao, color, audio, motion - use ferramentas de IA em cada etapa. Documente tempo economizado.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="flex-1 text-sm font-medium">Distribuicao Estrategica</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Prepare para multiplas plataformas. Gere clips, thumbnails, descricoes. Publique e acompanhe resultados.</p>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="flex-1 text-sm font-medium">Retrospectiva e Proximos Passos</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <p class="text-sm text-neutral-400 ml-9">Analise sua producao final. O que aprendeu, o que faria diferente. Trace seu caminho de evolucao continua.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="text-center">
+        <p class="text-neutral-500 text-sm mb-4">
+          VisionPro - Metodo Pratico de Criacao Audiovisual com IA
+        </p>
+        <div class="flex justify-center space-x-6">
+          <a href="../trilha1/index.html" class="text-emerald-400 hover:text-emerald-300 text-sm">Trilha 1</a>
+          <a href="../trilha2/index.html" class="text-blue-400 hover:text-blue-300 text-sm">Trilha 2</a>
+          <a href="../trilha3/index.html" class="text-purple-400 hover:text-purple-300 text-sm">Trilha 3</a>
+          <a href="index.html" class="text-amber-400 hover:text-amber-300 text-sm font-medium">Trilha 4</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTopic(button) {
+      const topicItem = button.parentElement;
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const icon = button.querySelector('.text-neutral-500:last-child');
+
+      // Close other open explanations in same module
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) {
+          exp.classList.remove('active');
+          const otherButton = exp.previousElementSibling;
+          const otherIcon = otherButton.querySelector('.text-neutral-500:last-child');
+          if (otherIcon) otherIcon.textContent = '+';
+        }
+      });
+
+      explanation.classList.toggle('active');
+      icon.textContent = explanation.classList.contains('active') ? '−' : '+';
+    }
+  </script>
+</body>
+</html>
