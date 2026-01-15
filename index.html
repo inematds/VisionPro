@@ -48,26 +48,34 @@
         </div>
 
         <!-- Trilhas + Theme Toggle -->
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="curso/trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
-            <span class="sm:hidden">T1</span>
-            <span class="hidden sm:inline">Fundamentos</span>
-          </a>
-          <a href="curso/trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
-            <span class="sm:hidden">T2</span>
-            <span class="hidden sm:inline">Metodo</span>
-          </a>
-          <a href="curso/trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
-            <span class="sm:hidden">T3</span>
-            <span class="hidden sm:inline">Avancado</span>
-          </a>
-          <a href="curso/trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
-            <span class="sm:hidden">T4</span>
-            <span class="hidden sm:inline">Labs</span>
-          </a>
-          <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2" title="Alternar tema">
-            <span id="theme-icon" class="text-lg">🌙</span>
-          </button>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="curso/trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="curso/trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="curso/trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="curso/trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Labs</span>
+            </a>
+            <a href="curso/trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Projeto</span>
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2" title="Alternar tema">
+              <span id="theme-icon" class="text-lg">🌙</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -140,11 +148,11 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <div class="text-3xl sm:text-4xl font-bold text-emerald-400">4</div>
+          <div class="text-3xl sm:text-4xl font-bold text-emerald-400">5</div>
           <div class="text-neutral-400 text-sm mt-1">Trilhas</div>
         </div>
         <div>
-          <div class="text-3xl sm:text-4xl font-bold text-blue-400">30</div>
+          <div class="text-3xl sm:text-4xl font-bold text-blue-400">37</div>
           <div class="text-neutral-400 text-sm mt-1">Modulos</div>
         </div>
         <div>
@@ -174,7 +182,7 @@
     <div class="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold mb-4">Sua Jornada de Aprendizado</h2>
       <p class="text-neutral-400 max-w-2xl mx-auto">
-        Quatro trilhas progressivas que transformam iniciantes em arquitetos de sistemas criativos audiovisuais.
+        Cinco trilhas progressivas que transformam iniciantes em arquitetos de sistemas criativos audiovisuais.
       </p>
     </div>
 
@@ -231,7 +239,7 @@
       </a>
 
       <!-- Trilha 3 -->
-      <a href="curso/trilha3/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-purple-500/50 transition-all overflow-hidden">
+      <a href="curso/trilha3/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-purple-500/50 transition-all overflow-hidden md:col-span-2">
         <div class="p-8">
           <div class="flex items-center justify-between mb-4">
             <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-bold rounded-full">TRILHA 3</span>
@@ -276,6 +284,34 @@
         </div>
         <div class="px-8 py-4 bg-amber-900/20 border-t border-dark-600 group-hover:bg-amber-900/30 transition-colors">
           <span class="text-amber-400 font-semibold text-sm">Diferenciais de Elite</span>
+        </div>
+      </a>
+
+      <!-- Trilha 5 -->
+      <a href="curso/trilha5/index.html" class="group block bg-dark-800 rounded-2xl border border-dark-600 hover:border-rose-500/50 transition-all overflow-hidden">
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-bold rounded-full">TRILHA 5</span>
+            <span class="text-neutral-500 text-sm">7 modulos</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 group-hover:text-rose-400 transition-colors">
+            🎬 Projeto Guiado
+          </h3>
+          <p class="text-neutral-400 mb-4">
+            Construa um video promocional completo do zero ao upload, com prompts prontos e exemplo real do projeto "Raizes".
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Briefing</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Roteiro</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Storyboard</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Assets</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Audio</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Edicao</span>
+            <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Finalizacao</span>
+          </div>
+        </div>
+        <div class="px-8 py-4 bg-rose-900/20 border-t border-dark-600 group-hover:bg-rose-900/30 transition-colors">
+          <span class="text-rose-400 font-semibold text-sm">Projeto Completo: Do Briefing ao Upload</span>
         </div>
       </a>
 
