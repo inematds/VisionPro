@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testar, Ajustar e Escalar - VisionPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        dark: {
+                            900: '#0a0a0f',
+                            800: '#12121a',
+                            700: '#1a1a24',
+                            600: '#2a2a3a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        html:not(.dark) { background: #f8fafc; }
+        html:not(.dark) body { background: #f8fafc; color: #1e293b; }
+        html:not(.dark) .dark\:bg-dark-900 { background: #f8fafc; }
+        html:not(.dark) .dark\:bg-dark-800 { background: #ffffff; }
+        html:not(.dark) .dark\:bg-dark-700 { background: #f1f5f9; }
+        html:not(.dark) .dark\:text-white { color: #1e293b; }
+        html:not(.dark) .dark\:text-gray-300 { color: #475569; }
+        html:not(.dark) .dark\:text-gray-400 { color: #64748b; }
+        html:not(.dark) .dark\:border-dark-600 { border-color: #e2e8f0; }
+    </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors">
+                        <span class="hidden sm:inline">Fundamentos</span>
+                        <span class="sm:hidden">Fund</span>
+                    </a>
+                    <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                        <span class="hidden sm:inline">Metodo</span>
+                        <span class="sm:hidden">Met</span>
+                    </a>
+                    <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors">
+                        <span class="hidden sm:inline">Avancado</span>
+                        <span class="sm:hidden">Avanc</span>
+                    </a>
+                    <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-amber-500/10 text-amber-400 hover:bg-amber-500/20 transition-colors">
+                        <span class="hidden sm:inline">Labs</span>
+                        <span class="sm:hidden">Labs</span>
+                    </a>
+                </div>
+                <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+                    <span class="dark:hidden">🌙</span>
+                    <span class="hidden dark:inline">☀️</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-b from-blue-900/30 to-dark-900 border-b border-dark-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="mb-4">
+                <a href="index.html" class="text-blue-400 hover:text-blue-300 text-sm">← Voltar para Trilha Metodo</a>
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm font-medium">Modulo 2.10</span>
+                <span class="px-3 py-1 bg-dark-700 text-gray-400 rounded-full text-sm">45 min</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Testar, Ajustar e Escalar</h1>
+            <p class="text-gray-400 text-lg max-w-2xl">
+                Valide seu conteudo antes de publicar, aprenda com os resultados e crie sistemas que permitem produzir mais com menos esforco.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+                <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                    <div class="text-2xl font-bold text-blue-400">6</div>
+                    <div class="text-sm text-gray-400">Topicos</div>
+                </div>
+                <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                    <div class="text-2xl font-bold text-blue-400">45</div>
+                    <div class="text-sm text-gray-400">Minutos</div>
+                </div>
+                <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                    <div class="text-2xl font-bold text-blue-400">Int</div>
+                    <div class="text-sm text-gray-400">Nivel</div>
+                </div>
+                <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                    <div class="text-2xl font-bold text-blue-400">Sis</div>
+                    <div class="text-sm text-gray-400">Tipo</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Topic 1 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">1</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Validar Antes de Publicar</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Publicar sem validar e como lancar um produto sem testar. Um video pode parecer perfeito para voce, mas seu publico pode ter uma experiencia completamente diferente.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Checklist de Validacao</h3>
+
+                <div class="space-y-4 mb-6">
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold">1</div>
+                            <h4 class="font-semibold text-white">Teste Tecnico</h4>
+                        </div>
+                        <ul class="text-gray-400 text-sm space-y-2 ml-14">
+                            <li>□ Assista do inicio ao fim sem pausar</li>
+                            <li>□ Verifique audio em fone e alto-falante</li>
+                            <li>□ Confira legendas/graficos em tela pequena</li>
+                            <li>□ Teste em conexao lenta (compressao)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold">2</div>
+                            <h4 class="font-semibold text-white">Teste de Engajamento</h4>
+                        </div>
+                        <ul class="text-gray-400 text-sm space-y-2 ml-14">
+                            <li>□ Os primeiros 3 segundos prendem atencao?</li>
+                            <li>□ O ritmo mantem interesse ate o fim?</li>
+                            <li>□ A mensagem principal e clara?</li>
+                            <li>□ O CTA (call to action) e obvio?</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 font-bold">3</div>
+                            <h4 class="font-semibold text-white">Teste com Terceiros</h4>
+                        </div>
+                        <ul class="text-gray-400 text-sm space-y-2 ml-14">
+                            <li>□ Mostre para alguem do publico-alvo</li>
+                            <li>□ Pergunte: "Qual e a mensagem principal?"</li>
+                            <li>□ Observe onde a pessoa demonstra desinteresse</li>
+                            <li>□ Anote feedback sem defender suas escolhas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Matriz de Decisao</h3>
+
+                <div class="bg-dark-900 rounded-xl p-5 border border-dark-600">
+                    <div class="grid grid-cols-2 gap-4 text-center text-sm">
+                        <div class="bg-green-900/30 rounded-lg p-4">
+                            <div class="font-semibold text-green-400 mb-2">✓ Publicar</div>
+                            <ul class="text-gray-400 text-xs space-y-1">
+                                <li>Tecnicamente perfeito</li>
+                                <li>Mensagem clara</li>
+                                <li>Feedback positivo</li>
+                            </ul>
+                        </div>
+                        <div class="bg-yellow-900/30 rounded-lg p-4">
+                            <div class="font-semibold text-yellow-400 mb-2">⚠️ Ajustar</div>
+                            <ul class="text-gray-400 text-xs space-y-1">
+                                <li>Problemas menores</li>
+                                <li>Duvidas de clareza</li>
+                                <li>Feedback misto</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-900/30 rounded-lg p-4">
+                            <div class="font-semibold text-orange-400 mb-2">🔄 Retrabalhar</div>
+                            <ul class="text-gray-400 text-xs space-y-1">
+                                <li>Problemas estruturais</li>
+                                <li>Mensagem confusa</li>
+                                <li>Ritmo quebrado</li>
+                            </ul>
+                        </div>
+                        <div class="bg-red-900/30 rounded-lg p-4">
+                            <div class="font-semibold text-red-400 mb-2">✗ Descartar</div>
+                            <ul class="text-gray-400 text-xs space-y-1">
+                                <li>Premissa errada</li>
+                                <li>Nao atende objetivo</li>
+                                <li>Custo > beneficio</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-sky-900/20 border border-sky-900/50 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-sky-400 text-xl">💡</span>
+                    <div>
+                        <h4 class="font-semibold text-sky-400 mb-1">Insight</h4>
+                        <p class="text-gray-300 text-sm">O "video perfeito" nao existe. Em algum momento voce precisa publicar. Se passar em 80% da validacao, publique e aprenda com os dados reais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 2 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">2</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Analisar Metricas Relevantes</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Numeros sem contexto nao significam nada. Aprenda quais metricas importam para seu objetivo e como interpreta-las corretamente.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Metricas por Objetivo</h3>
+
+                <div class="space-y-4 mb-6">
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-3">Objetivo: Alcance</h4>
+                        <div class="grid sm:grid-cols-3 gap-3">
+                            <div class="bg-dark-900 rounded-lg p-3">
+                                <div class="text-blue-400 font-semibold text-sm">Views</div>
+                                <div class="text-gray-400 text-xs">Quantas pessoas viram</div>
+                            </div>
+                            <div class="bg-dark-900 rounded-lg p-3">
+                                <div class="text-blue-400 font-semibold text-sm">Impressoes</div>
+                                <div class="text-gray-400 text-xs">Quantas vezes foi exibido</div>
+                            </div>
+                            <div class="bg-dark-900 rounded-lg p-3">
+                                <div class="text-blue-400 font-semibold text-sm">CTR</div>
+                                <div class="text-gray-400 text-xs">% que clicou para ver</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-3">Objetivo: Engajamento</h4>
+                        <div class="grid sm:grid-cols-3 gap-3">
+                            <div class="bg-dark-900 rounded-lg p-3">
+                                <div class="text-blue-400 font-semibold text-sm">Retencao</div>
+                                <div class="text-gray-400 text-xs">% assistido em media</div>
+                            </div>
+                            <div class="bg-dark-900 rounded-lg p-3">
+                                <div class="text-blue-400 font-semibold text-sm">Watch Time</div>
+                                <div class="text-gray-400 text-xs">Tempo total assistido</div>
+                            </div>
+                            <div class="bg-dark-900 rounded-lg p-3">
+                                <div class="text-blue-400 font-semibold text-sm">Interacoes</div>
+                                <div class="text-gray-400 text-xs">Likes, comments, shares</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-3">Objetivo: Conversao</h4>
+                        <div class="grid sm:grid-cols-3 gap-3">
+                            <div class="bg-dark-900 rounded-lg p-3">
+                                <div class="text-blue-400 font-semibold text-sm">Cliques no CTA</div>
+                                <div class="text-gray-400 text-xs">Acoes tomadas</div>
+                            </div>
+                            <div class="bg-dark-900 rounded-lg p-3">
+                                <div class="text-blue-400 font-semibold text-sm">Taxa Conversao</div>
+                                <div class="text-gray-400 text-xs">Views → acoes</div>
+                            </div>
+                            <div class="bg-dark-900 rounded-lg p-3">
+                                <div class="text-blue-400 font-semibold text-sm">Custo por Acao</div>
+                                <div class="text-gray-400 text-xs">ROI do conteudo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Grafico de Retencao</h3>
+
+                <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                    <p class="text-gray-400 text-sm mb-4">O grafico de retencao mostra onde as pessoas param de assistir:</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-sm text-gray-400">0-3s</div>
+                            <div class="flex-grow bg-dark-900 rounded-full h-4 relative">
+                                <div class="absolute left-0 top-0 h-4 bg-red-500 rounded-l-full" style="width: 100%"></div>
+                            </div>
+                            <div class="text-sm text-gray-400">Hook fraco = queda aqui</div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-sm text-gray-400">10-30%</div>
+                            <div class="flex-grow bg-dark-900 rounded-full h-4 relative">
+                                <div class="absolute left-0 top-0 h-4 bg-yellow-500 rounded-l-full" style="width: 70%"></div>
+                            </div>
+                            <div class="text-sm text-gray-400">Introducao longa demais</div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-sm text-gray-400">50%</div>
+                            <div class="flex-grow bg-dark-900 rounded-full h-4 relative">
+                                <div class="absolute left-0 top-0 h-4 bg-blue-500 rounded-l-full" style="width: 50%"></div>
+                            </div>
+                            <div class="text-sm text-gray-400">Meio do conteudo arrastado</div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 text-sm text-gray-400">80-90%</div>
+                            <div class="flex-grow bg-dark-900 rounded-full h-4 relative">
+                                <div class="absolute left-0 top-0 h-4 bg-green-500 rounded-l-full" style="width: 30%"></div>
+                            </div>
+                            <div class="text-sm text-gray-400">Normal - CTA chegando</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-amber-900/20 border border-amber-900/50 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-amber-400 text-xl">⚠️</span>
+                    <div>
+                        <h4 class="font-semibold text-amber-400 mb-1">Cuidado</h4>
+                        <p class="text-gray-300 text-sm">Nao compare metricas entre plataformas diferentes. Um "view" no YouTube (30s+) nao e igual a um view no TikTok (aparecer na tela). Compare sempre dentro da mesma plataforma.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 3 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">3</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Iterar com Base em Dados</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Os dados mostram o que esta acontecendo, mas voce precisa interpretar o porque. A iteracao inteligente transforma cada video em um experimento que melhora o proximo.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Ciclo de Melhoria Continua</h3>
+
+                <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600 mb-6">
+                    <div class="flex flex-col sm:flex-row items-center justify-around gap-4">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-blue-400 font-bold">1</span>
+                            </div>
+                            <div class="text-sm text-gray-300">Publicar</div>
+                        </div>
+                        <div class="text-blue-400 hidden sm:block">→</div>
+                        <div class="text-blue-400 sm:hidden">↓</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-blue-400 font-bold">2</span>
+                            </div>
+                            <div class="text-sm text-gray-300">Medir</div>
+                        </div>
+                        <div class="text-blue-400 hidden sm:block">→</div>
+                        <div class="text-blue-400 sm:hidden">↓</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-blue-400 font-bold">3</span>
+                            </div>
+                            <div class="text-sm text-gray-300">Analisar</div>
+                        </div>
+                        <div class="text-blue-400 hidden sm:block">→</div>
+                        <div class="text-blue-400 sm:hidden">↓</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-blue-400 font-bold">4</span>
+                            </div>
+                            <div class="text-sm text-gray-300">Ajustar</div>
+                        </div>
+                        <div class="text-blue-400 hidden sm:block">→</div>
+                        <div class="text-blue-400 sm:hidden">↓</div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-green-400 font-bold">↻</span>
+                            </div>
+                            <div class="text-sm text-gray-300">Repetir</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Hipoteses de Melhoria</h3>
+
+                <div class="overflow-x-auto mb-6">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-dark-600">
+                                <th class="text-left py-3 text-gray-400 font-medium">Sintoma</th>
+                                <th class="text-left py-3 text-gray-400 font-medium">Possivel Causa</th>
+                                <th class="text-left py-3 text-gray-400 font-medium">Teste</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3">CTR baixo</td>
+                                <td class="py-3">Thumbnail fraca ou titulo generico</td>
+                                <td class="py-3">A/B test de thumbnails</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3">Retencao cai nos primeiros 5s</td>
+                                <td class="py-3">Hook nao conecta com audiencia</td>
+                                <td class="py-3">Testar diferentes aberturas</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3">Queda no meio</td>
+                                <td class="py-3">Conteudo muito longo ou repetitivo</td>
+                                <td class="py-3">Versao mais curta e densa</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3">Pouco engajamento</td>
+                                <td class="py-3">Falta de pergunta/CTA</td>
+                                <td class="py-3">Adicionar perguntas explicitas</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3">Views ok, conversao baixa</td>
+                                <td class="py-3">CTA fraco ou no momento errado</td>
+                                <td class="py-3">Mover CTA para pico de retencao</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Regra do Teste Unico</h3>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-red-900/20 rounded-xl p-4 border border-red-900/30">
+                        <h4 class="font-semibold text-red-400 mb-2">✗ Errado</h4>
+                        <p class="text-gray-400 text-sm">Mudar thumbnail + titulo + duracao + formato de uma vez. Impossivel saber o que funcionou.</p>
+                    </div>
+                    <div class="bg-green-900/20 rounded-xl p-4 border border-green-900/30">
+                        <h4 class="font-semibold text-green-400 mb-2">✓ Certo</h4>
+                        <p class="text-gray-400 text-sm">Manter tudo igual e testar apenas thumbnails diferentes. Resultado claro e acionavel.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-primary/10 border border-primary/30 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-primary text-xl">🎯</span>
+                    <div>
+                        <h4 class="font-semibold text-primary mb-1">Exercicio Pratico</h4>
+                        <p class="text-gray-300 text-sm">Escolha seu video com pior performance. Analise o grafico de retencao. Identifique o maior ponto de queda. Formule uma hipotese do porque. Crie um novo video testando essa hipotese.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 4 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">4</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Criar Templates Reutilizaveis</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Templates sao a base da escala. Em vez de criar cada video do zero, voce cria estruturas que podem ser preenchidas e adaptadas rapidamente.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Tipos de Templates</h3>
+
+                <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">📝</span>
+                            <h4 class="font-semibold text-white">Templates de Roteiro</h4>
+                        </div>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li>• Estrutura de abertura padronizada</li>
+                            <li>• Formulas de transicao</li>
+                            <li>• Templates de CTA</li>
+                            <li>• Modelos por formato (tutorial, review, etc)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">🎨</span>
+                            <h4 class="font-semibold text-white">Templates Visuais</h4>
+                        </div>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li>• Projeto base no editor</li>
+                            <li>• Lower thirds pre-configurados</li>
+                            <li>• Transicoes e efeitos salvos</li>
+                            <li>• Paletas de cores e fontes</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">🤖</span>
+                            <h4 class="font-semibold text-white">Templates de Prompt</h4>
+                        </div>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li>• Prompts de geracao de ideias</li>
+                            <li>• Prompts de roteiro por formato</li>
+                            <li>• Prompts de imagem consistentes</li>
+                            <li>• Prompts de revisao</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">📋</span>
+                            <h4 class="font-semibold text-white">Templates de Processo</h4>
+                        </div>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li>• Checklist de pre-producao</li>
+                            <li>• Fluxo de aprovacao</li>
+                            <li>• Calendario editorial</li>
+                            <li>• Modelo de briefing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Exemplo: Template de Projeto de Edicao</h3>
+
+                <div class="bg-dark-900 rounded-xl p-5 border border-dark-600 font-mono text-sm">
+                    <div class="text-gray-400 mb-3"># Estrutura do Projeto Template</div>
+                    <div class="space-y-1 text-gray-300">
+                        <div><span class="text-blue-400">Bin:</span> 00_TEMPLATE (nao editar)</div>
+                        <div class="ml-4">├── Intro animado</div>
+                        <div class="ml-4">├── Lower thirds</div>
+                        <div class="ml-4">├── Transicoes</div>
+                        <div class="ml-4">├── Musicas aprovadas</div>
+                        <div class="ml-4">└── Efeitos sonoros</div>
+                        <div class="mt-2"><span class="text-blue-400">Sequence:</span> Template_[Formato]</div>
+                        <div class="ml-4">├── Marcadores de secao</div>
+                        <div class="ml-4">├── Ajustes de cor padrao</div>
+                        <div class="ml-4">└── Trilhas organizadas</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-sky-900/20 border border-sky-900/50 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-sky-400 text-xl">💡</span>
+                    <div>
+                        <h4 class="font-semibold text-sky-400 mb-1">Insight</h4>
+                        <p class="text-gray-300 text-sm">Templates nao sao prisoes. Sao pontos de partida. Sempre que um template nao funcionar para um projeto especifico, adapte. Depois, considere criar um template novo para esse caso.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 5 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">5</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Automatizar com IA</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Alem de templates, a IA permite automatizar tarefas repetitivas que antes consumiam horas. O objetivo e liberar seu tempo para o que realmente importa: criatividade e estrategia.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Tarefas Automatizaveis</h3>
+
+                <div class="space-y-4 mb-6">
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400 shrink-0">⚡</div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Alta Automacao</h4>
+                                <p class="text-gray-400 text-sm">Transcricao, legendas, corte de silencios, remocao de ruido, redimensionamento para plataformas, agendamento de posts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center text-yellow-400 shrink-0">⚙️</div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Automacao Assistida</h4>
+                                <p class="text-gray-400 text-sm">Geracao de roteiro (revisar), sugestao de thumbnails (escolher), corte de clipes (ajustar), colorgrading base (refinar).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400 shrink-0">🎨</div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Baixa Automacao</h4>
+                                <p class="text-gray-400 text-sm">Decisoes criativas, estrategia de conteudo, narrativa, tom de voz, conexao emocional - essas continuam humanas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Fluxo Automatizado Exemplo</h3>
+
+                <div class="bg-dark-900 rounded-xl p-5 border border-dark-600">
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center gap-3">
+                            <span class="text-blue-400">1.</span>
+                            <span class="text-gray-300">Briefing preenchido no Notion/Google Form</span>
+                        </div>
+                        <div class="flex items-center gap-3 ml-4">
+                            <span class="text-gray-500">↓</span>
+                            <span class="text-gray-500 text-xs">Automacao: Make/Zapier</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-blue-400">2.</span>
+                            <span class="text-gray-300">IA gera rascunho de roteiro baseado no briefing</span>
+                        </div>
+                        <div class="flex items-center gap-3 ml-4">
+                            <span class="text-gray-500">↓</span>
+                            <span class="text-gray-500 text-xs">Humano: Revisao e aprovacao</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-blue-400">3.</span>
+                            <span class="text-gray-300">Gravacao/geracao do conteudo</span>
+                        </div>
+                        <div class="flex items-center gap-3 ml-4">
+                            <span class="text-gray-500">↓</span>
+                            <span class="text-gray-500 text-xs">Automacao: Upload para pasta correta</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-blue-400">4.</span>
+                            <span class="text-gray-300">IA processa: transcricao, legendas, corte inicial</span>
+                        </div>
+                        <div class="flex items-center gap-3 ml-4">
+                            <span class="text-gray-500">↓</span>
+                            <span class="text-gray-500 text-xs">Humano: Edicao final</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-blue-400">5.</span>
+                            <span class="text-gray-300">Export automatico para multiplos formatos</span>
+                        </div>
+                        <div class="flex items-center gap-3 ml-4">
+                            <span class="text-gray-500">↓</span>
+                            <span class="text-gray-500 text-xs">Automacao: Agendamento nas plataformas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-amber-900/20 border border-amber-900/50 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-amber-400 text-xl">⚠️</span>
+                    <div>
+                        <h4 class="font-semibold text-amber-400 mb-1">Importante</h4>
+                        <p class="text-gray-300 text-sm">Automatize processos que ja funcionam manualmente. Automatizar um processo quebrado apenas gera problemas mais rapido. Primeiro funciona, depois escala.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 6 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">6</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Construir Sistema de Producao</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Um sistema de producao e a uniao de todos os elementos: metodo + templates + automacao + processos. E o que permite produzir conteudo de qualidade de forma consistente e sustentavel.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Componentes do Sistema</h3>
+
+                <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600 mb-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Entrada</h4>
+                            <ul class="text-gray-400 text-sm space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-400">→</span>
+                                    <span>Banco de ideias validadas</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-400">→</span>
+                                    <span>Calendario editorial</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-400">→</span>
+                                    <span>Briefing padronizado</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Saida</h4>
+                            <ul class="text-gray-400 text-sm space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-400">←</span>
+                                    <span>Videos publicados com consistencia</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-400">←</span>
+                                    <span>Metricas documentadas</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-green-400">←</span>
+                                    <span>Aprendizados para proximas iteracoes</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Cadencia de Producao</h3>
+
+                <div class="grid sm:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600 text-center">
+                        <div class="text-3xl font-bold text-blue-400 mb-2">1x</div>
+                        <div class="text-sm text-gray-400">Iniciante</div>
+                        <div class="text-xs text-gray-500 mt-2">1 video/semana<br>Foco em qualidade</div>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600 text-center">
+                        <div class="text-3xl font-bold text-blue-400 mb-2">3x</div>
+                        <div class="text-sm text-gray-400">Intermediario</div>
+                        <div class="text-xs text-gray-500 mt-2">3 videos/semana<br>Equilibrio</div>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600 text-center">
+                        <div class="text-3xl font-bold text-blue-400 mb-2">5+</div>
+                        <div class="text-sm text-gray-400">Avancado</div>
+                        <div class="text-xs text-gray-500 mt-2">5+ videos/semana<br>Sistema otimizado</div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Rotina Semanal Exemplo</h3>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-dark-600">
+                                <th class="text-left py-3 text-gray-400 font-medium">Dia</th>
+                                <th class="text-left py-3 text-gray-400 font-medium">Atividade</th>
+                                <th class="text-left py-3 text-gray-400 font-medium">Tempo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3 font-medium">Segunda</td>
+                                <td class="py-3">Planejamento + Roteiros da semana</td>
+                                <td class="py-3">2-3h</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3 font-medium">Terca</td>
+                                <td class="py-3">Gravacao em lote</td>
+                                <td class="py-3">3-4h</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3 font-medium">Quarta</td>
+                                <td class="py-3">Edicao videos 1-2</td>
+                                <td class="py-3">4h</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3 font-medium">Quinta</td>
+                                <td class="py-3">Edicao video 3 + Finalizacoes</td>
+                                <td class="py-3">4h</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 font-medium">Sexta</td>
+                                <td class="py-3">Revisao + Agendamento + Analise</td>
+                                <td class="py-3">2h</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-primary/10 border border-primary/30 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-primary text-xl">🎯</span>
+                    <div>
+                        <h4 class="font-semibold text-primary mb-1">Proximo Passo</h4>
+                        <p class="text-gray-300 text-sm">Documente seu processo atual em um fluxograma simples. Identifique onde voce gasta mais tempo. Essa e a primeira coisa a otimizar, seja com template, automacao ou delegacao.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="mb-12 bg-gradient-to-r from-blue-900/30 to-dark-800 rounded-2xl p-6 sm:p-8 border border-blue-500/20">
+            <h2 class="text-xl sm:text-2xl font-bold mb-6">Resumo do Modulo</h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">O que voce aprendeu:</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Validar conteudo antes de publicar com checklist estruturado</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Analisar metricas relevantes para cada objetivo</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Iterar e melhorar baseado em dados, nao intuicao</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Criar templates reutilizaveis para cada parte do processo</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Automatizar tarefas repetitivas com ferramentas de IA</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Construir um sistema de producao sustentavel e escalavel</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="border-t border-dark-600 pt-6">
+                <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                    <h3 class="text-lg font-semibold text-green-400 mb-3">🎉 Parabens!</h3>
+                    <p class="text-gray-300 mb-4">Voce completou a Trilha 2 - Metodo VisionPro! Agora voce tem um processo completo para criar videos, da ideia a publicacao.</p>
+                    <a href="../trilha3/index.html" class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors">
+                        <span>Continuar para Trilha 3: Avancado</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center">
+            <a href="modulo-2-9.html" class="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors">
+                <span>←</span>
+                <span>Modulo anterior</span>
+            </a>
+            <a href="../trilha3/index.html" class="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors">
+                <span>Proxima trilha</span>
+                <span>→</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-600 mt-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-gray-400">
+                <p class="font-semibold text-white mb-2">VisionPro</p>
+                <p class="text-sm">Producao audiovisual com inteligencia artificial</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        if (localStorage.getItem('theme') === 'light') {
+            html.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>

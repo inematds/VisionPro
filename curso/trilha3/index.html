@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 3: Avancado | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#A855F7',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+            <span class="sm:hidden">T1</span>
+            <span class="hidden sm:inline">Fundamentos</span>
+          </a>
+          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+            <span class="sm:hidden">T2</span>
+            <span class="hidden sm:inline">Metodo</span>
+          </a>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-purple-500/10 text-purple-400">
+            <span class="sm:hidden">T3</span>
+            <span class="hidden sm:inline">Avancado</span>
+          </a>
+          <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+            <span class="sm:hidden">T4</span>
+            <span class="hidden sm:inline">Labs</span>
+          </a>
+          <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+            <span id="theme-icon" class="text-lg">🌙</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300 text-sm">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-purple-400 text-sm font-medium">Trilha 3</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">
+        TRILHA 3 - PRODUCAO AVANCADA
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🚀 Producao Audiovisual Avancada com IA</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Domine tecnicas profissionais de narrativa, cinematografia, sound design e efeitos visuais. Produza conteudo de nivel profissional com IA como parceiro criativo.
+      </p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">7</div>
+          <div class="text-xs text-neutral-400">Modulos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">42</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">~10h</div>
+          <div class="text-xs text-neutral-400">Duracao</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-purple-400">Pro</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modulos -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Modulo 3.1 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.1</span>
+          <span class="text-xs text-neutral-500">~90 min</span>
+        </div>
+        <a href="modulo-3-1.html" class="block">
+          <h3 class="text-2xl sm:text-3xl font-bold mb-3 hover:text-purple-400 transition-colors">📖 Narrativa Cinematografica Avancada</h3>
+        </a>
+        <p class="text-neutral-400 text-sm">Tecnicas de storytelling profissional para criar historias memoraveis.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🎭</span>
+            <div class="flex-1">
+              <span class="font-medium">Estruturas narrativas complexas</span>
+              <span class="text-neutral-500 text-sm ml-2">- Alem do 3 atos</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Estruturas como a Jornada do Heroi, estrutura em 5 atos, narrativa nao-linear, multiplas linhas temporais e historias paralelas que elevam a complexidade narrativa.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Historias complexas geram mais engajamento e rewatch. O publico sofisticado espera narrativas que surpreendam.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Jornada do heroi, estrutura de 5 atos, flashbacks, narrativa nao-linear, subtramas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🧠</span>
+            <div class="flex-1">
+              <span class="font-medium">Subtexto e camadas de significado</span>
+              <span class="text-neutral-500 text-sm ml-2">- O nao-dito</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Subtexto e o significado por baixo das palavras e acoes. O que o personagem diz vs o que realmente quer. Camadas de significado para diferentes audiencias.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Subtexto e o que separa conteudo superficial de conteudo que ressoa profundamente. Permite rewatchability.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Subtexto, simbolismo, metafora visual, ironias dramaticas, foreshadowing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">⚡</span>
+            <div class="flex-1">
+              <span class="font-medium">Tensao e payoff</span>
+              <span class="text-neutral-500 text-sm ml-2">- A arte do suspense</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Setup e payoff sao promessas e cumprimentos narrativos. Tensao e o espaco entre eles. Dominar isso e dominar a atencao do espectador.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Tensao bem construida mantem audiencias grudadas. Payoff mal executado arruina horas de setup.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Chekhov's gun, plant and payoff, suspense vs surpresa, ritmo de revelacao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">💬</span>
+            <div class="flex-1">
+              <span class="font-medium">Dialogos que revelam personagem</span>
+              <span class="text-neutral-500 text-sm ml-2">- Fala com proposito</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Dialogo profissional faz multiplas funcoes simultaneamente: revela personagem, avanca plot, estabelece tom e gera subtext.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Dialogo ruim e o maior indicador de amadorismo. Dialogo excelente eleva todo o projeto.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vozes distintas, economia de palavras, conflito em dialogo, exposicao organica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🎬</span>
+            <div class="flex-1">
+              <span class="font-medium">Narrativa visual</span>
+              <span class="text-neutral-500 text-sm ml-2">- Mostrar, nao contar</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Contar historias atraves de imagens, composicao, movimento e elementos visuais ao inves de palavras. O "show don't tell" cinematografico.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Video e um meio visual. Usar palavras para tudo desperdiça o potencial do formato.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Show don't tell, symbolismo visual, mise-en-scene, storytelling ambiental.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg mr-2">🤖</span>
+            <div class="flex-1">
+              <span class="font-medium">IA como co-roteirista</span>
+              <span class="text-neutral-500 text-sm ml-2">- Colaboracao criativa</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Usar IA nao para gerar roteiros, mas para explorar alternativas, identificar furos logicos, sugerir twists e desenvolver ideias em parceria criativa.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">IA bem usada multiplica sua capacidade criativa. Mal usada gera conteudo generico. A diferenca esta na tecnica.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Prompts de desenvolvimento, brainstorm assistido, analise de estrutura, iteracao criativa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modulo 3.2 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.2</span>
+          <span class="text-xs text-neutral-500">~90 min</span>
+        </div>
+        <a href="modulo-3-2.html" class="block">
+          <h3 class="text-2xl sm:text-3xl font-bold mb-3 hover:text-purple-400 transition-colors">📷 Direcao de Fotografia Avancada</h3>
+        </a>
+        <p class="text-neutral-400 text-sm">Cinematografia profissional: luz, camera, composicao e atmosfera.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">💡</span>
+            <div class="flex-1">
+              <span class="font-medium">Iluminacao cinematografica</span>
+              <span class="text-neutral-500 text-sm ml-2">- Luz com intencao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Iluminacao que conta historia, nao apenas ilumina. Cada setup de luz comunica emocao, tempo, espaco e significado narrativo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Luz e a diferenca mais visivel entre amador e profissional. Luz errada arruina qualquer outro elemento.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Three-point lighting, high-key, low-key, chiaroscuro, luz motivada, golden hour.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🎥</span>
+            <div class="flex-1">
+              <span class="font-medium">Movimento de camera expressivo</span>
+              <span class="text-neutral-500 text-sm ml-2">- Camera com proposito</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cada movimento de camera deve ter um motivo narrativo ou emocional. Pan, tilt, dolly, tracking - cada um comunica algo diferente.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Movimento de camera influencia como a audiencia sente a cena. Movimento errado cria desconexao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Dolly zoom, steadicam, handheld, crane shots, movimento motivado.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">📐</span>
+            <div class="flex-1">
+              <span class="font-medium">Composicao avancada</span>
+              <span class="text-neutral-500 text-sm ml-2">- Quadro perfeito</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Alem da regra dos tercos: proporcao aurea, linhas de guia, framing dentro do frame, balanco visual e tensao compositiva.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Composicao guia o olho do espectador e comunica hierarquia visual. Composicao ruim confunde e cansa.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Proporcao aurea, leading lines, framing, headroom, looking room, depth.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🎨</span>
+            <div class="flex-1">
+              <span class="font-medium">Color grading expressivo</span>
+              <span class="text-neutral-500 text-sm ml-2">- Cor como linguagem</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Usar cor para contar historia, estabelecer tom, diferenciar timelines e criar identidade visual unica para o projeto.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Colorgrading e o que transforma footage crua em cinema. E a camada final que unifica tudo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Teoria das cores, LUTs, power windows, color story, teal and orange.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🔍</span>
+            <div class="flex-1">
+              <span class="font-medium">Lentes e profundidade</span>
+              <span class="text-neutral-500 text-sm ml-2">- Otica narrativa</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Escolha de lentes (wide, normal, tele) afeta como percebemos espaco, distancia e relacoes entre elementos. Profundidade de campo guia atencao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Lentes erradas distorcem a realidade de formas nao intencionais. Lentes certas amplificam a narrativa.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Distancia focal, depth of field, bokeh, anamorphic, lens distortion.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg mr-2">🤖</span>
+            <div class="flex-1">
+              <span class="font-medium">Cinematografia com IA</span>
+              <span class="text-neutral-500 text-sm ml-2">- Geracao visual avancada</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Usar IA para gerar elementos visuais com estetica cinematografica: prompts que especificam iluminacao, lente, composicao e atmosfera.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">IA sem direcao cinematografica gera imagens genericas. Com direcao, gera arte.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Prompts cinematograficos, style transfer, controlnet, image-to-video com estetica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modulo 3.3 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.3</span>
+          <span class="text-xs text-neutral-500">~80 min</span>
+        </div>
+        <a href="modulo-3-3.html" class="block">
+          <h3 class="text-2xl sm:text-3xl font-bold mb-3 hover:text-purple-400 transition-colors">🎵 Sound Design Profissional</h3>
+        </a>
+        <p class="text-neutral-400 text-sm">Audio que transforma: sound design, mixagem e paisagens sonoras.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🔊</span>
+            <div class="flex-1">
+              <span class="font-medium">Fundamentos de sound design</span>
+              <span class="text-neutral-500 text-sm ml-2">- Som como narrativa</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sound design e a criacao intencional de todos os elementos sonoros: ambiente, efeitos, foleys e camadas que constroem o mundo auditivo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Audio e 50% da experiencia. Sem sound design, video parece vazio mesmo com otimas imagens.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ambientes, foley, efeitos sonoros, camadas, espacializacao, worldizing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🎚️</span>
+            <div class="flex-1">
+              <span class="font-medium">Mixagem e masterizacao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Equilibrio perfeito</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Mixagem e equilibrar todos os elementos sonoros para clareza. Masterizacao e otimizar o mix final para diferentes sistemas de reproducao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Mix ruim = audio ininteligivel. Master ruim = audio que soa diferente em cada dispositivo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">EQ, compressao, limiter, loudness, headroom, reference tracks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🎼</span>
+            <div class="flex-1">
+              <span class="font-medium">Musica e emocao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Trilha que move</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Selecao e edicao de musica para amplificar emocoes especificas, criar ritmo e unificar a experiencia audiovisual.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Musica errada sabota a emocao. Musica certa eleva cenas mediocres para memoraveis.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Leitmotif, sync points, underscore, needle drops, music licensing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🗣️</span>
+            <div class="flex-1">
+              <span class="font-medium">Tratamento de voz</span>
+              <span class="text-neutral-500 text-sm ml-2">- Clareza vocal</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Processamento de dialogos e locucoes para maxima clareza: de-noise, de-ess, EQ vocal, compressao e espacializacao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Voz e o elemento mais importante do audio. Se nao entende a voz, o video falhou.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">De-noising, de-essing, EQ vocal, compressao broadcast, ADR.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🌊</span>
+            <div class="flex-1">
+              <span class="font-medium">Paisagens sonoras</span>
+              <span class="text-neutral-500 text-sm ml-2">- Mundos auditivoS</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Construir ambientes sonoros imersivos que transportam o espectador. Cada cena tem sua assinatura auditiva.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Paisagens sonoras criam imersao que imagens sozinhas nao conseguem.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ambience, room tone, walla, soundscaping, transicoes sonoras.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg mr-2">🤖</span>
+            <div class="flex-1">
+              <span class="font-medium">Audio com IA</span>
+              <span class="text-neutral-500 text-sm ml-2">- Geracao e restauracao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ferramentas de IA para geracao de musica, efeitos sonoros, restauracao de audio, separacao de stems e clonagem de voz.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">IA revolucionou o que e possivel em audio: tasks que levavam horas agora levam minutos.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">AI music generation, stem separation, voice cloning, audio restoration.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modulo 3.4 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.4</span>
+          <span class="text-xs text-neutral-500">~90 min</span>
+        </div>
+        <a href="modulo-3-4.html" class="block">
+          <h3 class="text-2xl sm:text-3xl font-bold mb-3 hover:text-purple-400 transition-colors">✨ Motion Graphics e VFX</h3>
+        </a>
+        <p class="text-neutral-400 text-sm">Efeitos visuais e graficos animados que elevam a producao.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🎞️</span>
+            <div class="flex-1">
+              <span class="font-medium">Principios de animacao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Movimento organico</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Os 12 principios da Disney aplicados a motion graphics: timing, easing, anticipation, follow-through que fazem graficos parecerem vivos.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Animacao sem principios parece rigida e robotica. Com principios, parece natural e elegante.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ease in/out, anticipation, squash/stretch, secondary action, timing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🔤</span>
+            <div class="flex-1">
+              <span class="font-medium">Tipografia em movimento</span>
+              <span class="text-neutral-500 text-sm ml-2">- Texto animado</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Animar texto para comunicar, enfatizar e entreter. Kinetic typography, reveal effects, character animation.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Texto animado e essencial para redes sociais, videos explicativos e titulos impactantes.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Kinetic typography, text reveals, per-character animation, path animation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">📊</span>
+            <div class="flex-1">
+              <span class="font-medium">Visualizacao de dados</span>
+              <span class="text-neutral-500 text-sm ml-2">- Dados que falam</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Transformar numeros e dados em graficos animados que contam historias: charts, graphs, infograficos em movimento.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Dados puros sao sonoriferos. Dados visualizados engajam e convencem.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Chart animation, data-driven design, infographic storytelling, visual hierarchy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🎭</span>
+            <div class="flex-1">
+              <span class="font-medium">Composicao e VFX</span>
+              <span class="text-neutral-500 text-sm ml-2">- Efeitos integrados</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Combinar multiplos elementos visuais de forma coesa: green screen, rotoscoping, tracking, integracao de CG.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">VFX mal feito distrai. VFX bem feito e invisivel e serve a historia.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Keying, rotoscoping, tracking, match moving, compositing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🎪</span>
+            <div class="flex-1">
+              <span class="font-medium">Transicoes criativas</span>
+              <span class="text-neutral-500 text-sm ml-2">- Conexoes visuais</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Transicoes que conectam cenas de forma criativa: wipes, morphs, match cuts, mask transitions que mantem fluxo visual.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Transicoes sao o "invisible cut" que mantem audiencias engajadas sem perceberem.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Match cut, morph, mask transitions, whip pan, luma/chroma wipes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg mr-2">🤖</span>
+            <div class="flex-1">
+              <span class="font-medium">VFX com IA</span>
+              <span class="text-neutral-500 text-sm ml-2">- Efeitos assistidos</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">IA para rotoscoping automatico, geracao de backgrounds, extensao de sets, upscaling e criacao de elementos visuais.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Tasks de VFX que levavam dias agora levam horas. IA democratiza efeitos de alto nivel.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Auto-rotoscoping, inpainting, outpainting, style transfer, neural upscaling.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modulo 3.5 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.5</span>
+          <span class="text-xs text-neutral-500">~80 min</span>
+        </div>
+        <a href="modulo-3-5.html" class="block">
+          <h3 class="text-2xl sm:text-3xl font-bold mb-3 hover:text-purple-400 transition-colors">📺 Series e Formatos Recorrentes</h3>
+        </a>
+        <p class="text-neutral-400 text-sm">Produzir conteudo em serie: consistencia, escalabilidade e fidelizacao.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">📋</span>
+            <div class="flex-1">
+              <span class="font-medium">Design de formato</span>
+              <span class="text-neutral-500 text-sm ml-2">- Estrutura replicavel</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Criar um formato que pode ser replicado infinitamente: estrutura, elementos recorrentes, identidade visual e ritmo consistente.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Formatos permitem escala. Em vez de reinventar a roda, voce preenche um template comprovado.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Format bible, recurring elements, segment structure, signature moments.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">🎯</span>
+            <div class="flex-1">
+              <span class="font-medium">Arco de temporada</span>
+              <span class="text-neutral-500 text-sm ml-2">- Planejamento longo</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Planejar conteudo em arcos maiores: temporadas, temas mensais, progressoes que mantem audiencia voltando.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Arcos criam antecipacao e fidelidade. Episodios isolados sao esquecidos; series sao acompanhadas.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Season arc, episode structure, callbacks, continuity, cliffhangers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🏭</span>
+            <div class="flex-1">
+              <span class="font-medium">Producao em lote</span>
+              <span class="text-neutral-500 text-sm ml-2">- Eficiencia de escala</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Gravar e editar multiplos episodios de uma vez: batch recording, assembly line editing, maximizar uso de recursos.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Produzir um video por vez e ineficiente. Em lote, custos fixos se diluem e qualidade sobe.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Batch recording, content bank, buffer, pipeline management.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🎨</span>
+            <div class="flex-1">
+              <span class="font-medium">Identidade visual de serie</span>
+              <span class="text-neutral-500 text-sm ml-2">- Branding consistente</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Criar identidade visual que une todos os episodios: intro, outro, paleta de cores, tipografia, elementos graficos consistentes.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Identidade forte torna serie reconhecivel instantaneamente e constroi marca.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Brand book, title sequence, bumpers, lower thirds, end cards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">👥</span>
+            <div class="flex-1">
+              <span class="font-medium">Engajamento de comunidade</span>
+              <span class="text-neutral-500 text-sm ml-2">- Fidelizacao</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Construir comunidade ao redor da serie: interacao com comentarios, Q&A, behind the scenes, participacao da audiencia.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Series com comunidades engajadas tem retencao muito maior que conteudo isolado.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Community building, fan engagement, user generated content, inside jokes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg mr-2">🤖</span>
+            <div class="flex-1">
+              <span class="font-medium">Automacao de series</span>
+              <span class="text-neutral-500 text-sm ml-2">- Pipeline com IA</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Automatizar partes do processo de producao de series: templates de edicao, geracao de assets, agendamento, analise de performance.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sem automacao, manter cadencia de serie e insustentavel. Com automacao, escala sem burnout.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Template-based editing, auto-posting, analytics automation, content calendar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modulo 3.6 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.6</span>
+          <span class="text-xs text-neutral-500">~70 min</span>
+        </div>
+        <a href="modulo-3-6.html" class="block">
+          <h3 class="text-2xl sm:text-3xl font-bold mb-3 hover:text-purple-400 transition-colors">💰 Distribuicao e Monetizacao</h3>
+        </a>
+        <p class="text-neutral-400 text-sm">Estrategias para distribuir e monetizar conteudo audiovisual.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🌐</span>
+            <div class="flex-1">
+              <span class="font-medium">Estrategia multiplataforma</span>
+              <span class="text-neutral-500 text-sm ml-2">- Onde publicar</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Distribuir conteudo em multiplas plataformas de forma estrategica: adaptando formatos, horarios e abordagens para cada uma.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cada plataforma tem audiencias e algoritmos diferentes. Estrategia certa maximiza alcance.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Platform-native content, repurposing, cross-posting, primary vs secondary platforms.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">📈</span>
+            <div class="flex-1">
+              <span class="font-medium">Algoritmos e discovery</span>
+              <span class="text-neutral-500 text-sm ml-2">- Ser encontrado</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Entender como algoritmos recomendam conteudo e otimizar para discovery: thumbnails, titulos, retencao, engajamento.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">O melhor conteudo do mundo nao adianta se ninguem encontra. Algoritmos sao gatekeepers.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">CTR, watch time, engagement rate, impressions, suggested videos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">💵</span>
+            <div class="flex-1">
+              <span class="font-medium">Modelos de monetizacao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Formas de ganhar</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Diferentes formas de monetizar conteudo: ads, patrocinios, memberships, produtos digitais, servicos, licenciamento.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Depender apenas de AdSense e limitante. Diversificacao de receita e sustentabilidade.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">CPM, sponsorships, affiliate, digital products, memberships, licensing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">🤝</span>
+            <div class="flex-1">
+              <span class="font-medium">Negocios com marcas</span>
+              <span class="text-neutral-500 text-sm ml-2">- Parcerias pagas</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Como atrair, negociar e executar parcerias com marcas: midia kits, precificacao, entregas, manutencao de relacionamento.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Parcerias com marcas podem pagar mais que anos de ads. E um mercado bilionario.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Media kit, rate cards, brand fit, integration, disclosure, deliverables.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">📊</span>
+            <div class="flex-1">
+              <span class="font-medium">Analytics para crescimento</span>
+              <span class="text-neutral-500 text-sm ml-2">- Decisoes baseadas em dados</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Usar dados de analytics para guiar decisoes de conteudo: o que funciona, o que escalar, o que abandonar.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Intuicao nao escala. Dados mostram padroes invisiveis e permitem otimizacao continua.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Retention graphs, traffic sources, audience demographics, A/B testing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg mr-2">🤖</span>
+            <div class="flex-1">
+              <span class="font-medium">IA para distribuicao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Otimizacao automatica</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Usar IA para otimizar distribuicao: geracao de thumbnails, titulos, descricoes, horarios de postagem, segmentacao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Distribuicao eficaz exige testes constantes. IA permite testar em escala impossivel manualmente.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">AI thumbnail generation, title optimization, scheduling AI, trend prediction.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modulo 3.7 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-purple-400 font-bold">3.7</span>
+          <span class="text-xs text-neutral-500">~80 min</span>
+        </div>
+        <a href="modulo-3-7.html" class="block">
+          <h3 class="text-2xl sm:text-3xl font-bold mb-3 hover:text-purple-400 transition-colors">⚙️ Workflows Profissionais</h3>
+        </a>
+        <p class="text-neutral-400 text-sm">Sistemas de producao em escala: equipe, processos e ferramentas.</p>
+      </div>
+
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg mr-2">🏢</span>
+            <div class="flex-1">
+              <span class="font-medium">Estrutura de equipe</span>
+              <span class="text-neutral-500 text-sm ml-2">- Papeis e responsabilidades</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Diferentes estruturas de equipe para producao audiovisual: solo, dupla, equipe pequena, equipe completa. Papeis e responsabilidades de cada funcao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Escala exige delegar. Saber quando e como contratar e a diferenca entre burnout e crescimento.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Produtor, editor, camera, diretor, gerente de projeto, freelancer vs staff.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg mr-2">📁</span>
+            <div class="flex-1">
+              <span class="font-medium">Gestao de assets</span>
+              <span class="text-neutral-500 text-sm ml-2">- Organizacao em escala</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sistemas para organizar, armazenar e encontrar assets: nomenclatura, estrutura de pastas, MAM (Media Asset Management).</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Com milhares de arquivos, organizacao ruim = horas perdidas procurando. Organizacao boa = minutos.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Nomenclatura, folder structure, metadata, tagging, DAM systems.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg mr-2">🔄</span>
+            <div class="flex-1">
+              <span class="font-medium">Pipeline de producao</span>
+              <span class="text-neutral-500 text-sm ml-2">- Fluxo otimizado</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O fluxo completo da ideia ao video publicado: etapas, handoffs, checkpoints, aprovacoes. Pipeline documentado e replicavel.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sem pipeline definido, cada projeto e caos. Com pipeline, cada projeto e execucao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Pre-production, production, post-production, delivery, handoffs, SLAs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg mr-2">✅</span>
+            <div class="flex-1">
+              <span class="font-medium">Controle de qualidade</span>
+              <span class="text-neutral-500 text-sm ml-2">- Standards consistentes</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Processos para garantir qualidade consistente: checklists, review stages, aprovacoes, padronizacao tecnica e estetica.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Qualidade inconsistente prejudica marca e confianca da audiencia. QC garante padrao minimo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">QC checklist, review stages, technical specs, brand guidelines, approval workflows.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg mr-2">🛠️</span>
+            <div class="flex-1">
+              <span class="font-medium">Stack de ferramentas</span>
+              <span class="text-neutral-500 text-sm ml-2">- Ecossistema integrado</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Conjunto de ferramentas que trabalham juntas: edicao, gestao de projetos, comunicacao, armazenamento, automacao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ferramentas fragmentadas geram atrito. Stack integrado acelera o fluxo.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Tool ecosystem, integrations, automation, project management, cloud storage.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg mr-2">🤖</span>
+            <div class="flex-1">
+              <span class="font-medium">IA no workflow profissional</span>
+              <span class="text-neutral-500 text-sm ml-2">- Automacao inteligente</span>
+            </div>
+            <span class="text-neutral-500 text-sm">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3">
+              <div>
+                <span class="text-purple-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Integrar IA em cada etapa do workflow: pesquisa, roteiro, producao, edicao, distribuicao. Humanos para decisoes, IA para execucao.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">IA nao substitui profissionais - amplifica sua capacidade. Profissionais com IA produzem 10x mais que sem.</p>
+              </div>
+              <div>
+                <span class="text-purple-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">AI-augmented workflows, decision vs execution, hybrid teams, prompt libraries.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Final -->
+    <div class="bg-gradient-to-r from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/20 p-8 text-center mt-12">
+      <h2 class="text-2xl font-bold mb-4">🚀 Pronto para o nivel profissional?</h2>
+      <p class="text-neutral-400 mb-6">Apos dominar esta trilha, voce tera habilidades de producao audiovisual de nivel profissional.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="modulo-3-1.html" class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-semibold transition-colors">
+          Comecar Trilha 3
+          <span class="ml-2">→</span>
+        </a>
+        <a href="../trilha4/index.html" class="inline-flex items-center px-6 py-3 bg-dark-700 hover:bg-dark-600 text-neutral-300 rounded-lg font-semibold transition-colors">
+          Ver Laboratorios
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="text-center text-neutral-500">
+        <p class="font-semibold text-neutral-300 mb-2">VisionPro</p>
+        <p class="text-sm">Producao audiovisual com inteligencia artificial</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTopic(button) {
+      const explanation = button.nextElementSibling;
+      const icon = button.querySelector('.text-neutral-500:last-child');
+
+      explanation.classList.toggle('active');
+      icon.textContent = explanation.classList.contains('active') ? '−' : '+';
+    }
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      const icon = document.getElementById('theme-icon');
+      icon.textContent = document.documentElement.classList.contains('dark') ? '🌙' : '☀️';
+    }
+  </script>
+</body>
+</html>

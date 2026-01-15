@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montagem e Finalizacao - VisionPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        dark: {
+                            900: '#0a0a0f',
+                            800: '#12121a',
+                            700: '#1a1a24',
+                            600: '#2a2a3a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        html:not(.dark) { background: #f8fafc; }
+        html:not(.dark) body { background: #f8fafc; color: #1e293b; }
+        html:not(.dark) .dark\:bg-dark-900 { background: #f8fafc; }
+        html:not(.dark) .dark\:bg-dark-800 { background: #ffffff; }
+        html:not(.dark) .dark\:bg-dark-700 { background: #f1f5f9; }
+        html:not(.dark) .dark\:text-white { color: #1e293b; }
+        html:not(.dark) .dark\:text-gray-300 { color: #475569; }
+        html:not(.dark) .dark\:text-gray-400 { color: #64748b; }
+        html:not(.dark) .dark\:border-dark-600 { border-color: #e2e8f0; }
+    </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors">
+                        <span class="hidden sm:inline">Fundamentos</span>
+                        <span class="sm:hidden">Fund</span>
+                    </a>
+                    <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                        <span class="hidden sm:inline">Metodo</span>
+                        <span class="sm:hidden">Met</span>
+                    </a>
+                    <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors">
+                        <span class="hidden sm:inline">Avancado</span>
+                        <span class="sm:hidden">Avanc</span>
+                    </a>
+                    <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-amber-500/10 text-amber-400 hover:bg-amber-500/20 transition-colors">
+                        <span class="hidden sm:inline">Labs</span>
+                        <span class="sm:hidden">Labs</span>
+                    </a>
+                </div>
+                <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors">
+                    <span class="dark:hidden">🌙</span>
+                    <span class="hidden dark:inline">☀️</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-b from-blue-900/30 to-dark-900 border-b border-dark-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="mb-4">
+                <a href="index.html" class="text-blue-400 hover:text-blue-300 text-sm">← Voltar para Trilha Metodo</a>
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm font-medium">Modulo 2.9</span>
+                <span class="px-3 py-1 bg-dark-700 text-gray-400 rounded-full text-sm">55 min</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Montagem e Finalizacao</h1>
+            <p class="text-gray-400 text-lg max-w-2xl">
+                Transforme seu material bruto em um video finalizado usando tecnicas de edicao profissionais e ferramentas de IA.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+                <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                    <div class="text-2xl font-bold text-blue-400">6</div>
+                    <div class="text-sm text-gray-400">Topicos</div>
+                </div>
+                <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                    <div class="text-2xl font-bold text-blue-400">55</div>
+                    <div class="text-sm text-gray-400">Minutos</div>
+                </div>
+                <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                    <div class="text-2xl font-bold text-blue-400">Int</div>
+                    <div class="text-sm text-gray-400">Nivel</div>
+                </div>
+                <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                    <div class="text-2xl font-bold text-blue-400">Exec</div>
+                    <div class="text-sm text-gray-400">Tipo</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Topic 1 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">1</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Montar a Estrutura Base</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    A montagem comeca com a estrutura, nao com os detalhes. Primeiro construa o "esqueleto" do seu video antes de se preocupar com transicoes, efeitos ou cor.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Fluxo de Edicao em 3 Passes</h3>
+
+                <!-- Three Passes -->
+                <div class="space-y-4 mb-6">
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-10 h-10 bg-red-500/20 rounded-full flex items-center justify-center text-red-400 font-bold">1</div>
+                            <h4 class="font-semibold text-white">Assembly Cut (Corte Bruto)</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-2">Coloque todos os clips na timeline na ordem do roteiro. Nao se preocupe com duracao ou qualidade.</p>
+                        <div class="text-xs text-gray-500">Objetivo: Ver a historia completa de ponta a ponta</div>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center text-yellow-400 font-bold">2</div>
+                            <h4 class="font-semibold text-white">Rough Cut (Corte Aproximado)</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-2">Corte os excessos, ajuste a duracao, escolha os melhores takes. O video deve fluir.</p>
+                        <div class="text-xs text-gray-500">Objetivo: Ritmo e narrativa funcionando</div>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 font-bold">3</div>
+                            <h4 class="font-semibold text-white">Fine Cut (Corte Final)</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-2">Ajustes finos de timing, adicao de transicoes, B-roll, graficos e efeitos.</p>
+                        <div class="text-xs text-gray-500">Objetivo: Polimento e finalizacao</div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Organizacao da Timeline</h3>
+
+                <div class="bg-dark-900 rounded-xl p-5 border border-dark-600 font-mono text-sm">
+                    <div class="text-gray-400 mb-3"># Estrutura de Trilhas Recomendada</div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-3">
+                            <span class="text-blue-400 w-8">V4:</span>
+                            <span class="text-gray-300">Textos e Graficos</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-blue-400 w-8">V3:</span>
+                            <span class="text-gray-300">Overlays e Efeitos</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-blue-400 w-8">V2:</span>
+                            <span class="text-gray-300">B-Roll e Inserts</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-blue-400 w-8">V1:</span>
+                            <span class="text-gray-300">Video Principal</span>
+                        </div>
+                        <div class="border-t border-dark-600 my-2"></div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-green-400 w-8">A1:</span>
+                            <span class="text-gray-300">Dialogo/Locucao Principal</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-green-400 w-8">A2:</span>
+                            <span class="text-gray-300">Audio Ambiente/Efeitos</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-green-400 w-8">A3:</span>
+                            <span class="text-gray-300">Musica</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-sky-900/20 border border-sky-900/50 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-sky-400 text-xl">💡</span>
+                    <div>
+                        <h4 class="font-semibold text-sky-400 mb-1">Insight</h4>
+                        <p class="text-gray-300 text-sm">Resista a tentacao de ajustar detalhes no Assembly Cut. Se voce ficar corrigindo a cor de um clip que pode ser removido depois, perde tempo. Primeiro a historia, depois a estetica.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 2 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">2</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Usar IA na Edicao</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Ferramentas de IA podem acelerar drasticamente o processo de edicao. Saiba onde elas brilham e onde ainda precisam de supervisao humana.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Tarefas que IA Faz Bem</h3>
+
+                <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-2xl">✂️</span>
+                            <h4 class="font-semibold text-white">Auto-Corte de Silencios</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">Remove pausas e "ums" automaticamente. Economiza horas em videos longos.</p>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-2xl">📝</span>
+                            <h4 class="font-semibold text-white">Transcricao Automatica</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">Gera legendas e permite buscar por palavras no video.</p>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-2xl">🎨</span>
+                            <h4 class="font-semibold text-white">Color Match</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">Iguala cores entre clips diferentes automaticamente.</p>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-2xl">🔊</span>
+                            <h4 class="font-semibold text-white">Limpeza de Audio</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">Remove ruido de fundo, eco e melhora clareza vocal.</p>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-2xl">👤</span>
+                            <h4 class="font-semibold text-white">Recorte de Fundo</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">Remove ou substitui fundos sem chroma key.</p>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-2xl">📐</span>
+                            <h4 class="font-semibold text-white">Auto-Reframe</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">Ajusta enquadramento para diferentes formatos (16:9 → 9:16).</p>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Ferramentas Recomendadas</h3>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-dark-600">
+                                <th class="text-left py-3 text-gray-400 font-medium">Tarefa</th>
+                                <th class="text-left py-3 text-gray-400 font-medium">Ferramenta</th>
+                                <th class="text-left py-3 text-gray-400 font-medium">Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3">Corte de silencios</td>
+                                <td class="py-3">Descript, Opus Clip</td>
+                                <td class="py-3">Web/App</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3">Transcricao</td>
+                                <td class="py-3">Whisper, Descript</td>
+                                <td class="py-3">Local/Web</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3">Limpeza de audio</td>
+                                <td class="py-3">Adobe Enhance, Krisp</td>
+                                <td class="py-3">Web/Plugin</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3">Remocao de fundo</td>
+                                <td class="py-3">Runway, Remove.bg</td>
+                                <td class="py-3">Web</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3">Auto-reframe</td>
+                                <td class="py-3">Premiere, CapCut</td>
+                                <td class="py-3">App</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-amber-900/20 border border-amber-900/50 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-amber-400 text-xl">⚠️</span>
+                    <div>
+                        <h4 class="font-semibold text-amber-400 mb-1">Atencao</h4>
+                        <p class="text-gray-300 text-sm">Sempre revise resultados de IA antes de exportar. Auto-corte pode remover pausas dramaticas intencionais. Legendas automaticas erram nomes proprios. Supervisao humana e essencial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 3 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">3</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Trabalhar o Audio</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Audio e 50% da experiencia do video - alguns diriam que e mais importante que a imagem. Um audio mal trabalhado arruina ate a melhor filmagem.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Niveis de Volume Padrao</h3>
+
+                <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600 mb-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-24 text-sm text-gray-400">Dialogo</div>
+                            <div class="flex-grow bg-dark-900 rounded-full h-4 relative">
+                                <div class="absolute left-0 top-0 h-4 bg-green-500 rounded-l-full" style="width: 75%"></div>
+                                <div class="absolute right-2 top-0 h-4 flex items-center text-xs text-white">-6 dB</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-24 text-sm text-gray-400">Musica (fundo)</div>
+                            <div class="flex-grow bg-dark-900 rounded-full h-4 relative">
+                                <div class="absolute left-0 top-0 h-4 bg-blue-500 rounded-l-full" style="width: 45%"></div>
+                                <div class="absolute right-2 top-0 h-4 flex items-center text-xs text-white">-18 dB</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-24 text-sm text-gray-400">Efeitos</div>
+                            <div class="flex-grow bg-dark-900 rounded-full h-4 relative">
+                                <div class="absolute left-0 top-0 h-4 bg-purple-500 rounded-l-full" style="width: 55%"></div>
+                                <div class="absolute right-2 top-0 h-4 flex items-center text-xs text-white">-12 dB</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-24 text-sm text-gray-400">Master</div>
+                            <div class="flex-grow bg-dark-900 rounded-full h-4 relative">
+                                <div class="absolute left-0 top-0 h-4 bg-yellow-500 rounded-l-full" style="width: 90%"></div>
+                                <div class="absolute right-2 top-0 h-4 flex items-center text-xs text-white">-3 dB</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">Nunca ultrapasse 0 dB no master - causa distorcao (clipping)</p>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Checklist de Audio</h3>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-3">Pre-Mix</h4>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Normalizar todos os clips de dialogo</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Remover ruido de fundo</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Corrigir picos e estouro</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Aplicar EQ basico na voz</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-3">Mixagem</h4>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Balancear dialogo vs musica</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Ducking automatico na musica</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Transicoes suaves entre trilhas</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Compressao leve no master</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-primary/10 border border-primary/30 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-primary text-xl">🎯</span>
+                    <div>
+                        <h4 class="font-semibold text-primary mb-1">Teste Pratico</h4>
+                        <p class="text-gray-300 text-sm">Ouca seu video em fones de ouvido, em alto-falante do celular e em caixas de som. Se o dialogo for claro em todos, seu mix esta bom. Se nao, ajuste os niveis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 4 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">4</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Aplicar Correcao de Cor</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Correcao de cor e diferente de colorgrading. Primeiro voce corrige problemas tecnicos, depois aplica um "look" estetico. Confundir as etapas gera resultados inconsistentes.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Correcao vs Colorgrading</h3>
+
+                <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-3">Correcao (Tecnica)</h4>
+                        <p class="text-gray-400 text-sm mb-3">Resolver problemas, igualar clips</p>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li>• Balanco de branco correto</li>
+                            <li>• Exposicao adequada</li>
+                            <li>• Contraste equilibrado</li>
+                            <li>• Remocao de colorcast</li>
+                            <li>• Match entre takes</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-3">Colorgrading (Criativa)</h4>
+                        <p class="text-gray-400 text-sm mb-3">Criar atmosfera, definir estilo</p>
+                        <ul class="text-gray-400 text-sm space-y-1">
+                            <li>• Tons quentes ou frios</li>
+                            <li>• Contraste cinematico</li>
+                            <li>• Saturacao estilizada</li>
+                            <li>• LUTs e presets</li>
+                            <li>• Looks especificos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Fluxo de Correcao Basica</h3>
+
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-blue-500/30 rounded-lg flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">1</div>
+                        <div class="bg-dark-800/50 rounded-lg p-3 flex-grow border border-dark-600">
+                            <span class="text-gray-300">Ajuste o <strong>balanco de branco</strong> - brancos devem ser neutros</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-blue-500/30 rounded-lg flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">2</div>
+                        <div class="bg-dark-800/50 rounded-lg p-3 flex-grow border border-dark-600">
+                            <span class="text-gray-300">Corrija a <strong>exposicao</strong> - use histograma como guia</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-blue-500/30 rounded-lg flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">3</div>
+                        <div class="bg-dark-800/50 rounded-lg p-3 flex-grow border border-dark-600">
+                            <span class="text-gray-300">Ajuste <strong>contraste</strong> - expanda o range sem perder detalhes</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-blue-500/30 rounded-lg flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">4</div>
+                        <div class="bg-dark-800/50 rounded-lg p-3 flex-grow border border-dark-600">
+                            <span class="text-gray-300">Refine <strong>saturacao</strong> - tons de pele devem parecer naturais</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-blue-500/30 rounded-lg flex items-center justify-center text-blue-400 font-bold text-sm shrink-0">5</div>
+                        <div class="bg-dark-800/50 rounded-lg p-3 flex-grow border border-dark-600">
+                            <span class="text-gray-300">Aplique <strong>LUT/Grade</strong> - somente apos correcao base</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">IA na Correcao de Cor</h3>
+
+                <div class="bg-dark-800/50 rounded-xl p-5 border border-dark-600">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold text-green-400 mb-2">✓ Use IA para:</h4>
+                            <ul class="text-gray-400 text-sm space-y-1">
+                                <li>• Auto-match entre clips</li>
+                                <li>• Correcao de balanco de branco</li>
+                                <li>• Sugestao de LUTs</li>
+                                <li>• Estabilizacao</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-400 mb-2">✗ Revise manualmente:</h4>
+                            <ul class="text-gray-400 text-sm space-y-1">
+                                <li>• Tons de pele</li>
+                                <li>• Cenas com iluminacao mista</li>
+                                <li>• Detalhes em sombras/altas luzes</li>
+                                <li>• Consistencia entre cenas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-sky-900/20 border border-sky-900/50 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-sky-400 text-xl">💡</span>
+                    <div>
+                        <h4 class="font-semibold text-sky-400 mb-1">Insight</h4>
+                        <p class="text-gray-300 text-sm">Calibre seu monitor ou use um monitor de referencia. Editar cor em tela nao calibrada e como mixar audio com fones ruins - voce nao ve o que realmente esta la.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 5 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">5</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Adicionar Graficos e Textos</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Elementos graficos ajudam a comunicar informacoes, reforcar pontos e manter o engajamento. Use com moderacao e consistencia.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Tipos de Elementos Graficos</h3>
+
+                <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-2">Lower Thirds</h4>
+                        <p class="text-gray-400 text-sm">Identificacao de pessoas, locais, cargos. Posicao inferior da tela.</p>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-2">Legendas</h4>
+                        <p class="text-gray-400 text-sm">Transcricao do dialogo. Essencial para acessibilidade e redes sociais.</p>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-2">Call-outs</h4>
+                        <p class="text-gray-400 text-sm">Destaque de pontos-chave. Texto que aparece para enfatizar falas.</p>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-2">Infograficos</h4>
+                        <p class="text-gray-400 text-sm">Dados, estatisticas, processos. Visualizacao de informacoes complexas.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Principios de Design</h3>
+
+                <div class="space-y-4 mb-6">
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <div class="flex items-start gap-4">
+                            <div class="text-2xl">🎨</div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Consistencia Visual</h4>
+                                <p class="text-gray-400 text-sm">Use a mesma fonte, cores e estilo em todos os graficos. Crie templates reutilizaveis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <div class="flex items-start gap-4">
+                            <div class="text-2xl">📐</div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Safe Zones</h4>
+                                <p class="text-gray-400 text-sm">Mantenha texto a pelo menos 10% das bordas. Considere interface de plataformas (botoes do YouTube, UI do Instagram).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <div class="flex items-start gap-4">
+                            <div class="text-2xl">⏱️</div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Tempo de Leitura</h4>
+                                <p class="text-gray-400 text-sm">Texto deve ficar na tela tempo suficiente para ler 2x. Para legendas: 15-20 caracteres por segundo max.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <div class="flex items-start gap-4">
+                            <div class="text-2xl">🔲</div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Contraste</h4>
+                                <p class="text-gray-400 text-sm">Texto claro sobre fundo escuro com sombra/borda. Use caixa semi-transparente se necessario.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Gerando Graficos com IA</h3>
+
+                <div class="bg-dark-900 rounded-xl p-5 border border-dark-600">
+                    <p class="text-gray-300 text-sm mb-3">Use IA para gerar elementos graficos unicos:</p>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-400">→</span>
+                            <span><strong>Icones customizados:</strong> "Icone minimalista de [conceito], linha fina, fundo transparente"</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-400">→</span>
+                            <span><strong>Backgrounds abstratos:</strong> "Textura gradiente suave, tons de azul, estilo corporativo"</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-400">→</span>
+                            <span><strong>Ilustracoes:</strong> "Ilustracao flat de [cena], estilo infografico, cores vibrantes"</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-amber-900/20 border border-amber-900/50 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-amber-400 text-xl">⚠️</span>
+                    <div>
+                        <h4 class="font-semibold text-amber-400 mb-1">Cuidado</h4>
+                        <p class="text-gray-300 text-sm">Menos e mais. Um video sobrecarregado de textos e graficos cansa o espectador. Se a informacao pode ser dita, nao precisa ser escrita. Reserve graficos para o que realmente precisa de reforco visual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 6 -->
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">6</div>
+                <h2 class="text-xl sm:text-2xl font-bold">Exportar para Diferentes Plataformas</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/20 to-dark-800 rounded-2xl p-6 sm:p-8 border border-dark-600 mb-6">
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Cada plataforma tem suas especificacoes tecnicas e boas praticas. Exportar corretamente garante que seu video apareca com a melhor qualidade possivel.
+                </p>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Especificacoes por Plataforma</h3>
+
+                <div class="overflow-x-auto mb-6">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-dark-600">
+                                <th class="text-left py-3 text-gray-400 font-medium">Plataforma</th>
+                                <th class="text-left py-3 text-gray-400 font-medium">Resolucao</th>
+                                <th class="text-left py-3 text-gray-400 font-medium">Aspecto</th>
+                                <th class="text-left py-3 text-gray-400 font-medium">Max</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3 font-medium">YouTube</td>
+                                <td class="py-3">1920x1080 / 4K</td>
+                                <td class="py-3">16:9</td>
+                                <td class="py-3">12h / 256GB</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3 font-medium">Instagram Feed</td>
+                                <td class="py-3">1080x1080</td>
+                                <td class="py-3">1:1 / 4:5</td>
+                                <td class="py-3">60s / 4GB</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3 font-medium">Reels/TikTok</td>
+                                <td class="py-3">1080x1920</td>
+                                <td class="py-3">9:16</td>
+                                <td class="py-3">90s / 287MB</td>
+                            </tr>
+                            <tr class="border-b border-dark-700">
+                                <td class="py-3 font-medium">LinkedIn</td>
+                                <td class="py-3">1920x1080</td>
+                                <td class="py-3">16:9 / 1:1</td>
+                                <td class="py-3">10m / 5GB</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 font-medium">Stories</td>
+                                <td class="py-3">1080x1920</td>
+                                <td class="py-3">9:16</td>
+                                <td class="py-3">15-60s</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Configuracoes de Export Recomendadas</h3>
+
+                <div class="bg-dark-900 rounded-xl p-5 border border-dark-600 mb-6 font-mono text-sm">
+                    <div class="text-gray-400 mb-3"># Configuracao Padrao Alta Qualidade</div>
+                    <div class="space-y-1 text-gray-300">
+                        <div><span class="text-blue-400">Codec:</span> H.264 ou H.265 (HEVC)</div>
+                        <div><span class="text-blue-400">Bitrate:</span> 10-20 Mbps (1080p) / 35-45 Mbps (4K)</div>
+                        <div><span class="text-blue-400">Frame Rate:</span> Igual ao original (24/30/60 fps)</div>
+                        <div><span class="text-blue-400">Audio:</span> AAC, 320 kbps, Stereo</div>
+                        <div><span class="text-blue-400">Formato:</span> MP4 (.mp4)</div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Checklist Pre-Export</h3>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-3">Video</h4>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Inicio e fim limpos (sem frames pretos)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Correcao de cor aplicada</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Graficos dentro da safe zone</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Sem artefatos ou glitches</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-xl p-4 border border-dark-600">
+                        <h4 class="font-semibold text-white mb-3">Audio</h4>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Niveis nao ultrapassam -3dB</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Dialogo claro sobre musica</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Sem pops ou cliques</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-400">□</span>
+                                <span>Fade in/out aplicados</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-primary/10 border border-primary/30 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                    <span class="text-primary text-xl">🎯</span>
+                    <div>
+                        <h4 class="font-semibold text-primary mb-1">Dica Pro</h4>
+                        <p class="text-gray-300 text-sm">Crie presets de export para cada plataforma que voce usa regularmente. Isso economiza tempo e garante consistencia. Exporte sempre uma versao master em alta qualidade antes de versoes otimizadas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="mb-12 bg-gradient-to-r from-blue-900/30 to-dark-800 rounded-2xl p-6 sm:p-8 border border-blue-500/20">
+            <h2 class="text-xl sm:text-2xl font-bold mb-6">Resumo do Modulo</h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">O que voce aprendeu:</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Estruturar a edicao em tres passes (assembly, rough, fine cut)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Aplicar ferramentas de IA para acelerar tarefas repetitivas</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Mixar audio profissionalmente com niveis corretos</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Aplicar correcao de cor e colorgrading de forma sistematica</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Adicionar graficos e textos seguindo boas praticas de design</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400">✓</span>
+                        <span class="text-gray-300">Exportar para diferentes plataformas com qualidade otima</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="border-t border-dark-600 pt-6">
+                <h3 class="text-lg font-semibold text-blue-400 mb-4">Proximo modulo:</h3>
+                <a href="modulo-2-10.html" class="flex items-center justify-between p-4 bg-dark-800/50 rounded-xl border border-dark-600 hover:border-blue-500/50 transition-colors group">
+                    <div>
+                        <div class="font-semibold text-white group-hover:text-blue-400 transition-colors">2.10 Testar, Ajustar e Escalar</div>
+                        <div class="text-sm text-gray-400">Valide seu conteudo e crie sistemas de producao escalavel</div>
+                    </div>
+                    <span class="text-blue-400 text-xl">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center">
+            <a href="modulo-2-8.html" class="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors">
+                <span>←</span>
+                <span>Modulo anterior</span>
+            </a>
+            <a href="modulo-2-10.html" class="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors">
+                <span>Proximo modulo</span>
+                <span>→</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-600 mt-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-gray-400">
+                <p class="font-semibold text-white mb-2">VisionPro</p>
+                <p class="text-sm">Producao audiovisual com inteligencia artificial</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        if (localStorage.getItem('theme') === 'light') {
+            html.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>

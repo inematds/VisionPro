@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo 3.3: Sound Design Profissional - VisionPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    typography: {
+                        DEFAULT: {
+                            css: {
+                                maxWidth: 'none',
+                            },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px -10px rgba(168, 85, 247, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-xl font-bold gradient-text">VisionPro</a>
+                <div class="flex items-center space-x-6">
+                    <a href="../trilha1/index.html" class="text-sm text-neutral-400 hover:text-emerald-400 transition-colors">Trilha 1</a>
+                    <a href="../trilha2/index.html" class="text-sm text-neutral-400 hover:text-blue-400 transition-colors">Trilha 2</a>
+                    <a href="index.html" class="text-sm text-purple-400 font-medium">Trilha 3</a>
+                    <a href="../trilha4/index.html" class="text-sm text-neutral-400 hover:text-amber-400 transition-colors">Trilha 4</a>
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-900 hover:bg-neutral-800 transition-colors">
+                        <span class="text-lg">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <!-- Header -->
+            <div class="mb-12">
+                <div class="flex items-center space-x-3 mb-4">
+                    <a href="index.html" class="text-neutral-400 hover:text-purple-400 transition-colors">← Trilha 3</a>
+                    <span class="text-neutral-600">/</span>
+                    <span class="text-purple-400 text-sm font-medium px-2 py-1 bg-purple-500/20 rounded-full">Modulo 3.3</span>
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-bold mb-4">Sound Design Profissional</h1>
+                <p class="text-neutral-400 text-lg mb-6">Domine a arte do som para criar experiencias audiovisuais imersivas e profissionais</p>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-4 p-4 bg-neutral-900/50 rounded-xl border border-neutral-800">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-purple-400">90</div>
+                        <div class="text-xs text-neutral-500">minutos</div>
+                    </div>
+                    <div class="text-center border-x border-neutral-800">
+                        <div class="text-2xl font-bold text-purple-400">6</div>
+                        <div class="text-xs text-neutral-500">topicos</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-purple-400">Pro</div>
+                        <div class="text-xs text-neutral-500">nivel</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topics -->
+            <div class="space-y-8">
+                <!-- Topic 1 -->
+                <div class="card-hover bg-gradient-to-br from-purple-900/30 to-neutral-900 rounded-2xl border border-purple-500/20 p-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-purple-400 font-bold">1</span>
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-xl font-bold mb-3">Fundamentos de Audio Profissional</h2>
+                            <p class="text-neutral-400 mb-6">Som representa 50% da experiencia cinematografica. Entenda os principios tecnicos e perceptivos que fundamentam todo trabalho de audio profissional.</p>
+
+                            <div class="space-y-6">
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Fisica do Som</h3>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="text-sm font-medium mb-2">Frequencia (Hz)</div>
+                                            <p class="text-xs text-neutral-500 mb-2">Determina o tom (grave/agudo)</p>
+                                            <ul class="text-xs text-neutral-400 space-y-1">
+                                                <li>• Sub-graves: 20-60 Hz</li>
+                                                <li>• Graves: 60-250 Hz</li>
+                                                <li>• Medios: 250-4000 Hz</li>
+                                                <li>• Agudos: 4000-20000 Hz</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="text-sm font-medium mb-2">Amplitude (dB)</div>
+                                            <p class="text-xs text-neutral-500 mb-2">Determina o volume</p>
+                                            <ul class="text-xs text-neutral-400 space-y-1">
+                                                <li>• Sussurro: 30 dB</li>
+                                                <li>• Conversa: 60 dB</li>
+                                                <li>• Grito: 80 dB</li>
+                                                <li>• Limiar dor: 120 dB</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Padroes de Audio Digital</h3>
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-sm">
+                                            <thead>
+                                                <tr class="border-b border-neutral-700">
+                                                    <th class="text-left py-2 text-neutral-400">Formato</th>
+                                                    <th class="text-left py-2 text-neutral-400">Sample Rate</th>
+                                                    <th class="text-left py-2 text-neutral-400">Bit Depth</th>
+                                                    <th class="text-left py-2 text-neutral-400">Uso</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-neutral-300">
+                                                <tr class="border-b border-neutral-800">
+                                                    <td class="py-2">CD Quality</td>
+                                                    <td class="py-2">44.1 kHz</td>
+                                                    <td class="py-2">16-bit</td>
+                                                    <td class="py-2">Musica</td>
+                                                </tr>
+                                                <tr class="border-b border-neutral-800">
+                                                    <td class="py-2">Broadcast</td>
+                                                    <td class="py-2">48 kHz</td>
+                                                    <td class="py-2">24-bit</td>
+                                                    <td class="py-2 text-purple-400">Video padrao</td>
+                                                </tr>
+                                                <tr class="border-b border-neutral-800">
+                                                    <td class="py-2">Pro Audio</td>
+                                                    <td class="py-2">96 kHz</td>
+                                                    <td class="py-2">24-bit</td>
+                                                    <td class="py-2">Cinema/Master</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-2">Hi-Res</td>
+                                                    <td class="py-2">192 kHz</td>
+                                                    <td class="py-2">32-bit</td>
+                                                    <td class="py-2">Arquivamento</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 bg-purple-500/10 rounded-lg border-l-4 border-purple-500">
+                                    <div class="text-sm font-medium text-purple-400 mb-1">Regra de Ouro</div>
+                                    <p class="text-neutral-300 text-sm">Sempre grave em 48kHz/24-bit para video. E o padrao da industria e garante compatibilidade universal com qualquer NLE.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 2 -->
+                <div class="card-hover bg-gradient-to-br from-purple-900/30 to-neutral-900 rounded-2xl border border-purple-500/20 p-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-purple-400 font-bold">2</span>
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-xl font-bold mb-3">Captacao de Audio para Video</h2>
+                            <p class="text-neutral-400 mb-6">O audio captado em set e insubstituivel. Tecnicas profissionais de gravacao que garantem material limpo e utilizavel.</p>
+
+                            <div class="space-y-6">
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Tipos de Microfone</h3>
+                                    <div class="space-y-4">
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <span class="font-medium">Shotgun (Super-Cardioide)</span>
+                                                <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Essencial</span>
+                                            </div>
+                                            <p class="text-sm text-neutral-400 mb-2">Captacao direcional, rejeita som dos lados. Ideal para dialogos em set.</p>
+                                            <p class="text-xs text-neutral-500">Ex: Rode NTG3, Sennheiser MKH416, Deity S-Mic 2</p>
+                                        </div>
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <span class="font-medium">Lapela (Lavalier)</span>
+                                                <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Versatil</span>
+                                            </div>
+                                            <p class="text-sm text-neutral-400 mb-2">Oculto na roupa, som consistente em movimento. Ideal para entrevistas e vlogs.</p>
+                                            <p class="text-xs text-neutral-500">Ex: Sennheiser ME2, Rode Lavalier GO, DPA 4060</p>
+                                        </div>
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <span class="font-medium">Condensador Large Diaphragm</span>
+                                                <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">Estudio</span>
+                                            </div>
+                                            <p class="text-sm text-neutral-400 mb-2">Maximo detalhe, sensibilidade alta. Ideal para narracao e podcast.</p>
+                                            <p class="text-xs text-neutral-500">Ex: Rode NT1, Audio-Technica AT4050, Neumann U87</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Niveis de Gravacao</h3>
+                                    <div class="space-y-3">
+                                        <div>
+                                            <div class="flex justify-between text-sm mb-1">
+                                                <span>Pico Maximo</span>
+                                                <span class="text-red-400">-6 dB</span>
+                                            </div>
+                                            <div class="w-full bg-neutral-800 rounded-full h-2">
+                                                <div class="bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 h-2 rounded-full" style="width: 85%;"></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex justify-between text-sm mb-1">
+                                                <span>Nivel Ideal (Dialogos)</span>
+                                                <span class="text-green-400">-12 a -18 dB</span>
+                                            </div>
+                                            <div class="w-full bg-neutral-800 rounded-full h-2">
+                                                <div class="bg-green-500 h-2 rounded-full" style="width: 60%;"></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex justify-between text-sm mb-1">
+                                                <span>Ruido de Fundo</span>
+                                                <span class="text-neutral-400">< -60 dB</span>
+                                            </div>
+                                            <div class="w-full bg-neutral-800 rounded-full h-2">
+                                                <div class="bg-neutral-600 h-2 rounded-full" style="width: 10%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 bg-red-500/10 rounded-lg border-l-4 border-red-500">
+                                    <div class="text-sm font-medium text-red-400 mb-1">Erro Fatal</div>
+                                    <p class="text-neutral-300 text-sm">Audio clipado (distorcido por volume excessivo) e irrecuperavel. E melhor gravar baixo demais do que alto demais - voce pode aumentar no pos, mas nao pode remover distorcao.</p>
+                                </div>
+
+                                <div class="p-4 bg-amber-500/10 rounded-lg border-l-4 border-amber-500">
+                                    <div class="text-sm font-medium text-amber-400 mb-1">Exercicio Pratico</div>
+                                    <p class="text-neutral-300 text-sm">Grave 30 segundos de "silencio" no seu ambiente de gravacao. Analise o ruido de fundo - ar condicionado, geladeira, trafego. Identifique e elimine cada fonte de ruido antes de gravar.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 3 -->
+                <div class="card-hover bg-gradient-to-br from-purple-900/30 to-neutral-900 rounded-2xl border border-purple-500/20 p-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-purple-400 font-bold">3</span>
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-xl font-bold mb-3">Design de Som e Foley</h2>
+                            <p class="text-neutral-400 mb-6">Crie camadas sonoras que amplificam a narrativa. Som nao deve ser literal - deve ser emocional.</p>
+
+                            <div class="space-y-6">
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Camadas do Sound Design</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-start space-x-3 p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0 text-sm">1</div>
+                                            <div>
+                                                <div class="font-medium">Dialogos</div>
+                                                <p class="text-sm text-neutral-400">Voz principal, ADR (regravacao), respiracoes, reacoes</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3 p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0 text-sm">2</div>
+                                            <div>
+                                                <div class="font-medium">Ambientes (Room Tone)</div>
+                                                <p class="text-sm text-neutral-400">Som constante do espaco - escritorio, floresta, cidade</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3 p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0 text-sm">3</div>
+                                            <div>
+                                                <div class="font-medium">Foley</div>
+                                                <p class="text-sm text-neutral-400">Passos, roupa, objetos, interacoes fisicas sincronizadas</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3 p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0 text-sm">4</div>
+                                            <div>
+                                                <div class="font-medium">Efeitos (SFX)</div>
+                                                <p class="text-sm text-neutral-400">Impactos, transicoes, elementos especiais, sons UI</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3 p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0 text-sm">5</div>
+                                            <div>
+                                                <div class="font-medium">Musica</div>
+                                                <p class="text-sm text-neutral-400">Score, trilha licenciada, stingers, transicoes musicais</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Tecnicas de Foley Criativo</h3>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium text-sm mb-1">Chuva</div>
+                                            <p class="text-xs text-neutral-400">Bacon fritando + chuveiro em bandeja metalica</p>
+                                        </div>
+                                        <div class="p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium text-sm mb-1">Passos na neve</div>
+                                            <p class="text-xs text-neutral-400">Amido de milho em saco de pano</p>
+                                        </div>
+                                        <div class="p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium text-sm mb-1">Fogo</div>
+                                            <p class="text-xs text-neutral-400">Celofane amassado + gravacao de fogo real</p>
+                                        </div>
+                                        <div class="p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium text-sm mb-1">Ossos quebrando</div>
+                                            <p class="text-xs text-neutral-400">Aipo + cenoura + nozes</p>
+                                        </div>
+                                        <div class="p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium text-sm mb-1">Espada</div>
+                                            <p class="text-xs text-neutral-400">Faca no afiador + whoosh metalico</p>
+                                        </div>
+                                        <div class="p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium text-sm mb-1">Monstro</div>
+                                            <p class="text-xs text-neutral-400">Rugido de animal + vocalizacao humana pitch-shifted</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 bg-purple-500/10 rounded-lg border-l-4 border-purple-500">
+                                    <div class="text-sm font-medium text-purple-400 mb-1">Insight Profissional</div>
+                                    <p class="text-neutral-300 text-sm">O melhor sound design e invisivel. O espectador nao deve notar os sons individuais - deve sentir a atmosfera completa. Se alguem comentar "que som legal", provavelmente esta alto demais.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 4 -->
+                <div class="card-hover bg-gradient-to-br from-purple-900/30 to-neutral-900 rounded-2xl border border-purple-500/20 p-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-purple-400 font-bold">4</span>
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-xl font-bold mb-3">Mixagem e Masterizacao</h2>
+                            <p class="text-neutral-400 mb-6">Equilibre todos os elementos sonoros em uma mix coesa que funcione em qualquer sistema de reproducao.</p>
+
+                            <div class="space-y-6">
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Niveis de Referencia por Tipo</h3>
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-sm">
+                                            <thead>
+                                                <tr class="border-b border-neutral-700">
+                                                    <th class="text-left py-2 text-neutral-400">Elemento</th>
+                                                    <th class="text-left py-2 text-neutral-400">Nivel</th>
+                                                    <th class="text-left py-2 text-neutral-400">Notas</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-neutral-300">
+                                                <tr class="border-b border-neutral-800">
+                                                    <td class="py-2 font-medium">Dialogos</td>
+                                                    <td class="py-2 text-purple-400">-12 a -6 dB</td>
+                                                    <td class="py-2 text-xs">Elemento principal, sempre audivel</td>
+                                                </tr>
+                                                <tr class="border-b border-neutral-800">
+                                                    <td class="py-2 font-medium">Musica (sob dialogo)</td>
+                                                    <td class="py-2">-24 a -18 dB</td>
+                                                    <td class="py-2 text-xs">Nunca competir com voz</td>
+                                                </tr>
+                                                <tr class="border-b border-neutral-800">
+                                                    <td class="py-2 font-medium">Musica (destaque)</td>
+                                                    <td class="py-2">-12 a -6 dB</td>
+                                                    <td class="py-2 text-xs">Em momentos sem dialogo</td>
+                                                </tr>
+                                                <tr class="border-b border-neutral-800">
+                                                    <td class="py-2 font-medium">Ambiente</td>
+                                                    <td class="py-2">-30 a -20 dB</td>
+                                                    <td class="py-2 text-xs">Preenchimento sutil</td>
+                                                </tr>
+                                                <tr class="border-b border-neutral-800">
+                                                    <td class="py-2 font-medium">SFX</td>
+                                                    <td class="py-2">Variavel</td>
+                                                    <td class="py-2 text-xs">Depende da importancia narrativa</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-2 font-medium">Master Final</td>
+                                                    <td class="py-2 text-emerald-400">-14 LUFS</td>
+                                                    <td class="py-2 text-xs">YouTube/Streaming padrao</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Processamento Essencial</h3>
+                                    <div class="space-y-4">
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium mb-2">EQ (Equalizacao)</div>
+                                            <ul class="text-sm text-neutral-400 space-y-1">
+                                                <li>• High-pass em dialogos: corte abaixo de 80Hz (remove rumble)</li>
+                                                <li>• Presence boost: 2-4kHz para clareza</li>
+                                                <li>• De-essing: reduzir 5-8kHz para sibilancia</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium mb-2">Compressao</div>
+                                            <ul class="text-sm text-neutral-400 space-y-1">
+                                                <li>• Ratio leve (2:1 a 4:1) para dialogos</li>
+                                                <li>• Attack medio (10-30ms) preserva transientes</li>
+                                                <li>• Release automatico ou 100-200ms</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium mb-2">Limiter</div>
+                                            <ul class="text-sm text-neutral-400 space-y-1">
+                                                <li>• Ceiling: -1 dB (evita clipping)</li>
+                                                <li>• True Peak limiting para streaming</li>
+                                                <li>• Nao usar para "volume" - usar para protecao</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 bg-purple-500/10 rounded-lg border-l-4 border-purple-500">
+                                    <div class="text-sm font-medium text-purple-400 mb-1">Loudness Standards</div>
+                                    <p class="text-neutral-300 text-sm mb-2">Plataformas normalizam automaticamente. Foque em dynamic range, nao em volume bruto:</p>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div>YouTube: -14 LUFS</div>
+                                        <div>Spotify: -14 LUFS</div>
+                                        <div>Netflix: -27 LUFS</div>
+                                        <div>Broadcast TV: -24 LUFS</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 5 -->
+                <div class="card-hover bg-gradient-to-br from-purple-900/30 to-neutral-900 rounded-2xl border border-purple-500/20 p-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-purple-400 font-bold">5</span>
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-xl font-bold mb-3">Paisagens Sonoras e Ambientacao</h2>
+                            <p class="text-neutral-400 mb-6">Construa mundos sonoros imersivos que transportem o espectador para dentro da narrativa.</p>
+
+                            <div class="space-y-6">
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Componentes de um Ambiente Sonoro</h3>
+                                    <div class="space-y-4">
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="flex items-center justify-between mb-2">
+                                                <span class="font-medium">Base (Bed)</span>
+                                                <span class="text-xs text-neutral-500">Constante</span>
+                                            </div>
+                                            <p class="text-sm text-neutral-400">Som continuo que define o espaco: vento, ar-condicionado, trafego distante, chiado de floresta</p>
+                                        </div>
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="flex items-center justify-between mb-2">
+                                                <span class="font-medium">Textura</span>
+                                                <span class="text-xs text-neutral-500">Semi-constante</span>
+                                            </div>
+                                            <p class="text-sm text-neutral-400">Variacoes sutis sobre a base: folhas ao vento, ondas, murmuro de multidao</p>
+                                        </div>
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="flex items-center justify-between mb-2">
+                                                <span class="font-medium">Pontuacao</span>
+                                                <span class="text-xs text-neutral-500">Ocasional</span>
+                                            </div>
+                                            <p class="text-sm text-neutral-400">Eventos esporadicos: passaro cantando, carro passando, porta batendo ao longe</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Ambientes por Emocao</h3>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium text-sm mb-2 text-blue-400">Tranquilidade</div>
+                                            <ul class="text-xs text-neutral-400 space-y-1">
+                                                <li>• Sons graves suaves</li>
+                                                <li>• Reverb longo</li>
+                                                <li>• Poucos elementos</li>
+                                                <li>• Natureza sutil</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium text-sm mb-2 text-red-400">Tensao</div>
+                                            <ul class="text-xs text-neutral-400 space-y-1">
+                                                <li>• Frequencias baixas (sub)</li>
+                                                <li>• Silencio estrategico</li>
+                                                <li>• Sons dissonantes</li>
+                                                <li>• Heartbeat sutil</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium text-sm mb-2 text-amber-400">Energia</div>
+                                            <ul class="text-xs text-neutral-400 space-y-1">
+                                                <li>• Muitos elementos</li>
+                                                <li>• Movimento estereo</li>
+                                                <li>• Transientes rapidos</li>
+                                                <li>• Ritmo implicito</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-3 bg-neutral-900/50 rounded-lg">
+                                            <div class="font-medium text-sm mb-2 text-purple-400">Misterio</div>
+                                            <ul class="text-xs text-neutral-400 space-y-1">
+                                                <li>• Sons indefinidos</li>
+                                                <li>• Espacialidade ampla</li>
+                                                <li>• Delay sutil</li>
+                                                <li>• Elementos "quase" identificaveis</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 bg-amber-500/10 rounded-lg border-l-4 border-amber-500">
+                                    <div class="text-sm font-medium text-amber-400 mb-1">Exercicio: Construa um Ambiente</div>
+                                    <p class="text-neutral-300 text-sm">Crie a paisagem sonora de "escritorio a noite": Base (ar-condicionado, computadores ligados), Textura (trafego distante, relogio), Pontuacao (elevador, notificacao de celular ao longe). Use 3-5 tracks no total.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 6 -->
+                <div class="card-hover bg-gradient-to-br from-purple-900/30 to-neutral-900 rounded-2xl border border-purple-500/20 p-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-purple-400 font-bold">6</span>
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-xl font-bold mb-3">Audio com Ferramentas de IA</h2>
+                            <p class="text-neutral-400 mb-6">IAs de audio revolucionaram o que e possivel em pos-producao. Use-as para acelerar e expandir seu trabalho.</p>
+
+                            <div class="space-y-6">
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Ferramentas de IA por Funcao</h3>
+                                    <div class="space-y-4">
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <span class="font-medium">Remocao de Ruido</span>
+                                                <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">Essencial</span>
+                                            </div>
+                                            <p class="text-sm text-neutral-400 mb-2">Remove ruido de fundo, vento, zumbido eletrico sem afetar a voz.</p>
+                                            <p class="text-xs text-neutral-500">Adobe Podcast, Descript, iZotope RX, Krisp</p>
+                                        </div>
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <span class="font-medium">Separacao de Stems</span>
+                                                <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Poderoso</span>
+                                            </div>
+                                            <p class="text-sm text-neutral-400 mb-2">Separa voz, instrumentos, bateria de qualquer audio misto.</p>
+                                            <p class="text-xs text-neutral-500">Lalal.ai, MVSEP, Spleeter, Demucs</p>
+                                        </div>
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <span class="font-medium">Geracao de Musica</span>
+                                                <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Criativo</span>
+                                            </div>
+                                            <p class="text-sm text-neutral-400 mb-2">Cria trilhas originais royalty-free baseadas em prompts.</p>
+                                            <p class="text-xs text-neutral-500">Suno, Udio, AIVA, Soundraw, Mubert</p>
+                                        </div>
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <span class="font-medium">Geracao de SFX</span>
+                                                <span class="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded">Util</span>
+                                            </div>
+                                            <p class="text-sm text-neutral-400 mb-2">Cria efeitos sonoros a partir de descricoes textuais.</p>
+                                            <p class="text-xs text-neutral-500">ElevenLabs SFX, AudioGen, Stability Audio</p>
+                                        </div>
+                                        <div class="p-4 bg-neutral-900/50 rounded-lg">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <span class="font-medium">Voice Cloning/TTS</span>
+                                                <span class="text-xs bg-red-500/20 text-red-400 px-2 py-1 rounded">Avancado</span>
+                                            </div>
+                                            <p class="text-sm text-neutral-400 mb-2">Narracao sintetica realista ou clonagem de voz (com permissao).</p>
+                                            <p class="text-xs text-neutral-500">ElevenLabs, PlayHT, WellSaid, Murf</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Prompts para Geracao de Trilha</h3>
+                                    <div class="space-y-3">
+                                        <div class="p-3 bg-neutral-900 rounded-lg font-mono text-sm">
+                                            <span class="text-purple-400"># Suspense Corporativo</span><br>
+                                            <span class="text-neutral-300">"Tense corporate thriller, minimal piano, pulsing synth bass, building tension, dark ambient, 90 BPM, cinematic"</span>
+                                        </div>
+                                        <div class="p-3 bg-neutral-900 rounded-lg font-mono text-sm">
+                                            <span class="text-purple-400"># Upbeat Tutorial</span><br>
+                                            <span class="text-neutral-300">"Uplifting tech tutorial background, light electronic, positive energy, no lyrics, subtle beat, 120 BPM, lo-fi elements"</span>
+                                        </div>
+                                        <div class="p-3 bg-neutral-900 rounded-lg font-mono text-sm">
+                                            <span class="text-purple-400"># Epico Emocional</span><br>
+                                            <span class="text-neutral-300">"Emotional epic, orchestral swells, hopeful strings, building to climax, cinematic trailer style, 70 BPM"</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-neutral-950/50 rounded-xl p-5 border border-neutral-800">
+                                    <h3 class="font-semibold text-purple-400 mb-4">Workflow: Audio Enhancement com IA</h3>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-6 h-6 bg-purple-500/20 rounded-full flex items-center justify-center flex-shrink-0 text-xs text-purple-400">1</div>
+                                            <div class="text-sm text-neutral-300">Importe audio bruto no Adobe Podcast ou similar para limpeza inicial</div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-6 h-6 bg-purple-500/20 rounded-full flex items-center justify-center flex-shrink-0 text-xs text-purple-400">2</div>
+                                            <div class="text-sm text-neutral-300">Use separacao de stems se precisar isolar voz de ambiente</div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-6 h-6 bg-purple-500/20 rounded-full flex items-center justify-center flex-shrink-0 text-xs text-purple-400">3</div>
+                                            <div class="text-sm text-neutral-300">Gere trilha musical no Suno/Udio baseada no mood do video</div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-6 h-6 bg-purple-500/20 rounded-full flex items-center justify-center flex-shrink-0 text-xs text-purple-400">4</div>
+                                            <div class="text-sm text-neutral-300">Crie SFX customizados via ElevenLabs ou biblioteca AI</div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-6 h-6 bg-purple-500/20 rounded-full flex items-center justify-center flex-shrink-0 text-xs text-purple-400">5</div>
+                                            <div class="text-sm text-neutral-300">Monte e mixe tudo na sua DAW/NLE preferida</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 bg-red-500/10 rounded-lg border-l-4 border-red-500">
+                                    <div class="text-sm font-medium text-red-400 mb-1">Aviso Legal</div>
+                                    <p class="text-neutral-300 text-sm">Verifique sempre os termos de uso das ferramentas de IA. Algumas restringem uso comercial. Nunca clone vozes sem autorizacao explicita do dono da voz. Documente suas licencas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="mt-12 p-6 bg-gradient-to-br from-purple-900/30 to-neutral-900 rounded-2xl border border-purple-500/20">
+                <h3 class="text-xl font-bold mb-4">Resumo do Modulo</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-medium text-purple-400 mb-2">O que voce aprendeu:</h4>
+                        <ul class="text-sm text-neutral-400 space-y-1">
+                            <li>• Fundamentos tecnicos de audio digital</li>
+                            <li>• Tecnicas profissionais de captacao</li>
+                            <li>• Design de som e foley criativo</li>
+                            <li>• Mixagem e niveis de referencia</li>
+                            <li>• Construcao de paisagens sonoras</li>
+                            <li>• Ferramentas de IA para audio</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-purple-400 mb-2">Proximo modulo:</h4>
+                        <p class="text-sm text-neutral-400 mb-3">Motion Graphics e VFX - Adicione movimento e efeitos visuais cinematograficos aos seus projetos.</p>
+                        <a href="modulo-3-4.html" class="inline-flex items-center space-x-2 px-4 py-2 bg-purple-500/20 text-purple-400 rounded-lg hover:bg-purple-500/30 transition-colors">
+                            <span>Continuar para Modulo 3.4</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="mt-8 flex justify-between items-center">
+                <a href="modulo-3-2.html" class="flex items-center space-x-2 text-neutral-400 hover:text-purple-400 transition-colors">
+                    <span>←</span>
+                    <span>Modulo 3.2</span>
+                </a>
+                <a href="index.html" class="text-neutral-400 hover:text-purple-400 transition-colors">
+                    Ver todos os modulos
+                </a>
+                <a href="modulo-3-4.html" class="flex items-center space-x-2 text-neutral-400 hover:text-purple-400 transition-colors">
+                    <span>Modulo 3.4</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeToggle.querySelector('span').textContent = isDark ? '🌙' : '☀️';
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Check saved theme
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+            themeToggle.querySelector('span').textContent = '☀️';
+        }
+    </script>
+</body>
+</html>

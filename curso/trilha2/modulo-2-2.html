@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 2.2: Gerar Ideias Direcionadas com IA | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b; }
+    html:not(.dark) .text-neutral-300 { color: #475569; }
+    html:not(.dark) .text-neutral-400 { color: #64748b; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+            <span class="sm:hidden">T1</span>
+            <span class="hidden sm:inline">Fundamentos</span>
+          </a>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-blue-500/10 text-blue-400">
+            <span class="sm:hidden">T2</span>
+            <span class="hidden sm:inline">Metodo</span>
+          </a>
+          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+            <span class="sm:hidden">T3</span>
+            <span class="hidden sm:inline">Avancado</span>
+          </a>
+          <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+            <span class="sm:hidden">T4</span>
+            <span class="hidden sm:inline">Labs</span>
+          </a>
+          <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-dark-700 transition-colors ml-2">
+            <span id="theme-icon" class="text-lg">🌙</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Breadcrumb -->
+      <div class="flex items-center space-x-2 mb-4 text-sm">
+        <a href="../../index.html" class="text-neutral-500 hover:text-neutral-300">Inicio</a>
+        <span class="text-neutral-600">/</span>
+        <a href="index.html" class="text-neutral-500 hover:text-neutral-300">Trilha 2</a>
+        <span class="text-neutral-600">/</span>
+        <span class="text-blue-400 font-medium">Modulo 2.2</span>
+      </div>
+
+      <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">
+        MODULO 2.2
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">💡 Gerar Ideias Direcionadas com IA</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Usar ChatGPT/Claude para brainstorm estruturado. Transformar seu problema narrativo em multiplas solucoes criativas em minutos.
+      </p>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-blue-400">6</div>
+          <div class="text-xs text-neutral-400">Topicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-blue-400">~45</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-blue-400">Pratico</div>
+          <div class="text-xs text-neutral-400">Nivel</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600 text-center">
+          <div class="text-xl font-bold text-blue-400">IA</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteudo Principal -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Diagrama Visual Inicial -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-blue-900/20 to-dark-800 rounded-xl p-6 border border-blue-500/20">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4 text-center">Fluxo de Ideacao com IA</h3>
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="flex-1 bg-dark-800/50 rounded-lg p-4 text-center border border-dark-600">
+            <div class="text-3xl mb-2">🎯</div>
+            <span class="text-sm font-semibold text-neutral-300">Problema Definido</span>
+            <p class="text-xs text-neutral-500 mt-1">Do modulo 2.1</p>
+          </div>
+          <div class="text-2xl text-blue-400 rotate-90 md:rotate-0">→</div>
+          <div class="flex-1 bg-blue-900/30 rounded-lg p-4 text-center border border-blue-500/30">
+            <div class="text-3xl mb-2">🤖</div>
+            <span class="text-sm font-semibold text-blue-400">Prompt Estruturado</span>
+            <p class="text-xs text-neutral-500 mt-1">Formula + contexto</p>
+          </div>
+          <div class="text-2xl text-blue-400 rotate-90 md:rotate-0">→</div>
+          <div class="flex-1 bg-purple-900/30 rounded-lg p-4 text-center border border-purple-500/30">
+            <div class="text-3xl mb-2">💡</div>
+            <span class="text-sm font-semibold text-purple-400">10+ Ideias</span>
+            <p class="text-xs text-neutral-500 mt-1">Em 5 minutos</p>
+          </div>
+          <div class="text-2xl text-blue-400 rotate-90 md:rotate-0">→</div>
+          <div class="flex-1 bg-emerald-900/30 rounded-lg p-4 text-center border border-emerald-500/30">
+            <div class="text-3xl mb-2">✓</div>
+            <span class="text-sm font-semibold text-emerald-400">Ideia Escolhida</span>
+            <p class="text-xs text-neutral-500 mt-1">Filtrada e validada</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold">1</span>
+        <h2 class="text-2xl font-bold">🤖 Por que usar IA para ideacao</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        IA nao substitui sua criatividade - ela <strong class="text-blue-400">amplifica</strong>. Em vez de ficar 2 horas pensando sozinho, voce tem um "sparring partner" que gera dezenas de opcoes para voce filtrar e combinar.
+      </p>
+
+      <!-- Box Principal -->
+      <div class="bg-gradient-to-br from-blue-900/20 to-dark-800 rounded-xl p-6 border border-blue-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Vantagens da Ideacao com IA</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 mt-1">⚡</span>
+            <div>
+              <span class="font-semibold text-neutral-200">Velocidade</span>
+              <p class="text-sm text-neutral-400">10 ideias em 30 segundos vs 2 horas pensando</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 mt-1">🔄</span>
+            <div>
+              <span class="font-semibold text-neutral-200">Variedade</span>
+              <p class="text-sm text-neutral-400">Angulos que voce nunca pensaria sozinho</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 mt-1">🎯</span>
+            <div>
+              <span class="font-semibold text-neutral-200">Direcao</span>
+              <p class="text-sm text-neutral-400">Ideias ja focadas no seu problema</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="text-blue-400 mt-1">🔁</span>
+            <div>
+              <span class="font-semibold text-neutral-200">Iteracao</span>
+              <p class="text-sm text-neutral-400">Refinar e combinar sem julgamento</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparacao -->
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl p-6 border border-red-500/30">
+          <h4 class="font-bold text-red-400 mb-4">✗ Brainstorm Tradicional</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li>• Depende do seu estado mental</li>
+            <li>• Limitado ao seu repertorio</li>
+            <li>• Autocensura inconsciente</li>
+            <li>• Esgota rapido</li>
+          </ul>
+        </div>
+        <div class="bg-blue-900/20 rounded-xl p-6 border border-blue-500/30">
+          <h4 class="font-bold text-blue-400 mb-4">✓ Brainstorm com IA</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li>• Funciona a qualquer hora</li>
+            <li>• Acesso a milhoes de referencias</li>
+            <li>• Sem medo de sugerir "bobagem"</li>
+            <li>• Infinitamente escalavel</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Alerta -->
+      <div class="bg-amber-900/20 rounded-xl p-6 border border-amber-500/30">
+        <h3 class="text-lg font-semibold text-amber-400 mb-3">⚠️ Porem, cuidado</h3>
+        <p class="text-neutral-300">
+          IA gera <strong class="text-amber-400">quantidade, nao qualidade garantida</strong>. Voce ainda precisa filtrar, julgar e adaptar. A IA e o gerador de opcoes; voce e o curador.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold">2</span>
+        <h2 class="text-2xl font-bold">📝 Estrutura do prompt perfeito</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Um prompt ruim gera ideias genericas. Um prompt bem estruturado gera ideias <strong class="text-blue-400">especificas e uteis</strong>. A qualidade do output depende 90% da qualidade do input.
+      </p>
+
+      <!-- Framework do Prompt -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Framework C.R.I.A.</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+              <span class="text-blue-400 font-bold">C</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Contexto</h4>
+              <p class="text-sm text-neutral-400">Quem voce e, o que faz, qual o cenario</p>
+              <p class="text-xs text-blue-400 mt-2">"Sou um criador de conteudo para pequenos negocios..."</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+              <span class="text-blue-400 font-bold">R</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Resultado</h4>
+              <p class="text-sm text-neutral-400">O que voce quer que a IA entregue</p>
+              <p class="text-xs text-blue-400 mt-2">"Preciso de 10 ideias de video de 60 segundos..."</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+              <span class="text-blue-400 font-bold">I</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Instrucoes</h4>
+              <p class="text-sm text-neutral-400">Como deve ser o formato da resposta</p>
+              <p class="text-xs text-blue-400 mt-2">"Liste no formato: Titulo | Conceito em 1 linha | Gancho inicial"</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+              <span class="text-blue-400 font-bold">A</span>
+            </div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+              <h4 class="font-semibold text-neutral-200 mb-1">Ajustes</h4>
+              <p class="text-sm text-neutral-400">Restricoes, tom, estilo, o que evitar</p>
+              <p class="text-xs text-blue-400 mt-2">"Evite cliches, tom informal, sem humor forcado"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dica -->
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">💡 Dica de Ouro</h3>
+        <p class="text-neutral-300">
+          Sempre inclua seu <strong class="text-primary">problema narrativo do Modulo 2.1</strong> no prompt. Isso ancora todas as ideias no seu objetivo real.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold">3</span>
+        <h2 class="text-2xl font-bold">🎨 Prompts prontos para copiar</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Aqui estao <strong class="text-blue-400">templates testados</strong> que voce pode copiar e adaptar. Cada um serve para um tipo diferente de problema narrativo.
+      </p>
+
+      <!-- Template 1 -->
+      <div class="bg-gradient-to-br from-blue-900/20 to-dark-800 rounded-xl p-6 border border-blue-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3">📱 Para Reels/TikTok</h3>
+        <div class="bg-dark-800 rounded-lg p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+          <p>Contexto: Sou [seu nicho] e preciso criar conteudo para Instagram Reels.</p>
+          <p class="mt-2">Problema narrativo: Preciso fazer [publico] sentir [emocao] para [acao].</p>
+          <p class="mt-2">Me de 10 ideias de videos de 30-60 segundos que:</p>
+          <p>- Tenham gancho forte nos primeiros 3 segundos</p>
+          <p>- Sejam filmaveis com celular</p>
+          <p>- Gerem engajamento (comentarios, salvamentos)</p>
+          <p class="mt-2">Formato: Titulo | Gancho | Estrutura em 3 pontos</p>
+        </div>
+      </div>
+
+      <!-- Template 2 -->
+      <div class="bg-gradient-to-br from-purple-900/20 to-dark-800 rounded-xl p-6 border border-purple-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">🎬 Para Videos Longos (YouTube)</h3>
+        <div class="bg-dark-800 rounded-lg p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+          <p>Contexto: Tenho um canal sobre [tema] para [publico].</p>
+          <p class="mt-2">Problema narrativo: Preciso fazer [publico] [entender/aprender/decidir] [topico].</p>
+          <p class="mt-2">Me de 5 ideias de videos de 10-15 minutos que:</p>
+          <p>- Tenham alto potencial de busca</p>
+          <p>- Resolvam um problema real do publico</p>
+          <p>- Permitam monetizacao futura</p>
+          <p class="mt-2">Formato: Titulo SEO | Angulo unico | 5 capitulos sugeridos</p>
+        </div>
+      </div>
+
+      <!-- Template 3 -->
+      <div class="bg-gradient-to-br from-amber-900/20 to-dark-800 rounded-xl p-6 border border-amber-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-amber-400 mb-3">💼 Para Video Institucional</h3>
+        <div class="bg-dark-800 rounded-lg p-4 font-mono text-sm text-neutral-300 overflow-x-auto">
+          <p>Contexto: Preciso criar um video institucional para [empresa/marca].</p>
+          <p class="mt-2">Problema narrativo: Fazer [cliente ideal] confiar na marca para [acao de conversao].</p>
+          <p class="mt-2">Me de 5 conceitos criativos que:</p>
+          <p>- Diferenciem dos concorrentes</p>
+          <p>- Mostrem valor sem parecer "vendedor"</p>
+          <p>- Funcionem em 2-3 minutos</p>
+          <p class="mt-2">Formato: Conceito | Tom | Estrutura narrativa | CTA</p>
+        </div>
+      </div>
+
+      <!-- Insight -->
+      <div class="bg-sky-900/20 rounded-xl p-6 border border-sky-500/30">
+        <h3 class="text-lg font-semibold text-sky-400 mb-3">💡 Personalize Sempre</h3>
+        <p class="text-neutral-300">
+          Estes templates sao <strong class="text-sky-400">pontos de partida</strong>. Quanto mais especifico voce for sobre seu contexto real, melhores serao as ideias geradas.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold">4</span>
+        <h2 class="text-2xl font-bold">🔄 Tecnica de refinamento</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A primeira resposta da IA raramente e a melhor. O poder real vem da <strong class="text-blue-400">conversa iterativa</strong>. Voce pede, avalia, refina, pede de novo.
+      </p>
+
+      <!-- Fluxo de Refinamento -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Ciclo de Refinamento</h3>
+        <div class="space-y-4">
+          <div class="flex items-center space-x-4">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold">1</div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+              <span class="text-neutral-200">Prompt inicial → Recebe 10 ideias</span>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold">2</div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+              <span class="text-neutral-200">"Gostei das ideias 3 e 7. Combine elementos das duas"</span>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold">3</div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+              <span class="text-neutral-200">"Torne mais [emocional/pratico/visual/direto]"</span>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold">4</div>
+            <div class="flex-1 bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+              <span class="text-neutral-200">"Agora desenvolva essa ideia em roteiro de 5 cenas"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comandos de Refinamento -->
+      <div class="bg-gradient-to-br from-blue-900/20 to-dark-800 rounded-xl p-6 border border-blue-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Frases Uteis para Refinar</h3>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="bg-dark-800/50 rounded-lg p-3 text-sm">
+            <span class="text-blue-400">"Mais ousado"</span>
+            <span class="text-neutral-400"> - quando esta generico</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 text-sm">
+            <span class="text-blue-400">"Mais simples"</span>
+            <span class="text-neutral-400"> - quando esta complexo</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 text-sm">
+            <span class="text-blue-400">"Combine X com Y"</span>
+            <span class="text-neutral-400"> - para misturar ideias</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 text-sm">
+            <span class="text-blue-400">"Na direcao oposta"</span>
+            <span class="text-neutral-400"> - para explorar contrastes</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 text-sm">
+            <span class="text-blue-400">"Para publico X"</span>
+            <span class="text-neutral-400"> - para ajustar tom</span>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-3 text-sm">
+            <span class="text-blue-400">"Mais controverso"</span>
+            <span class="text-neutral-400"> - para gerar debate</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercicio -->
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">📝 Exercicio Pratico</h3>
+        <p class="text-neutral-300">
+          Abra o ChatGPT ou Claude agora. Use seu problema narrativo do Modulo 2.1 e peca 10 ideias. Depois, <strong class="text-primary">refine pelo menos 3 vezes</strong> ate ter uma ideia que voce realmente quer produzir.
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold">5</span>
+        <h2 class="text-2xl font-bold">⚖️ Como filtrar as ideias</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Ter 20 ideias e melhor que ter 0, mas voce precisa <strong class="text-blue-400">escolher uma</strong>. Use criterios objetivos para filtrar, nao apenas "gostei/nao gostei".
+      </p>
+
+      <!-- Matriz de Avaliacao -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Matriz de Avaliacao de Ideias</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-dark-600">
+                <th class="text-left py-3 text-neutral-400 font-medium">Criterio</th>
+                <th class="text-center py-3 text-neutral-400 font-medium">1-5</th>
+                <th class="text-left py-3 text-neutral-400 font-medium">Pergunta</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-300">
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-semibold text-blue-400">Alinhamento</td>
+                <td class="text-center py-3">___</td>
+                <td class="py-3">Resolve meu problema narrativo?</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-semibold text-emerald-400">Viabilidade</td>
+                <td class="text-center py-3">___</td>
+                <td class="py-3">Consigo produzir com meus recursos?</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-semibold text-purple-400">Originalidade</td>
+                <td class="text-center py-3">___</td>
+                <td class="py-3">E diferente do que ja existe?</td>
+              </tr>
+              <tr class="border-b border-dark-600/50">
+                <td class="py-3 font-semibold text-amber-400">Emocao</td>
+                <td class="text-center py-3">___</td>
+                <td class="py-3">Eu ficaria animado para produzir?</td>
+              </tr>
+              <tr>
+                <td class="py-3 font-semibold text-red-400">Risco</td>
+                <td class="text-center py-3">___</td>
+                <td class="py-3">O que pode dar errado?</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-neutral-500 text-xs mt-4">Some os pontos. Ideias com 18+ sao fortes candidatas.</p>
+      </div>
+
+      <!-- Filtros Rapidos -->
+      <div class="grid md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-emerald-900/20 rounded-xl p-4 border border-emerald-500/30 text-center">
+          <div class="text-2xl mb-2">✓</div>
+          <h4 class="font-semibold text-emerald-400 text-sm">FAZER</h4>
+          <p class="text-xs text-neutral-400 mt-1">Pontuacao 18+, alta energia</p>
+        </div>
+        <div class="bg-amber-900/20 rounded-xl p-4 border border-amber-500/30 text-center">
+          <div class="text-2xl mb-2">⏳</div>
+          <h4 class="font-semibold text-amber-400 text-sm">GUARDAR</h4>
+          <p class="text-xs text-neutral-400 mt-1">Boa ideia, momento errado</p>
+        </div>
+        <div class="bg-red-900/20 rounded-xl p-4 border border-red-500/30 text-center">
+          <div class="text-2xl mb-2">✗</div>
+          <h4 class="font-semibold text-red-400 text-sm">DESCARTAR</h4>
+          <p class="text-xs text-neutral-400 mt-1">Nao alinha ou e inviavel</p>
+        </div>
+      </div>
+
+      <!-- Insight -->
+      <div class="bg-sky-900/20 rounded-xl p-6 border border-sky-500/30">
+        <h3 class="text-lg font-semibold text-sky-400 mb-3">💡 Regra dos 2 Minutos</h3>
+        <p class="text-neutral-300">
+          Se voce nao consegue explicar a ideia em 2 minutos para alguem de fora, ela ainda nao esta clara o suficiente. <strong class="text-sky-400">Volte e simplifique.</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- Topico 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold">6</span>
+        <h2 class="text-2xl font-bold">📁 Organizando seu banco de ideias</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Ideias descartadas hoje podem ser <strong class="text-blue-400">perfeitas amanha</strong>. Crie um sistema simples para guardar e reencontrar suas ideias quando precisar.
+      </p>
+
+      <!-- Sistema Sugerido -->
+      <div class="bg-gradient-to-br from-blue-900/20 to-dark-800 rounded-xl p-6 border border-blue-500/20 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Sistema de 3 Pastas</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-emerald-500/30">
+            <div class="text-2xl mb-2">📗</div>
+            <h4 class="font-semibold text-emerald-400 mb-2">PRODUCAO</h4>
+            <p class="text-xs text-neutral-400">Ideias aprovadas, prontas para virar roteiro</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-amber-500/30">
+            <div class="text-2xl mb-2">📙</div>
+            <h4 class="font-semibold text-amber-400 mb-2">INCUBACAO</h4>
+            <p class="text-xs text-neutral-400">Boas ideias que precisam amadurecer</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-lg p-4 border border-purple-500/30">
+            <div class="text-2xl mb-2">📕</div>
+            <h4 class="font-semibold text-purple-400 mb-2">ARQUIVO</h4>
+            <p class="text-xs text-neutral-400">Todas as ideias geradas (para referencia)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Template de Registro -->
+      <div class="bg-dark-700/50 rounded-xl p-6 border border-dark-600 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Template de Registro de Ideia</h3>
+        <div class="bg-dark-800/50 rounded-lg p-4 space-y-2 text-sm">
+          <p><span class="text-blue-400 font-semibold">Data:</span> <span class="text-neutral-500">[quando gerou]</span></p>
+          <p><span class="text-blue-400 font-semibold">Titulo:</span> <span class="text-neutral-500">[nome curto]</span></p>
+          <p><span class="text-blue-400 font-semibold">Conceito:</span> <span class="text-neutral-500">[1-2 frases]</span></p>
+          <p><span class="text-blue-400 font-semibold">Problema que resolve:</span> <span class="text-neutral-500">[link com objetivo]</span></p>
+          <p><span class="text-blue-400 font-semibold">Formato:</span> <span class="text-neutral-500">[tipo e duracao]</span></p>
+          <p><span class="text-blue-400 font-semibold">Pontuacao:</span> <span class="text-neutral-500">[nota da matriz]</span></p>
+          <p><span class="text-blue-400 font-semibold">Status:</span> <span class="text-neutral-500">[producao/incubacao/arquivo]</span></p>
+        </div>
+      </div>
+
+      <!-- Dica Final -->
+      <div class="bg-primary/10 rounded-xl p-6 border border-primary/30">
+        <h3 class="text-lg font-semibold text-primary mb-3">📌 Ferramentas Recomendadas</h3>
+        <p class="text-neutral-300 mb-3">Onde guardar suas ideias:</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-dark-800/50 rounded-full text-sm text-neutral-300">Notion</span>
+          <span class="px-3 py-1 bg-dark-800/50 rounded-full text-sm text-neutral-300">Google Docs</span>
+          <span class="px-3 py-1 bg-dark-800/50 rounded-full text-sm text-neutral-300">Trello</span>
+          <span class="px-3 py-1 bg-dark-800/50 rounded-full text-sm text-neutral-300">Notes do celular</span>
+          <span class="px-3 py-1 bg-dark-800/50 rounded-full text-sm text-neutral-300">Obsidian</span>
+        </div>
+        <p class="text-neutral-400 text-sm mt-3">O melhor sistema e o que <strong class="text-primary">voce vai usar</strong>. Simplicidade > Perfecao.</p>
+      </div>
+    </section>
+
+    <!-- Resumo Final -->
+    <section class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+      <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <span class="mr-3">📝</span> Resumo do Modulo
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-blue-400 mb-4">O que voce aprendeu:</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-blue-400">✓</span>
+              <span>Por que IA amplifica (nao substitui) criatividade</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-blue-400">✓</span>
+              <span>Framework C.R.I.A. para prompts perfeitos</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-blue-400">✓</span>
+              <span>Templates prontos para diferentes formatos</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-blue-400">✓</span>
+              <span>Tecnica de refinamento iterativo</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-blue-400">✓</span>
+              <span>Matriz de avaliacao de ideias</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-blue-400">✓</span>
+              <span>Sistema de organizacao de banco de ideias</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-blue-400 mb-4">Proximo modulo:</h3>
+          <div class="bg-dark-700/50 rounded-xl p-4 border border-dark-600">
+            <span class="text-blue-400 font-bold text-sm">2.3</span>
+            <h4 class="font-bold mt-1">🎭 Construir Personagens Funcionais</h4>
+            <p class="text-neutral-400 text-sm mt-2">
+              Criar personagens que servem a historia, mesmo em videos curtos. Tecnicas de caracterizacao rapida.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="modulo-2-1.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          ← Modulo 2.1
+        </a>
+        <a href="modulo-2-3.html" class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors">
+          Proximo: Modulo 2.3 →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <span class="text-2xl">🎬</span>
+          <span class="font-bold text-neutral-200">VisionPro</span>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm">INEMA.CLUB</a>
+        </div>
+        <div class="text-neutral-500 text-sm">Modulo 2.2: Gerar Ideias Direcionadas com IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.getElementById('theme-icon').textContent = '☀️';
+    }
+  </script>
+
+</body>
+</html>
