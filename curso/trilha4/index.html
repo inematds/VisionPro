@@ -85,7 +85,7 @@
   </header>
 
   <!-- Lista de Modulos -->
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="space-y-6">
 
       <!-- Lab 4.1 -->
@@ -164,6 +164,16 @@
             <p class="text-sm text-neutral-400 ml-9">Como documentar falhas para extrair aprendizado maximo. Template de reflexao pos-erro. Construindo biblioteca de anti-padroes.</p>
           </div>
         </div>
+
+        <!-- Botoes de Acao -->
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('lab-4-1.html')" class="px-4 py-2 text-sm bg-amber-600/20 hover:bg-amber-600/30 text-amber-400 border border-amber-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="lab-4-1.html" class="px-4 py-2 text-sm bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
       </div>
 
       <!-- Lab 4.2 -->
@@ -240,6 +250,16 @@
           <div class="topic-explanation px-6 pb-4">
             <p class="text-sm text-neutral-400 ml-9">Como organizar uma swipe file de referencias. Categorizacao por tecnica, mood, estilo. Seu acervo de inspiracao curado.</p>
           </div>
+        </div>
+
+        <!-- Botoes de Acao -->
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('lab-4-2.html')" class="px-4 py-2 text-sm bg-amber-600/20 hover:bg-amber-600/30 text-amber-400 border border-amber-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="lab-4-2.html" class="px-4 py-2 text-sm bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
         </div>
       </div>
 
@@ -318,6 +338,16 @@
             <p class="text-sm text-neutral-400 ml-9">Analise retrospectiva de cada producao. O que funcionou, o que falhou, o que mudar. Melhoria continua documentada.</p>
           </div>
         </div>
+
+        <!-- Botoes de Acao -->
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('lab-4-3.html')" class="px-4 py-2 text-sm bg-amber-600/20 hover:bg-amber-600/30 text-amber-400 border border-amber-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="lab-4-3.html" class="px-4 py-2 text-sm bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
       </div>
 
       <!-- Lab 4.4 -->
@@ -394,6 +424,16 @@
           <div class="topic-explanation px-6 pb-4">
             <p class="text-sm text-neutral-400 ml-9">Como apresentar seu trabalho. O pitch de 30 segundos. Responder "o que voce faz?" de forma memoravel.</p>
           </div>
+        </div>
+
+        <!-- Botoes de Acao -->
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('lab-4-4.html')" class="px-4 py-2 text-sm bg-amber-600/20 hover:bg-amber-600/30 text-amber-400 border border-amber-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="lab-4-4.html" class="px-4 py-2 text-sm bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
         </div>
       </div>
 
@@ -472,10 +512,40 @@
             <p class="text-sm text-neutral-400 ml-9">Analise sua producao final. O que aprendeu, o que faria diferente. Trace seu caminho de evolucao continua.</p>
           </div>
         </div>
+
+        <!-- Botoes de Acao -->
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('lab-4-5.html')" class="px-4 py-2 text-sm bg-amber-600/20 hover:bg-amber-600/30 text-amber-400 border border-amber-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="lab-4-5.html" class="px-4 py-2 text-sm bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
       </div>
 
     </div>
   </main>
+
+  <!-- Modal -->
+  <div id="modal-overlay" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="relative z-10 w-full h-full flex items-center justify-center p-4">
+      <div class="bg-dark-800 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden border border-dark-600">
+        <div class="flex items-center justify-between p-4 border-b border-dark-600">
+          <span class="text-amber-400 font-semibold">Visualizacao do Lab</span>
+          <button onclick="closeModal()" class="p-2 hover:bg-dark-700 rounded-lg transition-colors text-neutral-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="modal-content" class="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
+          <!-- Conteudo carregado via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="border-t border-dark-600 bg-dark-800/50">
@@ -496,9 +566,8 @@
 
   <script>
     function toggleTopic(button) {
-      const topicItem = button.parentElement;
-      const explanation = topicItem.querySelector('.topic-explanation');
-      const icon = button.querySelector('.text-neutral-500:last-child');
+      const explanation = button.nextElementSibling;
+      const icon = button.querySelector('span:last-child');
 
       // Close other open explanations in same module
       const moduleCard = button.closest('.bg-dark-800');
@@ -506,7 +575,7 @@
         if (exp !== explanation) {
           exp.classList.remove('active');
           const otherButton = exp.previousElementSibling;
-          const otherIcon = otherButton.querySelector('.text-neutral-500:last-child');
+          const otherIcon = otherButton.querySelector('span:last-child');
           if (otherIcon) otherIcon.textContent = '+';
         }
       });
@@ -514,6 +583,35 @@
       explanation.classList.toggle('active');
       icon.textContent = explanation.classList.contains('active') ? '−' : '+';
     }
+
+    function openModal(labUrl) {
+      const modal = document.getElementById('modal-overlay');
+      const content = document.getElementById('modal-content');
+      modal.classList.remove('hidden');
+      content.innerHTML = '<div class="flex items-center justify-center h-64"><div class="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-400"></div></div>';
+
+      fetch(labUrl)
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const mainContent = doc.querySelector('section.py-16:last-of-type .max-w-4xl');
+          if (mainContent) {
+            content.innerHTML = mainContent.innerHTML;
+          } else {
+            content.innerHTML = '<p class="text-center text-neutral-400">Conteudo nao encontrado.</p>';
+          }
+        })
+        .catch(err => {
+          content.innerHTML = '<p class="text-center text-red-400">Erro ao carregar conteudo.</p>';
+        });
+    }
+
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.add('hidden');
+    }
+
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   </script>
 </body>
 </html>
