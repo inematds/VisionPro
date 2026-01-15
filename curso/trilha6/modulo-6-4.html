@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.4 Storyboard Animado | Projeto Animacao | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#22D3EE',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .prompt-box { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
+    .copy-btn:active { transform: scale(0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Labs</span>
+            </a>
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Marketing</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Animacao</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-cyan-900/20 to-dark-900 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-3 mb-4">
+        <a href="index.html" class="text-cyan-400 hover:text-cyan-300 text-sm">← Trilha 6</a>
+        <span class="text-neutral-600">|</span>
+        <span class="px-2 py-0.5 bg-orange-500/20 text-orange-400 text-xs rounded">PLANEJAMENTO</span>
+      </div>
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-14 h-14 bg-cyan-500/20 text-cyan-400 rounded-2xl flex items-center justify-center font-bold text-xl">6.4</span>
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold">Storyboard Animado</h1>
+          <p class="text-neutral-400 text-sm mt-1">75 min • Projeto Luna e Pip</p>
+        </div>
+      </div>
+      <p class="text-neutral-300 max-w-2xl">
+        Neste modulo voce vai criar storyboards para cada episodio: composicao de cenas, movimentos de camera e animatics basicos para testar timing.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">1</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Composicao de Cenas</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Regras de composicao visual para guiar o olhar e contar a historia em cada quadro.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 1: Guia de Composicao</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de composicao visual especifico para "Luna e Pip".
+
+PRINCIPIOS FUNDAMENTAIS:
+
+1. REGRA DOS TERCOS
+- Como aplicar na serie
+- Onde posicionar Luna
+- Onde posicionar Pip
+- Pontos focais
+
+2. LINHAS DE DIRECAO
+- Como guiar o olhar
+- Uso de elementos naturais
+- Direcao de movimento
+
+3. ENQUADRAMENTOS POR EMOCAO
+- Cenas de alegria: [composicao]
+- Cenas de medo: [composicao]
+- Cenas de descoberta: [composicao]
+- Cenas de amizade: [composicao]
+
+4. RELACAO LUNA-PIP NO FRAME
+- Quando juntas
+- Distancia emocional
+- Olhares e conexao
+- Diferenca de altura
+
+5. USO DE ESPACO
+- Espaco negativo
+- Respiro visual
+- Densidade por cena
+- Foco de atencao
+
+6. PROFUNDIDADE
+- Foreground, middle, background
+- Como criar camadas
+- Elementos sobrepostos
+
+Inclua sketches de composicao em ASCII ou descricoes visuais.</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">2</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Movimentos de Camera</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Pans, zooms e movimentos que adicionam dinamismo a animacao 2D.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 2: Planejamento de Camera</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de movimentos de camera para "Luna e Pip".
+
+MOVIMENTOS DISPONIVEIS EM 2D:
+
+1. PAN (horizontal)
+- Quando usar
+- Velocidade tipica
+- Exemplos de cenas
+
+2. TILT (vertical)
+- Quando usar
+- Efeito emocional
+
+3. ZOOM IN
+- Quando usar
+- Para que emocoes
+- Velocidade
+
+4. ZOOM OUT (reveal)
+- Quando usar
+- Impacto narrativo
+
+5. PARALLAX
+- Como criar profundidade
+- Camadas de movimento
+- Efeito magico
+
+6. CAMERA SHAKE
+- Se/quando usar
+- Intensidade apropriada
+
+MOVIMENTOS POR CENA TIPO:
+- Establishing shot: [movimento]
+- Dialogo: [movimento]
+- Acao: [movimento]
+- Emocional: [movimento]
+- Magico: [movimento]
+
+REGRAS:
+- Duracao maxima de movimento
+- Transicoes entre movimentos
+- O que evitar</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">3</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Thumbnails e Roughs</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Esbocos rapidos de cada cena para testar fluxo narrativo antes de refinar.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 3: Storyboard Ep 1 - Parte 1</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie descricoes de storyboard para as cenas 1-4 do Episodio 1 "O Encontro".
+
+FORMATO PARA CADA PAINEL:
+- Numero do painel
+- Timestamp
+- Enquadramento (wide/medium/close)
+- Descricao da imagem
+- Acao no painel
+- Dialogo/som
+- Movimento de camera
+- Duracao
+
+CENAS A STORYBOARDAR:
+
+CENA 1: MANHA NA VILA (00:00-00:05)
+[Escreva 2-3 paineis]
+
+CENA 2: LUNA EM CASA (00:05-00:15)
+[Escreva 3-4 paineis]
+
+CENA 3: LUNA NA PRACA (00:15-00:25)
+[Escreva 2-3 paineis]
+
+CENA 4: BORDA DA FLORESTA (00:25-00:35)
+[Escreva 3-4 paineis]
+
+TOTAL: ~12 paineis para 35 segundos
+
+Seja visual e especifico nas descricoes.</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 4: Storyboard Ep 1 - Parte 2</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Continue o storyboard para as cenas 5-8 do Episodio 1 "O Encontro".
+
+CENA 5: DENTRO DA FLORESTA (00:35-00:50)
+- Luna explorando
+- Sons misteriosos
+- [Escreva 3-4 paineis]
+
+CENA 6: ENCONTRO COM PIP (00:50-01:20)
+- Luna ve algo se mexendo
+- Pip aparece assustada (verde)
+- Luna se aproxima devagar
+- [Escreva 5-6 paineis - cena importante]
+
+CENA 7: CONEXAO (01:20-01:45)
+- Pip muda para roxo (curiosa)
+- Luna estende a mao
+- Pip se aproxima
+- Pip fica laranja (feliz)
+- [Escreva 4-5 paineis]
+
+CENA 8: DESPEDIDA (01:45-02:00)
+- Luna precisa voltar
+- Promessa de retorno
+- Pip observa Luna ir
+- [Escreva 2-3 paineis]
+
+TOTAL: ~15 paineis para 85 segundos</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">4</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Timing de Cenas</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Definicao precisa de duracao de cada shot para caber em 2 minutos.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 5: Shot List com Timing</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie uma shot list com timing preciso para o Episodio 1.
+
+FORMATO:
+Shot# | Timestamp | Duracao | Tipo | Descricao | Audio
+
+EXEMPLO:
+001 | 00:00-00:03 | 3s | WIDE | Establishing vila manha | Musica tema
+002 | 00:03-00:05 | 2s | MEDIUM | Casa da Luna | SFX passaros
+
+CRIE A LISTA COMPLETA:
+- Total de shots
+- Timing de cada um
+- Tipo de enquadramento
+- Descricao breve
+- Elemento de audio
+
+REGRAS:
+- Shots muito curtos: 1-2s (cortes rapidos)
+- Shots medios: 3-5s (maioria)
+- Shots longos: 6-8s (momentos importantes)
+- Total deve dar 120 segundos
+
+Garanta que:
+- Abertura = 5s
+- Fechamento = 5s
+- Conteudo = 110s</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">5</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Animatic Basico</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Storyboard em video com timing e audio temporario para testar o episodio.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 6: Guia de Animatic</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie instrucoes para montar um animatic do Episodio 1.
+
+FERRAMENTAS SUGERIDAS:
+- CapCut (gratis, facil)
+- DaVinci Resolve (gratis, profissional)
+- Adobe Premiere
+- Canva Video
+
+PROCESSO:
+
+1. PREPARACAO
+- Exportar paineis de storyboard
+- Nomear arquivos sequencialmente
+- Preparar audio temporario
+
+2. MONTAGEM
+- Importar imagens na timeline
+- Definir duracao de cada painel
+- Ajustar conforme shot list
+
+3. AUDIO TEMPORARIO
+- Gravar narracoes de scratch
+- Adicionar musica de referencia
+- Incluir SFX basicos
+
+4. MOVIMENTOS BASICOS
+- Aplicar zoom onde necessario
+- Simular pans com crop/position
+- Transicoes simples
+
+5. REVISAO
+- Assistir completo
+- Anotar problemas de timing
+- Verificar clareza narrativa
+
+6. ITERACAO
+- Ajustar duracoes
+- Reordenar se necessario
+- Testar com outras pessoas
+
+CHECKLIST DE ANIMATIC:
+[ ] Timing total = 2:00
+[ ] Historia clara
+[ ] Emocoes transmitidas
+[ ] Ritmo apropriado</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 6 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">6</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Revisao e Aprovacao</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Checklist de revisao para garantir que o storyboard esta pronto para producao.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 7: Checklist de Revisao</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um checklist completo de revisao de storyboard/animatic.
+
+CHECKLIST NARRATIVO:
+[ ] Historia compreensivel sem dialogo?
+[ ] Inicio, meio e fim claros?
+[ ] Arco emocional presente?
+[ ] Licao moral sutil?
+[ ] Gancho para proximo episodio?
+
+CHECKLIST TECNICO:
+[ ] Todos os shots necessarios?
+[ ] Timing total = 120 segundos?
+[ ] Continuidade mantida?
+[ ] Direcao de olhar correta?
+[ ] Entradas/saidas de quadro logicas?
+
+CHECKLIST DE PERSONAGEM:
+[ ] Luna reconhecivel em todos os shots?
+[ ] Expressoes da Luna claras?
+[ ] Mudancas de cor da Pip marcadas?
+[ ] Relacao espacial Luna-Pip correta?
+[ ] Acting apropriado para emocoes?
+
+CHECKLIST DE AMBIENTE:
+[ ] Locacoes estabelecidas?
+[ ] Transicoes de local claras?
+[ ] Hora do dia consistente?
+[ ] Elementos magicos indicados?
+
+CHECKLIST DE AUDIO:
+[ ] Dialogos marcados?
+[ ] SFX importantes indicados?
+[ ] Momentos de musica definidos?
+[ ] Silêncios intencionais?
+
+APROVACAO FINAL:
+[ ] Revisado por outra pessoa?
+[ ] Todos os problemas resolvidos?
+[ ] Pronto para producao de assets?</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Navegacao -->
+    <div class="flex justify-between items-center pt-8 border-t border-dark-600">
+      <a href="modulo-6-3.html" class="text-neutral-400 hover:text-white transition-colors">← Cenarios</a>
+      <a href="modulo-6-5.html" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-semibold transition-colors">Proximo: Assets →</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <p class="text-center text-neutral-500 text-sm">
+        VisionPro - Projeto Guiado: Serie Animada Luna e Pip
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function copyPrompt(button) {
+      const promptBox = button.closest('.prompt-box');
+      const promptText = promptBox.querySelector('pre').textContent;
+      navigator.clipboard.writeText(promptText).then(() => {
+        const originalText = button.textContent;
+        button.textContent = 'Copiado!';
+        button.classList.add('bg-green-500/30', 'text-green-400');
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('bg-green-500/30', 'text-green-400');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

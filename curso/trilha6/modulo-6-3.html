@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.3 Design de Cenarios | Projeto Animacao | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#22D3EE',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .prompt-box { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
+    .copy-btn:active { transform: scale(0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Labs</span>
+            </a>
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Marketing</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Animacao</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-cyan-900/20 to-dark-900 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-3 mb-4">
+        <a href="index.html" class="text-cyan-400 hover:text-cyan-300 text-sm">← Trilha 6</a>
+        <span class="text-neutral-600">|</span>
+        <span class="px-2 py-0.5 bg-purple-500/20 text-purple-400 text-xs rounded">VISUAL</span>
+      </div>
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-14 h-14 bg-cyan-500/20 text-cyan-400 rounded-2xl flex items-center justify-center font-bold text-xl">6.3</span>
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold">Design de Cenarios</h1>
+          <p class="text-neutral-400 text-sm mt-1">60 min • Projeto Luna e Pip</p>
+        </div>
+      </div>
+      <p class="text-neutral-300 max-w-2xl">
+        Neste modulo voce vai criar os cenarios da serie: a Vila Aurora, a Floresta Encantada, interiores e todos os backgrounds necessarios para os 5 episodios.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">1</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Vila da Luna</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          A Vila Aurora e o lar da Luna - casas acolhedoras, praca central e a casa onde ela mora com a avo.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 1: Design da Vila Aurora</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie uma descricao detalhada da Vila Aurora para geracao de backgrounds.
+
+CONTEXTO:
+Vila Aurora e uma pequena vila onde Luna mora. Fica na borda da Floresta Encantada. Atmosfera acolhedora e nostalgica.
+
+DEFINA:
+
+1. VISAO GERAL
+- Tamanho da vila (quantas casas?)
+- Layout geral
+- Elementos centrais
+- Epoca/estilo arquitetonico
+
+2. PRACA CENTRAL
+- Elementos presentes
+- Arvore ou fonte central?
+- Bancas ou comercio
+- Onde criancas brincam
+
+3. CASA DA LUNA
+- Exterior (estilo, cores, detalhes)
+- Jardim
+- Elementos unicos
+- O que a diferencia
+
+4. OUTROS EDIFICIOS
+- Padaria/mercado
+- Casas vizinhas
+- Escola?
+- Elementos comunitarios
+
+5. PALETA DE CORES
+- Cores predominantes (hex)
+- Materiais (pedra, madeira, etc)
+- Vegetacao
+- Ceu tipico
+
+6. ATMOSFERA
+- Luz caracteristica
+- Sons do ambiente
+- Cheiros sugeridos
+- Sensacao geral</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 2: Background Vila Aurora (Midjourney)</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Cozy fantasy village at golden hour, European cottage-style houses with warm stone walls and thatched roofs, central square with old oak tree, cobblestone paths, flower gardens, mountains in background, soft watercolor illustration style, Studio Ghibli inspired, children's book aesthetic, warm earth tones with green and amber, peaceful atmosphere, animation background art --ar 16:9 --style raw --v 6.1</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">2</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Floresta Encantada</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          O coracao magico da serie - arvores antigas, clareiras luminosas e espacos secretos.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 3: Design da Floresta</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie uma descricao detalhada da Floresta Encantada para backgrounds.
+
+CONTEXTO:
+Floresta magica onde Pip vive. Apenas criancas puras de coracao veem a magia. Lugar de descobertas e aventuras.
+
+AREAS DA FLORESTA:
+
+1. BORDA DA FLORESTA
+- Transicao vila-floresta
+- Nivel de magia visivel
+- Luz e atmosfera
+- Primeira impressao
+
+2. CLAREIRA DAS LUZES
+- Onde Luna encontrou Pip
+- Cogumelos luminosos
+- Vagalumes
+- Elementos magicos
+
+3. CAMINHO PRINCIPAL
+- Como e a trilha
+- Sinalizacoes naturais
+- O que se ve ao longo
+- Profundidade
+
+4. ARVORE ANCIA
+- Arvore gigante central
+- Lar de criaturas magicas
+- Detalhes especiais
+- Importancia na historia
+
+5. RIACHO CRISTALINO
+- Agua magica
+- Margens e vegetacao
+- Pontos de cruzamento
+- Reflexos especiais
+
+6. ELEMENTOS MAGICOS
+- Plantas luminosas
+- Particulas no ar
+- Sons da floresta
+- Como a magia se manifesta</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 4: Floresta de Dia (Midjourney)</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Enchanted forest clearing during day, ancient tall trees with moss, rays of golden sunlight filtering through leaves, glowing mushrooms on forest floor, soft mist, magical particles floating in air, butterflies, ferns and wildflowers, soft watercolor illustration style, Studio Ghibli inspired, warm greens and golden light, peaceful magical atmosphere, animation background --ar 16:9 --style raw --v 6.1</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 5: Floresta Entardecer (Midjourney)</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Magical forest at dusk, bioluminescent mushrooms starting to glow, fireflies appearing, ancient trees silhouetted against orange-pink sky, magical mist rising, soft purple and orange gradients, ethereal atmosphere, soft watercolor children's book style, warm and mysterious mood, animation background art --ar 16:9 --style raw --v 6.1</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">3</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Color Scripts</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Mapa de cores que guia a emocao de cada cena ao longo dos episodios.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 6: Color Script Episodio 1</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie o color script completo do Episodio 1 "O Encontro" de Luna e Pip.
+
+O QUE E COLOR SCRIPT:
+Sequencia de thumbnails coloridos que mostram a progressao de cor/luz ao longo do episodio, refletindo as emocoes da narrativa.
+
+ESTRUTURA DO EPISODIO:
+- Cena 1: Luna em casa (manha)
+- Cena 2: Luna na vila, decide explorar
+- Cena 3: Borda da floresta
+- Cena 4: Dentro da floresta
+- Cena 5: Encontro com Pip assustada
+- Cena 6: Conexao Luna-Pip
+- Cena 7: Amizade formada
+- Cena 8: Luna volta para casa
+
+PARA CADA CENA DEFINA:
+1. Paleta dominante (3 cores hex)
+2. Temperatura (quente/fria)
+3. Nivel de luz (claro/escuro)
+4. Saturacao (vibrante/suave)
+5. Emocao que transmite
+6. Transicao para proxima cena
+
+ARCO EMOCIONAL DE COR:
+- Inicio: [tom]
+- Ponto de tensao: [tom]
+- Resolucao: [tom]
+
+Considere que Pip muda de cor e isso afeta a cena.</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">4</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Iluminacao e Atmosfera</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Diferentes tipos de luz para criar mood em cada cena e locacao.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 7: Guia de Iluminacao</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de iluminacao para "Luna e Pip" definindo como a luz funciona em cada contexto.
+
+TIPOS DE LUZ NA SERIE:
+
+1. MANHA NA VILA
+- Direcao da luz
+- Temperatura de cor
+- Sombras (duras/suaves)
+- Cor do ceu
+
+2. MEIO-DIA
+- Caracteristicas
+- Quando usar
+- Mood associado
+
+3. GOLDEN HOUR
+- Importancia na serie
+- Cores especificas
+- Emocao
+
+4. ENTARDECER NA FLORESTA
+- Mistura de luzes
+- Elementos magicos
+- Transicao dia-noite
+
+5. INTERIOR DA CASA
+- Luz de janela
+- Lampadas/velas
+- Atmosfera acolhedora
+
+6. LUZ MAGICA
+- Brilho da Pip
+- Cogumelos luminosos
+- Particulas
+- Como interage com luz natural
+
+PARA CADA TIPO INCLUA:
+- Referencia de cor (hex)
+- Intensidade
+- Direcao
+- Uso narrativo</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">5</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Props e Elementos</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Objetos que aparecem na serie: mochila da Luna, cogumelos magicos, itens da vila.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 8: Design de Props</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie designs detalhados para os props principais de "Luna e Pip".
+
+PROPS IMPORTANTES:
+
+1. MOCHILA DA LUNA
+- Estilo (canvas aventureira)
+- Cor e detalhes
+- O que carrega dentro
+- Desgaste caracteristico
+
+2. LANTERNAS DA VILA
+- Estilo (rusticas)
+- Material
+- Como iluminam
+
+3. COGUMELOS MAGICOS
+- Variedades (3 tipos)
+- Cores e brilho
+- Tamanhos
+- Onde aparecem
+
+4. OBJETOS DA CASA DA LUNA
+- Itens acolhedores
+- Coisas da avo
+- Livros de aventura
+- Memorias da familia
+
+5. ELEMENTOS MAGICOS
+- Pedras brilhantes
+- Flores especiais
+- Frutos da floresta
+- Itens que Pip interage
+
+PARA CADA PROP:
+- Descricao visual
+- Paleta de cores
+- Significado na historia
+- Prompt Midjourney para gerar</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 9: Props Midjourney</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Prop design sheet for children's animation, cozy items collection: small canvas backpack with patches, vintage lantern, glowing magical mushrooms in different colors, old leather-bound storybook, wooden toy, wildflowers in jar, soft watercolor illustration style, items on white background, warm earth tones with magical glowing elements, Studio Ghibli inspired --ar 3:2 --style raw --v 6.1</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 6 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">6</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Backgrounds Finais</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Geracao de todos os backgrounds necessarios para os 5 episodios.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 10: Lista de Backgrounds</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie a lista completa de backgrounds necessarios para os 5 episodios de "Luna e Pip".
+
+ORGANIZE POR LOCACAO:
+
+VILA AURORA:
+1. Vista geral da vila (establishing)
+2. Praca central - dia
+3. Praca central - entardecer
+4. Casa da Luna - exterior
+5. Casa da Luna - interior sala
+6. Casa da Luna - quarto Luna
+7. Rua da vila
+8. [adicionar conforme necessario]
+
+FLORESTA ENCANTADA:
+1. Borda da floresta
+2. Caminho principal
+3. Clareira das Luzes - dia
+4. Clareira das Luzes - entardecer
+5. Clareira das Luzes - noite
+6. Arvore Ancia
+7. Riacho Cristalino
+8. [adicionar conforme necessario]
+
+PARA CADA BACKGROUND:
+- Nome/ID
+- Episodio(s) que aparece
+- Hora do dia
+- Elementos especiais
+- Nivel de detalhe necessario
+- Prompt Midjourney sugerido
+
+Priorize por frequencia de uso.</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Navegacao -->
+    <div class="flex justify-between items-center pt-8 border-t border-dark-600">
+      <a href="modulo-6-2.html" class="text-neutral-400 hover:text-white transition-colors">← Roteiro</a>
+      <a href="modulo-6-4.html" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-semibold transition-colors">Proximo: Storyboard →</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <p class="text-center text-neutral-500 text-sm">
+        VisionPro - Projeto Guiado: Serie Animada Luna e Pip
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function copyPrompt(button) {
+      const promptBox = button.closest('.prompt-box');
+      const promptText = promptBox.querySelector('pre').textContent;
+      navigator.clipboard.writeText(promptText).then(() => {
+        const originalText = button.textContent;
+        button.textContent = 'Copiado!';
+        button.classList.add('bg-green-500/30', 'text-green-400');
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('bg-green-500/30', 'text-green-400');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

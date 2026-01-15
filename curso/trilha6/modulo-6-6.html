@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.6 Audio e Vozes | Projeto Animacao | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#22D3EE',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .prompt-box { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
+    .copy-btn:active { transform: scale(0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Labs</span>
+            </a>
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Marketing</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Animacao</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-cyan-900/20 to-dark-900 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-3 mb-4">
+        <a href="index.html" class="text-cyan-400 hover:text-cyan-300 text-sm">← Trilha 6</a>
+        <span class="text-neutral-600">|</span>
+        <span class="px-2 py-0.5 bg-teal-500/20 text-teal-400 text-xs rounded">AUDIO</span>
+      </div>
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-14 h-14 bg-cyan-500/20 text-cyan-400 rounded-2xl flex items-center justify-center font-bold text-xl">6.6</span>
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold">Audio e Vozes</h1>
+          <p class="text-neutral-400 text-sm mt-1">60 min • Projeto Luna e Pip</p>
+        </div>
+      </div>
+      <p class="text-neutral-300 max-w-2xl">
+        Neste modulo voce vai criar todo o audio da serie: trilha musical, efeitos sonoros, voz da Luna e sons expressivos da Pip.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">1</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Trilha Musical</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Musica que define o tom magico e acolhedor da serie.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 1: Briefing Musical</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um briefing musical completo para "Luna e Pip".
+
+IDENTIDADE SONORA:
+
+1. TEMA PRINCIPAL
+- Mood: Magico, acolhedor, aventureiro
+- Instrumentos: [sugestoes]
+- Tempo: [BPM sugerido]
+- Duracao: 30-60 segundos
+- Onde usar: Abertura, momentos importantes
+
+2. VARIACOES DO TEMA
+- Versao alegre (Pip laranja)
+- Versao calma (Pip azul)
+- Versao curiosa (Pip roxa)
+- Versao tensa (Pip verde)
+
+3. MUSICA DE VILA
+- Caracteristicas
+- Instrumentos folk
+- Atmosfera
+
+4. MUSICA DE FLORESTA
+- Elementos naturais
+- Tons magicos
+- Misterio leve
+
+5. MUSICA EMOCIONAL
+- Momentos de amizade
+- Momentos de descoberta
+- Momentos de medo (leve)
+- Resolucao/alegria
+
+REFERENCIAS:
+- Filmes Ghibli
+- Pixar (Up, Coco)
+- Musica folk europeia
+
+PARA GERACAO COM SUNO AI:
+Crie prompts especificos para cada tipo de musica.</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 2: Tema Principal (Suno AI)</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT SUNO AI</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Whimsical orchestral theme for children's animated series, magical and heartwarming, featuring gentle piano melody, soft strings, light woodwinds (flute, clarinet), subtle music box elements, glockenspiel accents, warm and adventurous mood, Studio Ghibli inspired, 90 BPM, major key, building to hopeful crescendo, suitable for opening credits of show about friendship between girl and magical fox</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 3: Musica da Floresta (Suno AI)</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT SUNO AI</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Enchanted forest ambiance music for children's animation, mystical and wonder-filled, soft harp arpeggios, ethereal pads, gentle nature sounds woven in, sparkling high bells and chimes, dreamy atmosphere, sense of discovery and magic, slow tempo 70 BPM, peaceful yet curious mood, perfect for exploration scenes in magical woodland</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">2</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Efeitos Sonoros</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Sons do mundo: natureza, vila, magia e acoes dos personagens.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 4: Lista de SFX</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie a lista completa de efeitos sonoros para "Luna e Pip".
+
+SONS DA VILA:
+1. Passaros cantando (manha)
+2. Sino da praca
+3. Portas de madeira
+4. Passos em pedra
+5. Conversas distantes
+6. Vento suave
+[adicione mais]
+
+SONS DA FLORESTA:
+1. Folhas ao vento
+2. Galhos estalando
+3. Riacho correndo
+4. Passaros da floresta
+5. Insetos (cigarras, grilos)
+6. Corujas (noite)
+[adicione mais]
+
+SONS MAGICOS:
+1. Brilho da Pip
+2. Transicao de cor
+3. Cogumelos acendendo
+4. Particulas magicas
+5. Aura aparecendo
+[adicione mais]
+
+SONS DE PERSONAGEM:
+LUNA:
+1. Passos (grama, terra, pedra)
+2. Mochila balancando
+3. Risadas
+4. Suspiros
+5. Esforco (escalando)
+
+PIP:
+1. Passos leves
+2. Som de felicidade (yip)
+3. Som de medo (whimper)
+4. Som curioso (chirp)
+5. Cauda abanando
+[adicione mais]
+
+PARA CADA SOM:
+- Descricao
+- Onde usar
+- Fonte (biblioteca/geracao)</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">3</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Voice-Over da Luna</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Voz da Luna: dialogos, reacoes e narracao ocasional.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 5: Guia de Voz Luna</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de direcao de voz para a personagem Luna.
+
+CARACTERISTICAS DA VOZ:
+- Idade sonora: 8 anos
+- Tom: Agudo mas nao estridente
+- Energia: Alta mas nao gritada
+- Clareza: Boa dicao, natural
+- Sotaque: Neutro brasileiro
+
+EMOCOES E COMO SOAM:
+1. FELIZ
+- Velocidade de fala
+- Tom
+- Exemplo de linha
+
+2. CURIOSA
+- Velocidade
+- Inflexao (sobe no final?)
+- Exemplo
+
+3. ASSUSTADA
+- Volume
+- Velocidade
+- Exemplo
+
+4. DETERMINADA
+- Firmeza
+- Ritmo
+- Exemplo
+
+5. CARINHOSA (com Pip)
+- Suavidade
+- Velocidade
+- Exemplo
+
+DIRECOES ESPECIFICAS:
+- Linhas para Pip (mais doces)
+- Linhas para si mesma (pensativas)
+- Linhas de acao (energeticas)
+
+OPCOES DE VOZ:
+1. Gravacao propria
+2. ElevenLabs Voice AI
+3. Contratar atriz mirim
+
+Para ElevenLabs, sugira configuracoes.</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 6: Script de Gravacao Ep 1</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie o script de gravacao de voz do Episodio 1 para Luna.
+
+FORMATO:
+[Numero] | [Linha] | [Emocao] | [Notas de direcao]
+
+LINHAS DO EPISODIO 1:
+
+001 | "Bom dia, vo! Ja vou explorar!" | Animada | Saindo de casa, energica
+
+002 | "O que sera que tem la dentro da floresta?" | Curiosa | Olhando para arvores, sonhadora
+
+003 | "Oi...? Tem alguem ai?" | Hesitante | Ouviu um barulho, cautelosa
+
+004 | "Nao precisa ter medo... Eu sou amiga." | Gentil | Para Pip assustada, voz doce
+
+005 | "Voce... voce muda de cor!" | Surpresa | Descobrindo magia, encantada
+
+006 | "Que lindo! Voce fica laranja quando esta feliz!" | Maravilhada | Pip ficou laranja, alegre
+
+007 | "Vou te chamar de... Pip! Gostou?" | Carinhosa | Dando nome, esperando reacao
+
+008 | "Eu preciso ir agora, mas prometo voltar amanha." | Triste mas esperancosa | Despedida
+
+009 | "E nosso segredo, ta?" | Conspiradora | Sorrindo, cumplice
+
+TOTAL: ~9 linhas principais + reacoes (risos, suspiros, etc.)</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">4</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Sons da Pip</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Vocabulario sonoro da Pip para comunicar sem palavras.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 7: Vocabulario Sonoro Pip</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um vocabulario de sons expressivos para a personagem Pip.
+
+IMPORTANTE: Pip nao fala, apenas emite sons expressivos como uma raposinha fofa e magica.
+
+CATEGORIAS DE SONS:
+
+1. SONS DE FELICIDADE
+- Yip! (curto, agudo)
+- Chirp prolongado
+- Ronronar suave
+- Descricoes detalhadas de cada
+
+2. SONS DE MEDO
+- Whimper baixo
+- Choramingo suave
+- Tremulo na voz
+- Descricoes
+
+3. SONS DE CURIOSIDADE
+- Chirp interrogativo (sobe tom)
+- Fungar exploratorio
+- Som pensativo
+- Descricoes
+
+4. SONS DE AFETO
+- Ronronar profundo
+- Som suave de contentamento
+- Suspiro feliz
+- Descricoes
+
+5. SONS DE ALERTA
+- Yip sharp de aviso
+- Rosnado baixo (nao agressivo)
+- Som de atencao
+- Descricoes
+
+6. SONS DE COMUNICACAO
+- "Sim" (som afirmativo)
+- "Nao" (som negativo)
+- "Vem!" (chamando Luna)
+- "Olha!" (apontando algo)
+
+Para geracao de audio:
+- Sugestoes de como criar cada som
+- Referencias de animais reais
+- Ajustes para parecer magico</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">5</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Mixagem de Audio</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Equilibrio entre musica, vozes e efeitos.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 8: Guia de Mix</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de mixagem de audio para "Luna e Pip".
+
+HIERARQUIA DE AUDIO:
+1. Dialogos (prioridade maxima)
+2. Efeitos importantes para narrativa
+3. Musica
+4. Ambiente/atmosfera
+
+NIVEIS SUGERIDOS (dBFS):
+- Dialogos: -6 a -3 dB
+- SFX principais: -12 a -6 dB
+- Musica (durante dialogo): -18 a -12 dB
+- Musica (sem dialogo): -9 a -6 dB
+- Ambiente: -24 a -18 dB
+
+TECNICAS:
+
+1. DUCKING
+- Baixar musica quando ha fala
+- Automacao suave
+- Tempo de ataque/release
+
+2. ESPACIALIZACAO (se stereo)
+- Dialogos: Centro
+- Ambiente: Wide
+- SFX: Posicao na cena
+
+3. EQ PARA CLAREZA
+- Limpar frequencias que atrapalham voz
+- Presenca nos dialogos
+- Calor na musica
+
+4. COMPRESSAO
+- Dialogos: leve para consistencia
+- Musica: pre-mixada
+
+5. POR TIPO DE CENA
+- Cena de dialogo: [configuracao]
+- Cena de acao: [configuracao]
+- Cena emocional: [configuracao]
+- Cena magica: [configuracao]</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 6 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">6</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Sincronizacao</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Alinhamento perfeito de audio com animacao.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 9: Guia de Sync</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de sincronizacao audio-video para "Luna e Pip".
+
+TIPOS DE SYNC:
+
+1. LIP SYNC (Luna)
+- Frame rate de referencia
+- Tolerancia de sync (frames)
+- Tecnica de ajuste
+- Pontos de verificacao
+
+2. SYNC DE ACAO
+- Passos com pés no chão
+- Pegar objetos
+- Pulos e pousos
+- Portas abrindo/fechando
+
+3. SYNC MUSICAL
+- Hit points importantes
+- Transicoes em beat
+- Momentos emocionais
+- Musica pontuando acao
+
+4. SYNC DA PIP
+- Emocao audio + cor visual
+- Sons com movimentos
+- Reacoes sincronizadas
+
+WORKFLOW:
+1. Exportar animacao com timecode
+2. Importar audio em DAW
+3. Alinhar dialogos primeiro
+4. Adicionar SFX em sync
+5. Ajustar musica ao timing
+6. Revisar frame a frame nos pontos criticos
+
+PONTOS DE VERIFICACAO:
+[ ] Primeiro dialogo sync
+[ ] Mudancas de cor Pip sync
+[ ] Momentos de impacto
+[ ] Transicoes de cena
+[ ] Inicio e fim do episodio</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Navegacao -->
+    <div class="flex justify-between items-center pt-8 border-t border-dark-600">
+      <a href="modulo-6-5.html" class="text-neutral-400 hover:text-white transition-colors">← Assets</a>
+      <a href="modulo-6-7.html" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-semibold transition-colors">Proximo: Finalizacao →</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <p class="text-center text-neutral-500 text-sm">
+        VisionPro - Projeto Guiado: Serie Animada Luna e Pip
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function copyPrompt(button) {
+      const promptBox = button.closest('.prompt-box');
+      const promptText = promptBox.querySelector('pre').textContent;
+      navigator.clipboard.writeText(promptText).then(() => {
+        const originalText = button.textContent;
+        button.textContent = 'Copiado!';
+        button.classList.add('bg-green-500/30', 'text-green-400');
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('bg-green-500/30', 'text-green-400');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

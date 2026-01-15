@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.2 Roteiro e Narrativa | Projeto Animacao | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#22D3EE',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .prompt-box { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
+    .copy-btn:active { transform: scale(0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Labs</span>
+            </a>
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Marketing</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Animacao</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-cyan-900/20 to-dark-900 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-3 mb-4">
+        <a href="index.html" class="text-cyan-400 hover:text-cyan-300 text-sm">← Trilha 6</a>
+        <span class="text-neutral-600">|</span>
+        <span class="px-2 py-0.5 bg-green-500/20 text-green-400 text-xs rounded">HISTORIA</span>
+      </div>
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-14 h-14 bg-cyan-500/20 text-cyan-400 rounded-2xl flex items-center justify-center font-bold text-xl">6.2</span>
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold">Roteiro e Narrativa</h1>
+          <p class="text-neutral-400 text-sm mt-1">75 min • Projeto Luna e Pip</p>
+        </div>
+      </div>
+      <p class="text-neutral-300 max-w-2xl">
+        Neste modulo voce vai criar toda a estrutura narrativa: arco da temporada, sinopses dos 5 episodios, dialogos e roteiros formatados. Cada prompt esta pronto para usar.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">1</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Arco da Temporada</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          O arco narrativo define a jornada completa de Luna e Pip ao longo dos 5 episodios, com comeco, meio e fim satisfatorio.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 1: Criar Arco da Temporada</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Voce e um roteirista de animacao infantil. Crie o arco narrativo completo para a primeira temporada de "Luna e Pip" (5 episodios de 2 minutos cada).
+
+PREMISSA:
+Luna (8 anos) encontra Pip (raposinha magica que muda de cor conforme emocoes) na Floresta Encantada. Juntas, aprendem sobre amizade, coragem e emocoes.
+
+ESTRUTURA NECESSARIA:
+
+1. ARCO GERAL DA TEMPORADA
+- Tema central da temporada
+- O que Luna aprende ao final
+- Como a relacao Luna-Pip evolui
+- Qual e o "vilao" ou desafio (apropriado para criancas)
+
+2. EPISODIO 1: PILOTO
+- Como Luna encontra Pip
+- Estabelecer o mundo
+- Primeira aventura juntas
+- Gancho para continuar
+
+3. EPISODIO 2: CONSTRUCAO
+- Aprofundar a amizade
+- Introduzir elemento do mundo
+- Pequeno conflito e resolucao
+
+4. EPISODIO 3: DESENVOLVIMENTO
+- Desafio maior
+- Luna e Pip trabalham juntas
+- Revelar mais sobre Pip
+
+5. EPISODIO 4: CRISE
+- Momento de maior tensao (apropriado para idade)
+- Duvida ou separacao temporaria
+- Licao sobre amizade
+
+6. EPISODIO 5: RESOLUCAO
+- Climax da temporada
+- Luna e Pip superam juntas
+- Final satisfatorio mas aberto para T2
+
+Inclua logline de cada episodio e a licao aprendida.</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">2</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Sinopses dos Episodios</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Cada episodio precisa de uma sinopse clara com premissa, conflito, resolucao e licao moral.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 2: Sinopse Episodio 1 - O Encontro</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Escreva a sinopse completa do Episodio 1 de "Luna e Pip": O Encontro.
+
+FORMATO: 2 minutos de animacao
+PUBLICO: Criancas 4-10 anos
+
+CONTEXTO:
+Luna mora na Vila Aurora com sua avo. Um dia, explorando a borda da Floresta Encantada (contra as regras da avo), ela ouve um som estranho e encontra uma criatura magica assustada - uma raposinha cujo pelo esta verde (medo).
+
+ESTRUTURA EM 3 ATOS (2 minutos):
+
+ATO 1 (0:00-0:30): SETUP
+- Estabelecer Luna e seu mundo
+- Mostrar sua curiosidade
+- Decisao de explorar a floresta
+
+ATO 2 (0:30-1:30): CONFRONTO
+- Encontro com Pip assustada
+- Luna tenta se aproximar
+- Pip muda de cor (verde para roxo/curiosa)
+- Momento de conexao
+
+ATO 3 (1:30-2:00): RESOLUCAO
+- Luna e Pip se tornam amigas
+- Pip fica laranja (feliz)
+- Luna promete voltar
+- Gancho: segredo entre elas
+
+INCLUA:
+- Dialogos-chave da Luna (3-4 falas)
+- Sons/reacoes da Pip
+- Descricao de cenas importantes
+- Emocao de cada momento
+- Licao sutil (coragem de se aproximar do desconhecido)</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 3: Gerar Sinopses Eps 2-5</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Continue criando sinopses detalhadas para os episodios 2 a 5 de "Luna e Pip", seguindo o mesmo formato do Episodio 1.
+
+ARCO JA DEFINIDO:
+- Ep 1: O Encontro (Luna encontra Pip)
+- Ep 2: A ser definido
+- Ep 3: A ser definido
+- Ep 4: A ser definido
+- Ep 5: A ser definido
+
+REQUISITOS PARA CADA EPISODIO:
+1. Titulo evocativo
+2. Logline em uma frase
+3. Estrutura em 3 atos (30s + 60s + 30s)
+4. Dialogos-chave (3-4 falas)
+5. Mudancas de cor da Pip
+6. Licao moral sutil
+7. Conexao com episodio anterior/proximo
+
+TEMAS A EXPLORAR:
+- Ep 2: Medo do desconhecido (Pip ajuda Luna)
+- Ep 3: Compartilhar segredos (Luna quer contar para alguem)
+- Ep 4: Separacao e saudade (conflito temporario)
+- Ep 5: Aceitar diferencas e celebrar amizade
+
+Mantenha tom magico, acolhedor e apropriado para 4-10 anos.</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">3</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Dialogos e Voz</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Dialogos precisam soar naturais para criancas de 8 anos, com vocabulario e ritmo apropriados.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 4: Guia de Dialogos da Luna</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de voz e dialogos para a personagem Luna em "Luna e Pip".
+
+PERFIL DA LUNA:
+- Idade: 8 anos
+- Personalidade: Curiosa, corajosa, gentil, as vezes impulsiva
+- Contexto: Mora com a avo, explora a floresta, amiga da Pip
+
+DEFINA:
+
+1. VOZ DA PERSONAGEM
+- Como Luna fala (formal/informal?)
+- Palavras que ela usa frequentemente
+- Expressoes caracteristicas
+- O que ela NUNCA diria
+
+2. VOCABULARIO
+- Nivel de vocabulario (8 anos)
+- Girias ou expressoes proprias
+- Como expressa emocoes
+- Palavras favoritas
+
+3. PADROES DE FALA
+- Comprimento das frases
+- Usa perguntas frequentemente?
+- Fala sozinha? Com Pip?
+- Ritmo (rapido quando animada?)
+
+4. DIALOGOS DE EXEMPLO
+Escreva 10 falas tipicas da Luna para diferentes situacoes:
+- Descobrindo algo novo
+- Falando com Pip
+- Assustada
+- Feliz
+- Convencendo alguem
+- Fazendo promessa
+- Pedindo desculpas
+- Comemorando
+- Pensando alto
+- Despedindo-se
+
+5. O QUE EVITAR
+- Frases muito adultas
+- Girias datadas
+- Linguagem negativa</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">4</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Timing e Ritmo</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          2 minutos exigem precisao absoluta. Cada segundo conta para contar a historia.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 5: Script com Timing</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie o roteiro do Episodio 1 de "Luna e Pip" com timing preciso para 2 minutos.
+
+FORMATO DE ROTEIRO DE ANIMACAO:
+- Cada cena com timestamp
+- Descricao de acao
+- Dialogos com duracao
+- Notas de som/musica
+
+ESTRUTURA:
+00:00-00:05 - ABERTURA
+00:05-00:30 - ATO 1
+00:30-01:30 - ATO 2
+01:30-01:55 - ATO 3
+01:55-02:00 - FECHAMENTO
+
+PARA CADA CENA INCLUA:
+- Timestamp (ex: 00:15-00:22)
+- INT/EXT - LOCACAO - DIA/NOITE
+- Descricao da acao
+- Dialogo com indicacao de emocao
+- SFX necessarios
+- Notas de musica/tom
+
+REGRAS DE TIMING:
+- Falas de crianca: ~2 palavras/segundo
+- Pausas dramaticas: 1-2 segundos
+- Transicoes: 0.5-1 segundo
+- Reacoes: 1-2 segundos
+
+Escreva o roteiro completo do Ep 1 "O Encontro".</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">5</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Arcos de Personagem</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Como Luna e Pip crescem e mudam ao longo da temporada.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 6: Evolucao dos Personagens</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Mapeie a evolucao de Luna e Pip ao longo dos 5 episodios da primeira temporada.
+
+PARA LUNA, DEFINA:
+1. ESTADO INICIAL (Ep 1)
+- Como ela e no comeco
+- Seus medos
+- Suas limitacoes
+- O que ela acredita
+
+2. EVOLUCAO POR EPISODIO
+- Ep 1: O que aprende/muda
+- Ep 2: O que aprende/muda
+- Ep 3: O que aprende/muda
+- Ep 4: O que aprende/muda
+- Ep 5: O que aprende/muda
+
+3. ESTADO FINAL (Ep 5)
+- Como ela e no final
+- O que superou
+- Nova crenca/atitude
+- Abertura para T2
+
+PARA PIP, DEFINA:
+1. ESTADO INICIAL
+- Comportamento inicial
+- Relacao com humanos
+- Medos
+
+2. EVOLUCAO
+- Como confia mais em Luna
+- Novas cores/emocoes mostradas
+- Momentos de crescimento
+
+3. ESTADO FINAL
+- Nivel de confianca
+- Conexao com Luna
+
+MOMENTOS-CHAVE:
+Liste 5 momentos de virada emocional (um por episodio).</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 6 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">6</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Roteiro Formatado</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Roteiro final em formato profissional de animacao para producao.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 7: Roteiro Profissional Ep 1</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Formate o roteiro do Episodio 1 "O Encontro" em formato profissional de animacao.
+
+FORMATO PADRAO:
+=====================================
+LUNA E PIP
+"O Encontro"
+Episodio 101
+Escrito por: [Nome]
+Versao: 1.0
+=====================================
+
+FADE IN:
+
+CENA 1
+EXT. VILA AURORA - DIA
+
+[Descricao do cenario]
+
+LUNA (V.O.)
+(emocao)
+Dialogo aqui.
+
+SFX: [Efeito sonoro]
+MUSICA: [Indicacao musical]
+
+CORTA PARA:
+
+CENA 2
+...
+
+INCLUA PARA CADA CENA:
+1. Numero da cena
+2. Locacao (INT/EXT)
+3. Periodo (DIA/NOITE/ENTARDECER)
+4. Descricao de acao entre colchetes
+5. Dialogos com indicacao de emocao
+6. Direcao de som (SFX)
+7. Indicacoes de musica
+8. Transicoes (CORTA PARA, DISSOLVE, etc)
+
+ELEMENTOS ESPECIAIS PARA ANIMACAO:
+- Notas de expressao facial
+- Mudancas de cor da Pip
+- Indicacoes de camera (CLOSE, WIDE, PAN)
+- Timing sugerido entre parenteses
+
+Escreva o roteiro completo formatado.</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Navegacao -->
+    <div class="flex justify-between items-center pt-8 border-t border-dark-600">
+      <a href="modulo-6-1.html" class="text-neutral-400 hover:text-white transition-colors">← Conceito</a>
+      <a href="modulo-6-3.html" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-semibold transition-colors">Proximo: Cenarios →</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <p class="text-center text-neutral-500 text-sm">
+        VisionPro - Projeto Guiado: Serie Animada Luna e Pip
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function copyPrompt(button) {
+      const promptBox = button.closest('.prompt-box');
+      const promptText = promptBox.querySelector('pre').textContent;
+      navigator.clipboard.writeText(promptText).then(() => {
+        const originalText = button.textContent;
+        button.textContent = 'Copiado!';
+        button.classList.add('bg-green-500/30', 'text-green-400');
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('bg-green-500/30', 'text-green-400');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

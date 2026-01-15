@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.7 Animacao e Finalizacao | Projeto Animacao | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#22D3EE',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .prompt-box { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
+    .copy-btn:active { transform: scale(0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Labs</span>
+            </a>
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Marketing</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Animacao</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-cyan-900/20 to-dark-900 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-3 mb-4">
+        <a href="index.html" class="text-cyan-400 hover:text-cyan-300 text-sm">← Trilha 6</a>
+        <span class="text-neutral-600">|</span>
+        <span class="px-2 py-0.5 bg-red-500/20 text-red-400 text-xs rounded">FINAL</span>
+      </div>
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-14 h-14 bg-cyan-500/20 text-cyan-400 rounded-2xl flex items-center justify-center font-bold text-xl">6.7</span>
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold">Animacao e Finalizacao</h1>
+          <p class="text-neutral-400 text-sm mt-1">90 min • Projeto Luna e Pip</p>
+        </div>
+      </div>
+      <p class="text-neutral-300 max-w-2xl">
+        Neste modulo final voce vai aprender o workflow de animacao, composicao de cenas, exportacao para diferentes plataformas e estrategia de lancamento.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">1</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Workflow de Animacao</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Pipeline de producao usando ferramentas de IA para animacao.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 1: Pipeline de Producao</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um pipeline de producao de animacao para "Luna e Pip" usando ferramentas de IA.
+
+FERRAMENTAS DISPONIVEIS:
+- Midjourney/DALL-E: Geracao de imagens
+- Runway ML: Animacao de imagens
+- Pika Labs: Geracao de video
+- CapCut/DaVinci: Edicao
+- ElevenLabs: Vozes
+- Suno AI: Musica
+
+PIPELINE COMPLETO:
+
+FASE 1: PRE-PRODUCAO (Modulos 1-4)
+1. Briefing e conceito
+2. Design de personagens
+3. Design de cenarios
+4. Storyboard e animatic
+[Ja concluida]
+
+FASE 2: PRODUCAO DE ASSETS (Modulo 5)
+1. Gerar poses com Midjourney
+2. Gerar expressoes
+3. Gerar backgrounds
+4. Gerar props e efeitos
+[Ja concluida]
+
+FASE 3: ANIMACAO
+Passo 1: Preparar assets
+- Remover fundos
+- Organizar layers
+- Criar sprites sheets
+
+Passo 2: Animar com IA
+- Runway ML para movimento
+- Tecnicas de animacao
+- Limitacoes e solucoes
+
+Passo 3: Composicao
+- Montar cenas
+- Adicionar efeitos
+- Parallax e camera
+
+FASE 4: POS-PRODUCAO
+1. Edicao final
+2. Integracao de audio
+3. Color grading
+4. Exportacao
+
+Para cada fase, detalhe ferramentas e tecnicas.</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">2</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Animacao de Personagens</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Tecnicas para dar movimento aos personagens usando IA.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 2: Animar com Runway ML</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de animacao de personagens usando Runway ML Gen-2/Gen-3.
+
+PREPARACAO:
+1. Imagem base (personagem em pose)
+2. Fundo transparente ou removido
+3. Resolucao adequada
+
+TIPOS DE MOVIMENTO:
+
+1. IDLE ANIMATION (parado respirando)
+- Prompt: "[character] slight breathing motion, subtle idle animation, gentle sway"
+- Configuracoes
+- Duracao tipica
+
+2. WALK CYCLE
+- Prompt sugerido
+- Como fazer loop
+- Dicas de naturalidade
+
+3. EMOCOES
+- Mudanca de expressao
+- Reacoes de surpresa
+- Risada
+
+4. PARA PIP ESPECIFICAMENTE
+- Mudanca de cor
+- Movimento de cauda
+- Orelhas expressivas
+
+LIMITACOES:
+- O que nao funciona bem
+- Solucoes alternativas
+- Quando usar video manual
+
+WORKFLOW:
+1. Gerar animacao curta (4s)
+2. Avaliar qualidade
+3. Iterar prompt se necessario
+4. Exportar em alta qualidade
+5. Integrar na timeline</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 3: Runway ML - Luna Walking</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT RUNWAY ML</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">8-year-old girl Luna walking forward with gentle bounce, swaying pigtails, natural arm movement, soft watercolor animation style, maintaining character consistency, smooth loopable walk cycle, children's animation quality</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 4: Runway ML - Pip Happy</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT RUNWAY ML</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Cute orange magical fox Pip jumping joyfully, fluffy tail wagging enthusiastically, ears bouncing, magical sparkles appearing around, soft watercolor style, playful energetic movement, children's animation, seamless happy loop</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">3</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Animacao de Cenarios</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Movimento em backgrounds para criar cenarios vivos.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 5: Animar Backgrounds</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia para animar backgrounds em "Luna e Pip".
+
+ELEMENTOS ANIMAVEIS:
+
+1. VEGETACAO
+- Folhas ao vento
+- Grama ondulando
+- Flores balancando
+- Prompt Runway: "gentle wind moving through leaves and grass, soft natural sway"
+
+2. AGUA
+- Riacho fluindo
+- Reflexos ondulando
+- Prompt: "crystal clear stream flowing gently, light reflections on water surface"
+
+3. LUZ
+- Raios de sol movendo
+- Sombras de nuvens
+- Prompt: "dappled sunlight moving through trees, shifting light patterns"
+
+4. ELEMENTOS MAGICOS
+- Cogumelos pulsando
+- Particulas flutuando
+- Vagalumes voando
+- Prompt: "magical glowing particles floating gently in forest air"
+
+5. ATMOSFERA
+- Nevoa movendo
+- Folhas caindo
+- Poeira flutuando
+- Prompts especificos
+
+TECNICAS:
+- Loops seamless
+- Camadas de parallax
+- Velocidades diferentes por camada
+- Integracao com personagens</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">4</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Composicao e Edicao</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Juntar todos os elementos: personagens, cenarios, efeitos.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 6: Workflow de Composicao</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um workflow de composicao para montar cenas de "Luna e Pip".
+
+FERRAMENTA: DaVinci Resolve / CapCut / After Effects
+
+ESTRUTURA DE LAYERS:
+1. Background (mais atras)
+2. Midground elements
+3. Personagens
+4. Foreground elements
+5. Efeitos magicos
+6. Ajustes de cor/luz
+
+PARA CADA CENA:
+
+1. IMPORTAR ASSETS
+- Background animado
+- Personagem animado
+- Props necessarios
+- Efeitos
+
+2. POSICIONAR
+- Escalar corretamente
+- Posicionar no frame
+- Verificar perspectiva
+
+3. ANIMAR CAMERA
+- Aplicar movimentos do storyboard
+- Parallax entre camadas
+- Transicoes de cena
+
+4. ADICIONAR EFEITOS
+- Particulas magicas
+- Brilhos
+- Transicao de cor Pip
+
+5. COR E LUZ
+- Color grading geral
+- Matching de luz
+- Consistencia visual
+
+6. AUDIO
+- Sincronizar dialogos
+- Adicionar SFX
+- Mixar musica
+
+CHECKLIST POR CENA:
+[ ] Assets posicionados
+[ ] Escala correta
+[ ] Camera funcionando
+[ ] Efeitos aplicados
+[ ] Cor consistente
+[ ] Audio sincronizado</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">5</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Exportacao e Formatos</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Configuracoes de exportacao para cada plataforma.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 7: Especificacoes de Exportacao</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de exportacao para "Luna e Pip" para cada plataforma.
+
+ARQUIVO MASTER:
+- Resolucao: 1920x1080 (16:9) ou 4K
+- Codec: ProRes 422 ou DNxHD
+- Audio: PCM 48kHz 24-bit
+- Frame rate: 24fps
+- Colorspace: Rec. 709
+
+YOUTUBE:
+- Resolucao: 1920x1080 minimo
+- Codec: H.264 ou H.265
+- Bitrate: 12-20 Mbps
+- Audio: AAC 320kbps
+- Frame rate: 24fps
+- Aspect: 16:9
+- Arquivo: .mp4
+
+YOUTUBE SHORTS / TIKTOK / REELS:
+- Resolucao: 1080x1920 (9:16)
+- Codec: H.264
+- Bitrate: 8-12 Mbps
+- Audio: AAC 256kbps
+- Duracao max: 60s
+- Arquivo: .mp4
+
+INSTAGRAM (Feed):
+- Resolucao: 1080x1080 (1:1) ou 1080x1350 (4:5)
+- Mesmas specs de codec
+
+NETFLIX/STREAMING (futuro):
+- 4K HDR se possivel
+- Specs profissionais
+
+THUMBNAILS:
+- Resolucao: 1280x720
+- Formato: JPG/PNG
+- Tamanho max: 2MB</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 6 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">6</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Lancamento da Serie</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Estrategia de publicacao e promocao.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 8: Plano de Lancamento</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um plano de lancamento para a serie "Luna e Pip".
+
+FASE 1: PRE-LANCAMENTO (2 semanas antes)
+
+1. TEASER
+- Video de 15-30 segundos
+- Musica tema
+- "Em breve..."
+- Publicar em todas as plataformas
+
+2. APRESENTACAO DE PERSONAGENS
+- Post Luna com descricao
+- Post Pip com descricao
+- Stories interativos
+
+3. BEHIND THE SCENES
+- Processo de criacao
+- Antes/depois de IA
+- Humanizar o projeto
+
+FASE 2: LANCAMENTO
+
+SEMANA 1:
+- Episodio 1 + anuncio grande
+- Posts de suporte
+- Engajar com comentarios
+
+SEMANA 2:
+- Episodio 2
+- Conteudo complementar
+
+SEMANA 3-5:
+- Episodios 3, 4, 5
+- Manter engajamento
+- Compilacao ao final
+
+FASE 3: POS-LANCAMENTO
+
+1. COMPILACAO
+- Todos episodios juntos (10min)
+- Video especial
+
+2. CONTEUDO BONUS
+- Bloopers (se houver)
+- Como foi feito
+- Musicas completas
+
+CALENDARIO:
+Crie cronograma semanal detalhado.
+
+METRICAS DE SUCESSO:
+- Views esperadas
+- Engajamento
+- Crescimento de seguidores</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 9: Thumbnails e Titulos</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de thumbnails e titulos para os 5 episodios de "Luna e Pip".
+
+PRINCIPIOS DE THUMBNAIL:
+- Rostos visiveis e expressivos
+- Cores vibrantes
+- Contraste alto
+- Texto minimo ou nenhum
+- Emocao clara
+
+PARA CADA EPISODIO:
+
+EPISODIO 1: "O Encontro"
+- Thumbnail: Luna e Pip se olhando pela primeira vez
+- Emocao: Surpresa e maravilhamento
+- Cores: Verdes da floresta + laranja de Pip
+- Titulo alternativo: "Luna Encontra Uma Amiga Magica!"
+
+EPISODIO 2: [titulo]
+- Thumbnail: [descricao]
+- Emocao: [qual]
+- Cores: [quais]
+
+[Continue para eps 3-5]
+
+PROMPTS MIDJOURNEY PARA THUMBNAILS:
+[Crie prompt especifico para cada]
+
+TITULOS SEO:
+- Palavras-chave para criancas
+- Palavras-chave para pais
+- Formato ideal</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 10: Descricoes e Tags</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie as descricoes e tags para publicar "Luna e Pip" no YouTube.
+
+DESCRICAO PADRAO DO CANAL/SERIE:
+"🦊 Luna e Pip e uma serie animada sobre amizade, coragem e a magia de se conectar com a natureza!
+
+Acompanhe Luna, uma menina curiosa de 8 anos, e sua amiga Pip, uma raposinha magica cujo pelo muda de cor conforme suas emocoes. Juntas, elas exploram uma floresta encantada e aprendem licoes valiosas.
+
+✨ Ideal para criancas de 4 a 10 anos
+🎨 Animacao em estilo aquarela
+💖 Temas: amizade, emocoes, natureza
+
+[Links relevantes]"
+
+DESCRICAO DO EP 1:
+[Escreva descricao completa com timestamps]
+
+TAGS PRINCIPAIS:
+- Desenho infantil
+- Animacao para criancas
+- [adicione mais relevantes]
+
+HASHTAGS:
+#LunaEPip #DesenhoInfantil #AnimacaoInfantil [etc]
+
+PLAYLIST:
+Nome e descricao da playlist da serie
+
+CARDS E TELAS FINAIS:
+- Quando adicionar
+- O que promover</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Navegacao -->
+    <div class="flex justify-between items-center pt-8 border-t border-dark-600">
+      <a href="modulo-6-6.html" class="text-neutral-400 hover:text-white transition-colors">← Audio</a>
+      <a href="index.html" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-semibold transition-colors">Voltar para Trilha 6</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <p class="text-center text-neutral-500 text-sm">
+        VisionPro - Projeto Guiado: Serie Animada Luna e Pip
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function copyPrompt(button) {
+      const promptBox = button.closest('.prompt-box');
+      const promptText = promptBox.querySelector('pre').textContent;
+      navigator.clipboard.writeText(promptText).then(() => {
+        const originalText = button.textContent;
+        button.textContent = 'Copiado!';
+        button.classList.add('bg-green-500/30', 'text-green-400');
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('bg-green-500/30', 'text-green-400');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

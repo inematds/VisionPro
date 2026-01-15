@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.5 Geracao de Assets | Projeto Animacao | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#22D3EE',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .prompt-box { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
+    .copy-btn:active { transform: scale(0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Labs</span>
+            </a>
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Marketing</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Animacao</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-cyan-900/20 to-dark-900 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-3 mb-4">
+        <a href="index.html" class="text-cyan-400 hover:text-cyan-300 text-sm">← Trilha 6</a>
+        <span class="text-neutral-600">|</span>
+        <span class="px-2 py-0.5 bg-pink-500/20 text-pink-400 text-xs rounded">PRODUCAO</span>
+      </div>
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-14 h-14 bg-cyan-500/20 text-cyan-400 rounded-2xl flex items-center justify-center font-bold text-xl">6.5</span>
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold">Geracao de Assets</h1>
+          <p class="text-neutral-400 text-sm mt-1">90 min • Projeto Luna e Pip</p>
+        </div>
+      </div>
+      <p class="text-neutral-300 max-w-2xl">
+        Neste modulo voce vai gerar todos os assets visuais necessarios: poses dos personagens, expressoes faciais, lip sync shapes e efeitos magicos.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Topico 1 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">1</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Poses da Luna</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Biblioteca de poses da Luna para todas as acoes necessarias nos episodios.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 1: Poses de Acao Luna</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Character pose sheet of Luna, 8-year-old girl with curly brown pigtails in olive cardigan, showing multiple action poses: walking, running, jumping, sitting, pointing, reaching up, crouching down, looking back, waving, standing confident, soft watercolor children's book style, consistent character design, white background, animation reference --ar 3:2 --style raw --v 6.1</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 2: Poses Emocionais Luna</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Character pose sheet of Luna, 8-year-old girl, emotional body language poses: excited jumping with arms up, scared hugging herself, curious leaning forward, sad shoulders slumped, happy spinning, determined fists clenched, surprised stepping back, tired yawning, soft watercolor children's book style, white background, animation reference sheet --ar 3:2 --style raw --v 6.1</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 2 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">2</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Poses e Cores da Pip</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Pip em cada cor emocional com poses correspondentes.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 3: Pip Pose Library</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Liste todas as combinacoes de poses + cores da Pip necessarias para os 5 episodios.
+
+CORES EMOCIONAIS:
+- Azul: Calma, paz
+- Laranja: Feliz, animada
+- Roxo: Curiosa, interessada
+- Verde: Medo, inseguranca
+- Rosa: Amor, carinho
+
+POSES BASE:
+1. Sentada neutra
+2. Em pe alerta
+3. Correndo/saltando
+4. Deitada relaxada
+5. Encolhida (medo)
+6. Pulando de alegria
+7. Cabeca inclinada (curiosa)
+8. Cauda abanando
+9. Escondendo atras de algo
+10. Aconchegada em Luna
+
+MATRIZ NECESSARIA:
+Crie tabela de quais combinacoes cor+pose sao necessarias:
+
+| Pose | Azul | Laranja | Roxo | Verde | Rosa |
+|------|------|---------|------|-------|------|
+| ... | | | | | |
+
+Priorize as mais usadas.</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 4: Pip Laranja Poses</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Cute magical fox character Pip in warm orange fur color (happy emotion), multiple poses on white background: jumping joyfully, running playfully, tail wagging, nuzzling, rolling happily, sitting with big smile, ears perked up, soft watercolor children's book illustration, sparkles and magical particles, animation pose reference sheet --ar 3:2 --style raw --v 6.1</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 3 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">3</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Expressoes Faciais</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Expression sheets completos para Luna e Pip.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 5: Expression Sheet Luna Completo</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Detailed expression sheet of Luna character face, 8-year-old girl with curly brown hair and big hazel eyes, 12 expressions in grid: neutral, happy smile, big laugh, sad crying, worried anxious, scared wide eyes, surprised open mouth, curious raised eyebrow, determined focused, sleepy tired, angry pouty, loving tender, soft watercolor style, children's book illustration, white background --ar 1:1 --style raw --v 6.1</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 6: Expression Sheet Pip</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Expression sheet of magical fox Pip character face, cute oversized ears and big sparkly eyes, 12 expressions showing different emotions: calm peaceful, excited happy, curious tilted head, scared ears flat, playful tongue out, sleepy half-closed eyes, surprised wide eyes, loving affectionate, alert ears up, sad droopy, confused, mischievous, soft watercolor children's book style, white background --ar 1:1 --style raw --v 6.1</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 4 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">4</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Lip Sync Shapes</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Formas de boca da Luna para sincronizacao labial dos dialogos.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 7: Phoneme Shapes</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de lip sync para a personagem Luna com as formas de boca necessarias.
+
+FONEMAS BASICOS (Portugues):
+
+1. POSICAO FECHADA (M, B, P)
+- Descricao visual
+- Quando usar
+
+2. ABERTA PEQUENA (A breve)
+- Descricao visual
+- Exemplo de palavras
+
+3. ABERTA GRANDE (A longo, exclamacoes)
+- Descricao visual
+- Exemplo
+
+4. O/U (vogais arredondadas)
+- Descricao visual
+- Exemplo
+
+5. E/I (vogais fechadas)
+- Descricao visual
+- Exemplo
+
+6. F/V (labio inferior em dentes)
+- Descricao visual
+- Exemplo
+
+7. L/TH (lingua visivel)
+- Descricao visual
+- Exemplo
+
+8. SORRISO (enquanto fala)
+- Descricao visual
+- Quando aplicar
+
+REFERENCIA RAPIDA:
+Crie tabela de palavras comuns da Luna e quais shapes usar.</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 8: Mouth Shapes Midjourney</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Lip sync mouth shapes reference sheet for Luna character, 8-year-old girl face, showing 8 different mouth positions for animation: closed neutral, open A sound, O/U rounded, E/I smile, F/V teeth on lip, L tongue, wide surprise, small worried, consistent character design, soft watercolor children's book style, clear educational reference, white background --ar 16:9 --style raw --v 6.1</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 5 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">5</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Efeitos Magicos</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Particulas, brilhos e efeitos visuais para momentos magicos.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 9: FX Design</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie designs para os efeitos magicos de "Luna e Pip".
+
+EFEITOS NECESSARIOS:
+
+1. PARTICULAS DE BRILHO DA PIP
+- Cores por emocao
+- Forma das particulas
+- Comportamento (flutuam, giram?)
+- Quantidade
+
+2. TRANSICAO DE COR DA PIP
+- Como a cor muda (gradual, flash?)
+- Efeito durante transicao
+- Duracao tipica
+
+3. AURA MAGICA
+- Quando aparece
+- Cor e intensidade
+- Forma
+
+4. VAGALUMES DA FLORESTA
+- Design individual
+- Comportamento em grupo
+- Cores
+
+5. COGUMELOS LUMINOSOS
+- Tipo de brilho
+- Pulsacao
+- Interacao com ambiente
+
+6. POEIRA MAGICA
+- Particulas finas
+- Movimento
+- Quando aparece
+
+PARA CADA EFEITO:
+- Descricao visual
+- Animacao sugerida
+- Prompt Midjourney</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 10: Magic FX Midjourney</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Magical visual effects sprite sheet for children's animation: glowing particles in blue gold purple and green colors, sparkle bursts, fairy dust trails, soft glow orbs, fireflies, magical aura swirls, transformation shimmer, bioluminescent elements, transparent PNG style, soft watercolor aesthetic, white background, animation VFX reference --ar 3:2 --style raw --v 6.1</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Topico 6 -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">6</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Organizacao de Assets</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Sistema de nomenclatura e organizacao para todos os assets gerados.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 11: Sistema de Asset Management</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um sistema de organizacao de assets para a producao de "Luna e Pip".
+
+ESTRUTURA DE PASTAS:
+LunaPip_Assets/
+├── 01_Characters/
+│ ├── Luna/
+│ │ ├── Poses/
+│ │ ├── Expressions/
+│ │ ├── LipSync/
+│ │ └── Turnaround/
+│ ├── Pip/
+│ │ ├── Blue/
+│ │ ├── Orange/
+│ │ ├── Purple/
+│ │ ├── Green/
+│ │ └── Pink/
+│ └── Secondary/
+├── 02_Backgrounds/
+│ ├── Vila/
+│ ├── Floresta/
+│ └── Interior/
+├── 03_Props/
+├── 04_Effects/
+├── 05_Audio/
+└── 06_Exports/
+
+NOMENCLATURA:
+[Projeto]_[Categoria]_[Item]_[Variacao]_[Versao].png
+
+Exemplos:
+LP_Char_Luna_Pose_Walk_v01.png
+LP_Char_Pip_Orange_Jump_v02.png
+LP_BG_Forest_Clearing_Day_v01.png
+LP_FX_Sparkles_Blue_v01.png
+
+CONTROLE DE VERSAO:
+- v01, v02, v03...
+- Manter versoes anteriores
+- Marcar versao final como _FINAL
+
+CHECKLIST DE ASSETS:
+[ ] Todos nomeados corretamente
+[ ] Resolucao consistente
+[ ] Formato correto (PNG transparente)
+[ ] Backup atualizado</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Navegacao -->
+    <div class="flex justify-between items-center pt-8 border-t border-dark-600">
+      <a href="modulo-6-4.html" class="text-neutral-400 hover:text-white transition-colors">← Storyboard</a>
+      <a href="modulo-6-6.html" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-semibold transition-colors">Proximo: Audio →</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <p class="text-center text-neutral-500 text-sm">
+        VisionPro - Projeto Guiado: Serie Animada Luna e Pip
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function copyPrompt(button) {
+      const promptBox = button.closest('.prompt-box');
+      const promptText = promptBox.querySelector('pre').textContent;
+      navigator.clipboard.writeText(promptText).then(() => {
+        const originalText = button.textContent;
+        button.textContent = 'Copiado!';
+        button.classList.add('bg-green-500/30', 'text-green-400');
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('bg-green-500/30', 'text-green-400');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

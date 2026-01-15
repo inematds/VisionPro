@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 6 - Projeto Animacao | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#0a0a0f', 800: '#12121a', 700: '#1a1a24', 600: '#2a2a3a' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .topic-explanation { display: none; }
+    .topic-expanded .topic-explanation { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Labs</span>
+            </a>
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Marketing</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Animacao</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-cyan-900/20 to-dark-900 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-2 mb-4">
+        <span class="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full">TRILHA 6</span>
+        <span class="px-3 py-1 bg-dark-700 text-neutral-400 text-xs rounded-full">7 Modulos</span>
+        <span class="px-3 py-1 bg-dark-700 text-neutral-400 text-xs rounded-full">42 Topicos</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🦊 Projeto Animacao: Luna e Pip</h1>
+      <p class="text-neutral-400 text-lg max-w-3xl mb-6">
+        Crie uma mini-serie animada completa do zero usando IA. Acompanhe Luna, uma menina curiosa de 8 anos,
+        e sua amiga Pip, uma raposinha magica que muda de cor conforme suas emocoes. 5 episodios de 2 minutos cada.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 bg-dark-700 text-neutral-300 text-sm rounded-lg flex items-center">
+          <span class="mr-2">🎨</span> Estilo Aquarela 2D
+        </span>
+        <span class="px-4 py-2 bg-dark-700 text-neutral-300 text-sm rounded-lg flex items-center">
+          <span class="mr-2">⏱️</span> 5 Episodios x 2min
+        </span>
+        <span class="px-4 py-2 bg-dark-700 text-neutral-300 text-sm rounded-lg flex items-center">
+          <span class="mr-2">👧</span> Publico: 4-10 anos
+        </span>
+        <span class="px-4 py-2 bg-dark-700 text-neutral-300 text-sm rounded-lg flex items-center">
+          <span class="mr-2">💫</span> Tema: Amizade e Natureza
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Overview -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-cyan-500/10 border border-cyan-500/30 rounded-2xl p-6 mb-8">
+      <div class="flex items-start gap-4">
+        <span class="text-4xl">🦊</span>
+        <div>
+          <h2 class="text-xl font-bold text-cyan-400 mb-2">Sobre o Projeto "Luna e Pip"</h2>
+          <p class="text-neutral-300 text-sm mb-4">
+            Luna e uma menina de 8 anos que vive em uma pequena vila cercada por uma floresta encantada.
+            Um dia, ela encontra Pip, uma raposinha magica cujo pelo muda de cor conforme suas emocoes:
+            azul quando esta calma, laranja quando feliz, roxo quando curiosa, e verde quando sente medo.
+            Juntas, elas exploram a floresta e aprendem licoes sobre amizade, coragem e respeito pela natureza.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 text-sm">
+            <div class="bg-dark-800/50 rounded-lg p-3">
+              <span class="text-cyan-400 font-semibold">Luna</span>
+              <p class="text-neutral-400 mt-1">Cabelos castanhos cacheados, olhos grandes e expressivos, veste roupas em tons terrosos, sempre carrega uma mochila de aventuras.</p>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-3">
+              <span class="text-cyan-400 font-semibold">Pip</span>
+              <p class="text-neutral-400 mt-1">Raposinha pequena com orelhas grandes, olhos brilhantes, pelo que muda de cor, cauda fofa e expressiva, personalidade brincalhona.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modules -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <h2 class="text-2xl font-bold mb-8 flex items-center">
+      <span class="w-10 h-10 bg-cyan-500/20 text-cyan-400 rounded-xl flex items-center justify-center mr-3">📚</span>
+      Modulos do Projeto
+    </h2>
+
+    <div class="space-y-6">
+
+      <!-- Modulo 6.1 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-cyan-500/30 transition-all">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-4">
+              <span class="w-12 h-12 bg-cyan-500/20 text-cyan-400 rounded-xl flex items-center justify-center font-bold text-lg">6.1</span>
+              <div>
+                <h3 class="text-lg font-bold">Conceito e Personagens</h3>
+                <p class="text-neutral-400 text-sm mt-1">Briefing, design de personagens e estilo visual</p>
+              </div>
+            </div>
+            <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">FUNDACAO</span>
+          </div>
+        </div>
+        <div class="divide-y divide-dark-600">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="text-lg mr-2">📋</span><span class="flex-1 text-sm font-medium">Briefing da Serie</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Documento que define todos os parametros da serie: publico, tom, formato, objetivos e restricoes. A fundacao de todo o projeto.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Um briefing claro evita retrabalho e alinha expectativas. Voce vai criar o briefing completo de Luna e Pip.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Target audience, tom e mood, formato de episodios, plataformas de distribuicao, objetivos educacionais.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="text-lg mr-2">👧</span><span class="flex-1 text-sm font-medium">Design da Protagonista</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Criacao visual completa da Luna: aparencia, proporcoes, roupas, expressoes e poses caracteristicas.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Personagem consistente e a base da animacao. Voce vai gerar model sheets da Luna usando IA.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Character sheet, turnaround, expression sheet, proporcoes, silhueta, paleta de cores do personagem.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="text-lg mr-2">🦊</span><span class="flex-1 text-sm font-medium">Design do Animal Magico</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Criacao visual da Pip: design base, variacoes de cor por emocao, expressoes e movimentos caracteristicos.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Pip e o elemento magico da serie. Voce vai criar todas as variacoes de cor e expressao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Color variations, emotion mapping, creature design, appeal, expressividade da cauda e orelhas.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="text-lg mr-2">🎨</span><span class="flex-1 text-sm font-medium">Estilo Visual da Serie</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Definicao da estetica geral: estilo aquarela, paleta de cores, texturas, iluminacao e atmosfera visual.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Estilo consistente diferencia sua serie. Voce vai criar um style guide completo para toda a producao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Art direction, watercolor aesthetic, color script, visual consistency, mood boards.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="text-lg mr-2">🗺️</span><span class="flex-1 text-sm font-medium">Worldbuilding</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Construcao do universo da serie: a vila, a floresta encantada, criaturas magicas, regras do mundo.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Um mundo rico inspira historias. Voce vai criar o mapa e as regras do universo de Luna e Pip.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Universe bible, location design, magic system, flora e fauna, historia do mundo.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="text-lg mr-2">📐</span><span class="flex-1 text-sm font-medium">Model Sheets Finais</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Documentos finais com todas as referencias visuais: turnarounds, expressions, poses, scale charts.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Model sheets garantem consistencia em todas as cenas. Voce vai compilar o pacote completo de referencias.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Reference pack, size comparison, pose library, expression guide, color keys.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-6-1.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-6-1.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 6.2 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-cyan-500/30 transition-all">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-4">
+              <span class="w-12 h-12 bg-cyan-500/20 text-cyan-400 rounded-xl flex items-center justify-center font-bold text-lg">6.2</span>
+              <div>
+                <h3 class="text-lg font-bold">Roteiro e Narrativa</h3>
+                <p class="text-neutral-400 text-sm mt-1">Estrutura de historia, episodios e dialogos</p>
+              </div>
+            </div>
+            <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">HISTORIA</span>
+          </div>
+        </div>
+        <div class="divide-y divide-dark-600">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="text-lg mr-2">📖</span><span class="flex-1 text-sm font-medium">Arco da Temporada</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">A jornada completa da temporada: como Luna e Pip se conhecem, os desafios que enfrentam e o que aprendem.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Um arco bem definido mantem o publico engajado. Voce vai criar a estrutura narrativa dos 5 episodios.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Story arc, character development, episodic structure, tema recorrente, climax da temporada.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="text-lg mr-2">🎬</span><span class="flex-1 text-sm font-medium">Sinopse dos Episodios</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Resumo de cada episodio: premissa, conflito, resolucao e licao aprendida em cada historia.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sinopses claras guiam toda a producao. Voce vai criar os outlines dos 5 episodios com IA.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Logline, one-pager, estrutura de 3 atos em 2 minutos, moral da historia, ganchos entre episodios.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="text-lg mr-2">💬</span><span class="flex-1 text-sm font-medium">Dialogos e Voz</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Escrita de dialogos que soam naturais para criancas, com a voz unica de cada personagem.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Dialogos bons dao vida aos personagens. Voce vai criar as falas de Luna e os sons expressivos de Pip.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Character voice, age-appropriate language, show dont tell, subtext, ritmo de dialogo.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="text-lg mr-2">⏱️</span><span class="flex-1 text-sm font-medium">Timing e Ritmo</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Estruturacao do tempo: quanto dura cada cena, ritmo de cortes, momentos de pausa e acao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">2 minutos exigem precisao. Voce vai criar scripts com timing exato para cada episodio.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Script timing, beat sheet, pacing for kids, attention span, cliffhangers em formato curto.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="text-lg mr-2">🎭</span><span class="flex-1 text-sm font-medium">Arcos de Personagem</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Como Luna e Pip mudam ao longo da temporada: o que aprendem, como crescem, como sua amizade evolui.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Personagens que crescem sao memoraveis. Voce vai mapear a evolucao de cada personagem.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Character arc, internal vs external conflict, growth moments, relationship dynamics.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="text-lg mr-2">📝</span><span class="flex-1 text-sm font-medium">Roteiro Formatado</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Roteiro final em formato profissional de animacao: cenas, acoes, dialogos e indicacoes tecnicas.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Formato correto facilita a producao. Voce vai formatar os roteiros de todos os episodios.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Animation script format, scene headings, action lines, dialogue blocks, SFX notes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-6-2.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-6-2.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 6.3 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-cyan-500/30 transition-all">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-4">
+              <span class="w-12 h-12 bg-cyan-500/20 text-cyan-400 rounded-xl flex items-center justify-center font-bold text-lg">6.3</span>
+              <div>
+                <h3 class="text-lg font-bold">Design de Cenarios</h3>
+                <p class="text-neutral-400 text-sm mt-1">Backgrounds, ambientes e color scripts</p>
+              </div>
+            </div>
+            <span class="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded">VISUAL</span>
+          </div>
+        </div>
+        <div class="divide-y divide-dark-600">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="text-lg mr-2">🏡</span><span class="flex-1 text-sm font-medium">Vila da Luna</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Design da vila onde Luna mora: casas, ruas, praca central, casa da Luna com detalhes acolhedores.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A vila e o lar da historia. Voce vai criar backgrounds da vila em estilo aquarela.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Environment design, establishing shots, interior vs exterior, atmosfera acolhedora, detalhes de mundo.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="text-lg mr-2">🌲</span><span class="flex-1 text-sm font-medium">Floresta Encantada</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Design da floresta magica: arvores antigas, clareiras, riachos, cogumelos luminosos, areas secretas.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A floresta e onde a magia acontece. Voce vai criar multiplos ambientes dentro da floresta.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Magical realism, depth layers, light through trees, mystery areas, seasonal variations.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="text-lg mr-2">🎨</span><span class="flex-1 text-sm font-medium">Color Scripts</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Mapa de cores para cada episodio: como a paleta muda para refletir emocoes e momentos da historia.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cores contam historias. Voce vai criar color scripts que guiam a emocao de cada cena.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Color storytelling, emotional palettes, time of day, mood progression, visual rhythm.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="text-lg mr-2">☀️</span><span class="flex-1 text-sm font-medium">Iluminacao e Atmosfera</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Como a luz funciona no mundo de Luna: nascer do sol, luz filtrada na floresta, noites estreladas.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Iluminacao cria magia. Voce vai definir os diferentes tipos de luz para cada ambiente e hora.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Golden hour, dappled light, moonlight, magical glow, atmospheric perspective.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="text-lg mr-2">🍄</span><span class="flex-1 text-sm font-medium">Props e Elementos</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Objetos do mundo: mochila da Luna, pedras magicas, flores especiais, itens da vila e da floresta.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Props dao vida ao mundo. Voce vai criar uma biblioteca de objetos consistentes.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Prop design, scale consistency, magical objects, everyday items, storytelling through objects.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="text-lg mr-2">📸</span><span class="flex-1 text-sm font-medium">Backgrounds Finais</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Geracao dos backgrounds finais para cada cena dos 5 episodios usando IA e refinamento.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Backgrounds sao metade do visual. Voce vai produzir todos os cenarios necessarios.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Background production, consistency check, layer organization, animation-ready assets.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-6-3.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-6-3.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 6.4 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-cyan-500/30 transition-all">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-4">
+              <span class="w-12 h-12 bg-cyan-500/20 text-cyan-400 rounded-xl flex items-center justify-center font-bold text-lg">6.4</span>
+              <div>
+                <h3 class="text-lg font-bold">Storyboard Animado</h3>
+                <p class="text-neutral-400 text-sm mt-1">Composicao de cenas, camera e animatic</p>
+              </div>
+            </div>
+            <span class="px-2 py-1 bg-orange-500/20 text-orange-400 text-xs rounded">PLANEJAMENTO</span>
+          </div>
+        </div>
+        <div class="divide-y divide-dark-600">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="text-lg mr-2">🎬</span><span class="flex-1 text-sm font-medium">Composicao de Cenas</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Como organizar elementos em cada quadro: posicao dos personagens, relacao com cenario, pontos focais.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Boa composicao guia o olhar. Voce vai aplicar regras de composicao em cada cena.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Rule of thirds, leading lines, framing, negative space, visual hierarchy.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="text-lg mr-2">📹</span><span class="flex-1 text-sm font-medium">Movimentos de Camera</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Planejamento de como a "camera" se move: pans, zooms, tracking shots, mesmo em animacao 2D.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Movimento de camera adiciona dinamismo. Voce vai planejar cada movimento para os episodios.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Pan, tilt, zoom, truck, parallax scrolling, camera shake, establishing shots.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="text-lg mr-2">🖼️</span><span class="flex-1 text-sm font-medium">Thumbnails e Roughs</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Esbocos rapidos de cada cena para testar composicao e fluxo antes de produzir arte final.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Thumbnails economizam tempo. Voce vai criar esbocos rapidos com IA antes de refinar.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Thumbnail sketches, rough layouts, quick iteration, visual problem-solving.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="text-lg mr-2">⏰</span><span class="flex-1 text-sm font-medium">Timing de Cenas</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Definicao de quanto tempo cada cena dura, ritmo de cortes e sincronizacao com audio.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Timing perfeito e essencial em 2 minutos. Voce vai cronometrar cada cena precisamente.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Scene duration, cut timing, breathing room, comedic timing, dramatic pauses.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="text-lg mr-2">🎞️</span><span class="flex-1 text-sm font-medium">Animatic Basico</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Video do storyboard com timing: imagens estaticas em sequencia com audio temporario.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Animatic revela problemas cedo. Voce vai montar animatics de cada episodio para testar.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Animatic editing, scratch audio, timing adjustments, story reel, pre-visualization.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="text-lg mr-2">✅</span><span class="flex-1 text-sm font-medium">Revisao e Aprovacao</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Processo de revisar o animatic, identificar problemas e fazer ajustes antes da producao final.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Corrigir no storyboard e 10x mais barato que na animacao. Voce vai criar checklist de revisao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Review process, feedback integration, continuity check, locked animatic.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-6-4.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-6-4.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 6.5 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-cyan-500/30 transition-all">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-4">
+              <span class="w-12 h-12 bg-cyan-500/20 text-cyan-400 rounded-xl flex items-center justify-center font-bold text-lg">6.5</span>
+              <div>
+                <h3 class="text-lg font-bold">Geracao de Assets</h3>
+                <p class="text-neutral-400 text-sm mt-1">Poses, expressoes e elementos com IA</p>
+              </div>
+            </div>
+            <span class="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">PRODUCAO</span>
+          </div>
+        </div>
+        <div class="divide-y divide-dark-600">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="text-lg mr-2">🏃</span><span class="flex-1 text-sm font-medium">Poses da Luna</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Geracao de todas as poses necessarias: andando, correndo, sentada, surpresa, feliz, pensativa.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Poses consistentes sao a base da animacao. Voce vai criar biblioteca de poses com IA.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Pose library, action poses, idle poses, silhouette clarity, line of action.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="text-lg mr-2">🦊</span><span class="flex-1 text-sm font-medium">Poses e Cores da Pip</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Poses da Pip em cada cor emocional: azul-calma, laranja-feliz, roxo-curiosa, verde-medo.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Pip muda de cor constantemente. Voce vai criar poses em todas as variacoes de cor.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Color variations, emotion-pose mapping, tail expressions, ear positions, creature animation.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="text-lg mr-2">😊</span><span class="flex-1 text-sm font-medium">Expressoes Faciais</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Geracao de expressoes: alegria, tristeza, surpresa, medo, determinacao, curiosidade para ambos.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Expressoes comunicam emocao. Voce vai criar expression sheets completos.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Expression sheet, eyebrow positions, mouth shapes, eye expressions, subtle vs exaggerated.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="text-lg mr-2">👄</span><span class="flex-1 text-sm font-medium">Lip Sync Shapes</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Formas de boca para sincronizacao labial: vogais, consoantes, bocas fechadas e abertas.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Lip sync da vida aos dialogos. Voce vai criar phoneme shapes para a Luna.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Phonemes, mouth shapes, A-E-I-O-U positions, consonant shapes, lip sync basics.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="text-lg mr-2">✨</span><span class="flex-1 text-sm font-medium">Efeitos Magicos</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Elementos visuais de magia: brilhos, particulas, transicoes de cor da Pip, auras magicas.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Efeitos criam a magia visual. Voce vai criar assets de efeitos especiais.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Particle effects, glow effects, color transitions, sparkles, magical auras.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="text-lg mr-2">📦</span><span class="flex-1 text-sm font-medium">Organizacao de Assets</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sistema de organizacao de todos os assets: nomenclatura, pastas, versoes, formatos.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Organizacao evita caos. Voce vai criar um sistema de asset management.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">File naming conventions, folder structure, version control, asset database, backup system.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-6-5.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-6-5.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 6.6 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-cyan-500/30 transition-all">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-4">
+              <span class="w-12 h-12 bg-cyan-500/20 text-cyan-400 rounded-xl flex items-center justify-center font-bold text-lg">6.6</span>
+              <div>
+                <h3 class="text-lg font-bold">Audio e Vozes</h3>
+                <p class="text-neutral-400 text-sm mt-1">Trilha sonora, efeitos e voice-over</p>
+              </div>
+            </div>
+            <span class="px-2 py-1 bg-teal-500/20 text-teal-400 text-xs rounded">AUDIO</span>
+          </div>
+        </div>
+        <div class="divide-y divide-dark-600">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="text-lg mr-2">🎵</span><span class="flex-1 text-sm font-medium">Trilha Musical</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Musica de fundo que define o tom: tema principal, variacoes para momentos diferentes.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Musica e 50% da emocao. Voce vai criar ou selecionar trilhas com ferramentas de IA.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Main theme, leitmotif, mood variations, Suno AI, musical storytelling.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="text-lg mr-2">🔊</span><span class="flex-1 text-sm font-medium">Efeitos Sonoros</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sons do mundo: passos, natureza, sons magicos da Pip, ambiente da vila e floresta.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">SFX criam imersao. Voce vai criar biblioteca de efeitos sonoros para a serie.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Foley, ambient sounds, magical SFX, sound design, audio layers.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="text-lg mr-2">🎤</span><span class="flex-1 text-sm font-medium">Voice-Over da Luna</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Gravacao ou geracao de voz para a Luna: dialogos, reacoes, narracao quando necessario.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Voz da vida ao personagem. Voce vai explorar opcoes de voz com IA ou gravacao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Voice casting, AI voice generation, ElevenLabs, character voice consistency, child voice.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="text-lg mr-2">🦊</span><span class="flex-1 text-sm font-medium">Sons da Pip</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sons expressivos para Pip: chiados fofos, sons de felicidade, medo, curiosidade - sem falar.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Pip se comunica por sons. Voce vai criar vocabulario sonoro unico para ela.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Creature vocals, expressive sounds, emotional audio cues, non-verbal communication.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="text-lg mr-2">🎚️</span><span class="flex-1 text-sm font-medium">Mixagem de Audio</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Combinacao de todas as camadas de audio: balanco entre musica, voz e efeitos.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Mix ruim arruina bom audio. Voce vai aprender a equilibrar todas as camadas.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Audio mixing, levels, panning, EQ for animation, dialogue clarity, music ducking.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="text-lg mr-2">🔄</span><span class="flex-1 text-sm font-medium">Sincronizacao</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Alinhamento perfeito entre audio e video: lip sync, timing de efeitos, hits musicais.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Dessincronizacao quebra a ilusao. Voce vai sincronizar todo o audio com precisao.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Audio-video sync, hit points, musical sync, frame-accurate timing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-6-6.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-6-6.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 6.7 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-cyan-500/30 transition-all">
+        <div class="p-6 border-b border-dark-600">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-4">
+              <span class="w-12 h-12 bg-cyan-500/20 text-cyan-400 rounded-xl flex items-center justify-center font-bold text-lg">6.7</span>
+              <div>
+                <h3 class="text-lg font-bold">Animacao e Finalizacao</h3>
+                <p class="text-neutral-400 text-sm mt-1">Producao final, edicao e distribuicao</p>
+              </div>
+            </div>
+            <span class="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">FINAL</span>
+          </div>
+        </div>
+        <div class="divide-y divide-dark-600">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="text-lg mr-2">🎬</span><span class="flex-1 text-sm font-medium">Workflow de Animacao</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Processo de transformar assets estaticos em animacao: ferramentas, tecnicas, pipeline.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Workflow eficiente acelera producao. Voce vai definir o pipeline de animacao com IA.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Animation pipeline, keyframes, tweening, Runway ML, AI animation tools.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="text-lg mr-2">🔄</span><span class="flex-1 text-sm font-medium">Animacao de Personagens</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Dar movimento aos personagens: Luna andando, correndo, gesticulando; Pip pulando, mudando de cor.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Movimento da personalidade. Voce vai animar Luna e Pip com ferramentas de IA.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Character animation, walk cycles, idle animations, emotional movement, squash and stretch.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="text-lg mr-2">🌿</span><span class="flex-1 text-sm font-medium">Animacao de Cenarios</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Movimento nos backgrounds: folhas ao vento, agua correndo, luzes piscando, nuvens passando.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cenarios vivos criam imersao. Voce vai adicionar movimento sutil aos backgrounds.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Environmental animation, parallax, ambient movement, looping animations.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="text-lg mr-2">✂️</span><span class="flex-1 text-sm font-medium">Composicao e Edicao</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Juntar todas as camadas: personagens sobre backgrounds, efeitos, transicoes, cortes finais.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Composicao une tudo. Voce vai editar os episodios completos.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Compositing, layer management, transitions, pacing, final edit.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+            <span class="text-lg mr-2">📤</span><span class="flex-1 text-sm font-medium">Exportacao e Formatos</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Renderizacao final nos formatos corretos: YouTube, Instagram, TikTok, arquivo master.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Formato errado perde qualidade. Voce vai exportar para todas as plataformas.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Export settings, codecs, aspect ratios, master file, platform specifications.</p>
+              </div>
+            </div>
+          </div>
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center text-xs font-bold">6</span>
+            <span class="text-lg mr-2">🚀</span><span class="flex-1 text-sm font-medium">Lancamento da Serie</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-cyan-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Estrategia de publicacao: thumbnails, titulos, descricoes, calendario de lancamento.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Bom lancamento multiplica alcance. Voce vai criar estrategia de lancamento completa.</p>
+              </div>
+              <div>
+                <span class="text-cyan-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Release strategy, thumbnails, SEO for video, social media promotion, audience building.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-6-7.html')" class="px-4 py-2 text-sm bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-400 border border-cyan-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-6-7.html" class="px-4 py-2 text-sm bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <p class="text-center text-neutral-500 text-sm">
+        VisionPro - Formacao em Producao Audiovisual com IA
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/80" onclick="closeModal()"></div>
+    <div class="absolute inset-4 sm:inset-8 bg-dark-800 rounded-2xl overflow-hidden flex flex-col">
+      <div class="flex justify-between items-center p-4 border-b border-dark-600">
+        <span class="text-neutral-400 text-sm">Visualizacao em Modal</span>
+        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl">&times;</button>
+      </div>
+      <iframe id="modal-iframe" class="flex-1 w-full" src=""></iframe>
+    </div>
+  </div>
+
+  <script>
+    function toggleTopic(btn) {
+      const parent = btn.parentElement;
+      parent.classList.toggle('topic-expanded');
+      const icon = btn.querySelector('span:last-child');
+      icon.textContent = parent.classList.contains('topic-expanded') ? '−' : '+';
+    }
+
+    function openModal(url) {
+      document.getElementById('modal').classList.remove('hidden');
+      document.getElementById('modal-iframe').src = url;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('modal-iframe').src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>

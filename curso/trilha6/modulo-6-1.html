@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.1 Conceito e Personagens | Projeto Animacao | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#22D3EE',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .prompt-box { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
+    .copy-btn:active { transform: scale(0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Labs</span>
+            </a>
+            <a href="../trilha5/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Marketing</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-cyan-500/10 text-cyan-400">
+              <span class="sm:hidden">T6</span>
+              <span class="hidden sm:inline">Animacao</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-cyan-900/20 to-dark-900 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-3 mb-4">
+        <a href="index.html" class="text-cyan-400 hover:text-cyan-300 text-sm">← Trilha 6</a>
+        <span class="text-neutral-600">|</span>
+        <span class="px-2 py-0.5 bg-blue-500/20 text-blue-400 text-xs rounded">FUNDACAO</span>
+      </div>
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-14 h-14 bg-cyan-500/20 text-cyan-400 rounded-2xl flex items-center justify-center font-bold text-xl">6.1</span>
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold">Conceito e Personagens</h1>
+          <p class="text-neutral-400 text-sm mt-1">60 min • Projeto Luna e Pip</p>
+        </div>
+      </div>
+      <p class="text-neutral-300 max-w-2xl">
+        Neste modulo voce vai criar toda a fundacao visual do projeto: briefing da serie, design dos personagens Luna e Pip, estilo visual e worldbuilding. Cada prompt esta pronto para usar.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Intro do Projeto -->
+    <section class="mb-12">
+      <div class="bg-cyan-500/10 border border-cyan-500/30 rounded-2xl p-6">
+        <div class="flex items-start gap-4">
+          <span class="text-4xl">🦊</span>
+          <div>
+            <h2 class="text-xl font-bold text-cyan-400 mb-2">Projeto: Mini-Serie "Luna e Pip"</h2>
+            <p class="text-neutral-300 text-sm mb-4">
+              Luna e uma menina de 8 anos que encontra Pip, uma raposinha magica cujo pelo muda de cor conforme suas emocoes. Juntas, elas exploram uma floresta encantada e aprendem sobre amizade, coragem e natureza. 5 episodios de 2 minutos cada.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-dark-700 text-neutral-300 text-xs rounded-lg">Formato: 5 eps x 2min</span>
+              <span class="px-3 py-1 bg-dark-700 text-neutral-300 text-xs rounded-lg">Estilo: Aquarela 2D</span>
+              <span class="px-3 py-1 bg-dark-700 text-neutral-300 text-xs rounded-lg">Publico: 4-10 anos</span>
+              <span class="px-3 py-1 bg-dark-700 text-neutral-300 text-xs rounded-lg">Tom: Magico e Acolhedor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 1: Briefing -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">1</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Briefing da Serie</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          O briefing define todos os parametros da serie animada: publico-alvo, tom, formato, objetivos educacionais e restricoes. E o documento guia para todas as decisoes criativas.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 1: Criar Briefing da Serie Animada</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Voce e um produtor executivo de animacao infantil. Crie um briefing completo para a seguinte serie animada:
+
+PROJETO: "Luna e Pip" - Mini-serie animada
+
+PREMISSA:
+- Luna: menina de 8 anos, curiosa e corajosa, mora em uma vila proxima a uma floresta encantada
+- Pip: raposinha magica cujo pelo muda de cor conforme emocoes (azul=calma, laranja=feliz, roxo=curiosa, verde=medo)
+- Juntas exploram a floresta e aprendem licoes sobre amizade, coragem e natureza
+- Pip nao fala, comunica-se por sons e expressoes
+
+O briefing deve incluir:
+
+1. VISAO GERAL DA SERIE
+- Conceito em uma frase (logline)
+- Genero e tom
+- Proposta de valor unica
+
+2. PUBLICO-ALVO
+- Faixa etaria primaria e secundaria
+- Perfil psicografico das criancas
+- Contexto de consumo (onde/quando assistem)
+- O que os pais valorizam
+
+3. FORMATO E ESPECIFICACOES
+- Numero de episodios
+- Duracao de cada episodio
+- Estrutura de episodio (3 atos em 2 min)
+- Plataformas de destino
+
+4. TOM E VALORES
+- Adjetivos que definem o tom (5)
+- Valores educacionais
+- O que NUNCA deve aparecer
+- Nivel de conflito apropriado
+
+5. POTENCIAL DE EXPANSAO
+- Merchandising
+- Temporadas futuras
+- Conteudo complementar
+
+Formate de forma profissional e detalhada.</pre>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600">
+          <h4 class="font-semibold text-white mb-3">Resultado Esperado:</h4>
+          <div class="text-sm text-neutral-400 space-y-4">
+            <div>
+              <span class="text-cyan-400 font-semibold">LOGLINE:</span>
+              <p class="mt-1">"Uma menina curiosa e sua amiga raposinha magica descobrem que as emocoes sao superpoderes quando exploram juntas uma floresta encantada."</p>
+            </div>
+            <div>
+              <span class="text-cyan-400 font-semibold">PUBLICO:</span>
+              <p class="mt-1">Primario: 4-7 anos. Secundario: 8-10 anos. Criancas que amam animais, natureza e aventuras. Consomem conteudo em tablets/TV durante manha e final de tarde.</p>
+            </div>
+            <div>
+              <span class="text-cyan-400 font-semibold">TOM:</span>
+              <p class="mt-1">Magico, acolhedor, gentil, aventureiro, emocionalmente inteligente. Conflitos sempre resolvidos com empatia, nunca violencia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 2: Design Luna -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">2</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Design da Protagonista Luna</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          O design de personagem define a aparencia, proporcoes, roupas e personalidade visual da Luna. Precisa ser memoravel, animavel e conectar com criancas.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 2: Character Design da Luna</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie uma descricao detalhada de character design para a protagonista Luna, para ser usada como referencia na geracao de imagens.
+
+PERFIL DO PERSONAGEM:
+- Nome: Luna
+- Idade: 8 anos
+- Personalidade: Curiosa, corajosa, gentil, sonhadora
+- Contexto: Mora em uma vila e explora uma floresta encantada com sua amiga raposinha
+
+ESTILO VISUAL DA SERIE:
+- Estetica: Aquarela suave, Studio Ghibli meets livro infantil
+- Tom: Acolhedor, magico, nostalgico
+
+DEFINA DETALHADAMENTE:
+
+1. ROSTO E CABELO
+- Formato do rosto (infantil, proporcoes)
+- Tipo de cabelo, cor, comprimento
+- Penteado caracteristico
+- Olhos (formato, cor, expressividade)
+
+2. CORPO E PROPORCOES
+- Altura relativa (quantas cabecas?)
+- Build (magra, fofa, atletica?)
+- Proporcoes para animacao infantil
+- Silhueta distintiva
+
+3. ROUPA PRINCIPAL
+- Estilo geral (cottagecore, aventureira, etc)
+- Pecas especificas com cores
+- Acessorios importantes
+- Funcionalidade para aventuras
+
+4. ELEMENTOS ICÔNICOS
+- Item que sempre carrega
+- Detalhe memoravel
+- Cores que a definem
+- O que a diferencia visualmente
+
+5. EXPRESSOES BASICAS
+- Como ela demonstra felicidade
+- Como demonstra medo
+- Como demonstra curiosidade
+- Como demonstra determinacao
+
+Inclua codigos de cores hex para paleta do personagem.</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 3: Gerar Imagem da Luna (Midjourney)</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Character design sheet of Luna, an 8-year-old girl with curly brown hair in two low pigtails, big curious hazel eyes, round friendly face, wearing a cozy olive green cardigan over cream dress, brown boots, carrying a small canvas adventure backpack, soft watercolor illustration style, Studio Ghibli inspired, children's book aesthetic, warm earth tones palette, multiple poses and expressions on white background, turnaround reference sheet --ar 3:2 --style raw --v 6.1</pre>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600">
+          <h4 class="font-semibold text-white mb-3">Paleta de Cores da Luna:</h4>
+          <div class="flex flex-wrap gap-4 mt-2">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded" style="background-color: #8B6F47"></div>
+              <span class="text-xs text-neutral-400">#8B6F47 Cabelo</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded" style="background-color: #6B7F59"></div>
+              <span class="text-xs text-neutral-400">#6B7F59 Cardiga</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded" style="background-color: #F5E6D3"></div>
+              <span class="text-xs text-neutral-400">#F5E6D3 Vestido</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded" style="background-color: #5D4E37"></div>
+              <span class="text-xs text-neutral-400">#5D4E37 Botas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 3: Design Pip -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">3</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Design da Raposinha Pip</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Pip e o elemento magico da serie. Seu design precisa ser adoravel, expressivo e mostrar claramente as mudancas de cor conforme emocoes.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 4: Character Design da Pip</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie uma descricao detalhada de character design para Pip, a raposinha magica, para ser usada como referencia na geracao de imagens.
+
+PERFIL DO PERSONAGEM:
+- Nome: Pip
+- Especie: Raposinha magica
+- Caracteristica especial: Pelo muda de cor conforme emocoes
+- Personalidade: Brincalhona, leal, curiosa, protetora
+- Comunicacao: Apenas sons e expressoes (nao fala)
+
+SISTEMA DE CORES EMOCIONAIS:
+- Azul suave: Calma, tranquilidade
+- Laranja vibrante: Felicidade, excitacao
+- Roxo: Curiosidade, descoberta
+- Verde claro: Medo, inseguranca
+- Rosa: Amor, carinho
+
+DEFINA DETALHADAMENTE:
+
+1. CORPO E PROPORCOES
+- Tamanho relativo a Luna (chega onde?)
+- Proporcoes (cabeca grande? corpo pequeno?)
+- Silhueta distintiva
+- O que torna ela "fofa"
+
+2. CARACTERISTICAS FACIAIS
+- Olhos (tamanho, formato, brilho magico?)
+- Focinho e nariz
+- Orelhas (grandes? expressivas?)
+- Expressividade geral
+
+3. PELO E TEXTURA
+- Textura do pelo (fofo, liso, ondulado?)
+- Areas de cor (todo corpo muda ou partes?)
+- Brilho ou particulas magicas?
+- Transicoes de cor (graduais ou instantaneas?)
+
+4. CAUDA
+- Tamanho e formato
+- Expressividade da cauda
+- Como reflete emocoes
+- Movimento caracteristico
+
+5. ELEMENTOS MAGICOS
+- Como o brilho magico aparece
+- Particulas ou aura?
+- Momentos de transicao de cor
+- Efeitos visuais
+
+Inclua codigos hex para cada cor emocional.</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 5: Gerar Pip em Todas as Cores (Midjourney)</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY - PIP AZUL (CALMA)</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Cute magical fox character named Pip, small and fluffy with oversized ears and big sparkly eyes, soft blue-teal fur color representing calm emotion, fluffy expressive tail, gentle smile, surrounded by subtle magical sparkles, soft watercolor illustration style, children's book aesthetic, Studio Ghibli inspired, white background, multiple angles and expressions --ar 3:2 --style raw --v 6.1</pre>
+        </div>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY - PIP LARANJA (FELIZ)</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Cute magical fox character named Pip, small and fluffy with oversized ears and big sparkly eyes, warm orange fur color representing happiness and excitement, fluffy wagging tail, joyful expression with open mouth smile, surrounded by golden magical sparkles, soft watercolor illustration style, children's book aesthetic, Studio Ghibli inspired, white background, dynamic happy poses --ar 3:2 --style raw --v 6.1</pre>
+        </div>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY - PIP ROXO (CURIOSA)</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Cute magical fox character named Pip, small and fluffy with oversized ears perked up alertly and big curious sparkly eyes, soft purple-violet fur color representing curiosity and discovery, tilted head pose, fluffy tail raised with interest, surrounded by purple magical sparkles, soft watercolor illustration style, children's book aesthetic, white background, curious investigating poses --ar 3:2 --style raw --v 6.1</pre>
+        </div>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY - PIP VERDE (MEDO)</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Cute magical fox character named Pip, small and fluffy with oversized ears flattened back and big worried sparkly eyes, soft mint green fur color representing fear and insecurity, fluffy tail tucked, shy nervous expression, surrounded by faint green magical sparkles, soft watercolor illustration style, children's book aesthetic, white background, scared and hiding poses --ar 3:2 --style raw --v 6.1</pre>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600">
+          <h4 class="font-semibold text-white mb-3">Paleta de Cores da Pip:</h4>
+          <div class="flex flex-wrap gap-4 mt-2">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded" style="background-color: #7DD3E8"></div>
+              <span class="text-xs text-neutral-400">#7DD3E8 Calma</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded" style="background-color: #F59E0B"></div>
+              <span class="text-xs text-neutral-400">#F59E0B Feliz</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded" style="background-color: #A78BFA"></div>
+              <span class="text-xs text-neutral-400">#A78BFA Curiosa</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded" style="background-color: #86EFAC"></div>
+              <span class="text-xs text-neutral-400">#86EFAC Medo</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded" style="background-color: #FDA4AF"></div>
+              <span class="text-xs text-neutral-400">#FDA4AF Amor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 4: Estilo Visual -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">4</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Estilo Visual da Serie</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          O style guide define a estetica consistente de toda a serie: paleta de cores, texturas, iluminacao e atmosfera visual que fara "Luna e Pip" ser reconhecivel.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 6: Criar Style Guide Visual</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de estilo visual completo para a serie animada "Luna e Pip".
+
+REFERENCIAS ESTETICAS:
+- Studio Ghibli (My Neighbor Totoro, Ponyo)
+- Ilustracoes de livros infantis classicos
+- Tecnica de aquarela tradicional
+- Animacao europeia (The Secret of Kells)
+
+DEFINA:
+
+1. PALETA DE CORES GERAL
+- Cores primarias da serie (3) com hex
+- Cores secundarias (3) com hex
+- Cores de destaque (2)
+- Cores para momentos magicos
+- Cores a evitar
+
+2. ESTILO DE ILUSTRACAO
+- Nivel de detalhe (simples, medio, complexo)
+- Tipo de linha (outline ou sem outline?)
+- Textura (aquarela, flat, granulado?)
+- Como lidar com sombras
+- Como lidar com luz
+
+3. TIPOGRAFIA (para titulos/creditos)
+- Estilo de fonte
+- Caracteristicas (arredondada, organica, etc)
+- Cores de texto
+
+4. ATMOSFERA POR LOCACAO
+- Vila: paleta e mood
+- Floresta de dia: paleta e mood
+- Floresta magica/noite: paleta e mood
+- Interior da casa: paleta e mood
+
+5. ELEMENTOS VISUAIS RECORRENTES
+- Motivos graficos
+- Shapes organicos
+- Elementos de natureza
+- Elementos magicos
+
+6. O QUE EVITAR
+- Estilos que nao combinam
+- Cores que nao usar
+- Elementos visuais proibidos
+
+Formate como documento de referencia para artistas.</pre>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600">
+          <h4 class="font-semibold text-white mb-3">Paleta Geral da Serie:</h4>
+          <div class="grid sm:grid-cols-2 gap-4 mt-2">
+            <div>
+              <span class="text-cyan-400 text-sm font-semibold">PRIMARIAS</span>
+              <div class="flex gap-2 mt-2">
+                <div class="w-10 h-10 rounded" style="background-color: #6B8E23"></div>
+                <div class="w-10 h-10 rounded" style="background-color: #DEB887"></div>
+                <div class="w-10 h-10 rounded" style="background-color: #87CEEB"></div>
+              </div>
+            </div>
+            <div>
+              <span class="text-cyan-400 text-sm font-semibold">MAGICAS</span>
+              <div class="flex gap-2 mt-2">
+                <div class="w-10 h-10 rounded" style="background-color: #E6E6FA"></div>
+                <div class="w-10 h-10 rounded" style="background-color: #FFD700"></div>
+                <div class="w-10 h-10 rounded" style="background-color: #98FB98"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 5: Worldbuilding -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">5</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Worldbuilding</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          O worldbuilding define as regras do universo: como a magia funciona, a geografia da floresta, criaturas que existem e a historia do mundo.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 7: Criar Biblia do Mundo</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie uma biblia de mundo (world bible) para o universo de "Luna e Pip".
+
+PREMISSA DO MUNDO:
+Uma vila pacifica existe na borda de uma floresta encantada. A floresta e lar de criaturas magicas, mas apenas criancas puras de coracao conseguem ve-las. Pip e uma dessas criaturas.
+
+DESENVOLVA:
+
+1. A VILA DE AURORA
+- Nome e historia da vila
+- Populacao e modo de vida
+- Relacao com a floresta
+- Tradicoes locais
+- Casa da Luna (detalhes)
+
+2. A FLORESTA ENCANTADA
+- Nome da floresta
+- Geografia (areas distintas)
+- Regras magicas do lugar
+- Por que so criancas veem a magia?
+- Perigos apropriados para idade
+
+3. SISTEMA DE MAGIA
+- Como a magia funciona
+- Por que Pip muda de cor
+- Existem outras criaturas magicas?
+- Limites da magia
+- Como emocoes afetam o mundo
+
+4. CRIATURAS DO MUNDO
+- Outros seres magicos (3-5)
+- Suas caracteristicas
+- Relacao com Pip
+- Potencial para episodios futuros
+
+5. HISTORIA E LORE
+- Lenda local sobre a floresta
+- De onde Pip veio?
+- O que protege a floresta?
+- Misterios para explorar
+
+6. REGRAS DO MUNDO
+- O que e possivel
+- O que e impossivel
+- Consistencia para roteiros
+
+Mantenha tudo apropriado para criancas de 4-10 anos.</pre>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600">
+          <h4 class="font-semibold text-white mb-3">Locacoes Principais:</h4>
+          <div class="grid sm:grid-cols-3 gap-3 text-sm">
+            <div class="bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-cyan-400 font-semibold">Vila Aurora</span>
+              <p class="text-neutral-400 text-xs mt-1">Casas de pedra e madeira, pracinha central, padaria, jardins coloridos</p>
+            </div>
+            <div class="bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-cyan-400 font-semibold">Clareira das Luzes</span>
+              <p class="text-neutral-400 text-xs mt-1">Onde Luna encontrou Pip, cogumelos luminosos, vagalumes</p>
+            </div>
+            <div class="bg-dark-800/50 p-3 rounded-lg">
+              <span class="text-cyan-400 font-semibold">Arvore Anciã</span>
+              <p class="text-neutral-400 text-xs mt-1">Arvore gigante no coracao da floresta, lar de criaturas magicas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 6: Model Sheets -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-lg">6</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Model Sheets Finais</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Model sheets sao documentos de referencia que garantem consistencia em toda a producao. Incluem turnarounds, expressoes e comparacoes de escala.
+        </p>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 8: Turnaround da Luna</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY - TURNAROUND</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Character turnaround sheet of Luna, 8-year-old girl with curly brown pigtails and olive cardigan, showing front view, 3/4 view, side view, and back view, maintaining consistent proportions and design, simple T-pose, clean white background, soft watercolor children's book illustration style, animation reference sheet, professional character design --ar 16:9 --style raw --v 6.1</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 9: Expression Sheet Luna</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY - EXPRESSOES</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Expression sheet of Luna character, 8-year-old girl face showing 9 different emotions: happy, sad, surprised, scared, curious, determined, sleepy, laughing, worried, consistent character design, soft watercolor children's book style, grid layout on white background, animation reference, expressive cartoon eyes --ar 1:1 --style raw --v 6.1</pre>
+        </div>
+
+        <h3 class="text-lg font-semibold text-cyan-400 mb-4">Prompt 10: Scale Chart</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-cyan-400 font-semibold">PROMPT MIDJOURNEY - COMPARACAO DE ESCALA</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Character height comparison chart showing Luna (8-year-old girl) standing next to Pip (small magical fox reaching her knee), size reference with measurement lines, both characters in standard pose facing forward, soft watercolor children's book illustration style, clean white background, animation production reference --ar 16:9 --style raw --v 6.1</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumo do Modulo -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-r from-cyan-500/20 to-dark-800 rounded-2xl p-6 border border-cyan-500/30">
+        <h3 class="text-xl font-bold text-cyan-400 mb-4">Resumo: O Que Voce Criou</h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-xl p-4">
+            <span class="text-2xl mb-2 block">📋</span>
+            <h4 class="font-semibold text-white mb-1">Briefing da Serie</h4>
+            <p class="text-neutral-400 text-sm">Logline, publico, formato, tom e valores definidos.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-xl p-4">
+            <span class="text-2xl mb-2 block">👧</span>
+            <h4 class="font-semibold text-white mb-1">Design da Luna</h4>
+            <p class="text-neutral-400 text-sm">Aparencia completa, paleta de cores e prompts Midjourney.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-xl p-4">
+            <span class="text-2xl mb-2 block">🦊</span>
+            <h4 class="font-semibold text-white mb-1">Design da Pip</h4>
+            <p class="text-neutral-400 text-sm">Todas as variacoes de cor emocional com prompts.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-xl p-4">
+            <span class="text-2xl mb-2 block">🌍</span>
+            <h4 class="font-semibold text-white mb-1">Worldbuilding</h4>
+            <p class="text-neutral-400 text-sm">Vila, floresta, sistema de magia e criaturas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegacao -->
+    <div class="flex justify-between items-center pt-8 border-t border-dark-600">
+      <a href="index.html" class="text-neutral-400 hover:text-white transition-colors">
+        ← Voltar para Trilha 6
+      </a>
+      <a href="modulo-6-2.html" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-semibold transition-colors">
+        Proximo: Roteiro →
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <p class="text-center text-neutral-500 text-sm">
+        VisionPro - Projeto Guiado: Serie Animada Luna e Pip
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function copyPrompt(button) {
+      const promptBox = button.closest('.prompt-box');
+      const promptText = promptBox.querySelector('pre').textContent;
+      navigator.clipboard.writeText(promptText).then(() => {
+        const originalText = button.textContent;
+        button.textContent = 'Copiado!';
+        button.classList.add('bg-green-500/30', 'text-green-400');
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('bg-green-500/30', 'text-green-400');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
