@@ -21,7 +21,7 @@
   <style>
     body { font-family: 'Inter', sans-serif; }
     .topic-explanation { display: none; }
-    .topic-expanded .topic-explanation { display: block; }
+    .topic-explanation.active { display: block; }
   </style>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
@@ -1228,11 +1228,20 @@
   </div>
 
   <script>
-    function toggleTopic(btn) {
-      const parent = btn.parentElement;
-      parent.classList.toggle('topic-expanded');
-      const icon = btn.querySelector('span:last-child');
-      icon.textContent = parent.classList.contains('topic-expanded') ? '−' : '+';
+    function toggleTopic(button) {
+      const explanation = button.nextElementSibling;
+      const icon = button.querySelector('span:last-child');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) {
+          exp.classList.remove('active');
+          const otherButton = exp.previousElementSibling;
+          const otherIcon = otherButton.querySelector('span:last-child');
+          if (otherIcon) otherIcon.textContent = '+';
+        }
+      });
+      explanation.classList.toggle('active');
+      icon.textContent = explanation.classList.contains('active') ? '−' : '+';
     }
 
     function openModal(url) {
