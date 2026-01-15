@@ -38,16 +38,35 @@
     </style>
 </head>
 <body class="bg-neutral-950 text-neutral-100 min-h-screen">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
-        <div class="max-w-6xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="text-xl font-bold gradient-text">VisionPro</a>
-                <div class="flex items-center space-x-6">
-                    <a href="../trilha1/index.html" class="text-sm text-neutral-400 hover:text-emerald-400 transition-colors">Trilha 1</a>
-                    <a href="../trilha2/index.html" class="text-sm text-neutral-400 hover:text-blue-400 transition-colors">Trilha 2</a>
-                    <a href="index.html" class="text-sm text-purple-400 font-medium">Trilha 3</a>
-                    <a href="../trilha4/index.html" class="text-sm text-neutral-400 hover:text-amber-400 transition-colors">Trilha 4</a>
+    <!-- Navigation Global -->
+    <nav class="sticky top-0 z-50 bg-neutral-950/95 backdrop-blur-sm border-b border-neutral-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <a href="../../index.html" class="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors">
+                        <span class="text-3xl">🎬</span>
+                        <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+                    </a>
+                    <span class="text-neutral-600">|</span>
+                    <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+                </div>
+                <div class="flex items-center space-x-1 sm:space-x-2">
+                    <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+                        <span class="sm:hidden">T1</span>
+                        <span class="hidden sm:inline">Fundamentos</span>
+                    </a>
+                    <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+                        <span class="sm:hidden">T2</span>
+                        <span class="hidden sm:inline">Metodo</span>
+                    </a>
+                    <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-purple-500/10 text-purple-400">
+                        <span class="sm:hidden">T3</span>
+                        <span class="hidden sm:inline">Avancado</span>
+                    </a>
+                    <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+                        <span class="sm:hidden">T4</span>
+                        <span class="hidden sm:inline">Labs</span>
+                    </a>
                     <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-900 hover:bg-neutral-800 transition-colors">
                         <span class="text-lg">🌙</span>
                     </button>
