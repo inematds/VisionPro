@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 5: Projeto Guiado | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FB7185',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Labs</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-rose-500/10 text-rose-400">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Projeto</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header da Trilha -->
+  <header class="relative bg-gradient-to-b from-rose-900/20 to-dark-900 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-bold rounded-full">TRILHA 5</span>
+        <span class="text-neutral-500 text-sm">7 modulos</span>
+        <span class="px-2 py-0.5 bg-green-500/20 text-green-400 text-xs font-medium rounded">PROJETO COMPLETO</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+        <span class="text-rose-400">Projeto Guiado</span>
+      </h1>
+      <p class="text-neutral-400 text-lg max-w-2xl">
+        Crie um video promocional completo do zero usando IA. Cada modulo e um passo do processo com prompts prontos para copiar e usar.
+      </p>
+
+      <!-- Projeto Card -->
+      <div class="mt-8 bg-dark-800/80 rounded-2xl p-6 border border-rose-500/30 max-w-2xl">
+        <div class="flex items-start gap-4">
+          <div class="w-16 h-16 bg-rose-500/20 rounded-xl flex items-center justify-center text-3xl flex-shrink-0">
+            ☕
+          </div>
+          <div>
+            <div class="text-xs text-rose-400 font-semibold mb-1">PROJETO EXEMPLO</div>
+            <h3 class="text-xl font-bold text-white mb-2">Video Promocional "Raizes"</h3>
+            <p class="text-neutral-400 text-sm">
+              Um video de 60 segundos para uma marca ficticia de cafe sustentavel. Do briefing a publicacao, voce vai criar cada elemento com prompts de IA.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">60 segundos</span>
+              <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Cafe Sustentavel</span>
+              <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Prompts Completos</span>
+              <span class="px-2 py-1 bg-dark-700 text-neutral-300 text-xs rounded">Assets Gerados</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Lista de Modulos -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="space-y-6">
+
+      <!-- Modulo 5.1 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-rose-500/30 transition-all">
+        <a href="modulo-5-1.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-rose-500/20 text-rose-400 rounded-xl flex items-center justify-center font-bold">5.1</span>
+                <span class="text-neutral-500 text-sm">45 min</span>
+                <span class="px-2 py-0.5 bg-blue-500/20 text-blue-400 text-xs rounded">FUNDACAO</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                Briefing e Conceito
+              </h2>
+              <p class="text-neutral-400">
+                Defina o projeto com clareza. Crie o briefing, persona do cliente, e conceito criativo usando prompts de IA.
+              </p>
+            </div>
+            <span class="text-rose-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">Briefing do Projeto</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Documento que define objetivos, publico, tom, duracao e entregaveis do projeto. A fundacao de toda producao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Um briefing bem feito evita retrabalho e garante alinhamento. Voce vai criar o briefing completo do projeto Raizes com IA.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Objetivos SMART, publico-alvo, tom de voz, restricoes, entregaveis, criterios de sucesso.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Persona e Publico</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Perfil detalhado do espectador ideal: demografia, psicografia, dores, desejos e comportamento de consumo de conteudo.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cada decisao criativa deve servir a persona. Conhecer profundamente quem vai assistir guia todas as escolhas do video.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Buyer persona, jornada do cliente, pontos de dor, gatilhos emocionais, linguagem do publico.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Conceito Criativo</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">A ideia central que unifica todo o video. O conceito e a "big idea" que conecta marca, mensagem e emocao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Videos sem conceito sao apenas imagens bonitas. O conceito da proposito e memorabilidade a cada frame.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Big idea, territorio de marca, metafora visual, linha criativa, diferenciacao.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Referencias Visuais</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Colecao de imagens, videos e estilos que definem a direcao visual. O moodboard que guia toda a estetica do projeto.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Referencias alinham expectativas e aceleram decisoes criativas. Voce vai gerar descricoes de moodboard com IA.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Moodboard, paleta de cores, estilo fotografico, referencias de edicao, tom visual.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-5-1.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-5-1.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 5.2 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-rose-500/30 transition-all">
+        <a href="modulo-5-2.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-rose-500/20 text-rose-400 rounded-xl flex items-center justify-center font-bold">5.2</span>
+                <span class="text-neutral-500 text-sm">60 min</span>
+                <span class="px-2 py-0.5 bg-purple-500/20 text-purple-400 text-xs rounded">ROTEIRO</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                Roteiro com IA
+              </h2>
+              <p class="text-neutral-400">
+                Escreva o roteiro completo do video usando prompts especializados. Narracao, timing e estrutura narrativa.
+              </p>
+            </div>
+            <span class="text-rose-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">Estrutura do Video</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O esqueleto do video: gancho inicial, desenvolvimento, climax e call-to-action. A arquitetura que sustenta a narrativa.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sem estrutura solida, o video perde a audiencia. Voce vai criar a estrutura do video Raizes com prompts especificos.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Hook, problema-solucao, arco narrativo, pacing, call-to-action, retencao.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Narracao e Copy</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">O texto falado ou escrito do video. Cada palavra escolhida para maximo impacto emocional e clareza de mensagem.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Palavras certas transformam videos bons em memoraveis. Voce vai gerar a narracao completa do Raizes com IA.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Copywriting, tom de voz, ritmo de fala, palavras de poder, economia de palavras.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Timing e Ritmo</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Distribuicao de tempo entre cenas e sincronizacao entre audio e visual. O pulso que da vida ao video.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Timing errado mata emocao. Voce vai calcular e distribuir os 60 segundos do Raizes de forma otima.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Beat, pacing, respiracoes, sincronizacao, momentos de impacto, transicoes.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Roteiro Tecnico</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Documento que une narracao, descricao visual, audio e notas tecnicas em formato profissional de producao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">O roteiro tecnico e o mapa de producao. Voce vai formatar o roteiro do Raizes em padrao profissional.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">A/V script, colunas de producao, timecode, descricao de cena, notas de direcao.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-5-2.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-5-2.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 5.3 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-rose-500/30 transition-all">
+        <a href="modulo-5-3.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-rose-500/20 text-rose-400 rounded-xl flex items-center justify-center font-bold">5.3</span>
+                <span class="text-neutral-500 text-sm">75 min</span>
+                <span class="px-2 py-0.5 bg-green-500/20 text-green-400 text-xs rounded">VISUAL</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                Storyboard e Planejamento Visual
+              </h2>
+              <p class="text-neutral-400">
+                Planeje cada cena visualmente. Crie descricoes de frames, composicoes e transicoes com prompts de IA.
+              </p>
+            </div>
+            <span class="text-rose-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">Sequencia de Cenas</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Divisao do video em cenas numeradas com duracao e proposito definidos. O fluxo visual da narrativa.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Cenas bem planejadas facilitam toda a producao. Voce vai criar a sequencia completa do Raizes com IA.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Scene breakdown, continuidade, transicoes, ritmo visual, economia de cenas.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Composicao de Frames</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Descricao detalhada de cada frame: enquadramento, elementos visuais, iluminacao e atmosfera.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Frames bem descritos geram imagens melhores com IA. Voce vai criar descricoes otimizadas para geracao de imagens.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Regra dos tercos, leading lines, profundidade, ponto focal, atmosfera visual.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Prompts de Imagem</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Prompts otimizados para ferramentas de geracao de imagem como Midjourney, DALL-E ou Stable Diffusion.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Prompts bem escritos geram imagens de alta qualidade. Voce vai criar prompts prontos para usar em cada cena.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Prompt engineering, parametros de estilo, negative prompts, consistencia visual, aspect ratio.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Movimento e Transicoes</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Planejamento de como a camera se move dentro das cenas e como as transicoes conectam uma cena a outra.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Movimento mal planejado distrai; bem planejado, emociona. Voce vai definir cada movimento do video Raizes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Pan, tilt, zoom, parallax, transicoes suaves, match cuts, continuidade de movimento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-5-3.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-5-3.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 5.4 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-rose-500/30 transition-all">
+        <a href="modulo-5-4.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-rose-500/20 text-rose-400 rounded-xl flex items-center justify-center font-bold">5.4</span>
+                <span class="text-neutral-500 text-sm">90 min</span>
+                <span class="px-2 py-0.5 bg-amber-500/20 text-amber-400 text-xs rounded">GERACAO</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                Geracao de Assets Visuais
+              </h2>
+              <p class="text-neutral-400">
+                Gere todas as imagens, texturas e elementos visuais do video usando ferramentas de IA com prompts otimizados.
+              </p>
+            </div>
+            <span class="text-rose-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">Imagens Principais</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Os frames principais do video: cenas de cafe, fazenda, producao e momentos de consumo. A espinha dorsal visual.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Imagens principais definem a qualidade percebida do video. Voce vai gerar cada uma com prompts detalhados.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Hero shots, key frames, consistencia de estilo, resolucao, aspect ratio de video.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Elementos de Marca</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Logo, embalagens, texturas e elementos graficos da marca Raizes. A identidade visual aplicada ao video.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Elementos de marca bem integrados criam profissionalismo. Voce vai gerar e adaptar assets da marca Raizes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Brand assets, logo animation, packaging mockup, texturas organicas, tipografia.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Texturas e Backgrounds</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Elementos de fundo, texturas de madeira, papel craft e elementos naturais que compoem o universo visual.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Texturas adicionam profundidade e autenticidade. Voce vai gerar texturas coerentes com a estetica Raizes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Seamless textures, overlays, grain, backgrounds, elementos organicos.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Organizacao de Assets</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sistema de nomenclatura e organizacao de arquivos para facilitar a edicao. Estrutura de pastas e naming conventions.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Assets desorganizados atrasam a edicao. Voce vai criar uma estrutura profissional de organizacao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">File naming, folder structure, versioning, proxy workflow, asset management.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-5-4.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-5-4.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 5.5 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-rose-500/30 transition-all">
+        <a href="modulo-5-5.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-rose-500/20 text-rose-400 rounded-xl flex items-center justify-center font-bold">5.5</span>
+                <span class="text-neutral-500 text-sm">60 min</span>
+                <span class="px-2 py-0.5 bg-cyan-500/20 text-cyan-400 text-xs rounded">AUDIO</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                Audio e Trilha Sonora
+              </h2>
+              <p class="text-neutral-400">
+                Crie a narracao com voz sintetica, selecione musica e planeje efeitos sonoros para o video completo.
+              </p>
+            </div>
+            <span class="text-rose-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">Narracao com IA</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Geracao de voz narrada usando ferramentas como ElevenLabs ou similares. Voz sintetica de alta qualidade.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Vozes de IA democratizam narracao profissional. Voce vai gerar a narracao do Raizes com configuracoes otimizadas.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Voice cloning, texto para fala, entonacao, pacing de narracao, naturalidade.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Trilha Musical</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Selecao ou geracao de musica que complementa a emocao do video. Background music que amplifica a mensagem.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Musica errada sabota o video; certa, eleva. Voce vai escolher e adaptar a trilha perfeita para Raizes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Music licensing, royalty-free, BPM, mood matching, underscore, music beds.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Efeitos Sonoros</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Sons ambientes e efeitos que adicionam realismo: graos de cafe, xicara, natureza, sons de producao.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">SFX criam imersao sensorial. Voce vai selecionar e posicionar efeitos que dao vida ao universo Raizes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Foley, ambience, SFX layers, sound design, sync points, audio branding.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Mix e Master</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Balanceamento de volumes entre narracao, musica e efeitos. Niveis tecnicos para diferentes plataformas.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Audio mal mixado e amador instantaneo. Voce vai criar um mix profissional com hierarquia clara de sons.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Loudness normalization, LUFS, ducking, EQ, compression, audio hierarchy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-5-5.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-5-5.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 5.6 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-rose-500/30 transition-all">
+        <a href="modulo-5-6.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-rose-500/20 text-rose-400 rounded-xl flex items-center justify-center font-bold">5.6</span>
+                <span class="text-neutral-500 text-sm">90 min</span>
+                <span class="px-2 py-0.5 bg-red-500/20 text-red-400 text-xs rounded">EDICAO</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                Edicao e Montagem
+              </h2>
+              <p class="text-neutral-400">
+                Monte o video final. Combine todos os assets, aplique transicoes, motion e finalize a edicao completa.
+              </p>
+            </div>
+            <span class="text-rose-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">Montagem Base</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Primeira montagem com todos os assets na timeline. Estrutura basica do video antes de refinamentos.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">A montagem base revela o ritmo real do video. Voce vai criar a primeira versao completa do Raizes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Rough cut, assembly, sincronizacao, timeline organization, edit points.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Motion e Animacao</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Aplicacao de movimento em imagens estaticas: ken burns, parallax, zoom suave. Vida para fotos.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Movimento transforma imagens em video. Voce vai animar cada frame do Raizes com tecnicas profissionais.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Ken burns, parallax, ease in/out, keyframes, motion blur, 2.5D animation.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Color Grading</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Correcao e estilizacao de cores para criar atmosfera e consistencia visual em todo o video.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Color grading unifica imagens de diferentes fontes. Voce vai criar o look cinematico do Raizes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">LUTs, color wheels, curves, temperature, tint, look consistency, mood.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Tipografia e Graficos</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Textos animados, lower thirds, logo animation e elementos graficos que comunicam informacao visual.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Tipografia bem feita e invisivel; mal feita, distrai. Voce vai criar textos animados para o Raizes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Motion typography, kinetic text, lower thirds, end cards, call-to-action.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-5-6.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-5-6.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Modulo 5.7 -->
+      <div class="bg-dark-800 rounded-2xl border border-dark-600 overflow-hidden hover:border-rose-500/30 transition-all">
+        <a href="modulo-5-7.html" class="block p-6 sm:p-8">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-10 h-10 bg-rose-500/20 text-rose-400 rounded-xl flex items-center justify-center font-bold">5.7</span>
+                <span class="text-neutral-500 text-sm">45 min</span>
+                <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs rounded">FINAL</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold mb-2">
+                Finalizacao e Distribuicao
+              </h2>
+              <p class="text-neutral-400">
+                Exporte o video final em diferentes formatos, crie derivados para redes sociais e publique em multiplas plataformas.
+              </p>
+            </div>
+            <span class="text-rose-400 text-2xl ml-4">→</span>
+          </div>
+        </a>
+
+        <div class="border-t border-dark-600 divide-y divide-dark-700">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+            <span class="flex-1 text-sm font-medium">Export Settings</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Configuracoes de exportacao: codec, bitrate, resolucao e formato otimizados para cada plataforma.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Export errado destroi qualidade ou cria arquivos gigantes. Voce vai exportar o Raizes em configuracoes otimas.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">H.264, H.265, bitrate, CBR vs VBR, resolucao, frame rate, color space.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+            <span class="flex-1 text-sm font-medium">Versoes Derivadas</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Adaptacoes do video para diferentes formatos: vertical para Reels/TikTok, quadrado para feed, stories.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Um video pode virar dezenas de pecas. Voce vai criar todas as versoes do Raizes para maximizar alcance.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Repurposing, aspect ratios, platform optimization, clips, teasers, behind the scenes.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+            <span class="flex-1 text-sm font-medium">Thumbnails e Metadados</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Criacao de thumbnails, titulos, descricoes e tags otimizados para descoberta e cliques.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Video otimo com thumbnail ruim nao e assistido. Voce vai criar assets de distribuicao do Raizes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">CTR optimization, SEO de video, thumbnails, titulos, descricoes, tags, hashtags.</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 bg-rose-500/10 text-rose-400 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+            <span class="flex-1 text-sm font-medium">Publicacao e Analise</span>
+            <span class="text-neutral-500 text-lg">+</span>
+          </button>
+          <div class="topic-explanation px-6 pb-4">
+            <div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+              <div>
+                <span class="text-rose-400 font-semibold">O que e:</span>
+                <p class="text-neutral-300 text-sm mt-1">Estrategia de publicacao: timing, plataformas, cross-posting e metricas para acompanhar resultados.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Por que aprender:</span>
+                <p class="text-neutral-300 text-sm mt-1">Publicar no momento certo multiplica alcance. Voce vai criar o plano de lancamento completo do Raizes.</p>
+              </div>
+              <div>
+                <span class="text-rose-400 font-semibold">Conceitos-chave:</span>
+                <p class="text-neutral-300 text-sm mt-1">Publishing schedule, cross-platform, analytics, KPIs, iteration baseada em dados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+          <button onclick="openModal('modulo-5-7.html')" class="px-4 py-2 text-sm bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 rounded-lg font-medium transition-colors">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-5-7.html" class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-medium transition-colors">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal-overlay" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="relative z-10 w-full h-full flex items-center justify-center p-4">
+      <div class="bg-dark-800 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden border border-dark-600">
+        <div class="flex items-center justify-between p-4 border-b border-dark-600">
+          <span class="text-rose-400 font-semibold">Visualizacao do Modulo</span>
+          <button onclick="closeModal()" class="p-2 hover:bg-dark-700 rounded-lg transition-colors text-neutral-400 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="modal-content" class="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="text-center">
+        <p class="text-neutral-500 text-sm mb-4">
+          VisionPro - Metodo Pratico de Criacao Audiovisual com IA
+        </p>
+        <div class="flex justify-center flex-wrap gap-4">
+          <a href="../trilha1/index.html" class="text-emerald-400 hover:text-emerald-300 text-sm">Trilha 1</a>
+          <a href="../trilha2/index.html" class="text-blue-400 hover:text-blue-300 text-sm">Trilha 2</a>
+          <a href="../trilha3/index.html" class="text-purple-400 hover:text-purple-300 text-sm">Trilha 3</a>
+          <a href="../trilha4/index.html" class="text-amber-400 hover:text-amber-300 text-sm">Trilha 4</a>
+          <a href="index.html" class="text-rose-400 hover:text-rose-300 text-sm font-medium">Trilha 5</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTopic(button) {
+      const explanation = button.nextElementSibling;
+      const icon = button.querySelector('span:last-child');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) {
+          exp.classList.remove('active');
+          const otherButton = exp.previousElementSibling;
+          const otherIcon = otherButton.querySelector('span:last-child');
+          if (otherIcon) otherIcon.textContent = '+';
+        }
+      });
+      explanation.classList.toggle('active');
+      icon.textContent = explanation.classList.contains('active') ? '−' : '+';
+    }
+
+    function openModal(moduleUrl) {
+      const modal = document.getElementById('modal-overlay');
+      const content = document.getElementById('modal-content');
+      modal.classList.remove('hidden');
+      content.innerHTML = '<div class="flex items-center justify-center h-64"><div class="animate-spin rounded-full h-12 w-12 border-b-2 border-rose-400"></div></div>';
+      fetch(moduleUrl)
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const mainContent = doc.querySelector('main');
+          if (mainContent) {
+            content.innerHTML = mainContent.innerHTML;
+          } else {
+            content.innerHTML = '<p class="text-center text-neutral-400">Conteudo nao encontrado.</p>';
+          }
+        })
+        .catch(err => {
+          content.innerHTML = '<p class="text-center text-red-400">Erro ao carregar conteudo.</p>';
+        });
+    }
+
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.add('hidden');
+    }
+
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 5.4: Geração de Assets - VisionPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0f',
+                            800: '#12121a',
+                            700: '#1a1a24',
+                            600: '#2a2a3a'
+                        }
+                    },
+                    fontFamily: {
+                        'space': ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .prompt-box {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.05) 0%, rgba(251, 113, 133, 0.02) 100%);
+        }
+        .prompt-box:hover {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.08) 0%, rgba(251, 113, 133, 0.04) 100%);
+        }
+        .result-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(34, 197, 94, 0.02) 100%);
+        }
+        .tool-card {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.03) 0%, rgba(251, 113, 133, 0.01) 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+
+    <!-- Header -->
+    <header class="border-b border-dark-600 bg-dark-800/50 backdrop-blur-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="text-neutral-400 hover:text-rose-400 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </a>
+                    <span class="text-rose-400 font-semibold">Trilha 5</span>
+                    <span class="text-neutral-500">/</span>
+                    <span class="text-neutral-300">Módulo 5.4</span>
+                </div>
+                <div class="flex flex-col items-end space-y-1">
+                    <div class="flex items-center space-x-1 sm:space-x-2">
+                        <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+                            <span class="sm:hidden">T1</span>
+                            <span class="hidden sm:inline">Fundamentos</span>
+                        </a>
+                        <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+                            <span class="sm:hidden">T2</span>
+                            <span class="hidden sm:inline">Produção</span>
+                        </a>
+                        <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+                            <span class="sm:hidden">T3</span>
+                            <span class="hidden sm:inline">Pós</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-1 sm:space-x-2">
+                        <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+                            <span class="sm:hidden">T4</span>
+                            <span class="hidden sm:inline">Labs</span>
+                        </a>
+                        <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-rose-500/10 text-rose-400">
+                            <span class="sm:hidden">T5</span>
+                            <span class="hidden sm:inline">Projeto</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+
+        <!-- Module Header -->
+        <div class="mb-8">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="px-3 py-1 bg-rose-500/20 text-rose-400 text-sm font-semibold rounded-full">Módulo 5.4</span>
+                <span class="text-neutral-500 text-sm">90 min</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4">Geração de Assets Visuais</h1>
+            <p class="text-neutral-400 text-lg">
+                Transforme seu storyboard em vídeos e animações usando ferramentas de geração de vídeo por IA.
+                Do conceito estático ao movimento cinematográfico.
+            </p>
+        </div>
+
+        <!-- Progress Context -->
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600 mb-8">
+            <h3 class="text-sm font-semibold text-rose-400 mb-3">ONDE ESTAMOS NO PROJETO</h3>
+            <div class="flex items-center space-x-2 text-sm">
+                <span class="text-green-400">✓ Briefing</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Roteiro</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Storyboard</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-rose-400 font-semibold">Assets</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-neutral-500">Áudio</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-neutral-500">Edição</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Tools Overview -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">1</span>
+                Ferramentas de Geração de Vídeo
+            </h2>
+
+            <p class="text-neutral-300 mb-6">
+                Cada ferramenta tem pontos fortes específicos. Escolha baseado no tipo de cena
+                e no resultado visual desejado.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                <div class="tool-card rounded-xl p-5 border border-dark-600">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-white">Runway Gen-3</h4>
+                        <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Recomendado</span>
+                    </div>
+                    <p class="text-sm text-neutral-400 mb-3">Melhor qualidade geral, controle de câmera, image-to-video</p>
+                    <div class="text-xs text-neutral-500 space-y-1">
+                        <p><strong>Duração:</strong> 5-10 segundos</p>
+                        <p><strong>Ideal para:</strong> Cenas realistas, movimentos de câmera</p>
+                        <p><strong>Preço:</strong> ~$0.50 por 5s</p>
+                    </div>
+                </div>
+
+                <div class="tool-card rounded-xl p-5 border border-dark-600">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-white">Pika Labs</h4>
+                        <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Versátil</span>
+                    </div>
+                    <p class="text-sm text-neutral-400 mb-3">Boa relação custo-benefício, estilização criativa</p>
+                    <div class="text-xs text-neutral-500 space-y-1">
+                        <p><strong>Duração:</strong> 3-4 segundos</p>
+                        <p><strong>Ideal para:</strong> Cenas artísticas, texturas</p>
+                        <p><strong>Preço:</strong> Plano gratuito disponível</p>
+                    </div>
+                </div>
+
+                <div class="tool-card rounded-xl p-5 border border-dark-600">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-white">Kling AI</h4>
+                        <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Longa duração</span>
+                    </div>
+                    <p class="text-sm text-neutral-400 mb-3">Vídeos mais longos, bom para paisagens e natureza</p>
+                    <div class="text-xs text-neutral-500 space-y-1">
+                        <p><strong>Duração:</strong> Até 2 minutos</p>
+                        <p><strong>Ideal para:</strong> Aerials, natureza, establishing shots</p>
+                        <p><strong>Preço:</strong> Créditos diários gratuitos</p>
+                    </div>
+                </div>
+
+                <div class="tool-card rounded-xl p-5 border border-dark-600">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-white">Luma Dream Machine</h4>
+                        <span class="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded">Rápido</span>
+                    </div>
+                    <p class="text-sm text-neutral-400 mb-3">Geração rápida, bom para iteração</p>
+                    <div class="text-xs text-neutral-500 space-y-1">
+                        <p><strong>Duração:</strong> 5 segundos</p>
+                        <p><strong>Ideal para:</strong> Testes rápidos, conceitos</p>
+                        <p><strong>Preço:</strong> 30 gerações/mês grátis</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600">
+                <h4 class="text-sm font-semibold text-rose-400 mb-3">ESTRATÉGIA PARA O PROJETO RAÍZES</h4>
+                <div class="text-sm text-neutral-300 space-y-2">
+                    <p><span class="text-rose-400">•</span> <strong>Cenas urbanas (01-03):</strong> Runway Gen-3 - melhor para realismo</p>
+                    <p><span class="text-rose-400">•</span> <strong>Aerials/paisagens (04-05):</strong> Kling AI - vídeos mais longos de natureza</p>
+                    <p><span class="text-rose-400">•</span> <strong>Close-ups/detalhes (06-10):</strong> Runway Gen-3 - controle de câmera</p>
+                    <p><span class="text-rose-400">•</span> <strong>Cenas finais (11-12):</strong> Runway Gen-3 - qualidade premium</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Image to Video -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">2</span>
+                Image-to-Video: Do Storyboard ao Movimento
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                O método mais eficiente é usar as imagens do storyboard como ponto de partida.
+                Isso garante consistência visual entre o planejado e o resultado final.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: CENA 01 - MÃO NO CELULAR (RUNWAY)</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">MODO: Image to Video
+IMAGEM: [Upload da imagem do storyboard - Cena 01]
+
+PROMPT DE MOVIMENTO:
+Subtle thumb movement scrolling on phone screen, notification badges appearing and disappearing, slight hand tremor suggesting urgency, background blur with passing subway lights, cold blue reflections on screen
+
+CONFIGURAÇÕES RECOMENDADAS:
+- Motion Amount: 3-4 (movimento sutil)
+- Camera Motion: Static
+- Duration: 5 seconds
+- Seed: [anotar para consistência]</pre>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: CENA 04 - TRANSIÇÃO AERIAL (KLING)</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">MODO: Image to Video
+IMAGEM: [Upload da imagem do storyboard - Cena 04]
+
+PROMPT DE MOVIMENTO:
+Slow cinematic drone push forward over misty mountains, morning fog gently moving through valleys, golden sunlight gradually intensifying, peaceful and majestic atmosphere, coffee plantation revealed as camera moves
+
+CONFIGURAÇÕES RECOMENDADAS:
+- Duration: 10-15 seconds (cena de transição precisa de mais tempo)
+- Camera: Forward dolly motion
+- Speed: Slow, contemplative</pre>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: CENA 06 - MÃOS NA COLHEITA (RUNWAY)</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">MODO: Image to Video
+IMAGEM: [Upload da imagem do storyboard - Cena 06]
+
+PROMPT DE MOVIMENTO:
+Gentle hand movements carefully selecting ripe coffee cherries, fingers rolling cherry to check ripeness, subtle sunlight filtering through leaves creating moving shadows, shallow depth of field with bokeh shifting, warm golden backlight
+
+CONFIGURAÇÕES RECOMENDADAS:
+- Motion Amount: 4-5 (movimento natural das mãos)
+- Camera Motion: Static with subtle breathing
+- Duration: 5 seconds
+- Style: Cinematic, documentary</pre>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: CENA 09 - TORRA DO CAFÉ (RUNWAY)</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">MODO: Image to Video
+IMAGEM: [Upload da imagem do storyboard - Cena 09]
+
+PROMPT DE MOVIMENTO:
+Coffee beans tumbling and rotating in artisanal roaster, wisps of aromatic smoke rising and curling, beans gradually changing color from green to brown, warm amber lighting, rhythmic movement of roasting drum
+
+CONFIGURAÇÕES RECOMENDADAS:
+- Motion Amount: 6-7 (movimento ativo dos grãos)
+- Camera Motion: Slow push in
+- Duration: 5 seconds
+- Focus: Sharp on beans, soft smoke</pre>
+            </div>
+        </section>
+
+        <!-- Section 3: Text to Video -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">3</span>
+                Text-to-Video: Criando do Zero
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Algumas cenas podem ser geradas diretamente de texto, especialmente quando
+                você quer explorar variações ou não tem uma imagem de referência ideal.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: CHUVA NAS FOLHAS - TEXT TO VIDEO</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Extreme close-up of rain drops landing on glossy green coffee leaves, each drop creating tiny ripples, water droplets rolling down leaf surface catching light, soft natural lighting through overcast sky, peaceful meditative atmosphere, cinematic macro photography, shallow depth of field, documentary style, 4K quality
+
+CONFIGURAÇÕES:
+- Aspect Ratio: 16:9
+- Duration: 5 seconds
+- Camera: Static with subtle rack focus
+- Mood: Contemplative, natural</pre>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: VAPOR DO CAFÉ - TEXT TO VIDEO</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Elegant ceramic cup of fresh coffee with steam rising in slow motion, backlit by warm golden morning light, steam swirling and dancing in light beams, rustic wooden table surface, soft focus background with natural elements, cozy intimate atmosphere, cinematic food photography, warm amber and cream tones
+
+CONFIGURAÇÕES:
+- Aspect Ratio: 16:9
+- Duration: 5 seconds
+- Camera: Slow dolly in
+- Focus: Steam patterns, soft background</pre>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: MOMENTO DE PAUSA - TEXT TO VIDEO</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Woman in her 30s sitting by window in cozy home, eyes closed, both hands wrapped around warm coffee cup, subtle smile of contentment, morning golden light streaming through window, peaceful serene expression, slow deep breath, minimal modern interior, documentary portrait style, warm earth tones, cinematic depth of field
+
+CONFIGURAÇÕES:
+- Aspect Ratio: 16:9
+- Duration: 5 seconds
+- Camera: Static or very subtle push in
+- Expression: Natural, not acted</pre>
+            </div>
+        </section>
+
+        <!-- Section 4: Generating All Assets -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">4</span>
+                Gerando Todos os Assets do Projeto
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Use o prompt abaixo para criar uma lista completa de todos os vídeos
+                que precisam ser gerados, organizados por ferramenta e prioridade.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: LISTA COMPLETA DE ASSETS</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie uma lista de produção completa para gerar todos os assets de vídeo do projeto.
+
+PROJETO: "O Tempo das Coisas" - Raízes Café (60 segundos)
+
+CENAS DO STORYBOARD:
+01. Mãos no celular (0-3s)
+02. Tela com mensagens (3-6s)
+03. Café esquecido no escritório (6-10s)
+04. Transição aerial montanhas (10-15s)
+05. Fazenda de café estabelecendo (15-20s)
+06. Mãos colhendo grãos (20-25s)
+07. Sol no cafezal (25-30s)
+08. Chuva nas folhas (30-35s)
+09. Torra do café (35-38s)
+10. Embalagem artesanal (38-42s)
+11. Pessoa saboreando (42-50s)
+12. Encerramento com logo (50-60s)
+
+PARA CADA CENA, DEFINA:
+1. Ferramenta recomendada (Runway/Kling/Pika/Luma)
+2. Método (Image-to-Video ou Text-to-Video)
+3. Prompt completo otimizado para a ferramenta
+4. Duração necessária
+5. Configurações específicas (camera motion, motion amount, etc.)
+6. Prioridade (alta/média/baixa)
+7. Backup: ferramenta alternativa caso a primeira não funcione
+
+ORGANIZE EM FORMATO DE TABELA:
+| Cena | Ferramenta | Método | Duração | Prioridade |
+
+Depois liste os prompts completos para cada cena.</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">RESULTADO: PLANO DE PRODUÇÃO</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-neutral-300">
+                        <thead>
+                            <tr class="border-b border-dark-600">
+                                <th class="text-left py-2 text-rose-400">Cena</th>
+                                <th class="text-left py-2 text-rose-400">Ferramenta</th>
+                                <th class="text-left py-2 text-rose-400">Método</th>
+                                <th class="text-left py-2 text-rose-400">Duração</th>
+                                <th class="text-left py-2 text-rose-400">Prioridade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-dark-700"><td class="py-2">01</td><td>Runway</td><td>I2V</td><td>5s</td><td class="text-red-400">Alta</td></tr>
+                            <tr class="border-b border-dark-700"><td class="py-2">02</td><td>Runway</td><td>I2V</td><td>5s</td><td class="text-red-400">Alta</td></tr>
+                            <tr class="border-b border-dark-700"><td class="py-2">03</td><td>Runway</td><td>I2V</td><td>5s</td><td class="text-red-400">Alta</td></tr>
+                            <tr class="border-b border-dark-700"><td class="py-2">04</td><td>Kling</td><td>I2V</td><td>10s</td><td class="text-red-400">Alta</td></tr>
+                            <tr class="border-b border-dark-700"><td class="py-2">05</td><td>Kling</td><td>I2V</td><td>8s</td><td class="text-yellow-400">Média</td></tr>
+                            <tr class="border-b border-dark-700"><td class="py-2">06</td><td>Runway</td><td>I2V</td><td>5s</td><td class="text-red-400">Alta</td></tr>
+                            <tr class="border-b border-dark-700"><td class="py-2">07</td><td>Kling</td><td>T2V</td><td>5s</td><td class="text-yellow-400">Média</td></tr>
+                            <tr class="border-b border-dark-700"><td class="py-2">08</td><td>Runway</td><td>T2V</td><td>5s</td><td class="text-yellow-400">Média</td></tr>
+                            <tr class="border-b border-dark-700"><td class="py-2">09</td><td>Runway</td><td>I2V</td><td>5s</td><td class="text-red-400">Alta</td></tr>
+                            <tr class="border-b border-dark-700"><td class="py-2">10</td><td>Runway</td><td>I2V</td><td>5s</td><td class="text-yellow-400">Média</td></tr>
+                            <tr class="border-b border-dark-700"><td class="py-2">11</td><td>Runway</td><td>I2V</td><td>8s</td><td class="text-red-400">Alta</td></tr>
+                            <tr><td class="py-2">12</td><td>Runway</td><td>I2V</td><td>10s</td><td class="text-red-400">Alta</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-neutral-500 mt-3">Total: ~76 segundos de material bruto (margem para cortes)</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Optimization -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">5</span>
+                Otimização e Refinamento
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Nem toda geração sai perfeita na primeira tentativa. Aprenda a identificar
+                problemas e refinar seus prompts para resultados melhores.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: DIAGNÓSTICO E CORREÇÃO</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">O vídeo gerado não ficou como esperado. Ajude-me a diagnosticar e corrigir.
+
+PROMPT USADO:
+[Cole o prompt que você usou]
+
+RESULTADO OBTIDO:
+[Descreva o que a IA gerou]
+
+PROBLEMAS IDENTIFICADOS:
+- [ ] Movimento muito rápido/lento
+- [ ] Artefatos visuais ou distorções
+- [ ] Cores inconsistentes
+- [ ] Movimento de câmera errado
+- [ ] Elementos indesejados apareceram
+- [ ] Falta de coerência temporal
+- [ ] Qualidade baixa
+
+O QUE EU QUERIA:
+[Descreva sua expectativa]
+
+Por favor:
+1. Identifique a causa provável de cada problema
+2. Sugira correções específicas no prompt
+3. Recomende ajustes nas configurações
+4. Forneça um prompt revisado
+5. Sugira ferramenta alternativa se necessário</pre>
+            </div>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600">
+                <h4 class="text-sm font-semibold text-neutral-400 mb-3">PROBLEMAS COMUNS E SOLUÇÕES</h4>
+                <div class="space-y-4 text-sm">
+                    <div class="border-l-2 border-rose-500/50 pl-4">
+                        <p class="text-white font-semibold">Movimento muito artificial</p>
+                        <p class="text-neutral-400">Reduza "motion amount" e adicione "natural movement, subtle motion" ao prompt</p>
+                    </div>
+                    <div class="border-l-2 border-rose-500/50 pl-4">
+                        <p class="text-white font-semibold">Rostos distorcidos</p>
+                        <p class="text-neutral-400">Evite close-ups extremos em rostos. Use planos médios ou adicione "consistent face, stable features"</p>
+                    </div>
+                    <div class="border-l-2 border-rose-500/50 pl-4">
+                        <p class="text-white font-semibold">Morphing indesejado</p>
+                        <p class="text-neutral-400">Aumente "motion amount" gradualmente. Comece com 2-3 e vá aumentando</p>
+                    </div>
+                    <div class="border-l-2 border-rose-500/50 pl-4">
+                        <p class="text-white font-semibold">Falta de movimento</p>
+                        <p class="text-neutral-400">Seja mais específico sobre O QUE deve se mover: "hands moving", "leaves swaying", etc.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Organizing Files -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">6</span>
+                Organização dos Arquivos
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Mantenha seus assets organizados desde o início. Isso vai poupar muito
+                tempo na hora da edição.
+            </p>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600">
+                <h4 class="text-sm font-semibold text-neutral-400 mb-3">ESTRUTURA DE PASTAS RECOMENDADA</h4>
+                <div class="font-mono text-sm text-neutral-300 bg-dark-800/50 rounded-lg p-4">
+<pre>raizes-cafe-projeto/
+├── 01-briefing/
+│   └── briefing-v1.pdf
+├── 02-roteiro/
+│   └── roteiro-v1.pdf
+├── 03-storyboard/
+│   ├── frames/
+│   │   ├── cena-01.png
+│   │   ├── cena-02.png
+│   │   └── ...
+│   └── storyboard-completo.pdf
+├── 04-assets/
+│   ├── videos/
+│   │   ├── cena-01-v1.mp4
+│   │   ├── cena-01-v2.mp4  (variações)
+│   │   └── ...
+│   ├── selects/  (versões aprovadas)
+│   │   ├── cena-01-FINAL.mp4
+│   │   └── ...
+│   └── rejected/  (versões descartadas)
+├── 05-audio/
+└── 06-export/</pre>
+                </div>
+                <p class="text-xs text-neutral-500 mt-3">Dica: Sempre nomeie com número da cena + versão para facilitar identificação</p>
+            </div>
+        </section>
+
+        <!-- Deliverables Checklist -->
+        <section class="mb-10">
+            <div class="bg-gradient-to-br from-rose-500/10 to-pink-500/10 rounded-xl p-6 border border-rose-500/20">
+                <h3 class="text-xl font-bold mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Checklist do Módulo 5.4
+                </h3>
+                <p class="text-neutral-400 mb-4">Ao final deste módulo você deve ter:</p>
+                <div class="space-y-2">
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Plano de produção com ferramenta definida para cada cena</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>12 vídeos gerados (um para cada cena)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Vídeos refinados e aprovados (versões FINAL)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Arquivos organizados na estrutura de pastas</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>~76 segundos de material bruto total</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center pt-6 border-t border-dark-600">
+            <a href="modulo-5-3.html" class="flex items-center space-x-2 text-neutral-400 hover:text-rose-400 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <span>Módulo 5.3: Storyboard Visual</span>
+            </a>
+            <a href="modulo-5-5.html" class="flex items-center space-x-2 text-rose-400 hover:text-rose-300 transition-colors">
+                <span>Módulo 5.5: Áudio e Trilha Sonora</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-600 mt-16">
+        <div class="max-w-6xl mx-auto px-4 py-8">
+            <div class="text-center text-neutral-500 text-sm">
+                <p>VisionPro - Formação em Produção Audiovisual com IA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function copyPrompt(button) {
+            const promptBox = button.closest('.prompt-box');
+            const promptText = promptBox.querySelector('pre').textContent;
+
+            navigator.clipboard.writeText(promptText).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copiado!';
+                button.classList.add('bg-green-500/30', 'text-green-400');
+                button.classList.remove('bg-rose-500/20', 'text-rose-400');
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('bg-green-500/30', 'text-green-400');
+                    button.classList.add('bg-rose-500/20', 'text-rose-400');
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>

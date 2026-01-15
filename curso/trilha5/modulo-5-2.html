@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 5.2: Roteiro com IA - VisionPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0f',
+                            800: '#12121a',
+                            700: '#1a1a24',
+                            600: '#2a2a3a'
+                        }
+                    },
+                    fontFamily: {
+                        'space': ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .prompt-box {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.05) 0%, rgba(251, 113, 133, 0.02) 100%);
+        }
+        .prompt-box:hover {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.08) 0%, rgba(251, 113, 133, 0.04) 100%);
+        }
+        .result-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(34, 197, 94, 0.02) 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+
+    <!-- Header -->
+    <header class="border-b border-dark-600 bg-dark-800/50 backdrop-blur-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="text-neutral-400 hover:text-rose-400 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </a>
+                    <span class="text-rose-400 font-semibold">Trilha 5</span>
+                    <span class="text-neutral-500">/</span>
+                    <span class="text-neutral-300">Módulo 5.2</span>
+                </div>
+                <div class="flex flex-col items-end space-y-1">
+                    <div class="flex items-center space-x-1 sm:space-x-2">
+                        <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+                            <span class="sm:hidden">T1</span>
+                            <span class="hidden sm:inline">Fundamentos</span>
+                        </a>
+                        <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+                            <span class="sm:hidden">T2</span>
+                            <span class="hidden sm:inline">Produção</span>
+                        </a>
+                        <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+                            <span class="sm:hidden">T3</span>
+                            <span class="hidden sm:inline">Pós</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-1 sm:space-x-2">
+                        <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+                            <span class="sm:hidden">T4</span>
+                            <span class="hidden sm:inline">Labs</span>
+                        </a>
+                        <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-rose-500/10 text-rose-400">
+                            <span class="sm:hidden">T5</span>
+                            <span class="hidden sm:inline">Projeto</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+
+        <!-- Module Header -->
+        <div class="mb-8">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="px-3 py-1 bg-rose-500/20 text-rose-400 text-sm font-semibold rounded-full">Módulo 5.2</span>
+                <span class="text-neutral-500 text-sm">45 min</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4">Roteiro com IA</h1>
+            <p class="text-neutral-400 text-lg">
+                Transforme seu briefing em um roteiro profissional completo, com narração,
+                descrições de cena e timing preciso para cada momento do vídeo.
+            </p>
+        </div>
+
+        <!-- Progress Context -->
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600 mb-8">
+            <h3 class="text-sm font-semibold text-rose-400 mb-3">ONDE ESTAMOS NO PROJETO</h3>
+            <div class="flex items-center space-x-2 text-sm">
+                <span class="text-green-400">✓ Briefing</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-rose-400 font-semibold">Roteiro</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-neutral-500">Storyboard</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-neutral-500">Assets</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-neutral-500">Áudio</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-neutral-500">Edição</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Script Structure -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">1</span>
+                Estrutura Narrativa do Roteiro
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                O primeiro passo é definir a estrutura narrativa. Com base no conceito "O Tempo das Coisas"
+                desenvolvido no briefing, vamos criar um arco emocional que guie o espectador do início ao fim.
+            </p>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600 mb-6">
+                <h4 class="text-sm font-semibold text-neutral-400 mb-3">ESTRUTURA PARA 60 SEGUNDOS</h4>
+                <div class="grid grid-cols-3 gap-4 text-sm">
+                    <div class="text-center p-3 bg-dark-800/50 rounded-lg">
+                        <div class="text-rose-400 font-bold mb-1">0-15s</div>
+                        <div class="text-neutral-400">Abertura</div>
+                        <div class="text-xs text-neutral-500">Capturar atenção</div>
+                    </div>
+                    <div class="text-center p-3 bg-dark-800/50 rounded-lg">
+                        <div class="text-rose-400 font-bold mb-1">15-45s</div>
+                        <div class="text-neutral-400">Desenvolvimento</div>
+                        <div class="text-xs text-neutral-500">Contar a história</div>
+                    </div>
+                    <div class="text-center p-3 bg-dark-800/50 rounded-lg">
+                        <div class="text-rose-400 font-bold mb-1">45-60s</div>
+                        <div class="text-neutral-400">Conclusão</div>
+                        <div class="text-xs text-neutral-500">Call to action</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT 1: ESTRUTURA NARRATIVA</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Você é um roteirista especializado em vídeos publicitários e branded content. Preciso que crie a estrutura narrativa para um vídeo promocional de 60 segundos.
+
+BRIEFING DO PROJETO:
+- Marca: Raízes (café especial sustentável)
+- Conceito central: "O Tempo das Coisas"
+- Mensagem: Valorização do processo artesanal vs. instantaneidade moderna
+- Tom: Cinematográfico, autêntico, emocional
+- Público: Profissionais criativos 30-45 anos que valorizam qualidade
+
+ESTRUTURA DESEJADA:
+Divida o roteiro em 3 atos com timing específico:
+- ATO 1 (0-15s): Gancho emocional - capturar atenção imediatamente
+- ATO 2 (15-45s): Desenvolvimento - construir a narrativa da marca
+- ATO 3 (45-60s): Resolução - call to action emocional
+
+Para cada ato, defina:
+1. Objetivo emocional (o que o espectador deve sentir)
+2. Elemento visual principal (o que ele vê)
+3. Progressão da narrativa (como avança a história)
+4. Transição para o próximo ato
+
+Mantenha coerência com o conceito "O Tempo das Coisas" - a ideia de que coisas boas levam tempo.</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">RESULTADO ESPERADO</h4>
+                <div class="text-sm text-neutral-300 space-y-4">
+                    <div class="border-l-2 border-rose-500/50 pl-4">
+                        <div class="font-semibold text-rose-400 mb-1">ATO 1: O Convite (0-15s)</div>
+                        <p class="text-neutral-400"><strong>Objetivo:</strong> Criar curiosidade através do contraste</p>
+                        <p class="text-neutral-400"><strong>Visual:</strong> Mundo acelerado → transição para calma</p>
+                        <p class="text-neutral-400"><strong>Progressão:</strong> Do caos urbano ao primeiro grão de café</p>
+                    </div>
+                    <div class="border-l-2 border-rose-500/50 pl-4">
+                        <div class="font-semibold text-rose-400 mb-1">ATO 2: A Jornada (15-45s)</div>
+                        <p class="text-neutral-400"><strong>Objetivo:</strong> Construir conexão emocional com o processo</p>
+                        <p class="text-neutral-400"><strong>Visual:</strong> Mãos trabalhando, natureza, tempo passando</p>
+                        <p class="text-neutral-400"><strong>Progressão:</strong> Do plantio à xícara, mostrando cada etapa</p>
+                    </div>
+                    <div class="border-l-2 border-rose-500/50 pl-4">
+                        <div class="font-semibold text-rose-400 mb-1">ATO 3: O Momento (45-60s)</div>
+                        <p class="text-neutral-400"><strong>Objetivo:</strong> Criar desejo e pertencimento</p>
+                        <p class="text-neutral-400"><strong>Visual:</strong> Pessoa saboreando, sorriso sutil, logo</p>
+                        <p class="text-neutral-400"><strong>Progressão:</strong> Da preparação ao prazer do primeiro gole</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Voiceover Script -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">2</span>
+                Texto da Narração (Voiceover)
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                A narração é a alma do vídeo. Ela precisa ser poética mas acessível,
+                emocional mas não piegas. Cada palavra conta em 60 segundos.
+            </p>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600 mb-6">
+                <h4 class="text-sm font-semibold text-neutral-400 mb-3">REGRAS PARA NARRAÇÃO DE 60s</h4>
+                <ul class="text-sm text-neutral-300 space-y-2">
+                    <li class="flex items-start">
+                        <span class="text-rose-400 mr-2">•</span>
+                        <span><strong>Palavras:</strong> Entre 90-120 palavras (ritmo natural de leitura)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-rose-400 mr-2">•</span>
+                        <span><strong>Pausas:</strong> Incluir momentos de silêncio para respiração visual</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-rose-400 mr-2">•</span>
+                        <span><strong>Frases:</strong> Curtas e impactantes, fáceis de memorizar</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-rose-400 mr-2">•</span>
+                        <span><strong>Última frase:</strong> Deve ser o slogan ou frase memorável da marca</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT 2: TEXTO DO VOICEOVER</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Você é um copywriter especializado em branded content audiovisual. Crie o texto de narração (voiceover) para um vídeo de 60 segundos.
+
+CONTEXTO DO PROJETO:
+- Marca: Raízes - café especial de origem sustentável
+- Conceito: "O Tempo das Coisas"
+- Tom de voz: Calmo, reflexivo, poético mas acessível
+- Narrador: Voz masculina madura, como quem conta uma história ao pé do fogo
+
+ESTRUTURA NARRATIVA DEFINIDA:
+- ATO 1 (0-15s): Contraste entre mundo acelerado e a proposta da marca
+- ATO 2 (15-45s): Jornada do café - do cultivo à xícara
+- ATO 3 (45-60s): O momento de saborear, conexão humana
+
+REQUISITOS TÉCNICOS:
+- Total: 90-120 palavras (para ritmo confortável)
+- Inclua marcações de [PAUSA] onde o silêncio é intencional
+- Inclua marcações de tempo aproximado [00:00]
+- A última frase deve funcionar como slogan memorável
+- Evite clichês como "o melhor café" ou "sabor incomparável"
+- Use linguagem sensorial (texturas, aromas, temperaturas)
+
+REFERÊNCIAS DE TOM:
+- Documentários de natureza
+- Propagandas da Apple (simplicidade poética)
+- Narração de filmes do Terrence Malick
+
+Crie o texto completo com todas as marcações.</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">RESULTADO ESPERADO</h4>
+                <div class="text-sm text-neutral-300 font-mono bg-dark-800/50 rounded-lg p-4">
+                    <p class="mb-3 text-rose-400">[00:00 - ATO 1]</p>
+                    <p class="mb-1 italic">"Vivemos com pressa.</p>
+                    <p class="mb-1 italic">Mensagens que não terminamos de ler.</p>
+                    <p class="mb-3 italic">Cafés que não terminamos de sentir."</p>
+                    <p class="mb-3 text-neutral-500">[PAUSA - 2s]</p>
+
+                    <p class="mb-3 text-rose-400">[00:15 - ATO 2]</p>
+                    <p class="mb-1 italic">"Mas nas montanhas de Minas,</p>
+                    <p class="mb-1 italic">o tempo ainda tem outro ritmo.</p>
+                    <p class="mb-3 italic">[PAUSA]</p>
+                    <p class="mb-1 italic">Mãos que conhecem cada grão pelo nome.</p>
+                    <p class="mb-1 italic">Sol que amadurece sem pressa.</p>
+                    <p class="mb-3 italic">Chuva que chega na hora certa.</p>
+                    <p class="mb-3 text-neutral-500">[PAUSA - 2s]</p>
+                    <p class="mb-1 italic">Da terra ao torredor.</p>
+                    <p class="mb-3 italic">Do torredor às suas mãos."</p>
+
+                    <p class="mb-3 text-rose-400">[00:45 - ATO 3]</p>
+                    <p class="mb-1 italic">"Cada xícara carrega essa jornada.</p>
+                    <p class="mb-1 italic">Cada gole, uma pausa que você merece.</p>
+                    <p class="mb-3 text-neutral-500">[PAUSA - 2s]</p>
+                    <p class="mb-3 italic font-semibold text-white">Raízes. O tempo das coisas boas."</p>
+                    <p class="text-neutral-500">[00:60 - FIM]</p>
+                </div>
+                <p class="text-xs text-neutral-500 mt-3">Total: 98 palavras • Tempo de leitura: ~55s (com pausas)</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Scene Descriptions -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">3</span>
+                Descrições de Cena Detalhadas
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Agora vamos detalhar cada cena visualmente. Essas descrições servirão de base
+                para gerar as imagens com IA e para criar o storyboard no próximo módulo.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT 3: DESCRIÇÕES DE CENA</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Você é um diretor de fotografia criando o shot list detalhado para um vídeo publicitário. Preciso de descrições visuais precisas para cada cena.
+
+NARRAÇÃO DO VÍDEO:
+[00:00-15:00 - ATO 1]
+"Vivemos com pressa. Mensagens que não terminamos de ler. Cafés que não terminamos de sentir." [PAUSA]
+
+[00:15-45:00 - ATO 2]
+"Mas nas montanhas de Minas, o tempo ainda tem outro ritmo. [PAUSA] Mãos que conhecem cada grão pelo nome. Sol que amadurece sem pressa. Chuva que chega na hora certa. [PAUSA] Da terra ao torredor. Do torredor às suas mãos."
+
+[00:45-60:00 - ATO 3]
+"Cada xícara carrega essa jornada. Cada gole, uma pausa que você merece. [PAUSA] Raízes. O tempo das coisas boas."
+
+DIREÇÃO VISUAL DEFINIDA:
+- Paleta: Âmbar/marrom, verde esmeralda, creme quente, cinza pedra
+- Estilo: Cinematográfico, luz natural, golden hour
+- Referências: Documentários de natureza, comerciais premium
+- Aspecto: 16:9 cinemático
+
+PARA CADA CENA, FORNEÇA:
+1. TIMING: Momento exato no vídeo (ex: 00:00-00:03)
+2. TEXTO: Qual parte da narração acontece
+3. ENQUADRAMENTO: Tipo de plano (close, médio, aberto, etc.)
+4. DESCRIÇÃO VISUAL: O que vemos em detalhes
+5. MOVIMENTO: Câmera estática, pan, tilt, dolly, etc.
+6. LUZ: Tipo de iluminação da cena
+7. HUMOR/EMOÇÃO: Sensação que a cena transmite
+
+Crie entre 10-12 cenas para cobrir os 60 segundos completos.</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">RESULTADO ESPERADO (PRIMEIRAS 4 CENAS)</h4>
+                <div class="text-sm text-neutral-300 space-y-4">
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-rose-400 font-semibold">CENA 01</span>
+                            <span class="text-xs text-neutral-500">00:00 - 00:03</span>
+                        </div>
+                        <p class="text-neutral-400 text-xs mb-2">Narração: "Vivemos com pressa."</p>
+                        <p><strong>Enquadramento:</strong> Plano detalhe, foco seletivo</p>
+                        <p><strong>Visual:</strong> Mãos digitando freneticamente em smartphone, notificações pipocando na tela. Fundo desfocado de metrô/escritório.</p>
+                        <p><strong>Movimento:</strong> Câmera levemente instável, nervosa</p>
+                        <p><strong>Luz:</strong> Fria, artificial, azulada</p>
+                        <p><strong>Emoção:</strong> Ansiedade, urgência</p>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-rose-400 font-semibold">CENA 02</span>
+                            <span class="text-xs text-neutral-500">00:03 - 00:06</span>
+                        </div>
+                        <p class="text-neutral-400 text-xs mb-2">Narração: "Mensagens que não terminamos de ler."</p>
+                        <p><strong>Enquadramento:</strong> Close em tela de celular</p>
+                        <p><strong>Visual:</strong> Lista de mensagens não lidas, números subindo. Dedo scrollando rapidamente sem parar em nenhuma.</p>
+                        <p><strong>Movimento:</strong> Estático com movimento interno (scroll)</p>
+                        <p><strong>Luz:</strong> Luz da tela iluminando o ambiente escuro</p>
+                        <p><strong>Emoção:</strong> Sobrecarga, desconexão</p>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-rose-400 font-semibold">CENA 03</span>
+                            <span class="text-xs text-neutral-500">00:06 - 00:10</span>
+                        </div>
+                        <p class="text-neutral-400 text-xs mb-2">Narração: "Cafés que não terminamos de sentir."</p>
+                        <p><strong>Enquadramento:</strong> Plano médio</p>
+                        <p><strong>Visual:</strong> Copo de papel de café em mesa de escritório, vapor subindo. Mão pega o copo distraidamente enquanto olha para computador. Café esfriando esquecido.</p>
+                        <p><strong>Movimento:</strong> Leve dolly out, afastando</p>
+                        <p><strong>Luz:</strong> Fluorescente de escritório, sem vida</p>
+                        <p><strong>Emoção:</strong> Desperdício, automatismo</p>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-rose-400 font-semibold">CENA 04</span>
+                            <span class="text-xs text-neutral-500">00:10 - 00:15</span>
+                        </div>
+                        <p class="text-neutral-400 text-xs mb-2">Narração: [PAUSA - transição]</p>
+                        <p><strong>Enquadramento:</strong> Plano geral, aerial</p>
+                        <p><strong>Visual:</strong> TRANSIÇÃO - Imagem do escritório dissolve para vista aérea de montanhas verdes de Minas Gerais ao amanhecer. Neblina nos vales. Plantação de café ao longe.</p>
+                        <p><strong>Movimento:</strong> Drone suave, revelando paisagem</p>
+                        <p><strong>Luz:</strong> Golden hour, raios de sol atravessando neblina</p>
+                        <p><strong>Emoção:</strong> Alívio, descoberta, esperança</p>
+                    </div>
+                </div>
+                <p class="text-xs text-neutral-500 mt-3">Continue com cenas 05-12 seguindo o mesmo formato...</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Complete Script Document -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">4</span>
+                Documento de Roteiro Completo
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Agora vamos consolidar tudo em um documento de roteiro profissional que pode ser
+                compartilhado com equipe, clientes ou usado como referência durante a produção.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT 4: ROTEIRO FORMATADO</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Você é um assistente de produção audiovisual. Compile todas as informações abaixo em um documento de roteiro profissional formatado.
+
+INFORMAÇÕES DO PROJETO:
+- Título: "O Tempo das Coisas"
+- Cliente: Raízes Café
+- Formato: Vídeo promocional
+- Duração: 60 segundos
+- Aspecto: 16:9
+- Versão: 1.0
+- Data: [data atual]
+
+NARRAÇÃO APROVADA:
+[Cole aqui o texto do voiceover gerado no Prompt 2]
+
+LISTA DE CENAS:
+[Cole aqui as descrições de cena geradas no Prompt 3]
+
+FORMATO DO DOCUMENTO:
+Crie um documento organizado com as seguintes seções:
+
+1. CAPA
+   - Título do projeto
+   - Cliente
+   - Versão e data
+   - Duração total
+
+2. SINOPSE
+   - Resumo em 2-3 frases do conceito e narrativa
+
+3. DIREÇÃO CRIATIVA
+   - Tom e mood
+   - Referências visuais
+   - Paleta de cores
+   - Estilo de edição
+
+4. ROTEIRO TÉCNICO
+   Formato de duas colunas:
+   | ÁUDIO | VÍDEO |
+   Com timing preciso para cada linha
+
+5. SHOT LIST RESUMIDO
+   Tabela com: Nº | Timing | Plano | Descrição | Notas
+
+6. REQUISITOS DE PRODUÇÃO
+   - Locações necessárias
+   - Elementos visuais principais
+   - Considerações técnicas
+
+Formate de maneira clara e profissional, pronto para ser exportado como PDF.</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">ESTRUTURA DO DOCUMENTO FINAL</h4>
+                <div class="text-sm text-neutral-300">
+                    <div class="bg-dark-800/50 rounded-lg p-4 mb-4">
+                        <p class="text-center text-lg font-bold text-white mb-2">RAÍZES CAFÉ</p>
+                        <p class="text-center text-rose-400 mb-4">"O Tempo das Coisas"</p>
+                        <div class="grid grid-cols-2 gap-4 text-xs text-neutral-400">
+                            <div>
+                                <p><strong>Formato:</strong> Vídeo Promocional</p>
+                                <p><strong>Duração:</strong> 60 segundos</p>
+                            </div>
+                            <div>
+                                <p><strong>Versão:</strong> 1.0</p>
+                                <p><strong>Aspecto:</strong> 16:9 (1920x1080)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-neutral-400 text-xs">
+                        O documento final incluirá todas as seções formatadas profissionalmente,
+                        com o roteiro técnico em formato de duas colunas (áudio/vídeo),
+                        shot list numerado e requisitos de produção detalhados.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Alternative Versions -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">5</span>
+                Variações e Versões Alternativas
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                É sempre útil ter versões alternativas para diferentes contextos ou para
+                apresentar opções ao cliente. Vamos criar variações do roteiro.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT 5: VERSÕES ALTERNATIVAS</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Com base no roteiro principal do vídeo "O Tempo das Coisas" para Raízes Café, crie versões adaptadas para diferentes formatos e contextos.
+
+ROTEIRO PRINCIPAL (60s):
+[Cole aqui o roteiro completo já aprovado]
+
+CRIE AS SEGUINTES VERSÕES:
+
+1. VERSÃO 30 SEGUNDOS (Instagram Reels / TikTok)
+   - Condensar para os momentos mais impactantes
+   - Manter a mensagem central intacta
+   - Adaptar para formato vertical 9:16
+   - Ritmo mais dinâmico mas sem perder a essência
+
+2. VERSÃO 15 SEGUNDOS (Stories / Pré-roll)
+   - Apenas o gancho principal + call to action
+   - Uma única mensagem memorável
+   - Máximo impacto em mínimo tempo
+
+3. VERSÃO 90 SEGUNDOS (YouTube / Site)
+   - Expandir com mais detalhes do processo
+   - Adicionar momento de "behind the scenes"
+   - Incluir mais informações sobre sustentabilidade
+   - Ritmo mais contemplativo
+
+4. VERSÃO SEM NARRAÇÃO (Redes Sociais)
+   - Adaptar para funcionar só com texto na tela
+   - Definir as frases-chave que aparecem como texto
+   - Timing para leitura confortável
+
+Para cada versão, forneça:
+- Texto de narração adaptado (ou texto na tela)
+- Quais cenas manter/cortar/adaptar
+- Observações sobre ritmo e edição</pre>
+            </div>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600">
+                <h4 class="text-sm font-semibold text-neutral-400 mb-3">POR QUE CRIAR VERSÕES?</h4>
+                <div class="grid sm:grid-cols-2 gap-4 text-sm text-neutral-300">
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400">•</span>
+                        <span><strong>Multiplataforma:</strong> Cada rede tem formato ideal diferente</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400">•</span>
+                        <span><strong>Testes A/B:</strong> Testar diferentes durações e abordagens</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400">•</span>
+                        <span><strong>Orçamento:</strong> Cliente pode escolher versões conforme budget</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400">•</span>
+                        <span><strong>Acessibilidade:</strong> Versão sem áudio para quem assiste no mudo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Checklist -->
+        <section class="mb-10">
+            <div class="bg-gradient-to-br from-rose-500/10 to-pink-500/10 rounded-xl p-6 border border-rose-500/20">
+                <h3 class="text-xl font-bold mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Checklist do Módulo 5.2
+                </h3>
+                <p class="text-neutral-400 mb-4">Ao final deste módulo você deve ter:</p>
+                <div class="space-y-2">
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Estrutura narrativa em 3 atos com timing definido</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Texto de narração (voiceover) com 90-120 palavras</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Descrições detalhadas de 10-12 cenas</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Documento de roteiro profissional formatado</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Versões adaptadas para diferentes formatos (opcional)</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center pt-6 border-t border-dark-600">
+            <a href="modulo-5-1.html" class="flex items-center space-x-2 text-neutral-400 hover:text-rose-400 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <span>Módulo 5.1: Briefing e Conceito</span>
+            </a>
+            <a href="modulo-5-3.html" class="flex items-center space-x-2 text-rose-400 hover:text-rose-300 transition-colors">
+                <span>Módulo 5.3: Storyboard Visual</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-600 mt-16">
+        <div class="max-w-6xl mx-auto px-4 py-8">
+            <div class="text-center text-neutral-500 text-sm">
+                <p>VisionPro - Formação em Produção Audiovisual com IA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function copyPrompt(button) {
+            const promptBox = button.closest('.prompt-box');
+            const promptText = promptBox.querySelector('pre').textContent;
+
+            navigator.clipboard.writeText(promptText).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copiado!';
+                button.classList.add('bg-green-500/30', 'text-green-400');
+                button.classList.remove('bg-rose-500/20', 'text-rose-400');
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('bg-green-500/30', 'text-green-400');
+                    button.classList.add('bg-rose-500/20', 'text-rose-400');
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>

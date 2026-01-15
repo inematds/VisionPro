@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 5.7: Finalização e Distribuição - VisionPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0f',
+                            800: '#12121a',
+                            700: '#1a1a24',
+                            600: '#2a2a3a'
+                        }
+                    },
+                    fontFamily: {
+                        'space': ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .prompt-box {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.05) 0%, rgba(251, 113, 133, 0.02) 100%);
+        }
+        .prompt-box:hover {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.08) 0%, rgba(251, 113, 133, 0.04) 100%);
+        }
+        .result-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(34, 197, 94, 0.02) 100%);
+        }
+        .export-card {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.03) 0%, rgba(251, 113, 133, 0.01) 100%);
+        }
+        .celebration {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+
+    <!-- Header -->
+    <header class="border-b border-dark-600 bg-dark-800/50 backdrop-blur-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="text-neutral-400 hover:text-rose-400 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </a>
+                    <span class="text-rose-400 font-semibold">Trilha 5</span>
+                    <span class="text-neutral-500">/</span>
+                    <span class="text-neutral-300">Módulo 5.7</span>
+                </div>
+                <div class="flex flex-col items-end space-y-1">
+                    <div class="flex items-center space-x-1 sm:space-x-2">
+                        <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+                            <span class="sm:hidden">T1</span>
+                            <span class="hidden sm:inline">Fundamentos</span>
+                        </a>
+                        <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+                            <span class="sm:hidden">T2</span>
+                            <span class="hidden sm:inline">Produção</span>
+                        </a>
+                        <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+                            <span class="sm:hidden">T3</span>
+                            <span class="hidden sm:inline">Pós</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-1 sm:space-x-2">
+                        <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+                            <span class="sm:hidden">T4</span>
+                            <span class="hidden sm:inline">Labs</span>
+                        </a>
+                        <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-rose-500/10 text-rose-400">
+                            <span class="sm:hidden">T5</span>
+                            <span class="hidden sm:inline">Projeto</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+
+        <!-- Module Header -->
+        <div class="mb-8">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="px-3 py-1 bg-rose-500/20 text-rose-400 text-sm font-semibold rounded-full">Módulo 5.7</span>
+                <span class="text-neutral-500 text-sm">45 min</span>
+                <span class="px-3 py-1 bg-green-500/20 text-green-400 text-sm font-semibold rounded-full">FINAL</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4">Finalização e Distribuição</h1>
+            <p class="text-neutral-400 text-lg">
+                Exporte seu vídeo nos formatos ideais para cada plataforma e prepare
+                a estratégia de distribuição. O projeto "Raízes" está quase pronto!
+            </p>
+        </div>
+
+        <!-- Progress Context - Complete! -->
+        <div class="bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl p-5 border border-green-500/20 mb-8">
+            <h3 class="text-sm font-semibold text-green-400 mb-3">PROJETO COMPLETO!</h3>
+            <div class="flex items-center space-x-2 text-sm">
+                <span class="text-green-400">✓ Briefing</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Roteiro</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Storyboard</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Assets</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Áudio</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Edição</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-rose-400 font-semibold">Export</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Export Settings -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">1</span>
+                Configurações de Exportação
+            </h2>
+
+            <p class="text-neutral-300 mb-6">
+                Cada plataforma tem requisitos específicos. Vamos exportar versões
+                otimizadas para cada destino.
+            </p>
+
+            <div class="grid gap-4 mb-6">
+                <!-- Master Export -->
+                <div class="export-card rounded-xl p-5 border border-rose-500/30 bg-rose-500/5">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-white flex items-center">
+                            <span class="text-2xl mr-2">👑</span>
+                            Master (Arquivo Principal)
+                        </h4>
+                        <span class="text-xs bg-rose-500/20 text-rose-400 px-2 py-1 rounded">OBRIGATÓRIO</span>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <p class="text-neutral-400 mb-2">Configurações:</p>
+                            <ul class="text-xs text-neutral-300 space-y-1">
+                                <li>• Codec: ProRes 422 ou DNxHR</li>
+                                <li>• Resolução: 1920x1080</li>
+                                <li>• Frame rate: 24fps</li>
+                                <li>• Áudio: PCM 48kHz 24-bit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-neutral-400 mb-2">Por que manter:</p>
+                            <ul class="text-xs text-neutral-300 space-y-1">
+                                <li>• Qualidade máxima preservada</li>
+                                <li>• Base para futuras versões</li>
+                                <li>• Re-exports sem perda</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube -->
+                <div class="export-card rounded-xl p-5 border border-dark-600">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-white flex items-center">
+                            <span class="text-2xl mr-2">📺</span>
+                            YouTube / Vimeo
+                        </h4>
+                        <span class="text-xs text-neutral-500">~60-80 MB</span>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <ul class="text-xs text-neutral-300 space-y-1">
+                                <li>• Codec: H.264 (mais compatível)</li>
+                                <li>• Resolução: 1920x1080</li>
+                                <li>• Bitrate: 15-20 Mbps</li>
+                                <li>• Áudio: AAC 320kbps</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="text-xs text-neutral-300 space-y-1">
+                                <li>• Frame rate: 24fps</li>
+                                <li>• Container: MP4</li>
+                                <li>• Profile: High</li>
+                                <li>• Level: 4.2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram -->
+                <div class="export-card rounded-xl p-5 border border-dark-600">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-white flex items-center">
+                            <span class="text-2xl mr-2">📱</span>
+                            Instagram Feed / Reels
+                        </h4>
+                        <span class="text-xs text-neutral-500">~30-50 MB</span>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                        <div class="bg-dark-800/50 rounded-lg p-3">
+                            <p class="text-rose-400 text-xs font-semibold mb-2">Feed (Quadrado)</p>
+                            <ul class="text-xs text-neutral-300 space-y-1">
+                                <li>• Resolução: 1080x1080</li>
+                                <li>• Aspect: 1:1</li>
+                                <li>• Bitrate: 10 Mbps</li>
+                            </ul>
+                        </div>
+                        <div class="bg-dark-800/50 rounded-lg p-3">
+                            <p class="text-rose-400 text-xs font-semibold mb-2">Reels (Vertical)</p>
+                            <ul class="text-xs text-neutral-300 space-y-1">
+                                <li>• Resolução: 1080x1920</li>
+                                <li>• Aspect: 9:16</li>
+                                <li>• Bitrate: 10 Mbps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stories -->
+                <div class="export-card rounded-xl p-5 border border-dark-600">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-white flex items-center">
+                            <span class="text-2xl mr-2">⏳</span>
+                            Stories (15s version)
+                        </h4>
+                        <span class="text-xs text-neutral-500">~10-15 MB</span>
+                    </div>
+                    <div class="text-sm">
+                        <ul class="text-xs text-neutral-300 space-y-1">
+                            <li>• Resolução: 1080x1920 (9:16)</li>
+                            <li>• Duração: 15 segundos (versão condensada)</li>
+                            <li>• Bitrate: 8 Mbps</li>
+                            <li>• Incluir legenda (muitos assistem sem som)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: CONFIGURAÇÕES DE EXPORT DAVINCI</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Forneça as configurações exatas de export no DaVinci Resolve Deliver page para cada formato.
+
+FORMATOS NECESSÁRIOS:
+1. Master ProRes (arquivo principal)
+2. YouTube H.264 1080p
+3. Instagram Feed 1:1
+4. Instagram Reels 9:16
+5. Stories 15s 9:16
+
+PARA CADA FORMATO, ESPECIFIQUE:
+- Preset base (se houver)
+- Video Codec e configurações
+- Resolution override
+- Frame rate
+- Quality/Bitrate settings
+- Audio Codec e bitrate
+- File extension
+- Naming convention sugerida
+
+INCLUIR TAMBÉM:
+- Como salvar como Custom Export Preset para reuso
+- Ordem recomendada de rendering (queue)
+- Estimativa de tempo de render
+- Tamanho aproximado de arquivo</pre>
+            </div>
+        </section>
+
+        <!-- Section 2: Thumbnail & Metadata -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">2</span>
+                Thumbnail e Metadados
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                A thumbnail é tão importante quanto o vídeo. É o que faz as pessoas clicarem.
+                Vamos criar uma thumbnail profissional com IA.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: THUMBNAIL (MIDJOURNEY)</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">YouTube video thumbnail, steaming cup of specialty coffee on rustic wooden table, misty mountains of Minas Gerais visible through window in background, golden morning light, warm amber and emerald tones, cinematic composition, brand aesthetic, professional photography, inviting and premium feel, space for text overlay on left side, 16:9 aspect ratio --ar 16:9 --style raw --v 6.1</pre>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: TEXTOS E METADADOS</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie os textos e metadados para publicação do vídeo "Raízes - O Tempo das Coisas" em diferentes plataformas.
+
+SOBRE O VÍDEO:
+- Marca: Raízes (café especial sustentável)
+- Conceito: Valorização do tempo e processo artesanal
+- Duração: 60 segundos
+- Tipo: Vídeo promocional/branded content
+
+CRIE PARA CADA PLATAFORMA:
+
+1. YOUTUBE:
+   - Título (max 60 caracteres, chamativo)
+   - Descrição (2-3 parágrafos com links)
+   - Tags (15-20 relevantes)
+   - Categoria sugerida
+
+2. INSTAGRAM (Feed):
+   - Caption (max 2200 caracteres, com CTAs)
+   - Hashtags (20-30 estratégicos)
+   - Alt text para acessibilidade
+
+3. INSTAGRAM (Reels):
+   - Caption curta (mais engajante)
+   - Hashtags otimizados para Reels
+   - Áudio trending sugerido (se aplicável)
+
+4. LINKEDIN:
+   - Post texto (tom profissional)
+   - Hashtags corporativos
+
+5. TWITTER/X:
+   - Tweet (max 280 caracteres)
+   - Thread opcional (3-5 tweets)
+
+Mantenha consistência de marca mas adapte o tom para cada plataforma.</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">EXEMPLO: METADADOS YOUTUBE</h4>
+                <div class="space-y-4 text-sm">
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <p class="text-rose-400 font-semibold mb-2">Título</p>
+                        <p class="text-white">"Raízes | O Tempo das Coisas Boas - Café Especial"</p>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <p class="text-rose-400 font-semibold mb-2">Descrição</p>
+                        <p class="text-neutral-300 text-xs">
+                            Em um mundo que corre, escolhemos esperar. Raízes é mais que café - é uma pausa que você merece.
+                            <br><br>
+                            Conheça nossa história: [link]<br>
+                            Experimente nosso café: [link]
+                            <br><br>
+                            #CaféEspecial #Sustentabilidade #Raízes
+                        </p>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <p class="text-rose-400 font-semibold mb-2">Tags</p>
+                        <p class="text-xs text-neutral-400">
+                            café especial, specialty coffee, café brasileiro, minas gerais, sustentabilidade, café artesanal, branded content, comercial café, café premium, slow living...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Distribution Strategy -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">3</span>
+                Estratégia de Distribuição
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Não basta publicar - é preciso ter uma estratégia. Vamos planejar
+                como e quando distribuir o vídeo para máximo impacto.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: PLANO DE DISTRIBUIÇÃO</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um plano de distribuição para o vídeo promocional "Raízes - O Tempo das Coisas".
+
+CONTEXTO:
+- Marca: Raízes Café (nova no mercado)
+- Público: Profissionais criativos 30-45 anos, urbanos
+- Objetivo: Awareness de marca + direcionamento para e-commerce
+- Orçamento de mídia: Considere cenário orgânico + pago moderado
+
+VERSÕES DISPONÍVEIS:
+- 60s completo (YouTube, site)
+- 30s condensado (Instagram Feed, Facebook)
+- 15s teaser (Stories, pré-roll ads)
+- 9:16 vertical (Reels, TikTok, Shorts)
+
+DESENVOLVA:
+
+1. CRONOGRAMA DE LANÇAMENTO
+   - Dia 0: O que publicar primeiro?
+   - Dias 1-7: Sequência de posts
+   - Dias 8-30: Sustentação
+
+2. PLATAFORMAS (ordem de prioridade)
+   - Principal vs secundárias
+   - Adaptações necessárias para cada
+
+3. HORÁRIOS IDEAIS
+   - Melhores horários por plataforma
+   - Frequência de repostagem
+
+4. CALLS TO ACTION
+   - CTA principal do vídeo
+   - CTAs específicos por plataforma
+
+5. AMPLIFICAÇÃO
+   - Estratégia de boost/ads
+   - Segmentação sugerida
+   - Orçamento recomendado
+
+6. MÉTRICAS DE SUCESSO
+   - KPIs principais
+   - Metas realistas
+   - Como medir ROI</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">CRONOGRAMA SUGERIDO</h4>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-start bg-dark-800/50 rounded-lg p-3">
+                        <span class="w-16 text-rose-400 font-semibold">Dia 0</span>
+                        <div class="flex-1">
+                            <p class="text-white font-semibold">Lançamento Principal</p>
+                            <p class="text-xs text-neutral-400">YouTube (60s) + Instagram Feed (30s) + Stories teaser</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-800/50 rounded-lg p-3">
+                        <span class="w-16 text-rose-400 font-semibold">Dia 1</span>
+                        <div class="flex-1">
+                            <p class="text-white font-semibold">Expansão</p>
+                            <p class="text-xs text-neutral-400">Reels (vertical) + TikTok + LinkedIn (versão corporativa)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-800/50 rounded-lg p-3">
+                        <span class="w-16 text-rose-400 font-semibold">Dia 3</span>
+                        <div class="flex-1">
+                            <p class="text-white font-semibold">Behind the Scenes</p>
+                            <p class="text-xs text-neutral-400">Conteúdo de bastidores, processo de criação</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-dark-800/50 rounded-lg p-3">
+                        <span class="w-16 text-rose-400 font-semibold">Dia 7+</span>
+                        <div class="flex-1">
+                            <p class="text-white font-semibold">Sustentação</p>
+                            <p class="text-xs text-neutral-400">Cuts específicos, UGC, influencer reposts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Final Delivery Package -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">4</span>
+                Pacote de Entrega Final
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Organize todos os arquivos finais em uma estrutura profissional
+                para entrega ao cliente ou arquivamento.
+            </p>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600 mb-6">
+                <h4 class="text-sm font-semibold text-neutral-400 mb-3">ESTRUTURA DO PACOTE FINAL</h4>
+                <div class="font-mono text-sm text-neutral-300 bg-dark-800/50 rounded-lg p-4">
+<pre>raizes-cafe-final-delivery/
+│
+├── 01-MASTER/
+│   ├── raizes-master-prores.mov
+│   └── raizes-master-audio.wav
+│
+├── 02-EXPORTS/
+│   ├── youtube/
+│   │   └── raizes-youtube-1080p.mp4
+│   ├── instagram/
+│   │   ├── raizes-feed-1080x1080.mp4
+│   │   ├── raizes-reels-1080x1920.mp4
+│   │   └── raizes-stories-15s.mp4
+│   └── web/
+│       └── raizes-web-optimized.mp4
+│
+├── 03-GRAPHICS/
+│   ├── thumbnails/
+│   │   ├── thumbnail-youtube.jpg
+│   │   └── thumbnail-instagram.jpg
+│   └── logo/
+│       └── raizes-logo.png
+│
+├── 04-DOCUMENTATION/
+│   ├── briefing-aprovado.pdf
+│   ├── roteiro-final.pdf
+│   ├── storyboard.pdf
+│   ├── metadados-plataformas.txt
+│   └── plano-distribuicao.pdf
+│
+└── 05-PROJECT-FILES/
+    └── davinci-project-backup.drp</pre>
+                </div>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: RELATÓRIO DE ENTREGA</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um relatório de entrega profissional para o projeto "Raízes - O Tempo das Coisas".
+
+INFORMAÇÕES DO PROJETO:
+- Cliente: Raízes Café
+- Projeto: Vídeo Promocional
+- Duração: 60 segundos
+- Data de entrega: [data]
+
+O RELATÓRIO DEVE INCLUIR:
+
+1. SUMÁRIO EXECUTIVO
+   - Descrição do projeto
+   - Objetivos alcançados
+   - Entregas realizadas
+
+2. ESPECIFICAÇÕES TÉCNICAS
+   - Tabela com todas as versões exportadas
+   - Codec, resolução, bitrate de cada
+   - Tamanho de arquivo
+
+3. LISTA DE ARQUIVOS
+   - Inventário completo de todos os arquivos entregues
+   - Organização das pastas
+
+4. INSTRUÇÕES DE USO
+   - Qual arquivo usar para cada plataforma
+   - Recomendações de publicação
+
+5. CRÉDITOS E ATRIBUIÇÕES
+   - Ferramentas de IA utilizadas
+   - Licenças de música/assets
+   - Qualquer atribuição necessária
+
+6. PRÓXIMOS PASSOS SUGERIDOS
+   - Estratégia de lançamento
+   - Possíveis desdobramentos futuros
+   - Métricas a acompanhar
+
+Formate de maneira profissional, pronto para apresentar ao cliente.</pre>
+            </div>
+        </section>
+
+        <!-- Section 5: Project Retrospective -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">5</span>
+                Retrospectiva do Projeto
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Refletir sobre o processo é essencial para melhorar nos próximos projetos.
+                Documente o que funcionou e o que pode ser melhorado.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: RETROSPECTIVA</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um template de retrospectiva para documentar os aprendizados do projeto "Raízes".
+
+ÁREAS PARA AVALIAR:
+
+1. BRIEFING E CONCEITO
+   - O briefing foi claro o suficiente?
+   - O conceito funcionou como esperado?
+   - Mudanças que faria?
+
+2. ROTEIRO
+   - A narrativa fluiu bem?
+   - As pausas funcionaram?
+   - Timing adequado?
+
+3. GERAÇÃO DE IMAGENS (Storyboard)
+   - Quais prompts funcionaram melhor?
+   - Quantas iterações foram necessárias?
+   - Ferramenta preferida?
+
+4. GERAÇÃO DE VÍDEO
+   - Qualidade dos clips gerados?
+   - Problemas encontrados?
+   - Custo vs resultado?
+
+5. ÁUDIO
+   - Qualidade da narração de IA?
+   - Música gerada atendeu?
+   - Mixagem funcionou?
+
+6. EDIÇÃO
+   - Fluxo de trabalho eficiente?
+   - Transições funcionaram?
+   - Color grading satisfatório?
+
+7. GERAL
+   - Tempo total do projeto?
+   - Custo total (ferramentas de IA)?
+   - O que faria diferente?
+   - O que repetiria?
+
+FORMATO:
+Para cada área, use:
+✓ O que funcionou bem
+✗ O que não funcionou
+→ O que faria diferente</pre>
+            </div>
+        </section>
+
+        <!-- Celebration Section -->
+        <section class="mb-10">
+            <div class="celebration rounded-xl p-8 border border-rose-500/20 text-center">
+                <div class="text-6xl mb-4">🎬</div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Parabéns! Projeto Concluído!</h3>
+                <p class="text-neutral-300 mb-6 max-w-xl mx-auto">
+                    Você completou todas as etapas do projeto "Raízes". Do briefing inicial
+                    até a entrega final, você criou um vídeo promocional profissional
+                    utilizando inteligência artificial em cada etapa.
+                </p>
+                <div class="grid sm:grid-cols-4 gap-4 text-center mb-6">
+                    <div>
+                        <div class="text-2xl font-bold text-rose-400">7</div>
+                        <div class="text-xs text-neutral-400">Módulos</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-rose-400">60s</div>
+                        <div class="text-xs text-neutral-400">Vídeo Final</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-rose-400">12</div>
+                        <div class="text-xs text-neutral-400">Cenas</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-rose-400">5+</div>
+                        <div class="text-xs text-neutral-400">Ferramentas IA</div>
+                    </div>
+                </div>
+                <p class="text-sm text-neutral-400">
+                    Ferramentas utilizadas: ChatGPT/Claude (texto), Midjourney (imagens),
+                    Runway (vídeo), ElevenLabs (voz), Suno (música), DaVinci Resolve (edição)
+                </p>
+            </div>
+        </section>
+
+        <!-- Final Checklist -->
+        <section class="mb-10">
+            <div class="bg-gradient-to-br from-rose-500/10 to-pink-500/10 rounded-xl p-6 border border-rose-500/20">
+                <h3 class="text-xl font-bold mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Checklist Final do Projeto
+                </h3>
+                <p class="text-neutral-400 mb-4">Antes de considerar o projeto completo:</p>
+                <div class="space-y-2">
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Master exportado em qualidade máxima</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Versões para todas as plataformas exportadas</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Thumbnails criadas</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Metadados e textos preparados</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Plano de distribuição definido</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Pacote de entrega organizado</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Backup do projeto salvo</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Retrospectiva documentada</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center pt-6 border-t border-dark-600">
+            <a href="modulo-5-6.html" class="flex items-center space-x-2 text-neutral-400 hover:text-rose-400 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <span>Módulo 5.6: Edição e Montagem</span>
+            </a>
+            <a href="index.html" class="flex items-center space-x-2 text-rose-400 hover:text-rose-300 transition-colors">
+                <span>Voltar para Trilha 5</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-600 mt-16">
+        <div class="max-w-6xl mx-auto px-4 py-8">
+            <div class="text-center text-neutral-500 text-sm">
+                <p>VisionPro - Formação em Produção Audiovisual com IA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function copyPrompt(button) {
+            const promptBox = button.closest('.prompt-box');
+            const promptText = promptBox.querySelector('pre').textContent;
+
+            navigator.clipboard.writeText(promptText).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copiado!';
+                button.classList.add('bg-green-500/30', 'text-green-400');
+                button.classList.remove('bg-rose-500/20', 'text-rose-400');
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('bg-green-500/30', 'text-green-400');
+                    button.classList.add('bg-rose-500/20', 'text-rose-400');
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>

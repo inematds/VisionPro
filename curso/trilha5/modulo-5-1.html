@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5.1 Briefing e Conceito | Projeto Guiado | VisionPro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FB7185',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .prompt-box { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
+    .copy-btn:active { transform: scale(0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-3xl">🎬</span>
+            <span class="font-bold text-xl hidden sm:inline">VisionPro</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex flex-col items-end space-y-1">
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+              <span class="sm:hidden">T1</span>
+              <span class="hidden sm:inline">Fundamentos</span>
+            </a>
+            <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+              <span class="sm:hidden">T2</span>
+              <span class="hidden sm:inline">Metodo</span>
+            </a>
+            <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+              <span class="sm:hidden">T3</span>
+              <span class="hidden sm:inline">Avancado</span>
+            </a>
+          </div>
+          <div class="flex items-center space-x-1 sm:space-x-2">
+            <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+              <span class="sm:hidden">T4</span>
+              <span class="hidden sm:inline">Labs</span>
+            </a>
+            <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-rose-500/10 text-rose-400">
+              <span class="sm:hidden">T5</span>
+              <span class="hidden sm:inline">Projeto</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-rose-900/20 to-dark-900 border-b border-dark-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex items-center space-x-3 mb-4">
+        <a href="index.html" class="text-rose-400 hover:text-rose-300 text-sm">← Trilha 5</a>
+        <span class="text-neutral-600">|</span>
+        <span class="px-2 py-0.5 bg-blue-500/20 text-blue-400 text-xs rounded">FUNDACAO</span>
+      </div>
+      <div class="flex items-center gap-4 mb-4">
+        <span class="w-14 h-14 bg-rose-500/20 text-rose-400 rounded-2xl flex items-center justify-center font-bold text-xl">5.1</span>
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold">Briefing e Conceito</h1>
+          <p class="text-neutral-400 text-sm mt-1">45 min • Projeto Raizes</p>
+        </div>
+      </div>
+      <p class="text-neutral-300 max-w-2xl">
+        Neste modulo voce vai criar toda a fundacao do projeto: briefing completo, persona do publico-alvo, conceito criativo e direcao visual. Cada prompt esta pronto para copiar e usar.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Intro do Projeto -->
+    <section class="mb-12">
+      <div class="bg-rose-500/10 border border-rose-500/30 rounded-2xl p-6">
+        <div class="flex items-start gap-4">
+          <span class="text-4xl">☕</span>
+          <div>
+            <h2 class="text-xl font-bold text-rose-400 mb-2">Projeto: Video Promocional "Raizes"</h2>
+            <p class="text-neutral-300 text-sm mb-4">
+              Raizes e uma marca ficticia de cafe especial sustentavel. O video de 60 segundos vai contar a historia da origem do cafe ate a xicara, destacando sustentabilidade e qualidade artesanal.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-dark-700 text-neutral-300 text-xs rounded-lg">Duracao: 60s</span>
+              <span class="px-3 py-1 bg-dark-700 text-neutral-300 text-xs rounded-lg">Formato: 16:9 + 9:16</span>
+              <span class="px-3 py-1 bg-dark-700 text-neutral-300 text-xs rounded-lg">Tom: Emocional e Autentico</span>
+              <span class="px-3 py-1 bg-dark-700 text-neutral-300 text-xs rounded-lg">Estilo: Cinematico</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 1: Briefing -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-lg">1</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Briefing do Projeto</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          O briefing e o documento mais importante do projeto. Ele alinha expectativas e guia todas as decisoes criativas. Vamos usar IA para criar um briefing profissional completo.
+        </p>
+
+        <h3 class="text-lg font-semibold text-rose-400 mb-4">Prompt 1: Criar Briefing Completo</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-rose-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Voce e um diretor criativo especializado em videos publicitarios. Crie um briefing completo para o seguinte projeto:
+
+PROJETO: Video promocional de 60 segundos para "Raizes", uma marca de cafe especial sustentavel.
+
+CONTEXTO DA MARCA:
+- Cafe especial de origem unica (Minas Gerais, Brasil)
+- Producao familiar de 3a geracao
+- Certificacao organica e comercio justo
+- Torra artesanal em pequenos lotes
+- Preco premium (R$89/250g)
+
+O briefing deve incluir:
+
+1. OBJETIVO DO VIDEO
+- Objetivo principal (awareness, conversao, etc)
+- Mensagem-chave em uma frase
+- Acao desejada do espectador
+
+2. PUBLICO-ALVO
+- Demografia basica
+- Perfil psicografico
+- Onde consomem conteudo
+- O que valorizam
+
+3. TOM E ESTILO
+- Adjetivos que definem o tom (3-5)
+- Referencias de estilo visual
+- O que evitar
+
+4. ENTREGAVEIS
+- Formatos necessarios
+- Duracoes
+- Plataformas de destino
+
+5. RESTRICOES
+- O que NAO pode aparecer
+- Limitacoes tecnicas
+- Consideracoes legais
+
+6. CRITERIOS DE SUCESSO
+- Como medir se o video funcionou
+- KPIs especificos
+
+Formate de forma clara e profissional.</pre>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600">
+          <h4 class="font-semibold text-white mb-3">Resultado Esperado:</h4>
+          <div class="text-sm text-neutral-400 space-y-4">
+            <div>
+              <span class="text-rose-400 font-semibold">OBJETIVO:</span>
+              <p class="mt-1">Gerar awareness e desejo pela marca Raizes, posicionando-a como escolha premium para amantes de cafe que valorizam origem e sustentabilidade. Mensagem-chave: "Cada xicara conta uma historia de tres geracoes de dedicacao."</p>
+            </div>
+            <div>
+              <span class="text-rose-400 font-semibold">PUBLICO:</span>
+              <p class="mt-1">Adultos 28-45 anos, classe AB, urbanos, que compram cafe especial, frequentam cafeterias independentes, valorizam sustentabilidade e estao dispostos a pagar mais por qualidade e historia.</p>
+            </div>
+            <div>
+              <span class="text-rose-400 font-semibold">TOM:</span>
+              <p class="mt-1">Autentico, acolhedor, cinematico, contemplativo, premium sem ser elitista.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 2: Persona -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-lg">2</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Persona e Publico</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Uma persona bem construida guia todas as decisoes criativas. Vamos criar um perfil detalhado do espectador ideal do video Raizes.
+        </p>
+
+        <h3 class="text-lg font-semibold text-rose-400 mb-4">Prompt 2: Criar Persona Detalhada</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-rose-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie uma persona detalhada para o publico-alvo principal do video da marca Raizes (cafe especial sustentavel, R$89/250g).
+
+A persona deve incluir:
+
+DADOS DEMOGRAFICOS:
+- Nome ficticio
+- Idade
+- Profissao
+- Renda mensal
+- Cidade/bairro onde mora
+- Estado civil
+
+PERFIL PSICOGRAFICO:
+- Valores pessoais (top 5)
+- Como passa o tempo livre
+- Marcas que admira (fora do segmento cafe)
+- Causas que apoia
+- Como se ve daqui a 5 anos
+
+RELACAO COM CAFE:
+- Ritual de cafe (quando, como, onde)
+- Quanto gasta com cafe por mes
+- Onde compra cafe atualmente
+- O que sabe sobre cafe especial
+- Frustracao atual com cafe
+
+CONSUMO DE CONTEUDO:
+- Redes sociais que usa (e como usa cada uma)
+- Tipo de conteudo que para para assistir
+- Influenciadores que segue
+- Horarios de maior consumo de conteudo
+
+GATILHOS DE COMPRA:
+- O que a faria experimentar uma marca nova
+- O que a faria pagar premium
+- Objecoes que precisa superar
+- Prova social que valoriza
+
+Escreva em formato narrativo, como se estivesse descrevendo uma pessoa real.</pre>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600">
+          <h4 class="font-semibold text-white mb-3">Exemplo de Persona Gerada:</h4>
+          <div class="text-sm text-neutral-400">
+            <p class="mb-3"><span class="text-rose-400 font-semibold">Marina, 34 anos</span> - Arquiteta em escritorio proprio, renda de R$18k/mes, mora em Pinheiros (SP) com o marido. Valoriza autenticidade, design, sustentabilidade, experiencias sobre posses, e tempo de qualidade.</p>
+            <p class="mb-3">Seu ritual de cafe: acorda as 6h30, prepara na Chemex enquanto planeja o dia. E o unico momento de silencio antes do caos. Gasta R$150/mes em cafe, compra em cafeterias especializadas.</p>
+            <p>Para Marina, pagar R$89 nao e problema se sentir que esta apoiando algo real. Ela quer saber QUEM fez o cafe, nao so que e "especial".</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 3: Conceito Criativo -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-lg">3</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Conceito Criativo</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          O conceito criativo e a "big idea" que unifica todo o video. E a metafora ou angulo que torna a comunicacao memoravel e diferente da concorrencia.
+        </p>
+
+        <h3 class="text-lg font-semibold text-rose-400 mb-4">Prompt 3: Desenvolver Conceito Criativo</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-rose-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Voce e um diretor criativo premiado. Desenvolva 3 conceitos criativos diferentes para o video da marca Raizes.
+
+CONTEXTO:
+- Marca: Raizes - cafe especial sustentavel
+- Video: 60 segundos promocional
+- Publico: Marina, 34, arquiteta, valoriza autenticidade e sustentabilidade
+- Diferencial: Producao familiar de 3 geracoes em Minas Gerais
+- Tom: Autentico, cinematico, emocional
+
+Para cada conceito, forneca:
+
+1. TITULO DO CONCEITO
+Uma frase que resume a ideia
+
+2. BIG IDEA
+A metafora ou angulo central em 2-3 frases
+
+3. LOGLINE DO VIDEO
+O que acontece no video em uma frase
+
+4. GANCHO EMOCIONAL
+Qual emocao queremos provocar e por que funciona para este publico
+
+5. TERRITORIO VISUAL
+Que tipo de imagens esse conceito pede
+
+6. FRASE DE FECHAMENTO
+A frase que ficaria na tela no final
+
+7. POR QUE FUNCIONA
+Justificativa estrategica
+
+Seja ousado e original. Evite cliches de publicidade de cafe.</pre>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600">
+          <h4 class="font-semibold text-white mb-3">Conceito Escolhido para o Projeto:</h4>
+          <div class="text-sm text-neutral-400 space-y-3">
+            <div>
+              <span class="text-rose-400 font-semibold">CONCEITO: "O Tempo das Coisas"</span>
+            </div>
+            <div>
+              <span class="text-white font-medium">Big Idea:</span>
+              <p class="mt-1">Em um mundo de cafe instantaneo e entregas em 10 minutos, Raizes celebra o tempo que as coisas boas levam. Tres geracoes. 18 meses do plantio a xicara. 4 minutos de preparo. O tempo nao e inimigo - e ingrediente.</p>
+            </div>
+            <div>
+              <span class="text-white font-medium">Logline:</span>
+              <p class="mt-1">Acompanhamos o cafe desde a mao do avo que plantou ate a xicara da neta que toma - mostrando que algumas coisas ficam melhores com tempo.</p>
+            </div>
+            <div>
+              <span class="text-white font-medium">Frase Final:</span>
+              <p class="mt-1 text-rose-300 italic">"Raizes. Algumas coisas levam tempo. E esta tudo bem."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topico 4: Referencias Visuais -->
+    <section class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-lg">4</div>
+        <h2 class="text-xl sm:text-2xl font-bold">Referencias Visuais</h2>
+      </div>
+
+      <div class="bg-dark-800 rounded-2xl p-6 border border-dark-600 mb-6">
+        <p class="text-neutral-300 mb-6">
+          Um moodboard claro alinha expectativas visuais. Vamos criar descricoes detalhadas que definem a estetica do projeto e servem de base para os prompts de geracao de imagem.
+        </p>
+
+        <h3 class="text-lg font-semibold text-rose-400 mb-4">Prompt 4: Definir Direcao Visual</h3>
+
+        <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs text-rose-400 font-semibold">PROMPT PARA COPIAR</span>
+            <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+              Copiar
+            </button>
+          </div>
+          <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de direcao visual completo para o video "Raizes" baseado no conceito "O Tempo das Coisas".
+
+O video mostra a jornada do cafe desde o plantio ate a xicara, celebrando o tempo como ingrediente.
+
+Defina:
+
+1. PALETA DE CORES
+- Cores primarias (3) com codigos hex
+- Cores secundarias (2)
+- Cor de destaque
+- O que cada cor representa
+
+2. ESTILO DE FOTOGRAFIA
+- Tipo de iluminacao (natural, artificial, mista)
+- Hora do dia predominante
+- Profundidade de campo
+- Textura da imagem (limpa, granulada, etc)
+- Referencias de fotografos ou filmes
+
+3. COMPOSICAO
+- Enquadramentos predominantes
+- Uso de espaco negativo
+- Simetria vs assimetria
+- Elementos recorrentes no frame
+
+4. MOVIMENTO DE CAMERA
+- Tipos de movimento principais
+- Velocidade (lenta, media, rapida)
+- Estabilizacao (tripod, gimbal, handheld)
+
+5. ATMOSFERA
+- 5 palavras que definem o mood
+- O que o espectador deve sentir visualmente
+- Temperatura emocional (quente, fria, etc)
+
+6. O QUE EVITAR
+- Estilos que nao combinam
+- Cliches visuais do segmento
+- Erros comuns
+
+Seja especifico e pratico.</pre>
+        </div>
+
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600">
+          <h4 class="font-semibold text-white mb-3">Direcao Visual Definida:</h4>
+          <div class="text-sm text-neutral-400 space-y-4">
+            <div>
+              <span class="text-rose-400 font-semibold">PALETA:</span>
+              <div class="flex gap-3 mt-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 rounded bg-amber-800"></div>
+                  <span class="text-xs">#92400E</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 rounded bg-emerald-800"></div>
+                  <span class="text-xs">#065F46</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 rounded bg-orange-100"></div>
+                  <span class="text-xs">#FFF7ED</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 rounded bg-stone-700"></div>
+                  <span class="text-xs">#44403C</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="text-rose-400 font-semibold">ESTILO:</span>
+              <p class="mt-1">Luz natural dourada (golden hour), profundidade de campo rasa, leve grain cinematico. Referencias: Terrence Malick, comerciais da Patagonia, fotografia da Kinfolk Magazine.</p>
+            </div>
+            <div>
+              <span class="text-rose-400 font-semibold">MOVIMENTO:</span>
+              <p class="mt-1">Predominantemente lento e contemplativo. Dolly suaves, pan lentos, momentos estaticos. Gimbal estabilizado com micro-movimentos organicos.</p>
+            </div>
+            <div>
+              <span class="text-rose-400 font-semibold">EVITAR:</span>
+              <p class="mt-1">Filtros muito saturados, slow motion cliche de liquido, close-ups extremos de graos, estetica "hipster" generica, fontes manuscritas rebuscadas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumo do Modulo -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-r from-rose-500/20 to-dark-800 rounded-2xl p-6 border border-rose-500/30">
+        <h3 class="text-xl font-bold text-rose-400 mb-4">Resumo: O Que Voce Criou</h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-dark-800/50 rounded-xl p-4">
+            <span class="text-2xl mb-2 block">📋</span>
+            <h4 class="font-semibold text-white mb-1">Briefing Completo</h4>
+            <p class="text-neutral-400 text-sm">Objetivos, publico, tom, entregaveis e criterios de sucesso definidos.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-xl p-4">
+            <span class="text-2xl mb-2 block">👤</span>
+            <h4 class="font-semibold text-white mb-1">Persona Detalhada</h4>
+            <p class="text-neutral-400 text-sm">Marina - perfil completo do espectador ideal com gatilhos e comportamentos.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-xl p-4">
+            <span class="text-2xl mb-2 block">💡</span>
+            <h4 class="font-semibold text-white mb-1">Conceito Criativo</h4>
+            <p class="text-neutral-400 text-sm">"O Tempo das Coisas" - big idea que diferencia e emociona.</p>
+          </div>
+          <div class="bg-dark-800/50 rounded-xl p-4">
+            <span class="text-2xl mb-2 block">🎨</span>
+            <h4 class="font-semibold text-white mb-1">Direcao Visual</h4>
+            <p class="text-neutral-400 text-sm">Paleta, estilo fotografico, movimento e atmosfera definidos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegacao -->
+    <div class="flex justify-between items-center pt-8 border-t border-dark-600">
+      <a href="index.html" class="text-neutral-400 hover:text-white transition-colors">
+        ← Voltar para Trilha 5
+      </a>
+      <a href="modulo-5-2.html" class="px-6 py-3 bg-rose-600 hover:bg-rose-500 text-white rounded-xl font-semibold transition-colors">
+        Proximo: Roteiro →
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 bg-dark-800/50 mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <p class="text-center text-neutral-500 text-sm">
+        VisionPro - Projeto Guiado: Video Raizes
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function copyPrompt(button) {
+      const promptBox = button.closest('.prompt-box');
+      const promptText = promptBox.querySelector('pre').textContent;
+      navigator.clipboard.writeText(promptText).then(() => {
+        const originalText = button.textContent;
+        button.textContent = 'Copiado!';
+        button.classList.add('bg-green-500/30', 'text-green-400');
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('bg-green-500/30', 'text-green-400');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

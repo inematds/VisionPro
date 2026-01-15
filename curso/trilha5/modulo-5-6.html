@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 5.6: Edição e Montagem - VisionPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0f',
+                            800: '#12121a',
+                            700: '#1a1a24',
+                            600: '#2a2a3a'
+                        }
+                    },
+                    fontFamily: {
+                        'space': ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .prompt-box {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.05) 0%, rgba(251, 113, 133, 0.02) 100%);
+        }
+        .prompt-box:hover {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.08) 0%, rgba(251, 113, 133, 0.04) 100%);
+        }
+        .result-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(34, 197, 94, 0.02) 100%);
+        }
+        .timeline-track {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.03) 0%, rgba(251, 113, 133, 0.01) 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+
+    <!-- Header -->
+    <header class="border-b border-dark-600 bg-dark-800/50 backdrop-blur-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="text-neutral-400 hover:text-rose-400 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </a>
+                    <span class="text-rose-400 font-semibold">Trilha 5</span>
+                    <span class="text-neutral-500">/</span>
+                    <span class="text-neutral-300">Módulo 5.6</span>
+                </div>
+                <div class="flex flex-col items-end space-y-1">
+                    <div class="flex items-center space-x-1 sm:space-x-2">
+                        <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+                            <span class="sm:hidden">T1</span>
+                            <span class="hidden sm:inline">Fundamentos</span>
+                        </a>
+                        <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+                            <span class="sm:hidden">T2</span>
+                            <span class="hidden sm:inline">Produção</span>
+                        </a>
+                        <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+                            <span class="sm:hidden">T3</span>
+                            <span class="hidden sm:inline">Pós</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-1 sm:space-x-2">
+                        <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+                            <span class="sm:hidden">T4</span>
+                            <span class="hidden sm:inline">Labs</span>
+                        </a>
+                        <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-rose-500/10 text-rose-400">
+                            <span class="sm:hidden">T5</span>
+                            <span class="hidden sm:inline">Projeto</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+
+        <!-- Module Header -->
+        <div class="mb-8">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="px-3 py-1 bg-rose-500/20 text-rose-400 text-sm font-semibold rounded-full">Módulo 5.6</span>
+                <span class="text-neutral-500 text-sm">90 min</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4">Edição e Montagem</h1>
+            <p class="text-neutral-400 text-lg">
+                Reúna todos os elementos criados e monte o vídeo final. Aprenda a usar
+                IA para acelerar o processo de edição e refinar cada detalhe.
+            </p>
+        </div>
+
+        <!-- Progress Context -->
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600 mb-8">
+            <h3 class="text-sm font-semibold text-rose-400 mb-3">ONDE ESTAMOS NO PROJETO</h3>
+            <div class="flex items-center space-x-2 text-sm">
+                <span class="text-green-400">✓ Briefing</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Roteiro</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Storyboard</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Assets</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Áudio</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-rose-400 font-semibold">Edição</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Tools Selection -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">1</span>
+                Escolha da Ferramenta de Edição
+            </h2>
+
+            <p class="text-neutral-300 mb-6">
+                A ferramenta certa depende do seu nível de experiência e necessidades.
+                Todas podem entregar um resultado profissional.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                <div class="timeline-track rounded-xl p-5 border border-dark-600">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-white">CapCut</h4>
+                        <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Iniciante</span>
+                    </div>
+                    <p class="text-sm text-neutral-400 mb-3">Interface intuitiva, IA integrada, templates prontos</p>
+                    <div class="text-xs text-neutral-500 space-y-1">
+                        <p><strong>Prós:</strong> Fácil, grátis, muitos recursos de IA</p>
+                        <p><strong>Contras:</strong> Menos controle fino</p>
+                        <p><strong>IA:</strong> Auto-cut, legendas, efeitos</p>
+                    </div>
+                </div>
+
+                <div class="timeline-track rounded-xl p-5 border border-rose-500/30 bg-rose-500/5">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-white">DaVinci Resolve</h4>
+                        <span class="text-xs bg-rose-500/20 text-rose-400 px-2 py-1 rounded">Recomendado</span>
+                    </div>
+                    <p class="text-sm text-neutral-400 mb-3">Profissional, gratuito, color grading excepcional</p>
+                    <div class="text-xs text-neutral-500 space-y-1">
+                        <p><strong>Prós:</strong> Completo, profissional, grátis</p>
+                        <p><strong>Contras:</strong> Curva de aprendizado</p>
+                        <p><strong>IA:</strong> Magic Mask, auto-color, audio</p>
+                    </div>
+                </div>
+
+                <div class="timeline-track rounded-xl p-5 border border-dark-600">
+                    <div class="font-bold text-white mb-3">Adobe Premiere</h4>
+                    <p class="text-sm text-neutral-400 mb-3">Padrão da indústria, integração Adobe</p>
+                    <div class="text-xs text-neutral-500 space-y-1">
+                        <p><strong>Prós:</strong> Completo, plugins, suporte</p>
+                        <p><strong>Contras:</strong> Assinatura paga</p>
+                        <p><strong>IA:</strong> Sensei, Auto-reframe, Speech-to-text</p>
+                    </div>
+                </div>
+
+                <div class="timeline-track rounded-xl p-5 border border-dark-600">
+                    <h4 class="font-bold text-white mb-3">Final Cut Pro</h4>
+                    <p class="text-sm text-neutral-400 mb-3">Mac only, otimizado para Apple Silicon</p>
+                    <div class="text-xs text-neutral-500 space-y-1">
+                        <p><strong>Prós:</strong> Rápido, integrado, magnético</p>
+                        <p><strong>Contras:</strong> Só Mac, pago</p>
+                        <p><strong>IA:</strong> Smart Conform, Object Tracker</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600">
+                <h4 class="text-sm font-semibold text-rose-400 mb-3">PARA ESTE PROJETO: DAVINCI RESOLVE</h4>
+                <p class="text-sm text-neutral-300">
+                    Vamos usar DaVinci Resolve por ser gratuito, profissional e ter excelentes
+                    ferramentas de color grading - perfeito para o visual cinematográfico do projeto Raízes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Project Setup -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">2</span>
+                Configuração do Projeto
+            </h2>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: CONFIGURAÇÕES DE PROJETO</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Quais são as configurações ideais de projeto para editar um vídeo publicitário no DaVinci Resolve?
+
+ESPECIFICAÇÕES DO PROJETO:
+- Duração: 60 segundos
+- Formato final: MP4 (H.264/H.265)
+- Plataformas: YouTube, Instagram, Site
+- Estilo visual: Cinematográfico, cores quentes
+- Assets: Vídeos gerados por IA (maioria 1920x1080)
+
+PRECISO SABER:
+1. Timeline Settings:
+   - Resolução ideal
+   - Frame rate (24, 30 ou 60fps?)
+   - Aspect ratio
+
+2. Project Settings:
+   - Color science (DaVinci YRGB vs ACEScct)
+   - Timeline color space
+   - Output color space
+
+3. Organização:
+   - Estrutura de bins recomendada
+   - Nomenclatura de arquivos
+   - Markers e timeline markers
+
+4. Proxy workflow:
+   - Preciso de proxies para vídeos de IA?
+   - Configurações de proxy se necessário
+
+5. Backup:
+   - Configuração de auto-save
+   - Backup de projeto</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">CONFIGURAÇÕES RECOMENDADAS</h4>
+                <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <p class="text-rose-400 font-semibold mb-2">Timeline</p>
+                        <ul class="text-xs text-neutral-400 space-y-1">
+                            <li>• Resolução: 1920x1080</li>
+                            <li>• Frame rate: 24fps (cinematográfico)</li>
+                            <li>• Aspect: 16:9</li>
+                            <li>• Color: DaVinci YRGB Color Managed</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <p class="text-rose-400 font-semibold mb-2">Organização de Bins</p>
+                        <ul class="text-xs text-neutral-400 space-y-1">
+                            <li>📁 01_VIDEO (cenas 01-12)</li>
+                            <li>📁 02_AUDIO (VO, music, SFX)</li>
+                            <li>📁 03_GRAPHICS (logo, textos)</li>
+                            <li>📁 04_EXPORTS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Assembly -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">3</span>
+                Montagem da Timeline
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Siga o storyboard como guia e monte o esqueleto do vídeo primeiro.
+                Depois refinamos timing e transições.
+            </p>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600 mb-6">
+                <h4 class="text-sm font-semibold text-neutral-400 mb-3">ESTRUTURA DA TIMELINE</h4>
+                <div class="space-y-2">
+                    <div class="flex items-center text-xs">
+                        <span class="w-16 text-rose-400 font-semibold">V3</span>
+                        <div class="flex-1 h-6 bg-amber-500/20 rounded flex items-center px-2 text-amber-400">Logo / Textos</div>
+                    </div>
+                    <div class="flex items-center text-xs">
+                        <span class="w-16 text-rose-400 font-semibold">V2</span>
+                        <div class="flex-1 h-6 bg-purple-500/20 rounded flex items-center px-2 text-purple-400">Overlays / Ajustes</div>
+                    </div>
+                    <div class="flex items-center text-xs">
+                        <span class="w-16 text-rose-400 font-semibold">V1</span>
+                        <div class="flex-1 h-6 bg-rose-500/20 rounded flex items-center px-2 text-rose-400">Vídeo Principal (Cenas)</div>
+                    </div>
+                    <div class="flex items-center text-xs">
+                        <span class="w-16 text-green-400 font-semibold">A1</span>
+                        <div class="flex-1 h-6 bg-green-500/20 rounded flex items-center px-2 text-green-400">Narração (Voiceover)</div>
+                    </div>
+                    <div class="flex items-center text-xs">
+                        <span class="w-16 text-blue-400 font-semibold">A2</span>
+                        <div class="flex-1 h-6 bg-blue-500/20 rounded flex items-center px-2 text-blue-400">Trilha Musical</div>
+                    </div>
+                    <div class="flex items-center text-xs">
+                        <span class="w-16 text-amber-400 font-semibold">A3</span>
+                        <div class="flex-1 h-6 bg-amber-500/20 rounded flex items-center px-2 text-amber-400">Efeitos Sonoros</div>
+                    </div>
+                    <div class="flex items-center text-xs">
+                        <span class="w-16 text-neutral-400 font-semibold">A4</span>
+                        <div class="flex-1 h-6 bg-neutral-500/20 rounded flex items-center px-2 text-neutral-400">Ambiente</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: GUIA DE MONTAGEM</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia passo a passo para montar a timeline do vídeo "Raízes" de 60 segundos.
+
+ASSETS DISPONÍVEIS:
+- 12 clips de vídeo (cenas 01-12, ~5-10s cada)
+- 1 arquivo de narração (~55s)
+- 3 trilhas musicais (principal, natureza, emocional)
+- Múltiplos efeitos sonoros organizados por cena
+- Logo Raízes (PNG com alpha)
+
+ROTEIRO COM TIMING:
+[00:00-00:03] Cena 01 - "Vivemos com pressa"
+[00:03-00:06] Cena 02 - "Mensagens que não terminamos de ler"
+[00:06-00:10] Cena 03 - "Cafés que não terminamos de sentir"
+[00:10-00:15] Cena 04 - [PAUSA - Transição montanhas]
+[00:15-00:20] Cena 05 - "Mas nas montanhas de Minas..."
+[00:20-00:25] Cena 06 - "Mãos que conhecem cada grão"
+[00:25-00:30] Cena 07 - "Sol que amadurece sem pressa"
+[00:30-00:35] Cena 08 - "Chuva que chega na hora certa"
+[00:35-00:38] Cena 09 - "Da terra ao torredor"
+[00:38-00:42] Cena 10 - "Do torredor às suas mãos"
+[00:42-00:50] Cena 11 - "Cada xícara carrega essa jornada"
+[00:50-00:60] Cena 12 - "Raízes. O tempo das coisas boas"
+
+GUIA PASSO A PASSO:
+1. Importação e organização
+2. Montagem do rough cut (vídeo + narração)
+3. Ajuste fino de timing
+4. Adição de trilha musical
+5. Inserção de efeitos sonoros
+6. Transições entre cenas
+7. Adição de logo e textos
+8. Revisão e ajustes finais</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">PASSO A PASSO DA MONTAGEM</h4>
+                <div class="space-y-4 text-sm text-neutral-300">
+                    <div class="border-l-2 border-rose-500/50 pl-4">
+                        <p class="text-rose-400 font-semibold">1. ROUGH CUT (Primeira passada)</p>
+                        <ul class="text-xs text-neutral-400 mt-1 space-y-1">
+                            <li>• Coloque narração em A1 e alinhe ao início</li>
+                            <li>• Posicione cada cena em V1 seguindo o timing do roteiro</li>
+                            <li>• Não se preocupe com transições ainda</li>
+                            <li>• Verifique se todas as falas têm vídeo correspondente</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-2 border-rose-500/50 pl-4">
+                        <p class="text-rose-400 font-semibold">2. AJUSTE DE TIMING</p>
+                        <ul class="text-xs text-neutral-400 mt-1 space-y-1">
+                            <li>• Ajuste entradas de vídeo para sincronizar com narração</li>
+                            <li>• Crie "respiro" antes de frases importantes</li>
+                            <li>• Use ripple edit para não criar gaps</li>
+                            <li>• Marque momentos-chave com markers coloridos</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-2 border-rose-500/50 pl-4">
+                        <p class="text-rose-400 font-semibold">3. ÁUDIO LAYERS</p>
+                        <ul class="text-xs text-neutral-400 mt-1 space-y-1">
+                            <li>• A2: Trilha musical com fade in suave (0-3s)</li>
+                            <li>• Abaixe música durante narração (-6 a -9dB)</li>
+                            <li>• A3: Efeitos sonoros nos momentos certos</li>
+                            <li>• A4: Ambiente contínuo em volume baixo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Transitions -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">4</span>
+                Transições e Ritmo
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                As transições definem o ritmo emocional do vídeo. Cada tipo de transição
+                comunica algo diferente.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: PLANO DE TRANSIÇÕES</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um plano de transições para o vídeo "Raízes" de 60 segundos.
+
+CONTEXTO EMOCIONAL:
+- ATO 1 (0-15s): Tensão, pressa, desconexão → Transição para calma
+- ATO 2 (15-45s): Contemplativo, natureza, processo artesanal
+- ATO 3 (45-60s): Emocional, satisfação, conexão
+
+CENAS E SUAS CONEXÕES:
+01→02: Mesmo ambiente (escritório/urbano)
+02→03: Mesmo ambiente
+03→04: GRANDE TRANSIÇÃO - urbano para natureza
+04→05: Continuidade (natureza)
+05→06: Aproximação (geral para detalhe)
+06→07: Continuidade (fazenda)
+07→08: Continuidade (natureza)
+08→09: Mudança (campo para processo)
+09→10: Continuidade (processo)
+10→11: Mudança (produto para pessoa)
+11→12: Resolução (emocional para marca)
+
+PARA CADA TRANSIÇÃO DEFINA:
+1. Tipo (cut, dissolve, fade, wipe, etc.)
+2. Duração recomendada
+3. Por que essa escolha?
+4. Dica de execução no DaVinci Resolve</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">MAPA DE TRANSIÇÕES</h4>
+                <div class="space-y-3 text-xs">
+                    <div class="flex items-center bg-dark-800/50 rounded-lg p-3">
+                        <span class="w-16 text-rose-400 font-mono">01→02</span>
+                        <span class="w-20 text-white">Cut</span>
+                        <span class="flex-1 text-neutral-400">Corte seco - mantém tensão urbana</span>
+                    </div>
+                    <div class="flex items-center bg-dark-800/50 rounded-lg p-3">
+                        <span class="w-16 text-rose-400 font-mono">02→03</span>
+                        <span class="w-20 text-white">Cut</span>
+                        <span class="flex-1 text-neutral-400">Corte seco - ritmo acelerado</span>
+                    </div>
+                    <div class="flex items-center bg-rose-500/10 rounded-lg p-3 border border-rose-500/30">
+                        <span class="w-16 text-rose-400 font-mono">03→04</span>
+                        <span class="w-20 text-white font-semibold">Dissolve</span>
+                        <span class="flex-1 text-neutral-300">2-3s - GRANDE VIRADA emocional</span>
+                    </div>
+                    <div class="flex items-center bg-dark-800/50 rounded-lg p-3">
+                        <span class="w-16 text-rose-400 font-mono">04→05</span>
+                        <span class="w-20 text-white">Dissolve</span>
+                        <span class="flex-1 text-neutral-400">1s - continuidade suave</span>
+                    </div>
+                    <div class="flex items-center bg-dark-800/50 rounded-lg p-3">
+                        <span class="w-16 text-rose-400 font-mono">05→06</span>
+                        <span class="w-20 text-white">Cut</span>
+                        <span class="flex-1 text-neutral-400">Corte no beat da música</span>
+                    </div>
+                    <div class="flex items-center bg-dark-800/50 rounded-lg p-3">
+                        <span class="w-16 text-rose-400 font-mono">11→12</span>
+                        <span class="w-20 text-white">Dissolve</span>
+                        <span class="flex-1 text-neutral-400">1.5s - resolução emocional para marca</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Color Grading -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">5</span>
+                Color Grading Cinematográfico
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                O color grading unifica visualmente todo o vídeo e reforça a mensagem emocional.
+                Vamos criar dois looks distintos para os dois mundos do vídeo.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: LOOK URBANO (CENAS 01-03)</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Descreva os ajustes de color grading para criar um look "urbano frio e desconectado" nas cenas 01-03 do vídeo Raízes.
+
+OBJETIVO EMOCIONAL:
+- Transmitir: Pressa, desconexão, frieza tecnológica
+- Contraste com: As cenas quentes da natureza que vêm depois
+
+FERRAMENTAS DISPONÍVEIS (DaVinci Resolve):
+- Primaries (Lift/Gamma/Gain)
+- Curves
+- Color Wheels
+- Qualifiers
+- Power Windows
+
+FORNEÇA AJUSTES ESPECÍFICOS:
+1. Temperature/Tint gerais
+2. Contraste e níveis
+3. Saturação
+4. Cor nas sombras vs highlights
+5. Vignette sugerido
+6. Grain/textura</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-4">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">LOOK 1: URBANO FRIO</h4>
+                <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <p class="text-rose-400 font-semibold mb-2">Primaries</p>
+                        <ul class="text-xs text-neutral-400 space-y-1">
+                            <li>• Temperature: -15 (mais frio)</li>
+                            <li>• Tint: +5 (leve magenta)</li>
+                            <li>• Contrast: +10</li>
+                            <li>• Saturation: -20%</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <p class="text-rose-400 font-semibold mb-2">Color Wheels</p>
+                        <ul class="text-xs text-neutral-400 space-y-1">
+                            <li>• Lift: Azul escuro nas sombras</li>
+                            <li>• Gamma: Neutro/leve cyan</li>
+                            <li>• Gain: Branco frio</li>
+                            <li>• Vignette: Sutil (-0.3)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: LOOK NATUREZA (CENAS 04-12)</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Descreva os ajustes de color grading para criar um look "quente, natural e cinematográfico" nas cenas 04-12 do vídeo Raízes.
+
+OBJETIVO EMOCIONAL:
+- Transmitir: Calma, conexão, autenticidade, calor humano
+- Paleta desejada: Âmbar, verde esmeralda, creme quente
+
+REFERÊNCIAS VISUAIS:
+- Documentários de natureza (BBC, National Geographic)
+- Comerciais de café premium
+- Filmes do Terrence Malick (golden hour)
+
+FORNEÇA:
+1. Ajustes de primaries
+2. Curves customizadas
+3. Qualifiers para realçar:
+   - Verde das folhas
+   - Marrom do café
+   - Tons de pele
+4. Como criar transição suave do look frio para este</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">LOOK 2: NATUREZA QUENTE</h4>
+                <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <p class="text-rose-400 font-semibold mb-2">Primaries</p>
+                        <ul class="text-xs text-neutral-400 space-y-1">
+                            <li>• Temperature: +20 (mais quente)</li>
+                            <li>• Tint: -5 (leve verde)</li>
+                            <li>• Contrast: +5 (suave)</li>
+                            <li>• Saturation: +10%</li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <p class="text-rose-400 font-semibold mb-2">Color Wheels</p>
+                        <ul class="text-xs text-neutral-400 space-y-1">
+                            <li>• Lift: Marrom quente</li>
+                            <li>• Gamma: Âmbar dourado</li>
+                            <li>• Gain: Creme suave</li>
+                            <li>• Highlight: Orange push</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Final Polish -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">6</span>
+                Finalização e Polimento
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Antes de exportar, faça uma revisão completa e aplique os toques finais
+                que elevam o vídeo de "bom" para "profissional".
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: CHECKLIST DE FINALIZAÇÃO</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um checklist completo de finalização para revisar antes de exportar o vídeo "Raízes".
+
+ASPECTOS A VERIFICAR:
+
+1. VÍDEO
+   - Continuidade visual
+   - Estabilização (se necessário)
+   - Remoção de artefatos de IA
+   - Speed ramping suave
+   - Enquadramento consistente
+
+2. ÁUDIO
+   - Níveis de narração consistentes
+   - Ducking funcionando
+   - Transições de música suaves
+   - Sem clipping ou distorção
+   - Fade out final
+
+3. TIMING
+   - Sincronização áudio/vídeo
+   - Duração total exata (60s)
+   - Pausas adequadas
+   - Ritmo geral fluido
+
+4. GRÁFICOS
+   - Logo bem posicionado
+   - Tempo de exibição adequado
+   - Animação suave (se houver)
+
+5. COLOR
+   - Consistência entre cenas
+   - Transição de looks suave
+   - Skin tones naturais
+   - Níveis de preto/branco corretos
+
+6. TÉCNICO
+   - Sem frames pretos
+   - Sem glitches
+   - Aspect ratio correto
+   - Safe zones respeitadas
+
+Para cada item, indique:
+- Como verificar
+- Problemas comuns
+- Como corrigir</pre>
+            </div>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600">
+                <h4 class="text-sm font-semibold text-rose-400 mb-3">TOQUES FINAIS OPCIONAIS</h4>
+                <div class="grid sm:grid-cols-2 gap-4 text-sm text-neutral-300">
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400">•</span>
+                        <span><strong>Film grain:</strong> 2-5% para textura cinematográfica</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400">•</span>
+                        <span><strong>Letterbox:</strong> Barras 2.35:1 para look cinema</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400">•</span>
+                        <span><strong>Vignette global:</strong> Sutil para foco central</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400">•</span>
+                        <span><strong>Sharpening:</strong> Leve no output (cuidado!)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Checklist -->
+        <section class="mb-10">
+            <div class="bg-gradient-to-br from-rose-500/10 to-pink-500/10 rounded-xl p-6 border border-rose-500/20">
+                <h3 class="text-xl font-bold mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Checklist do Módulo 5.6
+                </h3>
+                <p class="text-neutral-400 mb-4">Ao final deste módulo você deve ter:</p>
+                <div class="space-y-2">
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Projeto configurado corretamente no DaVinci Resolve</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Timeline montada com todas as 12 cenas</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Áudio sincronizado (narração + música + efeitos)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Transições aplicadas conforme plano</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Color grading aplicado (look frio + quente)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Logo inserido corretamente</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Revisão completa feita</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center pt-6 border-t border-dark-600">
+            <a href="modulo-5-5.html" class="flex items-center space-x-2 text-neutral-400 hover:text-rose-400 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <span>Módulo 5.5: Áudio e Trilha Sonora</span>
+            </a>
+            <a href="modulo-5-7.html" class="flex items-center space-x-2 text-rose-400 hover:text-rose-300 transition-colors">
+                <span>Módulo 5.7: Finalização e Distribuição</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-600 mt-16">
+        <div class="max-w-6xl mx-auto px-4 py-8">
+            <div class="text-center text-neutral-500 text-sm">
+                <p>VisionPro - Formação em Produção Audiovisual com IA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function copyPrompt(button) {
+            const promptBox = button.closest('.prompt-box');
+            const promptText = promptBox.querySelector('pre').textContent;
+
+            navigator.clipboard.writeText(promptText).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copiado!';
+                button.classList.add('bg-green-500/30', 'text-green-400');
+                button.classList.remove('bg-rose-500/20', 'text-rose-400');
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('bg-green-500/30', 'text-green-400');
+                    button.classList.add('bg-rose-500/20', 'text-rose-400');
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>

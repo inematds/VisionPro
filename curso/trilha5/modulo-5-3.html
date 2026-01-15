@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 5.3: Storyboard Visual - VisionPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0f',
+                            800: '#12121a',
+                            700: '#1a1a24',
+                            600: '#2a2a3a'
+                        }
+                    },
+                    fontFamily: {
+                        'space': ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .prompt-box {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.05) 0%, rgba(251, 113, 133, 0.02) 100%);
+        }
+        .prompt-box:hover {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.08) 0%, rgba(251, 113, 133, 0.04) 100%);
+        }
+        .result-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(34, 197, 94, 0.02) 100%);
+        }
+        .storyboard-frame {
+            background: linear-gradient(135deg, rgba(251, 113, 133, 0.03) 0%, rgba(251, 113, 133, 0.01) 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen">
+
+    <!-- Header -->
+    <header class="border-b border-dark-600 bg-dark-800/50 backdrop-blur-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="text-neutral-400 hover:text-rose-400 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </a>
+                    <span class="text-rose-400 font-semibold">Trilha 5</span>
+                    <span class="text-neutral-500">/</span>
+                    <span class="text-neutral-300">Módulo 5.3</span>
+                </div>
+                <div class="flex flex-col items-end space-y-1">
+                    <div class="flex items-center space-x-1 sm:space-x-2">
+                        <a href="../trilha1/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all">
+                            <span class="sm:hidden">T1</span>
+                            <span class="hidden sm:inline">Fundamentos</span>
+                        </a>
+                        <a href="../trilha2/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all">
+                            <span class="sm:hidden">T2</span>
+                            <span class="hidden sm:inline">Produção</span>
+                        </a>
+                        <a href="../trilha3/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all">
+                            <span class="sm:hidden">T3</span>
+                            <span class="hidden sm:inline">Pós</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-1 sm:space-x-2">
+                        <a href="../trilha4/index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all">
+                            <span class="sm:hidden">T4</span>
+                            <span class="hidden sm:inline">Labs</span>
+                        </a>
+                        <a href="index.html" class="px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold bg-rose-500/10 text-rose-400">
+                            <span class="sm:hidden">T5</span>
+                            <span class="hidden sm:inline">Projeto</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+
+        <!-- Module Header -->
+        <div class="mb-8">
+            <div class="flex items-center space-x-3 mb-4">
+                <span class="px-3 py-1 bg-rose-500/20 text-rose-400 text-sm font-semibold rounded-full">Módulo 5.3</span>
+                <span class="text-neutral-500 text-sm">60 min</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4">Storyboard Visual com IA</h1>
+            <p class="text-neutral-400 text-lg">
+                Transforme suas descrições de cena em imagens de referência usando geradores de imagem por IA.
+                Crie um storyboard visual completo para guiar toda a produção.
+            </p>
+        </div>
+
+        <!-- Progress Context -->
+        <div class="bg-dark-700/50 rounded-xl p-5 border border-dark-600 mb-8">
+            <h3 class="text-sm font-semibold text-rose-400 mb-3">ONDE ESTAMOS NO PROJETO</h3>
+            <div class="flex items-center space-x-2 text-sm">
+                <span class="text-green-400">✓ Briefing</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-green-400">✓ Roteiro</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-rose-400 font-semibold">Storyboard</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-neutral-500">Assets</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-neutral-500">Áudio</span>
+                <span class="text-neutral-600">→</span>
+                <span class="text-neutral-500">Edição</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Understanding Storyboards -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">1</span>
+                O Papel do Storyboard
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                O storyboard é o "mapa visual" do seu vídeo. Ele traduz o roteiro em imagens,
+                permitindo que todos visualizem o resultado final antes de qualquer produção.
+            </p>
+
+            <div class="grid sm:grid-cols-3 gap-4 mb-6">
+                <div class="bg-dark-700/30 rounded-xl p-4 border border-dark-600 text-center">
+                    <div class="text-3xl mb-2">📋</div>
+                    <h4 class="font-semibold text-white mb-1">Planejamento</h4>
+                    <p class="text-xs text-neutral-400">Visualizar sequência antes de produzir</p>
+                </div>
+                <div class="bg-dark-700/30 rounded-xl p-4 border border-dark-600 text-center">
+                    <div class="text-3xl mb-2">🤝</div>
+                    <h4 class="font-semibold text-white mb-1">Comunicação</h4>
+                    <p class="text-xs text-neutral-400">Alinhar equipe e cliente</p>
+                </div>
+                <div class="bg-dark-700/30 rounded-xl p-4 border border-dark-600 text-center">
+                    <div class="text-3xl mb-2">⏱️</div>
+                    <h4 class="font-semibold text-white mb-1">Economia</h4>
+                    <p class="text-xs text-neutral-400">Evitar retrabalho na produção</p>
+                </div>
+            </div>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600">
+                <h4 class="text-sm font-semibold text-neutral-400 mb-3">FERRAMENTAS DE IA PARA STORYBOARD</h4>
+                <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                    <div class="flex items-start space-x-3">
+                        <span class="text-rose-400 font-bold">Midjourney</span>
+                        <span class="text-neutral-400">Qualidade cinematográfica, melhor para conceitos artísticos</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-rose-400 font-bold">DALL-E 3</span>
+                        <span class="text-neutral-400">Fácil de usar, bom para iteração rápida</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-rose-400 font-bold">Stable Diffusion</span>
+                        <span class="text-neutral-400">Gratuito, flexível, requer mais ajustes</span>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-rose-400 font-bold">Leonardo.ai</span>
+                        <span class="text-neutral-400">Especializado em consistência visual</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Prompt Formula -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">2</span>
+                Fórmula de Prompt para Storyboard
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Para manter consistência visual em todas as cenas, vamos usar uma fórmula de prompt
+                padronizada que pode ser adaptada para cada frame.
+            </p>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600 mb-6">
+                <h4 class="text-sm font-semibold text-rose-400 mb-3">ESTRUTURA DO PROMPT DE IMAGEM</h4>
+                <div class="font-mono text-sm text-neutral-300 bg-dark-800/50 rounded-lg p-4">
+                    <p class="text-rose-400 mb-2">[TIPO DE CENA] + [SUJEITO] + [AÇÃO] + [AMBIENTE]</p>
+                    <p class="text-blue-400 mb-2">+ [ILUMINAÇÃO] + [COR/MOOD] + [ESTILO VISUAL]</p>
+                    <p class="text-green-400">+ [PARÂMETROS TÉCNICOS]</p>
+                </div>
+            </div>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT BASE: DEFINIR ESTILO VISUAL</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um guia de estilo visual para manter consistência em todas as imagens de storyboard do projeto.
+
+PROJETO: Vídeo promocional "O Tempo das Coisas" - Raízes Café
+
+DIREÇÃO VISUAL DO BRIEFING:
+- Paleta: Âmbar/marrom (café, madeira), verde esmeralda (natureza), creme quente, cinza pedra
+- Mood: Cinematográfico, autêntico, emocional, contemplativo
+- Referências: Documentários de natureza, comerciais Apple, filmes Terrence Malick
+
+DEFINA:
+1. PARÂMETROS FIXOS (usar em todos os prompts):
+   - Aspect ratio ideal
+   - Estilo artístico base (fotografia, ilustração, etc.)
+   - Qualidade/renderização
+   - Palavras-chave de mood
+
+2. TEMPLATE DE PROMPT BASE:
+   Crie um template com espaços para preencher:
+   [CENA] + [ELEMENTOS FIXOS] + [PARÂMETROS]
+
+3. NEGATIVE PROMPTS:
+   Liste o que evitar para manter consistência
+
+4. VARIAÇÕES DE ILUMINAÇÃO:
+   - Para cenas urbanas/escritório (fria, artificial)
+   - Para cenas de natureza/fazenda (golden hour, natural)
+   - Para cenas de produto/café (quente, acolhedora)
+
+Formate como um guia de referência rápida que possa ser consultado durante a criação de cada frame.</pre>
+            </div>
+
+            <div class="result-box rounded-xl p-5 border border-green-900/30 mb-6">
+                <h4 class="text-sm font-semibold text-green-400 mb-3">RESULTADO: GUIA DE ESTILO</h4>
+                <div class="text-sm text-neutral-300 space-y-4">
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <div class="font-semibold text-rose-400 mb-2">PARÂMETROS FIXOS</div>
+                        <code class="text-xs bg-dark-700 px-2 py-1 rounded">--ar 16:9 --style raw --v 6.1</code>
+                        <p class="text-neutral-400 text-xs mt-2">cinematic photography, film grain, shallow depth of field, warm color grading</p>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <div class="font-semibold text-rose-400 mb-2">TEMPLATE BASE</div>
+                        <code class="text-xs text-neutral-300 block">
+                            [DESCRIÇÃO DA CENA], [ENQUADRAMENTO], cinematic photography,
+                            [ILUMINAÇÃO], warm amber and emerald tones, film grain,
+                            shallow depth of field, documentary style --ar 16:9 --style raw --v 6.1
+                        </code>
+                    </div>
+
+                    <div class="bg-dark-800/50 rounded-lg p-4">
+                        <div class="font-semibold text-rose-400 mb-2">NEGATIVE PROMPT</div>
+                        <code class="text-xs text-red-400">--no cartoon, illustration, 3d render, artificial, overprocessed, neon colors, text, watermark</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Scene-by-Scene Prompts -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">3</span>
+                Prompts Cena por Cena
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Vamos criar os prompts para cada frame do storyboard, baseados nas descrições
+                de cena desenvolvidas no Módulo 5.2.
+            </p>
+
+            <!-- Scene 1 -->
+            <div class="storyboard-frame rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <span class="text-xs text-rose-400 font-semibold">CENA 01 • 00:00-00:03</span>
+                        <p class="text-sm text-neutral-400 mt-1">"Vivemos com pressa."</p>
+                    </div>
+                    <span class="text-xs text-neutral-500 bg-dark-700 px-2 py-1 rounded">ATO 1</span>
+                </div>
+                <div class="prompt-box rounded-lg p-4 border border-dark-600 mb-3">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs text-rose-400 font-semibold">PROMPT MIDJOURNEY</span>
+                        <button onclick="copyPrompt(this)" class="copy-btn px-2 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded transition-colors">
+                            Copiar
+                        </button>
+                    </div>
+                    <pre class="text-xs text-neutral-300 whitespace-pre-wrap font-mono">Close-up of hands frantically typing on a smartphone, multiple notification bubbles appearing on screen, blurred subway background with motion blur, cold blue artificial lighting, stressed urban atmosphere, cinematic photography, shallow depth of field, film grain --ar 16:9 --style raw --v 6.1</pre>
+                </div>
+                <div class="flex items-center space-x-4 text-xs text-neutral-500">
+                    <span>📐 Close-up</span>
+                    <span>💡 Luz fria</span>
+                    <span>🎭 Ansiedade</span>
+                </div>
+            </div>
+
+            <!-- Scene 2 -->
+            <div class="storyboard-frame rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <span class="text-xs text-rose-400 font-semibold">CENA 02 • 00:03-00:06</span>
+                        <p class="text-sm text-neutral-400 mt-1">"Mensagens que não terminamos de ler."</p>
+                    </div>
+                    <span class="text-xs text-neutral-500 bg-dark-700 px-2 py-1 rounded">ATO 1</span>
+                </div>
+                <div class="prompt-box rounded-lg p-4 border border-dark-600 mb-3">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs text-rose-400 font-semibold">PROMPT MIDJOURNEY</span>
+                        <button onclick="copyPrompt(this)" class="copy-btn px-2 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded transition-colors">
+                            Copiar
+                        </button>
+                    </div>
+                    <pre class="text-xs text-neutral-300 whitespace-pre-wrap font-mono">Extreme close-up of phone screen showing endless unread messages, finger scrolling quickly past conversations, screen light illuminating dark environment, digital overwhelm visualization, cold blue glow, cinematic macro photography, shallow depth of field --ar 16:9 --style raw --v 6.1</pre>
+                </div>
+                <div class="flex items-center space-x-4 text-xs text-neutral-500">
+                    <span>📐 Extreme close</span>
+                    <span>💡 Luz de tela</span>
+                    <span>🎭 Sobrecarga</span>
+                </div>
+            </div>
+
+            <!-- Scene 3 -->
+            <div class="storyboard-frame rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <span class="text-xs text-rose-400 font-semibold">CENA 03 • 00:06-00:10</span>
+                        <p class="text-sm text-neutral-400 mt-1">"Cafés que não terminamos de sentir."</p>
+                    </div>
+                    <span class="text-xs text-neutral-500 bg-dark-700 px-2 py-1 rounded">ATO 1</span>
+                </div>
+                <div class="prompt-box rounded-lg p-4 border border-dark-600 mb-3">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs text-rose-400 font-semibold">PROMPT MIDJOURNEY</span>
+                        <button onclick="copyPrompt(this)" class="copy-btn px-2 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded transition-colors">
+                            Copiar
+                        </button>
+                    </div>
+                    <pre class="text-xs text-neutral-300 whitespace-pre-wrap font-mono">Medium shot of paper coffee cup on office desk, steam rising and dissipating, hand reaching for cup while eyes focused on computer screen, fluorescent office lighting, abandoned coffee getting cold, corporate atmosphere, cinematic photography, muted colors, film grain --ar 16:9 --style raw --v 6.1</pre>
+                </div>
+                <div class="flex items-center space-x-4 text-xs text-neutral-500">
+                    <span>📐 Plano médio</span>
+                    <span>💡 Fluorescente</span>
+                    <span>🎭 Desconexão</span>
+                </div>
+            </div>
+
+            <!-- Scene 4 - Transition -->
+            <div class="storyboard-frame rounded-xl p-5 border border-rose-500/30 mb-4 bg-rose-500/5">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <span class="text-xs text-rose-400 font-semibold">CENA 04 • 00:10-00:15 • TRANSIÇÃO</span>
+                        <p class="text-sm text-neutral-400 mt-1">[PAUSA - Transição para o campo]</p>
+                    </div>
+                    <span class="text-xs text-rose-400 bg-rose-500/20 px-2 py-1 rounded">VIRADA</span>
+                </div>
+                <div class="prompt-box rounded-lg p-4 border border-dark-600 mb-3">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs text-rose-400 font-semibold">PROMPT MIDJOURNEY</span>
+                        <button onclick="copyPrompt(this)" class="copy-btn px-2 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded transition-colors">
+                            Copiar
+                        </button>
+                    </div>
+                    <pre class="text-xs text-neutral-300 whitespace-pre-wrap font-mono">Aerial drone shot of misty green mountains of Minas Gerais Brazil at sunrise, coffee plantation in the valley, golden hour light rays piercing through fog, lush emerald vegetation, peaceful serene landscape, cinematic aerial photography, warm golden and green tones, National Geographic style --ar 16:9 --style raw --v 6.1</pre>
+                </div>
+                <div class="flex items-center space-x-4 text-xs text-neutral-500">
+                    <span>📐 Aerial/Drone</span>
+                    <span>💡 Golden hour</span>
+                    <span>🎭 Esperança</span>
+                </div>
+            </div>
+
+            <!-- Scene 5 -->
+            <div class="storyboard-frame rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <span class="text-xs text-rose-400 font-semibold">CENA 05 • 00:15-00:20</span>
+                        <p class="text-sm text-neutral-400 mt-1">"Mas nas montanhas de Minas, o tempo ainda tem outro ritmo."</p>
+                    </div>
+                    <span class="text-xs text-neutral-500 bg-dark-700 px-2 py-1 rounded">ATO 2</span>
+                </div>
+                <div class="prompt-box rounded-lg p-4 border border-dark-600 mb-3">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs text-rose-400 font-semibold">PROMPT MIDJOURNEY</span>
+                        <button onclick="copyPrompt(this)" class="copy-btn px-2 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded transition-colors">
+                            Copiar
+                        </button>
+                    </div>
+                    <pre class="text-xs text-neutral-300 whitespace-pre-wrap font-mono">Wide establishing shot of traditional Brazilian coffee farm at golden hour, rustic wooden buildings, coffee trees in rows stretching to mountains, warm amber sunlight, peaceful rural atmosphere, smoke rising from chimney, cinematic landscape photography, documentary style, warm earth tones --ar 16:9 --style raw --v 6.1</pre>
+                </div>
+                <div class="flex items-center space-x-4 text-xs text-neutral-500">
+                    <span>📐 Plano geral</span>
+                    <span>💡 Golden hour</span>
+                    <span>🎭 Serenidade</span>
+                </div>
+            </div>
+
+            <!-- Scene 6 -->
+            <div class="storyboard-frame rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <span class="text-xs text-rose-400 font-semibold">CENA 06 • 00:20-00:25</span>
+                        <p class="text-sm text-neutral-400 mt-1">"Mãos que conhecem cada grão pelo nome."</p>
+                    </div>
+                    <span class="text-xs text-neutral-500 bg-dark-700 px-2 py-1 rounded">ATO 2</span>
+                </div>
+                <div class="prompt-box rounded-lg p-4 border border-dark-600 mb-3">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs text-rose-400 font-semibold">PROMPT MIDJOURNEY</span>
+                        <button onclick="copyPrompt(this)" class="copy-btn px-2 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded transition-colors">
+                            Copiar
+                        </button>
+                    </div>
+                    <pre class="text-xs text-neutral-300 whitespace-pre-wrap font-mono">Intimate close-up of weathered farmer hands carefully selecting ripe red coffee cherries, detailed skin texture showing years of work, soft natural backlight, shallow depth of field with blurred coffee plants, warm amber and red tones, documentary photography, authentic and emotional --ar 16:9 --style raw --v 6.1</pre>
+                </div>
+                <div class="flex items-center space-x-4 text-xs text-neutral-500">
+                    <span>📐 Close-up</span>
+                    <span>💡 Backlight natural</span>
+                    <span>🎭 Cuidado</span>
+                </div>
+            </div>
+
+            <!-- More scenes prompt -->
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: GERAR CENAS RESTANTES</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie prompts de imagem no mesmo estilo para as cenas restantes do storyboard (cenas 07-12).
+
+ESTILO BASE JÁ DEFINIDO:
+- Formato: cinematic photography, --ar 16:9 --style raw --v 6.1
+- Paleta: warm amber, emerald green, cream, earth tones
+- Mood: documentary style, film grain, shallow depth of field
+
+CENAS RESTANTES DO ROTEIRO:
+
+CENA 07 (00:25-00:30): "Sol que amadurece sem pressa."
+- Visual: Time-lapse de café amadurecendo na planta
+
+CENA 08 (00:30-00:35): "Chuva que chega na hora certa."
+- Visual: Gotas de chuva nas folhas de café
+
+CENA 09 (00:35-00:38): "Da terra ao torredor."
+- Visual: Grãos sendo torrados, fumaça aromática
+
+CENA 10 (00:38-00:42): "Do torredor às suas mãos."
+- Visual: Café sendo embalado artesanalmente
+
+CENA 11 (00:42-00:50): "Cada xícara carrega essa jornada. Cada gole, uma pausa que você merece."
+- Visual: Pessoa saboreando café em momento de paz
+
+CENA 12 (00:50-00:60): "Raízes. O tempo das coisas boas."
+- Visual: Xícara com logo, transição para natureza, encerramento
+
+Para cada cena, forneça:
+1. Prompt completo para Midjourney
+2. Enquadramento recomendado
+3. Tipo de iluminação
+4. Emoção/mood da cena</pre>
+            </div>
+        </section>
+
+        <!-- Section 4: Storyboard Assembly -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">4</span>
+                Montando o Documento de Storyboard
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Com as imagens geradas, é hora de montar o documento final de storyboard
+                que servirá como guia para toda a produção.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: TEMPLATE DE STORYBOARD</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">Crie um template de documento de storyboard profissional para apresentação ao cliente e equipe de produção.
+
+PROJETO: "O Tempo das Coisas" - Raízes Café
+FORMATO: 12 cenas para 60 segundos
+
+ESTRUTURA DO DOCUMENTO:
+
+1. CAPA
+   - Logo/título do projeto
+   - Cliente: Raízes Café
+   - Versão e data
+   - "Storyboard - Vídeo Promocional 60s"
+
+2. VISÃO GERAL
+   - Grid de todas as 12 cenas em miniatura
+   - Timeline visual mostrando os 3 atos
+   - Resumo do conceito criativo
+
+3. PÁGINAS DE CENA (uma página por cena):
+   Layout de cada página:
+   ┌─────────────────────────────────────┐
+   │ [IMAGEM DO FRAME - grande]          │
+   │                                     │
+   ├─────────────────────────────────────┤
+   │ CENA: 01        TIMING: 00:00-00:03 │
+   │ ATO: 1 - Abertura                   │
+   ├─────────────────────────────────────┤
+   │ ÁUDIO/NARRAÇÃO:                     │
+   │ "Vivemos com pressa."               │
+   ├─────────────────────────────────────┤
+   │ DESCRIÇÃO VISUAL:                   │
+   │ [Descrição detalhada da cena]       │
+   ├─────────────────────────────────────┤
+   │ TÉCNICO:                            │
+   │ Plano: Close-up | Movimento: Estático│
+   │ Luz: Fria artificial | Duração: 3s  │
+   ├─────────────────────────────────────┤
+   │ NOTAS DE PRODUÇÃO:                  │
+   │ [Observações para a equipe]         │
+   └─────────────────────────────────────┘
+
+4. PÁGINA DE TRANSIÇÕES
+   - Como cada cena conecta com a próxima
+   - Tipo de corte/transição (cut, dissolve, etc.)
+
+5. REFERÊNCIAS VISUAIS
+   - Moodboard compilado
+   - Paleta de cores oficial
+   - Exemplos de referência
+
+Forneça as instruções de como montar este documento usando as imagens geradas.</pre>
+            </div>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600">
+                <h4 class="text-sm font-semibold text-neutral-400 mb-3">FERRAMENTAS PARA MONTAR O STORYBOARD</h4>
+                <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                    <div class="flex items-start space-x-3">
+                        <span class="text-rose-400">•</span>
+                        <div>
+                            <span class="font-semibold text-white">Canva</span>
+                            <p class="text-neutral-400 text-xs">Templates prontos, fácil de usar</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-rose-400">•</span>
+                        <div>
+                            <span class="font-semibold text-white">Figma/FigJam</span>
+                            <p class="text-neutral-400 text-xs">Colaborativo, flexível</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-rose-400">•</span>
+                        <div>
+                            <span class="font-semibold text-white">Boords</span>
+                            <p class="text-neutral-400 text-xs">Especializado em storyboard</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <span class="text-rose-400">•</span>
+                        <div>
+                            <span class="font-semibold text-white">Google Slides</span>
+                            <p class="text-neutral-400 text-xs">Gratuito, fácil compartilhamento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Refinement -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 flex items-center">
+                <span class="w-8 h-8 bg-rose-500/20 text-rose-400 rounded-lg flex items-center justify-center text-sm font-bold mr-3">5</span>
+                Refinando Imagens com IA
+            </h2>
+
+            <p class="text-neutral-300 mb-4">
+                Nem sempre a primeira geração sai perfeita. Aprenda a refinar suas imagens
+                para alcançar exatamente o visual desejado.
+            </p>
+
+            <div class="prompt-box rounded-xl p-5 border border-dark-600 mb-4">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="text-xs text-rose-400 font-semibold">PROMPT: REFINAMENTO DE IMAGEM</span>
+                    <button onclick="copyPrompt(this)" class="copy-btn px-3 py-1 bg-rose-500/20 hover:bg-rose-500/30 text-rose-400 text-xs rounded-lg transition-colors">
+                        Copiar
+                    </button>
+                </div>
+                <pre class="text-sm text-neutral-300 whitespace-pre-wrap font-mono leading-relaxed">A imagem gerada não ficou exatamente como eu queria. Preciso de ajuda para refinar o prompt.
+
+PROMPT ORIGINAL:
+[Cole aqui o prompt que você usou]
+
+IMAGEM GERADA:
+[Descreva o que a IA gerou]
+
+PROBLEMAS IDENTIFICADOS:
+[Liste o que não ficou como esperado]
+- Ex: "A iluminação ficou muito dura"
+- Ex: "A expressão da pessoa não transmite a emoção certa"
+- Ex: "As cores estão muito saturadas"
+
+O QUE EU QUERIA:
+[Descreva sua visão ideal]
+
+Por favor:
+1. Identifique quais partes do prompt causaram os problemas
+2. Sugira modificações específicas para corrigir cada issue
+3. Reescreva o prompt completo otimizado
+4. Sugira variações alternativas caso o primeiro refinamento não funcione
+5. Indique se devo usar algum parâmetro especial (--chaos, --weird, --stylize, etc.)</pre>
+            </div>
+
+            <div class="bg-dark-700/30 rounded-xl p-5 border border-dark-600">
+                <h4 class="text-sm font-semibold text-neutral-400 mb-3">DICAS DE REFINAMENTO</h4>
+                <div class="space-y-3 text-sm text-neutral-300">
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400 font-bold">1.</span>
+                        <span><strong>Seja específico:</strong> "warm golden hour lighting" é melhor que "good lighting"</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400 font-bold">2.</span>
+                        <span><strong>Use referências:</strong> "in the style of Roger Deakins cinematography"</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400 font-bold">3.</span>
+                        <span><strong>Controle o peso:</strong> Use ::2 para dar mais importância a termos específicos</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <span class="text-rose-400 font-bold">4.</span>
+                        <span><strong>Itere rapidamente:</strong> Gere 4 variações e selecione a melhor para refinar</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Checklist -->
+        <section class="mb-10">
+            <div class="bg-gradient-to-br from-rose-500/10 to-pink-500/10 rounded-xl p-6 border border-rose-500/20">
+                <h3 class="text-xl font-bold mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Checklist do Módulo 5.3
+                </h3>
+                <p class="text-neutral-400 mb-4">Ao final deste módulo você deve ter:</p>
+                <div class="space-y-2">
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Guia de estilo visual definido (parâmetros fixos)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>12 prompts de imagem escritos (um por cena)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>12 imagens de storyboard geradas por IA</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Documento de storyboard montado e formatado</span>
+                    </label>
+                    <label class="flex items-center space-x-3 text-neutral-300">
+                        <input type="checkbox" class="w-4 h-4 rounded border-dark-600 bg-dark-700 text-rose-500">
+                        <span>Imagens refinadas conforme necessário</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center pt-6 border-t border-dark-600">
+            <a href="modulo-5-2.html" class="flex items-center space-x-2 text-neutral-400 hover:text-rose-400 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <span>Módulo 5.2: Roteiro com IA</span>
+            </a>
+            <a href="modulo-5-4.html" class="flex items-center space-x-2 text-rose-400 hover:text-rose-300 transition-colors">
+                <span>Módulo 5.4: Geração de Assets</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-600 mt-16">
+        <div class="max-w-6xl mx-auto px-4 py-8">
+            <div class="text-center text-neutral-500 text-sm">
+                <p>VisionPro - Formação em Produção Audiovisual com IA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function copyPrompt(button) {
+            const promptBox = button.closest('.prompt-box');
+            const promptText = promptBox.querySelector('pre').textContent;
+
+            navigator.clipboard.writeText(promptText).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copiado!';
+                button.classList.add('bg-green-500/30', 'text-green-400');
+                button.classList.remove('bg-rose-500/20', 'text-rose-400');
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('bg-green-500/30', 'text-green-400');
+                    button.classList.add('bg-rose-500/20', 'text-rose-400');
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>
